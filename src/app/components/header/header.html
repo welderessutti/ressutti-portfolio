@@ -1,0 +1,87 @@
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-opacity-80 backdrop-blur border-b border-text-secondary/20"
+>
+  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a routerLink="/" class="text-xl font-bold text-text-primary hover:opacity-80 transition">
+      Ressutti.dev
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="text-accent"
+          class="hover:text-accent transition relative"
+        >
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/about" routerLinkActive="text-accent" class="hover:text-accent transition">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a
+          routerLink="/projects"
+          routerLinkActive="text-accent"
+          class="hover:text-accent transition"
+        >
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-accent"
+          class="hover:text-accent transition"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Button -->
+    <button class="md:hidden text-text-primary" (click)="toggleMenu()" aria-label="Open menu">
+      @if (isMenuOpen()) {
+        <!-- X -->
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" stroke-linecap="round" d="M6 6L18 18M6 18L18 6" />
+        </svg>
+      } @else {
+        <!-- Menu -->
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      }
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  @if (isMenuOpen()) {
+    <div class="md:hidden p-4 bg-opacity-80 backdrop-blur border-t border-text-secondary/20">
+      <ul class="flex flex-col gap-4 text-textSecondary">
+        <li>
+          <a routerLink="/" (click)="toggleMenu()" class="hover:text-accent"> Home </a>
+        </li>
+
+        <li>
+          <a routerLink="/about" (click)="toggleMenu()" class="hover:text-accent"> About </a>
+        </li>
+
+        <li>
+          <a routerLink="/projects" (click)="toggleMenu()" class="hover:text-accent"> Projects </a>
+        </li>
+
+        <li>
+          <a routerLink="/contact" (click)="toggleMenu()" class="hover:text-accent"> Contact </a>
+        </li>
+      </ul>
+    </div>
+  }
+</header>
