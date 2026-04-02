@@ -10,6 +10,6 @@ export class Header {
   isMenuOpen = signal(false);
 
   toggleMenu() {
-    this.isMenuOpen.set(!this.isMenuOpen());
+    this.isMenuOpen.update((open) => !open);
   }
 }
