@@ -1,0 +1,25 @@
+<section id="projects" class="py-20 reveal" appRevealOnScroll>
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-primary">Projects</h2>
+    <p class="text-text-secondary mb-12">
+      Alguns dos projetos que desenvolvi, focados em performance, escalabilidade e experiência do
+      usuário.
+    </p>
+
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      @for (project of projects; track project.title) {
+        <!-- Cards here -->
+        <app-project-card [project]="project"></app-project-card>
+      }
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <a
+        routerLink="/projects"
+        class="px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
+      >
+        Ver todos os projetos
+      </a>
+    </div>
+  </div>
+</section>
