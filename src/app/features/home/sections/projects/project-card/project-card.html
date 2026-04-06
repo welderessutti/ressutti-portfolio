@@ -39,24 +39,24 @@
     <div class="flex items-center gap-4 mt-2">
       @if (project.github) {
         <a
-        [href]="project.github"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm text-text-secondary hover:text-accent transition"
-      >
-        GitHub
-      </a>
+          [href]="project.github"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-text-secondary hover:text-accent transition"
+        >
+          GitHub
+        </a>
       }
 
       @if (project.demo) {
         <a
-        [href]="project.demo"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm text-accent hover:underline"
-      >
-        Live Demo
-      </a>
+          [href]="project.demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-accent hover:underline"
+        >
+          Live Demo
+        </a>
       }
     </div>
   </div>
