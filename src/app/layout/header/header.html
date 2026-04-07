@@ -1,5 +1,5 @@
 <header
-  class="fixed top-0 left-0 w-full z-50 bg-opacity-80 backdrop-blur border-b border-text-secondary/20"
+  class="fixed top-0 left-0 w-full z-60 bg-opacity-80 backdrop-blur border-b border-text-secondary/20"
 >
   <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     <!-- Logo -->
@@ -47,7 +47,13 @@
     </ul>
 
     <!-- Mobile Button -->
-    <button class="md:hidden text-text-primary" (click)="toggleMenu()" aria-label="Open menu">
+    <button
+      class="md:hidden text-text-primary"
+      (click)="toggleMenu()"
+      aria-label="Open menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="mobile-menu"
+    >
       @if (isMenuOpen()) {
         <!-- X -->
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -61,27 +67,5 @@
       }
     </button>
   </nav>
-
-  <!-- Mobile Menu -->
-  @if (isMenuOpen()) {
-    <div class="md:hidden p-4 bg-opacity-80 backdrop-blur border-t border-text-secondary/20">
-      <ul class="flex flex-col gap-4 text-textSecondary">
-        <li>
-          <a routerLink="/" (click)="toggleMenu()" class="hover:text-accent"> Home </a>
-        </li>
-
-        <li>
-          <a routerLink="/about" (click)="toggleMenu()" class="hover:text-accent"> About </a>
-        </li>
-
-        <li>
-          <a routerLink="/projects" (click)="toggleMenu()" class="hover:text-accent"> Projects </a>
-        </li>
-
-        <li>
-          <a routerLink="/contact" (click)="toggleMenu()" class="hover:text-accent"> Contact </a>
-        </li>
-      </ul>
-    </div>
-  }
 </header>
+<app-mobile-menu [isOpen]="isMenuOpen()" (close)="closeMenu()" />

@@ -1,0 +1,42 @@
+<!-- Overlay -->
+<div
+  class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300"
+  [class.opacity-100]="isOpen"
+  [class.opacity-0]="!isOpen"
+  [class.pointer-events-none]="!isOpen"
+  [class.invisible]="!isOpen"
+  (click)="onClose()"
+></div>
+
+<!-- Drawer -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 right-0 h-full pt-24 w-[min(100%,320px)] flex flex-col bg-surface z-50 shadow-2xl transform transition-transform duration-300 ease-in-out"
+  [class.translate-x-0]="isOpen"
+  [class.translate-x-full]="!isOpen"
+>
+  <nav class="flex flex-col h-full px-6 gap-6">
+    <!-- Links -->
+    <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
+      <li>
+        <a routerLink="/" (click)="onClose()" class="hover:text-accent transition"> Home </a>
+      </li>
+
+      <li>
+        <a routerLink="/about" (click)="onClose()" class="hover:text-accent transition"> About </a>
+      </li>
+
+      <li>
+        <a routerLink="/projects" (click)="onClose()" class="hover:text-accent transition">
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/contact" (click)="onClose()" class="hover:text-accent transition">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
