@@ -2,20 +2,21 @@
 
 @theme {
   /* Backgrounds */
-  --color-background: #ffffff;
-  --color-surface: #f9fafb;
-  --color-surface-light: #f3f4f6;
-  --color-surface-hover: #e5e7eb;
+  --color-background: #fcfcfe;
+  --color-surface: #eff1f9;
+  --color-surface-light: #f5f6fb;
+  --color-surface-hover: #dbe0f2;
 
   /* Borders */
-  --color-border: #e5e7eb;
-  --color-border-light: #f3f4f6;
+  --color-border: #dbe0f2;
+  --color-border-light: #e2e6f4;
 
   /* Text */
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-muted: #6b7280;
-  --color-text-accent: #2563eb;
+  --color-text-primary: #111523;
+  --color-text-secondary: #353845;
+  --color-text-tertiary: #5e606b;
+  --color-text-inverse: #fcfcfe;
+  --color-text-muted: #898a93;
 
   /* Accent */
   --color-accent: #3b82f6;
@@ -33,6 +34,16 @@
 
   /* Font */
   --font-inter: 'Inter', sans-serif;
+}
+
+@layer components {
+  .container-padding {
+    @apply max-w-6xl mx-auto px-4 md:px-6 lg:px-10;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
 }
 
 @layer utilities {

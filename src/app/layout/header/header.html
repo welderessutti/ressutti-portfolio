@@ -1,7 +1,7 @@
 <header
   class="fixed top-0 left-0 w-full z-60 bg-background/80 backdrop-blur border-b border-border"
 >
-  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <nav class="container-padding py-3 lg:py-4 flex items-center justify-between">
     <!-- Logo -->
     <a routerLink="/" class="text-xl font-bold text-text-primary hover:opacity-80 transition">
       Ressutti.dev
@@ -48,7 +48,7 @@
 
     <!-- Mobile Button -->
     <button
-      class="md:hidden text-text-primary"
+      class="md:hidden text-text-primary hover:text-accent transition"
       (click)="toggleMenu()"
       aria-label="Open menu"
       [attr.aria-expanded]="isMenuOpen()"
