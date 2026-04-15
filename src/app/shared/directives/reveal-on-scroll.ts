@@ -5,11 +5,15 @@ import { isPlatformBrowser } from '@angular/common';
   selector: '[appRevealOnScroll]',
 })
 export class RevealOnScroll implements AfterViewInit {
-  private el = inject(ElementRef);
-  private platformId = inject(PLATFORM_ID);
+  private readonly el = inject(ElementRef);
+  private readonly platformId = inject(PLATFORM_ID);
 
-  ngAfterViewInit() {
-    if (!isPlatformBrowser(this.platformId)) return;
+  private get isBrowser() {
+    return isPlatformBrowser(this.platformId);
+  }
+
+  public ngAfterViewInit() {
+    if (!this.isBrowser) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {

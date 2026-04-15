@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,16 +6,23 @@ import { Component, OnInit, signal } from '@angular/core';
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
-export class Hero implements OnInit {
+export class Hero implements OnInit, OnDestroy {
   protected readonly words = ['modernas', 'escaláveis', 'performáticas'];
   protected readonly typedText = signal('');
 
   private wordIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
+  private timeoutId?: ReturnType<typeof setTimeout>;
 
-  ngOnInit() {
+  public ngOnInit() {
     this.typeEffect();
+  }
+
+  public ngOnDestroy() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   }
 
   private typeEffect() {
@@ -36,7 +43,6 @@ export class Hero implements OnInit {
       speed = 1200; // pausa
       this.isDeleting = true;
     }
-
     // stopped deleting
     else if (this.isDeleting && this.charIndex === 0) {
       this.isDeleting = false;
@@ -44,6 +50,6 @@ export class Hero implements OnInit {
       speed = 300;
     }
 
-    setTimeout(() => this.typeEffect(), speed);
+    this.timeoutId = setTimeout(() => this.typeEffect(), speed);
   }
 }

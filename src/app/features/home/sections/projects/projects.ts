@@ -10,7 +10,7 @@ import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
   styleUrl: './projects.css',
 })
 export class Projects {
-  projects: Project[] = [
+  protected readonly projects: Project[] = [
     {
       title: 'Project 1',
       description: 'Description for Project 1',

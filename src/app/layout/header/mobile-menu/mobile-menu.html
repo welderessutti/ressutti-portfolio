@@ -1,6 +1,6 @@
 <!-- Overlay -->
 <div
-  class="fixed inset-0 bg-background/60 backdrop-blur-xs z-40 transition-opacity duration-300"
+  class="fixed inset-0 bg-background/60 backdrop-blur-xs z-30 transition-opacity duration-300"
   [class.opacity-100]="isOpen"
   [class.opacity-0]="!isOpen"
   [class.pointer-events-none]="!isOpen"
@@ -11,7 +11,7 @@
 <!-- Drawer -->
 <div
   id="mobile-menu"
-  class="fixed top-0 right-0 h-full pt-24 w-[min(100%,320px)] flex flex-col bg-surface-light z-50 shadow-2xl transform transition-transform duration-300 ease-in-out"
+  class="fixed top-0 right-0 h-full pt-24 w-[min(100%,320px)] flex flex-col bg-surface-light z-40 shadow-2xl transform transition-transform duration-300 ease-in-out"
   [class.translate-x-0]="isOpen"
   [class.translate-x-full]="!isOpen"
 >

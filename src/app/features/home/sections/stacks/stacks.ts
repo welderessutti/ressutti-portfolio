@@ -10,7 +10,7 @@ import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
   styleUrl: './stacks.css',
 })
 export class Stacks {
-  stacks: Stack[] = [
+  protected readonly stacks: Stack[] = [
     {
       category: 'Frontend',
       stacks: [

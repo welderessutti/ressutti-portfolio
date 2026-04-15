@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      <!-- Theme Initialization -->
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+
+          if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (!savedTheme) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (prefersDark) {
+              document.documentElement.classList.add('dark');
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="utf-8" />
     <title>Ressutti | Fullstack Software Developer</title>
     <base href="/" />

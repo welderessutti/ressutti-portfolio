@@ -1,5 +1,5 @@
 <header
-  class="fixed top-0 left-0 w-full z-60 bg-background/80 backdrop-blur border-b border-border"
+  class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur border-b border-border"
 >
   <nav class="container-padding py-3 lg:py-4 flex items-center justify-between">
     <!-- Logo -->
@@ -7,65 +7,122 @@
       Ressutti.dev
     </a>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
-      <li>
-        <a
-          routerLink="/"
-          routerLinkActive="text-accent"
-          class="hover:text-accent transition relative"
-        >
-          Home
-        </a>
-      </li>
+    <div class="flex items-center justify-between gap-8">
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="text-accent"
+            class="hover:text-accent transition relative"
+          >
+            Home
+          </a>
+        </li>
 
-      <li>
-        <a routerLink="/about" routerLinkActive="text-accent" class="hover:text-accent transition">
-          About
-        </a>
-      </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="text-accent"
+            class="hover:text-accent transition"
+          >
+            About
+          </a>
+        </li>
 
-      <li>
-        <a
-          routerLink="/projects"
-          routerLinkActive="text-accent"
-          class="hover:text-accent transition"
-        >
-          Projects
-        </a>
-      </li>
+        <li>
+          <a
+            routerLink="/projects"
+            routerLinkActive="text-accent"
+            class="hover:text-accent transition"
+          >
+            Projects
+          </a>
+        </li>
 
-      <li>
-        <a
-          routerLink="/contact"
-          routerLinkActive="text-accent"
-          class="hover:text-accent transition"
-        >
-          Contact
-        </a>
-      </li>
-    </ul>
+        <li>
+          <a
+            routerLink="/contact"
+            routerLinkActive="text-accent"
+            class="hover:text-accent transition"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
 
-    <!-- Mobile Button -->
-    <button
-      class="md:hidden text-text-primary hover:text-accent transition"
-      (click)="toggleMenu()"
-      aria-label="Open menu"
-      [attr.aria-expanded]="isMenuOpen()"
-      aria-controls="mobile-menu"
-    >
-      @if (isMenuOpen()) {
-        <!-- X -->
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-width="2" stroke-linecap="round" d="M6 6L18 18M6 18L18 6" />
-        </svg>
-      } @else {
-        <!-- Menu -->
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      }
-    </button>
+      <!-- Theme Button -->
+      <button
+        class="text-text-secondary hover:text-accent transition"
+        (click)="toggleTheme()"
+        aria-label="Toggle theme"
+      >
+        @if (isDarkMode()) {
+          <!-- Sun -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-sun-icon lucide-sun"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        } @else {
+          <!-- Moon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-moon-icon lucide-moon"
+          >
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+            />
+          </svg>
+        }
+      </button>
+
+      <!-- Mobile Button -->
+      <button
+        class="md:hidden text-text-secondary hover:text-accent transition"
+        (click)="toggleMenu()"
+        aria-label="Open menu"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-menu"
+      >
+        @if (isMenuOpen()) {
+          <!-- X -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-width="2" stroke-linecap="round" d="M6 6L18 18M6 18L18 6" />
+          </svg>
+        } @else {
+          <!-- Menu -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        }
+      </button>
+    </div>
   </nav>
 </header>
-<app-mobile-menu [isOpen]="isMenuOpen()" (close)="closeMenu()" />
+<app-mobile-menu [isOpen]="isMenuOpen()" (closeMenu)="closeMenu()" />

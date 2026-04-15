@@ -8,9 +8,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MobileMenu {
   @Input() isOpen!: boolean;
-  @Output() close = new EventEmitter<void>();
+  @Output() protected readonly closeMenu = new EventEmitter<void>();
 
-  onClose() {
-    this.close.emit();
+  protected onClose() {
+    this.closeMenu.emit();
   }
 }
