@@ -1,0 +1,64 @@
+<div id="lang-switcher" class="relative">
+  <!-- Button -->
+  <button
+    (click)="toggle()"
+    class="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-accent transition"
+  >
+    <!-- Flag -->
+    <span>
+      @if (currentLang() === 'pt-BR') {
+        🇧🇷
+      } @else {
+        🇬🇧
+      }
+    </span>
+
+    <!-- Label -->
+    <span>
+      @if (currentLang() === 'pt-BR') {
+        PT
+      } @else {
+        EN
+      }
+    </span>
+
+    <!-- Arrow -->
+    <svg
+      class="w-4 h-4 transition-transform"
+      [class.rotate-180]="isOpen()"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6" />
+    </svg>
+  </button>
+
+  <!-- Dropdown -->
+  <div
+    class="absolute right-0 mt-2 w-36 bg-surface border border-border rounded-lg shadow-lg p-2 z-50 transition-all duration-200"
+    [class.opacity-100]="isOpen()"
+    [class.opacity-0]="!isOpen()"
+    [class.pointer-events-none]="!isOpen()"
+    [class.translate-y-0]="isOpen()"
+    [class.translate-y-2]="!isOpen()"
+  >
+    <!-- PT -->
+    <button
+      (click)="selectLang('pt-BR')"
+      class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
+      [class.bg-surface-hover]="currentLang() === 'pt-BR'"
+    >
+      🇧🇷 Português
+    </button>
+
+    <!-- EN -->
+    <button
+      (click)="selectLang('en-GB')"
+      class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
+      [class.bg-surface-hover]="currentLang() === 'en-GB'"
+    >
+      🇬🇧 English
+    </button>
+  </div>
+</div>

@@ -1,10 +1,11 @@
 import { Component, signal, HostListener, inject, PLATFORM_ID } from '@angular/core';
-import { MobileMenu } from './mobile-menu/mobile-menu';
 import { isPlatformBrowser } from '@angular/common';
+import { MobileMenu } from './mobile-menu/mobile-menu';
+import { LanguageSwitcher } from './language-switcher/language-switcher';
 
 @Component({
   selector: 'app-header',
-  imports: [MobileMenu],
+  imports: [MobileMenu, LanguageSwitcher],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -26,18 +27,13 @@ export class Header {
 
   protected toggleTheme() {
     if (!this.isBrowser) return;
-
-    const html = document.documentElement;
-    const isDark = html.classList.toggle('dark');
-
+    const isDark = document.documentElement.classList.toggle('dark');
     this.isDarkMode.set(isDark);
-
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 
   private toggleBodyScroll(lock: boolean) {
     if (!this.isBrowser) return;
-
     document.body.classList.toggle('overflow-hidden', lock);
   }
 
@@ -57,9 +53,7 @@ export class Header {
   @HostListener('window:resize')
   protected onResize() {
     if (!this.isBrowser) return;
-
     if (!this.isMenuOpen()) return;
-
     if (window.innerWidth >= 768) {
       this.closeMenu();
     }
@@ -68,7 +62,6 @@ export class Header {
   @HostListener('window:keydown.escape')
   protected onEsc() {
     if (!this.isBrowser) return;
-
     if (this.isMenuOpen()) {
       this.closeMenu();
     }
