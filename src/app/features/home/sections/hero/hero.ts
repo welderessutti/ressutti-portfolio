@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal, inject } from '@angular/core';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +8,7 @@ import { Component, OnDestroy, OnInit, signal } from '@angular/core';
   styleUrl: './hero.css',
 })
 export class Hero implements OnInit, OnDestroy {
+  protected readonly translation = inject(TranslationService);
   protected readonly words = ['modernas', 'escaláveis', 'performáticas'];
   protected readonly typedText = signal('');
 
