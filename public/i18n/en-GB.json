@@ -6,5 +6,29 @@
     "subtitle": "I create scalable and high-performance web applications.",
     "buttonProjects": "View projects",
     "buttonContact": "Contact"
+  },
+
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of the projects I've developed, focused on performance, scalability, and user experience.",
+    "buttonViewAll": "View all projects",
+    "items": [
+      {
+        "title": "Project 1",
+        "description": "Description for Project 1",
+        "techs": ["Angular", "Java"],
+        "image": "/images/project1.jpg",
+        "github": "https://github.com/user/project1",
+        "demo": "https://demo.com/project1"
+      },
+      {
+        "title": "Project 2",
+        "description": "Description for Project 2",
+        "techs": ["Angular", "Java"],
+        "image": "/images/project2.jpg",
+        "github": "https://github.com/user/project2",
+        "demo": "https://demo.com/project2"
+      }
+    ]
   }
 }

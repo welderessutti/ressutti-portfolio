@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { ProjectCard } from './project-card/project-card';
 import { Project } from './project.model';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,22 +11,8 @@ import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
   styleUrl: './projects.css',
 })
 export class Projects {
-  protected readonly projects: Project[] = [
-    {
-      title: 'Project 1',
-      description: 'Description for Project 1',
-      techs: ['Tech 1', 'Tech 2'],
-      image: 'assets/images/project1.jpg',
-      github: 'https://github.com/user/project1',
-      demo: 'https://demo.com/project1',
-    },
-    {
-      title: 'Project 2',
-      description: 'Description for Project 2',
-      techs: ['Tech 3', 'Tech 4'],
-      image: 'assets/images/project2.jpg',
-      github: 'https://github.com/user/project2',
-      demo: 'https://demo.com/project2',
-    },
-  ];
+  protected readonly translation = inject(TranslationService);
+  protected readonly projects = computed<Project[]>(() =>
+    this.translation.tObjectArray<Project>('projects.items'),
+  );
 }

@@ -67,7 +67,7 @@ export class TranslationService {
     return typeof value === 'string' ? value : path;
   }
 
-  public tArray(path: string): string[] {
+  public tObjectArray<T = unknown>(path: string): T[] {
     const keys = path.split('.');
     let value: unknown = this.translations();
 
@@ -75,6 +75,6 @@ export class TranslationService {
       if (typeof value !== 'object' || value === null) return [];
       value = (value as Record<string, unknown>)[key];
     }
-    return Array.isArray(value) ? value : [];
+    return Array.isArray(value) ? (value as T[]) : [];
   }
 }

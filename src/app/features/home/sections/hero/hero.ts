@@ -9,7 +9,9 @@ import { TranslationService } from '../../../../core/services/translation.servic
 })
 export class Hero implements OnDestroy {
   protected readonly translation = inject(TranslationService);
-  protected readonly words = computed(() => this.translation.tArray('hero.words'));
+  protected readonly words = computed<string[]>(() =>
+    this.translation.tObjectArray<string>('hero.words'),
+  );
   protected readonly typedText = signal('');
 
   private wordIndex = 0;

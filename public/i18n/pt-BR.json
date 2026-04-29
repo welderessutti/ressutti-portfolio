@@ -6,5 +6,29 @@
     "subtitle": "Crio aplicações web com experiências que realmente fazem a diferença.",
     "buttonProjects": "Ver projetos",
     "buttonContact": "Contato"
+  },
+
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Alguns dos projetos que desenvolvi, focados em performance, escalabilidade e experiência do usuário.",
+    "buttonViewAll": "Ver todos os projetos",
+    "items": [
+      {
+        "title": "Projeto 1",
+        "description": "Descriçao do projeto 1",
+        "techs": ["Angular", "Java"],
+        "image": "/images/project1.jpg",
+        "github": "https://github.com/user/project1",
+        "demo": "https://demo.com/project1"
+      },
+      {
+        "title": "Projeto 2",
+        "description": "Descriçao do projeto 2",
+        "techs": ["Angular", "Java"],
+        "image": "/images/project2.jpg",
+        "github": "https://github.com/user/project2",
+        "demo": "https://demo.com/project2"
+      }
+    ]
   }
 }
