@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, signal, inject } from '@angular/core';
+import { Component, OnDestroy, signal, computed, inject, effect } from '@angular/core';
 import { TranslationService } from '../../../../core/services/translation.service';
 
 @Component({
@@ -7,9 +7,9 @@ import { TranslationService } from '../../../../core/services/translation.servic
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
-export class Hero implements OnInit, OnDestroy {
+export class Hero implements OnDestroy {
   protected readonly translation = inject(TranslationService);
-  protected readonly words = ['modernas', 'escaláveis', 'performáticas'];
+  protected readonly words = computed(() => this.translation.tArray('hero.words'));
   protected readonly typedText = signal('');
 
   private wordIndex = 0;
@@ -17,8 +17,22 @@ export class Hero implements OnInit, OnDestroy {
   private isDeleting = false;
   private timeoutId?: ReturnType<typeof setTimeout>;
 
-  public ngOnInit() {
-    this.typeEffect();
+  constructor() {
+    effect(() => {
+      const words = this.words();
+
+      if (!words.length) return;
+
+      this.wordIndex = 0;
+      this.charIndex = 0;
+      this.isDeleting = false;
+
+      if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+      }
+
+      this.typeEffect();
+    });
   }
 
   public ngOnDestroy() {
@@ -28,7 +42,11 @@ export class Hero implements OnInit, OnDestroy {
   }
 
   private typeEffect() {
-    const currentWord = this.words[this.wordIndex];
+    const words = this.words();
+
+    if (!words.length) return;
+
+    const currentWord = words[this.wordIndex];
 
     if (this.isDeleting) {
       this.charIndex--;
@@ -48,7 +66,7 @@ export class Hero implements OnInit, OnDestroy {
     // stopped deleting
     else if (this.isDeleting && this.charIndex === 0) {
       this.isDeleting = false;
-      this.wordIndex = (this.wordIndex + 1) % this.words.length; // loop back to first word
+      this.wordIndex = (this.wordIndex + 1) % words.length; // loop back to first word
       speed = 300;
     }
 

@@ -1,7 +1,9 @@
 {
   "hero": {
-    "title": "Construindo experiências digitais",
-    "subtitle": "Crio aplicações web escaláveis e performáticas.",
+    "before": "Construindo experiências digitais",
+    "words": ["modernas", "escaláveis", "performáticas"],
+    "after": "",
+    "subtitle": "Crio aplicações web com experiências que realmente fazem a diferença.",
     "buttonProjects": "Ver projetos",
     "buttonContact": "Contato"
   }

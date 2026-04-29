@@ -66,4 +66,15 @@ export class TranslationService {
     }
     return typeof value === 'string' ? value : path;
   }
+
+  public tArray(path: string): string[] {
+    const keys = path.split('.');
+    let value: unknown = this.translations();
+
+    for (const key of keys) {
+      if (typeof value !== 'object' || value === null) return [];
+      value = (value as Record<string, unknown>)[key];
+    }
+    return Array.isArray(value) ? value : [];
+  }
 }
