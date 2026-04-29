@@ -11,24 +11,27 @@
   "projects": {
     "title": "Projetos",
     "subtitle": "Alguns dos projetos que desenvolvi, focados em performance, escalabilidade e experiência do usuário.",
-    "buttonViewAll": "Ver todos os projetos",
-    "items": [
-      {
+    "items": {
+      "project1": {
         "title": "Projeto 1",
-        "description": "Descriçao do projeto 1",
-        "techs": ["Angular", "Java"],
-        "image": "/images/project1.jpg",
-        "github": "https://github.com/user/project1",
-        "demo": "https://demo.com/project1"
+        "description": "Descrição do projeto 1"
       },
-      {
+      "project2": {
         "title": "Projeto 2",
-        "description": "Descriçao do projeto 2",
-        "techs": ["Angular", "Java"],
-        "image": "/images/project2.jpg",
-        "github": "https://github.com/user/project2",
-        "demo": "https://demo.com/project2"
+        "description": "Descrição do projeto 2"
       }
-    ]
+    },
+    "buttonViewAll": "Ver todos os projetos"
+  },
+
+  "stacks": {
+    "title": "Tecnologias & Ferramentas",
+    "subtitle": "Tecnologias e ferramentas que utilizo para construir meus projetos, garantindo alto desempenho e escalabilidade.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Banco de Dados",
+      "devops": "DevOps"
+    }
   }
 }

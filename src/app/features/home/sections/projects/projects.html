@@ -8,7 +8,7 @@
     </p>
 
     <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-      @for (project of projects(); track project.title) {
+      @for (project of projects(); track project.id) {
         <!-- Cards here -->
         <app-project-card [project]="project"></app-project-card>
       }
