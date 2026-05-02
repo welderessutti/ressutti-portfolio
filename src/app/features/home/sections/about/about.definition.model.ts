@@ -1,4 +1,4 @@
-export interface AboutDefinitionItem {
+export interface AboutDefinition {
   term: string;
   description: string;
 }
