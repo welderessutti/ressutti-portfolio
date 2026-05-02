@@ -4,50 +4,39 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Left (Text) -->
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-text-primary">Sobre mim</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-text-primary">
+          {{ translation.t('about.main.title') }}
+        </h2>
 
         <p class="text-text-secondary mb-4 leading-relaxed">
-          Sou desenvolvedor focado em criar aplicações modernas, performáticas e escaláveis, com
-          atenção especial à experiência do usuário e qualidade de código.
+          {{ translation.t('about.main.subtitle1') }}
         </p>
 
         <p class="text-text-secondary mb-6 leading-relaxed">
-          Trabalho com tecnologias como Angular, Node.js e TypeScript, sempre buscando aplicar boas
-          práticas, arquitetura sólida e soluções eficientes para problemas reais.
+          {{ translation.t('about.main.subtitle2') }}
         </p>
 
         <!-- Highlights -->
         <ul class="list-disc pl-5 space-y-3 marker:text-accent">
-          <li class="text-text-secondary">Foco em performance e escalabilidade</li>
-          <li class="text-text-secondary">Código limpo e boas práticas</li>
-          <li class="text-text-secondary">Experiência em aplicações modernas e responsivas</li>
+          @for (highlight of highlights(); track highlight) {
+            <li class="text-text-secondary">{{ highlight }}</li>
+          }
         </ul>
       </div>
 
       <!-- Right (Visual / Card) -->
       <div class="bg-surface-light rounded-2xl p-6 border border-border shadow-sm">
-        <h3 class="text-lg font-semibold mb-4 text-text-primary">Resumo rápido</h3>
+        <h3 class="text-lg font-semibold mb-4 text-text-primary">
+          {{ translation.t('about.card.title') }}
+        </h3>
 
         <dl class="space-y-3 text-text-tertiary text-sm">
-          <div>
-            <dt class="font-medium text-text-secondary">Stack principal</dt>
-            <dd>Angular, Node.js</dd>
-          </div>
-
-          <div>
-            <dt class="font-medium text-text-secondary">Foco</dt>
-            <dd>Frontend moderno</dd>
-          </div>
-
-          <div>
-            <dt class="font-medium text-text-secondary">Experiência</dt>
-            <dd>Projetos pessoais e estudo contínuo</dd>
-          </div>
-
-          <div>
-            <dt class="font-medium text-text-secondary">Localização</dt>
-            <dd>Brasil</dd>
-          </div>
+          @for (definition of definitions(); track definition.term) {
+            <div>
+              <dt class="font-medium text-text-secondary">{{ definition.term }}</dt>
+              <dd>{{ definition.description }}</dd>
+            </div>
+          }
         </dl>
       </div>
     </div>

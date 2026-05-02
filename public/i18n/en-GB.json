@@ -33,5 +33,39 @@
       "database": "Database",
       "devops": "DevOps"
     }
+  },
+
+  "about": {
+    "main": {
+      "title": "About me",
+      "subtitle1": "I am a developer focused on building modern, high-performance, and scalable applications, with special attention to user experience and code quality.",
+      "subtitle2": "I work with technologies such as Angular, Node.js, and TypeScript, always aiming to apply best practices, solid architecture, and efficient solutions to real-world problems.",
+      "highlights": [
+        "Focus on performance and scalability",
+        "Clean code and best practices",
+        "Experience with web applications"
+      ]
+    },
+    "card": {
+      "title": "Quick overview",
+      "definitions": [
+        {
+          "term": "Main stack",
+          "description": "Angular, Java"
+        },
+        {
+          "term": "Focus",
+          "description": "Modern frontend"
+        },
+        {
+          "term": "Experience",
+          "description": "Personal projects and continuous learning"
+        },
+        {
+          "term": "Location",
+          "description": "Indaiatuba, SP - Brazil"
+        }
+      ]
+    }
   }
 }

@@ -33,5 +33,39 @@
       "database": "Banco de Dados",
       "devops": "DevOps"
     }
+  },
+
+  "about": {
+    "main": {
+      "title": "Sobre mim",
+      "subtitle1": "Sou desenvolvedor focado em criar aplicações modernas, performáticas e escaláveis, com atenção especial à experiência do usuário e qualidade de código.",
+      "subtitle2": "Trabalho com tecnologias como Angular, Node.js e TypeScript, sempre buscando aplicar boas práticas, arquitetura sólida e soluções eficientes para problemas reais.",
+      "highlights": [
+        "Foco em performance e escalabilidade",
+        "Código limpo e boas práticas",
+        "Experiência em aplicações "
+      ]
+    },
+    "card": {
+      "title": "Resumo rápido",
+      "definitions": [
+        {
+          "term": "Stack principal",
+          "description": "Angular, Java"
+        },
+        {
+          "term": "Foco",
+          "description": "Frontend moderno"
+        },
+        {
+          "term": "Experiência",
+          "description": "Projetos pessoais e estudo contínuo"
+        },
+        {
+          "term": "Localização",
+          "description": "Indaiatuba, SP - Brasil"
+        }
+      ]
+    }
   }
 }
