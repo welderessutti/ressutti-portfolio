@@ -1,4 +1,11 @@
 {
+  "nav": {
+    "home": "Home",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+
   "hero": {
     "before": "Construindo experiências digitais",
     "words": ["modernas", "escaláveis", "performáticas"],
@@ -67,5 +74,12 @@
         }
       ]
     }
+  },
+
+  "footer": {
+    "slogan": "Desenvolvendo aplicações modernas, performáticas e com foco em experiência do usuário.",
+    "nav": "Navegação",
+    "contact": "Contato",
+    "copyright": "Todos os direitos reservados."
   }
 }

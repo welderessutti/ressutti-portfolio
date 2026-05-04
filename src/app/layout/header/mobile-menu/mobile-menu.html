@@ -18,25 +18,13 @@
   <nav class="flex flex-col h-full px-6 gap-6">
     <!-- Links -->
     <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
-      <li>
-        <a routerLink="/" (click)="onClose()" class="hover:text-accent transition"> Home </a>
-      </li>
-
-      <li>
-        <a routerLink="/about" (click)="onClose()" class="hover:text-accent transition"> About </a>
-      </li>
-
-      <li>
-        <a routerLink="/projects" (click)="onClose()" class="hover:text-accent transition">
-          Projects
-        </a>
-      </li>
-
-      <li>
-        <a routerLink="/contact" (click)="onClose()" class="hover:text-accent transition">
-          Contact
-        </a>
-      </li>
+      @for (nav of navs; track nav.id) {
+        <li>
+          <a [routerLink]="nav.path" (click)="onClose()" class="hover:text-accent transition">
+            {{ nav.label }}
+          </a>
+        </li>
+      }
     </ul>
   </nav>
 </div>

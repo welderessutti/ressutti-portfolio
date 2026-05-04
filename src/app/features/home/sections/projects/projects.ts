@@ -2,7 +2,7 @@ import { Component, inject, computed } from '@angular/core';
 import { ProjectCard } from './project-card/project-card';
 import { ProjectBase, Project } from './project.model';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { TranslationService } from '../../../../core/services/translation/translation.service';
 
 @Component({
   selector: 'app-projects',

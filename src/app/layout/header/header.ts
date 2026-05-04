@@ -2,15 +2,18 @@ import { Component, signal, HostListener, inject, PLATFORM_ID } from '@angular/c
 import { isPlatformBrowser } from '@angular/common';
 import { MobileMenu } from './mobile-menu/mobile-menu';
 import { LanguageSwitcher } from './language-switcher/language-switcher';
+import { NavService } from '../../core/services/nav/nav.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [MobileMenu, LanguageSwitcher],
+  imports: [MobileMenu, LanguageSwitcher, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
   private readonly platformId = inject(PLATFORM_ID);
+  protected readonly nav = inject(NavService);
   protected readonly isMenuOpen = signal(false);
   protected readonly isDarkMode = signal(false);
 

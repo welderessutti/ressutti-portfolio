@@ -10,45 +10,17 @@
     <div class="flex items-center justify-between gap-8">
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
-        <li>
-          <a
-            routerLink="/"
-            routerLinkActive="text-accent"
-            class="hover:text-accent transition relative"
-          >
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/about"
-            routerLinkActive="text-accent"
-            class="hover:text-accent transition"
-          >
-            About
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/projects"
-            routerLinkActive="text-accent"
-            class="hover:text-accent transition"
-          >
-            Projects
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/contact"
-            routerLinkActive="text-accent"
-            class="hover:text-accent transition"
-          >
-            Contact
-          </a>
-        </li>
+        @for (nav of nav.navs(); track nav.id) {
+          <li>
+            <a
+              [routerLink]="nav.path"
+              routerLinkActive="text-accent"
+              class="hover:text-accent transition relative"
+            >
+              {{ nav.label }}
+            </a>
+          </li>
+        }
       </ul>
 
       <!-- Theme Button -->
@@ -128,4 +100,4 @@
     </div>
   </nav>
 </header>
-<app-mobile-menu [isOpen]="isMenuOpen()" (closeMenu)="closeMenu()" />
+<app-mobile-menu [isOpen]="isMenuOpen()" [navs]="nav.navs()" (closeMenu)="closeMenu()" />

@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Home } from './features/home/home';
 import { Footer } from './layout/footer/footer';
-import { TranslationService } from './core/services/translation.service';
+import { TranslationService } from './core/services/translation/translation.service';
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,6 @@
 import { Component, inject, computed } from '@angular/core';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { TranslationService } from '../../../../core/services/translation/translation.service';
 import { AboutDefinition } from './about.definition.model';
 
 @Component({

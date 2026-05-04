@@ -1,4 +1,11 @@
 {
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+
   "hero": {
     "before": "Building",
     "words": ["modern", "scalable", "high-performance"],
@@ -67,5 +74,12 @@
         }
       ]
     }
+  },
+
+  "footer": {
+    "slogan": "Building modern, high-performance web applications with a focus on user experience.",
+    "nav": "Navigation",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
   }
 }

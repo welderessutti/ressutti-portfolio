@@ -5,34 +5,33 @@
       <div>
         <h3 class="text-xl font-bold text-text-primary">Ressutti.dev</h3>
         <p class="mt-4 text-sm text-text-secondary max-w-xs">
-          Desenvolvendo aplicações modernas, performáticas e com foco em experiência do usuário.
+          {{ translation.t('footer.slogan') }}
         </p>
       </div>
 
       <!-- Navigation -->
       <div>
-        <h4 class="text-sm font-semibold text-text-primary mb-4">Navegação</h4>
+        <h4 class="text-sm font-semibold text-text-primary mb-4">
+          {{ translation.t('footer.nav') }}
+        </h4>
         <nav>
           <ul class="flex flex-col gap-2 text-sm text-text-secondary">
-            <li>
-              <a routerLink="/" class="hover:text-accent transition">Home</a>
-            </li>
-            <li>
-              <a routerLink="/about" class="hover:text-accent transition">About</a>
-            </li>
-            <li>
-              <a routerLink="/projects" class="hover:text-accent transition">Projects</a>
-            </li>
-            <li>
-              <a routerLink="/contact" class="hover:text-accent transition">Contact</a>
-            </li>
+            @for (nav of nav.navs(); track nav.id) {
+              <li>
+                <a [routerLink]="nav.path" class="hover:text-accent transition">
+                  {{ nav.label }}
+                </a>
+              </li>
+            }
           </ul>
         </nav>
       </div>
 
       <!-- Social -->
       <div>
-        <h4 class="text-sm font-semibold text-text-primary mb-4">Contato</h4>
+        <h4 class="text-sm font-semibold text-text-primary mb-4">
+          {{ translation.t('footer.contact') }}
+        </h4>
         <nav>
           <ul class="flex flex-col gap-2 text-sm text-text-secondary">
             <li>
@@ -51,7 +50,7 @@
 
     <!-- Bottom -->
     <div class="mt-10 pt-6 text-center text-sm text-text-tertiary">
-      © 2026 Ressutti.dev. Todos os direitos reservados.
+      © 2026 Ressutti.dev. {{ translation.t('footer.copyright') }}
     </div>
   </div>
 </footer>

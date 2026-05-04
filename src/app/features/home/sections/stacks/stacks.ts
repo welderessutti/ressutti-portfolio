@@ -2,7 +2,7 @@ import { Component, inject, computed } from '@angular/core';
 import { StackCard } from './stack-card/stack-card';
 import { StackBase, Stack } from './stack.model';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { TranslationService } from '../../../../core/services/translation/translation.service';
 
 @Component({
   selector: 'app-stacks',

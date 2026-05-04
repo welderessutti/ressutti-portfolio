@@ -1,5 +1,5 @@
 import { Component, OnDestroy, signal, computed, inject, effect } from '@angular/core';
-import { TranslationService } from '../../../../core/services/translation.service';
+import { TranslationService } from '../../../../core/services/translation/translation.service';
 
 @Component({
   selector: 'app-hero',
