@@ -1,4 +1,31 @@
 {
+  "seo": {
+    "home": {
+      "title": "Home | Ressutti.dev",
+      "description": "Portfólio de um desenvolvedor full-stack focado em performance e escalabilidade.",
+      "image": "/images/og-home.png",
+      "url": "https://ressutti.dev/"
+    },
+    "projects": {
+      "title": "Projetos | Ressutti.dev",
+      "description": "Alguns dos projetos que desenvolvi, focados em performance, escalabilidade e experiência do usuário.",
+      "image": "/images/og-projects.png",
+      "url": "https://ressutti.dev/projects"
+    },
+    "about": {
+      "title": "Sobre | Ressutti.dev",
+      "description": "Sou um desenvolvedor focado em criar aplicações modernas, performáticas e escaláveis, com atenção especial à experiência do usuário e qualidade de código.",
+      "image": "/images/og-about.png",
+      "url": "https://ressutti.dev/about"
+    },
+    "contact": {
+      "title": "Contato | Ressutti.dev",
+      "description": "Entre em contato comigo para discutir projetos, oportunidades ou apenas para dizer oi!",
+      "image": "/images/og-contact.png",
+      "url": "https://ressutti.dev/contact"
+    }
+  },
+
   "nav": {
     "home": "Home",
     "projects": "Projetos",
@@ -50,7 +77,7 @@
       "highlights": [
         "Foco em performance e escalabilidade",
         "Código limpo e boas práticas",
-        "Experiência em aplicações "
+        "Experiência em aplicações web"
       ]
     },
     "card": {

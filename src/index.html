@@ -1,23 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <script>
       (function () {
         try {
           const html = document.documentElement;
-          const savedTheme = localStorage.getItem('theme');
           const savedLang = localStorage.getItem('lang');
+          const savedTheme = localStorage.getItem('theme');
           let lang = 'en-GB';
-
-          if (savedTheme === 'dark') {
-            html.classList.add('dark');
-          } else if (!savedTheme) {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (prefersDark) {
-              html.classList.add('dark');
-            }
-          }
 
           if (savedLang) {
             lang = savedLang;
@@ -31,8 +21,17 @@
               lang = 'pt-BR';
             }
           }
-
           html.setAttribute('lang', lang);
+
+          if (savedTheme === 'dark') {
+            html.classList.add('dark');
+          } else if (!savedTheme) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (prefersDark) {
+              html.classList.add('dark');
+            }
+          }
         } catch (e) {}
       })();
     </script>
