@@ -20,7 +20,11 @@
     <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
       @for (nav of navs; track nav.id) {
         <li>
-          <a [routerLink]="nav.path" (click)="onClose()" class="hover:text-accent transition">
+          <a
+            [routerLink]="['/', nav.path]"
+            (click)="onClose()"
+            class="hover:text-accent transition"
+          >
             {{ nav.label }}
           </a>
         </li>

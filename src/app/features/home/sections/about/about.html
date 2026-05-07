@@ -4,21 +4,21 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Left (Text) -->
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-text-primary">
-          {{ translation.t('about.main.title') }}
+        <h2 i18n="@@home.about.main.title" class="text-3xl md:text-4xl font-bold mb-6 text-text-primary">
+          About me
         </h2>
 
-        <p class="text-text-secondary mb-4 leading-relaxed">
-          {{ translation.t('about.main.subtitle1') }}
+        <p i18n="@@home.about.main.subtitle1" class="text-text-secondary mb-4 leading-relaxed">
+          I am a developer focused on building modern, high-performance, and scalable applications, with special attention to user experience and code quality.
         </p>
 
-        <p class="text-text-secondary mb-6 leading-relaxed">
-          {{ translation.t('about.main.subtitle2') }}
+        <p i18n="@@home.about.main.subtitle2" class="text-text-secondary mb-6 leading-relaxed">
+          I work with technologies such as Angular, Node.js, and TypeScript, always aiming to apply best practices, solid architecture, and efficient solutions to real-world problems.
         </p>
 
         <!-- Highlights -->
         <ul class="list-disc pl-5 space-y-3 marker:text-accent">
-          @for (highlight of highlights(); track highlight) {
+          @for (highlight of highlights; track highlight) {
             <li class="text-text-secondary">{{ highlight }}</li>
           }
         </ul>
@@ -26,12 +26,12 @@
 
       <!-- Right (Visual / Card) -->
       <div class="bg-surface-light rounded-2xl p-6 border border-border shadow-sm">
-        <h3 class="text-lg font-semibold mb-4 text-text-primary">
-          {{ translation.t('about.card.title') }}
+        <h3 i18n="@@home.about.card.title" class="text-lg font-semibold mb-4 text-text-primary">
+          Quick overview
         </h3>
 
         <dl class="space-y-3 text-text-tertiary text-sm">
-          @for (definition of definitions(); track definition.term) {
+          @for (definition of definitions; track definition.id) {
             <div>
               <dt class="font-medium text-text-secondary">{{ definition.term }}</dt>
               <dd>{{ definition.description }}</dd>

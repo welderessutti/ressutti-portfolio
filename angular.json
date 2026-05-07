@@ -13,10 +13,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-GB",
+        "locales": {
+          "pt-BR": "src/locale/messages.pt-BR.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "localize": ["en-GB"],
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -25,9 +32,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
@@ -35,7 +40,8 @@
             },
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "polyfills": ["@angular/localize/init"]
           },
           "configurations": {
             "production": {

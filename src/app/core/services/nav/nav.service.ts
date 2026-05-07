@@ -1,23 +1,26 @@
-import { Injectable, computed, inject } from '@angular/core';
-import { TranslationService } from '../translation/translation.service';
-import { Nav, NavBase } from '../../../shared/models/nav.model';
+import { Injectable } from '@angular/core';
+import { Nav } from '../../../shared/models/nav.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavService {
-  private readonly translation = inject(TranslationService);
-  private readonly rawNav: NavBase[] = [
-    { id: 'home', path: '/' },
-    { id: 'projects', path: '/projects' },
-    { id: 'about', path: '/about' },
-    { id: 'contact', path: '/contact' },
+  public readonly navs: Nav[] = [
+    { id: 'home', label: $localize`:@@nav.home.label:Home`, path: $localize`:@@nav.home.path:` },
+    {
+      id: 'projects',
+      label: $localize`:@@nav.projects.label:Projects`,
+      path: $localize`:@@nav.projects.path:projects`,
+    },
+    {
+      id: 'about',
+      label: $localize`:@@nav.about.label:About`,
+      path: $localize`:@@nav.about.path:about`,
+    },
+    {
+      id: 'contact',
+      label: $localize`:@@nav.contact.label:Contact`,
+      path: $localize`:@@nav.contact.path:contact`,
+    },
   ];
-
-  public readonly navs = computed<Nav[]>(() =>
-    this.rawNav.map((nav) => ({
-      ...nav,
-      label: this.translation.t(`nav.${nav.id}`),
-    })),
-  );
 }

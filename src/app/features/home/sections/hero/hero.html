@@ -6,33 +6,36 @@
       <h1
         class="text-4xl md:text-6xl min-h-[80px] md:min-h-[120px] font-bold tracking-tight text-text-primary leading-tight animate-fade-up"
       >
-        {{ translation.t('hero.before') }}
+        <span i18n="@@home.hero.title.before">Building </span>
         <span class="text-accent inline-block">
           {{ typedText() }}
           <span class="animate-blink text-text-primary">|</span>
         </span>
-        {{ translation.t('hero.after') }}
+        <span i18n="@@home.hero.title.after"> digital experiences</span>
       </h1>
       <!-- Subtitle -->
-      <p class="mt-6 text-lg text-text-secondary animate-fade-up delay-200">
-        {{ translation.t('hero.subtitle') }}
+      <p
+        i18n="@@home.hero.subtitle"
+        class="mt-6 text-lg text-text-secondary animate-fade-up delay-200"
+      >
+        I create scalable and high-performance web applications.
       </p>
 
       <!-- Buttons -->
       <div class="mt-8 flex gap-4 animate-fade-up delay-300">
         <a
+          i18n="@@home.hero.buttonProjects"
           routerLink="/projects"
           class="px-6 py-3 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
+          >View projects</a
         >
-          {{ translation.t('hero.buttonProjects') }}
-        </a>
 
         <a
+          i18n="@@home.hero.buttonContact"
           routerLink="/contact"
           class="px-6 py-3 bg-surface text-text-secondary border border-border rounded-lg hover:bg-surface-hover transition font-medium shadow-lg hover:shadow-gray-400/30"
+          >Contact</a
         >
-          {{ translation.t('hero.buttonContact') }}
-        </a>
       </div>
     </div>
   </div>

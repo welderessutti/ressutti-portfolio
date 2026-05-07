@@ -1,9 +1,8 @@
-import { Component, signal, inject, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Home } from './features/home/home';
 import { Footer } from './layout/footer/footer';
-import { TranslationService } from './core/services/translation/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +10,6 @@ import { TranslationService } from './core/services/translation/translation.serv
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App implements OnInit {
+export class App {
   protected readonly title = signal('ressutti-portfolio');
-  private readonly translation = inject(TranslationService);
-
-  public ngOnInit() {
-    this.translation.init();
-  }
 }

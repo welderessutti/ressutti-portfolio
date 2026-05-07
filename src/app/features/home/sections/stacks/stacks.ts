@@ -1,8 +1,7 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component } from '@angular/core';
 import { StackCard } from './stack-card/stack-card';
-import { StackBase, Stack } from './stack.model';
+import { Stack } from './stack.model';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
-import { TranslationService } from '../../../../core/services/translation/translation.service';
 
 @Component({
   selector: 'app-stacks',
@@ -11,10 +10,10 @@ import { TranslationService } from '../../../../core/services/translation/transl
   styleUrl: './stacks.css',
 })
 export class Stacks {
-  protected readonly translation = inject(TranslationService);
-  private readonly rawStacks: StackBase[] = [
+  protected readonly stacks: Stack[] = [
     {
       id: 'frontend',
+      category: 'Frontend',
       stacks: [
         { name: 'Angular', icon: '' },
         { name: 'React', icon: '' },
@@ -24,6 +23,7 @@ export class Stacks {
     },
     {
       id: 'backend',
+      category: 'Backend',
       stacks: [
         { name: 'Node.js', icon: '' },
         { name: 'Django', icon: '' },
@@ -33,6 +33,7 @@ export class Stacks {
     },
     {
       id: 'database',
+      category: $localize`:@@home.stacks.category.database:Database`,
       stacks: [
         { name: 'MySQL', icon: '' },
         { name: 'MongoDB', icon: '' },
@@ -42,6 +43,7 @@ export class Stacks {
     },
     {
       id: 'devops',
+      category: 'DevOps',
       stacks: [
         { name: 'Git', icon: '' },
         { name: 'Docker', icon: '' },
@@ -50,11 +52,4 @@ export class Stacks {
       ],
     },
   ];
-
-  protected readonly stacks = computed<Stack[]>(() =>
-    this.rawStacks.map((stack) => ({
-      ...stack,
-      category: this.translation.t(`stacks.categories.${stack.id}`),
-    })),
-  );
 }

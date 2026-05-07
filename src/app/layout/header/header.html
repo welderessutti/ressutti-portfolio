@@ -10,10 +10,10 @@
     <div class="flex items-center justify-between gap-8">
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
-        @for (nav of nav.navs(); track nav.id) {
+        @for (nav of nav.navs; track nav.id) {
           <li>
             <a
-              [routerLink]="nav.path"
+              [routerLink]="['/', nav.path]"
               routerLinkActive="text-accent"
               class="hover:text-accent transition relative"
             >
@@ -100,4 +100,4 @@
     </div>
   </nav>
 </header>
-<app-mobile-menu [isOpen]="isMenuOpen()" [navs]="nav.navs()" (closeMenu)="closeMenu()" />
+<app-mobile-menu [isOpen]="isMenuOpen()" [navs]="nav.navs" (closeMenu)="closeMenu()" />

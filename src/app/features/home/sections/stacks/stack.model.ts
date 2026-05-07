@@ -3,11 +3,8 @@ export interface StackItem {
   icon: string;
 }
 
-export interface StackBase {
+export interface Stack {
   id: string;
-  stacks: StackItem[];
-}
-
-export interface Stack extends StackBase {
   category: string;
+  stacks: StackItem[];
 }

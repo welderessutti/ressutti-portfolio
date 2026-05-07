@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-GB" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="nav.home.label" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.home.path" datatype="html">
+        <source></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.projects.label" datatype="html">
+        <source>Projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.projects.path" datatype="html">
+        <source>projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.about.label" datatype="html">
+        <source>About</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.about.path" datatype="html">
+        <source>about</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.contact.label" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.contact.path" datatype="html">
+        <source>contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.seo.title" datatype="html">
+        <source>Home | Ressutti.dev</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.seo.description" datatype="html">
+        <source>Portfolio of a full-stack developer focused on performance and scalability.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.seo.url" datatype="html">
+        <source>https://www.ressutti.dev/en-GB</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.main.title" datatype="html">
+        <source> About me </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.main.subtitle1" datatype="html">
+        <source> I am a developer focused on building modern, high-performance, and scalable applications, with special attention to user experience and code quality. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.html</context>
+          <context context-type="linenumber">12,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.main.subtitle2" datatype="html">
+        <source> I work with technologies such as Angular, Node.js, and TypeScript, always aiming to apply best practices, solid architecture, and efficient solutions to real-world problems. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.html</context>
+          <context context-type="linenumber">16,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.title" datatype="html">
+        <source> Quick overview </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.html</context>
+          <context context-type="linenumber">30,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.main.highlights.0" datatype="html">
+        <source>Focus on performance and scalability</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.main.highlights.1" datatype="html">
+        <source>Clean code and best practices</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.main.highlights.2" datatype="html">
+        <source>Experience with web applications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.term1" datatype="html">
+        <source>Main stack</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.description1" datatype="html">
+        <source>Angular, Java</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.term2" datatype="html">
+        <source>Focus</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.description2" datatype="html">
+        <source>Modern frontend</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.term3" datatype="html">
+        <source>Experience</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.description3" datatype="html">
+        <source>Personal projects and continuous learning</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.term4" datatype="html">
+        <source>Location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.about.card.definitions.description4" datatype="html">
+        <source>Indaiatuba, SP - Brazil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.title.before" datatype="html">
+        <source>Building </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.title.after" datatype="html">
+        <source> digital experiences</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.subtitle" datatype="html">
+        <source> I create scalable and high-performance web applications. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
+          <context context-type="linenumber">21,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.buttonProjects" datatype="html">
+        <source>View projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.buttonContact" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
+          <context context-type="linenumber">37,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.keyword.modern" datatype="html">
+        <source>modern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.keyword.scalable" datatype="html">
+        <source>scalable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.keyword.highPerformance" datatype="html">
+        <source>high-performance</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.projects.title" datatype="html">
+        <source> Projects </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.projects.subtitle" datatype="html">
+        <source> Some of the projects I&apos;ve developed, focused on performance, scalability, and user experience. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.html</context>
+          <context context-type="linenumber">7,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.projects.buttonViewAll" datatype="html">
+        <source> View all projects </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.html</context>
+          <context context-type="linenumber">23,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.projects.items.project1.description" datatype="html">
+        <source>Description of project 1.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.projects.items.project2.description" datatype="html">
+        <source>Description of project 2.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.stacks.title" datatype="html">
+        <source> Technologies &amp; Tools </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/stacks/stacks.html</context>
+          <context context-type="linenumber">4,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.stacks.subtitle" datatype="html">
+        <source> Technologies and tools I use to build my projects, ensuring high performance and scalability. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/stacks/stacks.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.stacks.category.database" datatype="html">
+        <source>Database</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/stacks/stacks.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.slogan" datatype="html">
+        <source> Building modern, high-performance web applications with a focus on user experience. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.nav" datatype="html">
+        <source>Navigation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.contact" datatype="html">
+        <source> Contact </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.copyright" datatype="html">
+        <source>All rights reserved.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
+          <context context-type="linenumber">51,54</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

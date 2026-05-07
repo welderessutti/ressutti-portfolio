@@ -44,21 +44,21 @@
     [class.translate-y-2]="!isOpen()"
   >
     <!-- PT -->
-    <button
-      (click)="selectLang('pt-BR')"
+    <a
+      href="/pt-BR"
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
       [class.bg-surface-hover]="currentLang() === 'pt-BR'"
     >
       🇧🇷 Português
-    </button>
+    </a>
 
     <!-- EN -->
-    <button
-      (click)="selectLang('en-GB')"
+    <a
+      href="/en-GB"
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
       [class.bg-surface-hover]="currentLang() === 'en-GB'"
     >
       🇬🇧 English
-    </button>
+    </a>
   </div>
 </div>

@@ -1,8 +1,5 @@
-export interface NavBase {
+export interface Nav {
   id: string;
-  path: string;
-}
-
-export interface Nav extends NavBase {
   label: string;
+  path: string;
 }

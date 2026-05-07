@@ -1,14 +1,14 @@
 <section id="projects" class="section-padding bg-surface border-b border-border-light">
   <div class="container-padding reveal" appRevealOnScroll>
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-      {{ translation.t('projects.title') }}
+    <h2 i18n="@@home.projects.title" class="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+      Projects
     </h2>
-    <p class="text-text-secondary mb-12">
-      {{ translation.t('projects.subtitle') }}
+    <p i18n="@@home.projects.subtitle" class="text-text-secondary mb-12">
+      Some of the projects I've developed, focused on performance, scalability, and user experience.
     </p>
 
     <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-      @for (project of projects(); track project.id) {
+      @for (project of projects; track project.id) {
         <!-- Cards here -->
         <app-project-card [project]="project"></app-project-card>
       }
@@ -16,10 +16,11 @@
 
     <div class="mt-12 flex justify-center">
       <a
+        i18n="@@home.projects.buttonViewAll"
         routerLink="/projects"
         class="px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
       >
-        {{ translation.t('projects.buttonViewAll') }}
+        View all projects
       </a>
     </div>
   </div>

@@ -1,5 +1,4 @@
-import { Component, OnDestroy, signal, computed, inject, effect } from '@angular/core';
-import { TranslationService } from '../../../../core/services/translation/translation.service';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,34 +6,20 @@ import { TranslationService } from '../../../../core/services/translation/transl
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
-export class Hero implements OnDestroy {
-  protected readonly translation = inject(TranslationService);
-  protected readonly words = computed<string[]>(() =>
-    this.translation.tObjectArray<string>('hero.words'),
-  );
-  protected readonly typedText = signal('');
-
+export class Hero implements OnInit, OnDestroy {
+  private readonly words = [
+    $localize`:@@home.hero.keyword.modern:modern`,
+    $localize`:@@home.hero.keyword.scalable:scalable`,
+    $localize`:@@home.hero.keyword.highPerformance:high-performance`,
+  ];
   private wordIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
   private timeoutId?: ReturnType<typeof setTimeout>;
+  protected readonly typedText = signal('');
 
-  constructor() {
-    effect(() => {
-      const words = this.words();
-
-      if (!words.length) return;
-
-      this.wordIndex = 0;
-      this.charIndex = 0;
-      this.isDeleting = false;
-
-      if (this.timeoutId) {
-        clearTimeout(this.timeoutId);
-      }
-
-      this.typeEffect();
-    });
+  public ngOnInit() {
+    this.typeEffect();
   }
 
   public ngOnDestroy() {
@@ -44,11 +29,9 @@ export class Hero implements OnDestroy {
   }
 
   private typeEffect() {
-    const words = this.words();
+    if (!this.words.length) return;
 
-    if (!words.length) return;
-
-    const currentWord = words[this.wordIndex];
+    const currentWord = this.words[this.wordIndex];
 
     if (this.isDeleting) {
       this.charIndex--;
@@ -68,7 +51,7 @@ export class Hero implements OnDestroy {
     // stopped deleting
     else if (this.isDeleting && this.charIndex === 0) {
       this.isDeleting = false;
-      this.wordIndex = (this.wordIndex + 1) % words.length; // loop back to first word
+      this.wordIndex = (this.wordIndex + 1) % this.words.length; // loop back to first word
       speed = 300;
     }
 

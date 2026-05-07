@@ -1,16 +1,16 @@
 <section id="stacks" class="section-padding bg-surface-light border-b border-border-light">
   <div class="container-padding reveal" appRevealOnScroll>
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
-      {{ translation.t('stacks.title') }}
+    <h2 i18n="@@home.stacks.title" class="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+      Technologies & Tools
     </h2>
 
-    <p class="text-text-secondary mb-12">
-      {{ translation.t('stacks.subtitle') }}
+    <p i18n="@@home.stacks.subtitle" class="text-text-secondary mb-12">
+      Technologies and tools I use to build my projects, ensuring high performance and scalability.
     </p>
 
     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
       <!-- Category -->
-      @for (stack of stacks(); track stack.id) {
+      @for (stack of stacks; track stack.id) {
         <app-stack-card [stack]="stack"></app-stack-card>
       }
     </div>

@@ -1,6 +1,5 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component } from '@angular/core';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
-import { TranslationService } from '../../../../core/services/translation/translation.service';
 import { AboutDefinition } from './about.definition.model';
 
 @Component({
@@ -10,11 +9,31 @@ import { AboutDefinition } from './about.definition.model';
   styleUrl: './about.css',
 })
 export class About {
-  protected readonly translation = inject(TranslationService);
-  protected readonly highlights = computed<string[]>(() =>
-    this.translation.tObjectArray<string>('about.main.highlights'),
-  );
-  protected readonly definitions = computed<AboutDefinition[]>(() =>
-    this.translation.tObjectArray<AboutDefinition>('about.card.definitions'),
-  );
+  protected readonly highlights: string[] = [
+    $localize`:@@home.about.main.highlights.0:Focus on performance and scalability`,
+    $localize`:@@home.about.main.highlights.1:Clean code and best practices`,
+    $localize`:@@home.about.main.highlights.2:Experience with web applications`,
+  ];
+  protected readonly definitions: AboutDefinition[] = [
+    {
+      id: '1',
+      term: $localize`:@@home.about.card.definitions.term1:Main stack`,
+      description: $localize`:@@home.about.card.definitions.description1:Angular, Java`,
+    },
+    {
+      id: '2',
+      term: $localize`:@@home.about.card.definitions.term2:Focus`,
+      description: $localize`:@@home.about.card.definitions.description2:Modern frontend`,
+    },
+    {
+      id: '3',
+      term: $localize`:@@home.about.card.definitions.term3:Experience`,
+      description: $localize`:@@home.about.card.definitions.description3:Personal projects and continuous learning`,
+    },
+    {
+      id: '4',
+      term: $localize`:@@home.about.card.definitions.term4:Location`,
+      description: $localize`:@@home.about.card.definitions.description4:Indaiatuba, SP - Brazil`,
+    },
+  ];
 }

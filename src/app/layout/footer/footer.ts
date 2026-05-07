@@ -1,6 +1,5 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { TranslationService } from '../../core/services/translation/translation.service';
 import { NavService } from '../../core/services/nav/nav.service';
 
 @Component({
@@ -10,6 +9,5 @@ import { NavService } from '../../core/services/nav/nav.service';
   styleUrl: './footer.css',
 })
 export class Footer {
-  protected readonly translation = inject(TranslationService);
   protected readonly nav = inject(NavService);
 }

@@ -2,7 +2,6 @@ import { Injectable, signal, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 type Lang = 'en-GB' | 'pt-BR';
-type Translations = Record<string, any>;
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +9,6 @@ type Translations = Record<string, any>;
 export class TranslationService {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly lang = signal<Lang>('en-GB');
-  private readonly translations = signal<Translations>({});
   public readonly currentLang = this.lang.asReadonly();
 
   private get isBrowser() {
@@ -33,48 +31,14 @@ export class TranslationService {
     localStorage.setItem('lang', lang);
   }
 
-  private async loadTranslations(lang: Lang) {
-    try {
-      const file = await fetch(`/i18n/${lang}.json`);
-      const json = await file.json();
-      this.translations.set(json);
-    } catch {
-      this.translations.set({});
-    }
-  }
-
   public init() {
     const htmlLang = this.getLangFromHtml();
     this.lang.set(htmlLang);
-    this.loadTranslations(htmlLang);
   }
 
   public setLang(lang: Lang) {
     this.lang.set(lang);
     this.setHtmlLang(lang);
     this.persistLang(lang);
-    this.loadTranslations(lang);
-  }
-
-  public t(path: string): string {
-    const keys = path.split('.');
-    let value: unknown = this.translations();
-
-    for (const key of keys) {
-      if (typeof value !== 'object' || value === null) return path;
-      value = (value as Record<string, unknown>)[key];
-    }
-    return typeof value === 'string' ? value : path;
-  }
-
-  public tObjectArray<T = unknown>(path: string): T[] {
-    const keys = path.split('.');
-    let value: unknown = this.translations();
-
-    for (const key of keys) {
-      if (typeof value !== 'object' || value === null) return [];
-      value = (value as Record<string, unknown>)[key];
-    }
-    return Array.isArray(value) ? (value as T[]) : [];
   }
 }
