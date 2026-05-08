@@ -10,6 +10,4 @@ import { Footer } from './layout/footer/footer';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('ressutti-portfolio');
-}
+export class App {}

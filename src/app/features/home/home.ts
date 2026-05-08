@@ -19,7 +19,7 @@ export class Home {
       title: $localize`:@@home.seo.title:Home | Ressutti.dev`,
       description: $localize`:@@home.seo.description:Portfolio of a full-stack developer focused on performance and scalability.`,
       image: '/assets/images/seo/home.png',
-      url: $localize`:@@home.seo.url:https://www.ressutti.dev/en-GB`,
+      path: '/',
     });
   }
 }

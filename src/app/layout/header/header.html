@@ -13,8 +13,10 @@
         @for (nav of nav.navs; track nav.id) {
           <li>
             <a
-              [routerLink]="['/', nav.path]"
+              [hreflang]="nav.locale"
+              [routerLink]="'/' + nav.locale + nav.path"
               routerLinkActive="text-accent"
+              [routerLinkActiveOptions]="{ exact: true }"
               class="hover:text-accent transition relative"
             >
               {{ nav.label }}

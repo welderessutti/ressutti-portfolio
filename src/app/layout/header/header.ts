@@ -1,17 +1,17 @@
-import { Component, signal, HostListener, inject, PLATFORM_ID } from '@angular/core';
+import { Component, signal, HostListener, inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MobileMenu } from './mobile-menu/mobile-menu';
 import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { NavService } from '../../core/services/nav/nav.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [MobileMenu, LanguageSwitcher, RouterLink],
+  imports: [MobileMenu, LanguageSwitcher, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Header {
+export class Header implements OnInit {
   private readonly platformId = inject(PLATFORM_ID);
   protected readonly nav = inject(NavService);
   protected readonly isMenuOpen = signal(false);

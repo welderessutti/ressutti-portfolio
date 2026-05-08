@@ -16,7 +16,13 @@
           <ul class="flex flex-col gap-2 text-sm text-text-secondary">
             @for (nav of nav.navs; track nav.id) {
               <li>
-                <a [routerLink]="nav.path" class="hover:text-accent transition">
+                <a
+                  [hreflang]="nav.locale"
+                  [routerLink]="'/' + nav.locale + nav.path"
+                  routerLinkActive="text-accent"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  class="hover:text-accent transition"
+                >
                   {{ nav.label }}
                 </a>
               </li>
@@ -33,10 +39,22 @@
         <nav>
           <ul class="flex flex-col gap-2 text-sm text-text-secondary">
             <li>
-              <a href="#" class="hover:text-accent transition">GitHub</a>
+              <a
+                href="https://github.com/welderessutti"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-accent transition"
+                >GitHub</a
+              >
             </li>
             <li>
-              <a href="#" class="hover:text-accent transition">LinkedIn</a>
+              <a
+                href="https://linkedin.com/in/welderessutti"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-accent transition"
+                >LinkedIn</a
+              >
             </li>
             <li>
               <a href="mailto:seuemail@email.com" class="hover:text-accent transition"> Email </a>

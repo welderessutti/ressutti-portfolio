@@ -6,7 +6,7 @@
   >
     <!-- Flag -->
     <span>
-      @if (currentLang() === 'pt-BR') {
+      @if (currentLang() === LOCALES.ptBR) {
         🇧🇷
       } @else {
         🇬🇧
@@ -15,7 +15,7 @@
 
     <!-- Label -->
     <span>
-      @if (currentLang() === 'pt-BR') {
+      @if (currentLang() === LOCALES.ptBR) {
         PT
       } @else {
         EN
@@ -45,18 +45,20 @@
   >
     <!-- PT -->
     <a
-      href="/pt-BR"
+      [href]="getSwitchLangUrl(LOCALES.ptBR)"
+      [hreflang]="LOCALES.ptBR"
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
-      [class.bg-surface-hover]="currentLang() === 'pt-BR'"
+      [class.bg-surface-hover]="currentLang() === LOCALES.ptBR"
     >
       🇧🇷 Português
     </a>
 
     <!-- EN -->
     <a
-      href="/en-GB"
+      [href]="getSwitchLangUrl(LOCALES.enGB)"
+      [hreflang]="LOCALES.enGB"
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
-      [class.bg-surface-hover]="currentLang() === 'en-GB'"
+      [class.bg-surface-hover]="currentLang() === LOCALES.enGB"
     >
       🇬🇧 English
     </a>

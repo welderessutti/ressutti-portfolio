@@ -1,7 +1,6 @@
 import { Component, signal, HostListener, inject, DOCUMENT, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-type Lang = 'en-GB' | 'pt-BR';
+import { DEFAULT_LOCALE, Locale, LOCALES } from '../../../shared/i18n/locales';
 
 @Component({
   selector: 'app-language-switcher',
@@ -12,11 +11,12 @@ type Lang = 'en-GB' | 'pt-BR';
 export class LanguageSwitcher implements OnInit {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
-  protected readonly currentLang = signal<Lang>('en-GB');
+  protected readonly LOCALES = LOCALES;
+  protected readonly currentLang = signal<Locale>(DEFAULT_LOCALE);
   protected readonly isOpen = signal(false);
 
   public ngOnInit() {
-    const lang = this.document.documentElement.lang as Lang;
+    const lang = this.document.documentElement.lang as Locale;
     this.currentLang.set(lang);
   }
 
@@ -24,14 +24,8 @@ export class LanguageSwitcher implements OnInit {
     this.isOpen.update((value) => !value);
   }
 
-  protected switchLang(lang: Lang) {
-    const currentUrl = this.router.url;
-    const newUrl =
-      lang === 'pt-BR'
-        ? currentUrl.replace(/^\/en-GB/, '/pt-BR')
-        : currentUrl.replace(/^\/pt-BR/, '/en-GB');
-
-    window.location.href = newUrl;
+  protected getSwitchLangUrl(locale: Locale): string {
+    return this.router.url.replace(new RegExp(`^/(${LOCALES.enGB}|${LOCALES.ptBR})`), `/${locale}`);
   }
 
   @HostListener('document:click', ['$event'])

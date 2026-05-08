@@ -1,34 +1,38 @@
-import { Injectable, inject, PLATFORM_ID, DOCUMENT } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Seo } from '../../../shared/models/seo.model';
+import { Locale, LOCALES } from '../../../shared/i18n/locales';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SeoService {
-  private readonly platformId = inject(PLATFORM_ID);
   private readonly document = inject(DOCUMENT);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
+  private readonly BASE_URL: string = 'https://www.ressutti.com';
 
-  private get isBrowser() {
-    return isPlatformBrowser(this.platformId);
+  private get currentLocale(): Locale {
+    return this.document.documentElement.lang as Locale;
   }
 
-  private updateAlternateLinks(url: string) {
+  private buildUrl(locale: Locale, path: string): string {
+    return `${this.BASE_URL}/${locale}${path}`;
+  }
+
+  private updateAlternateLinks(path: string) {
     const alternates = [
       {
-        hreflang: 'en',
-        href: `https://www.ressutti.com/en-GB${url}`,
+        hreflang: LOCALES.enGB,
+        href: this.buildUrl(LOCALES.enGB, path),
       },
       {
-        hreflang: 'pt',
-        href: `https://www.ressutti.com/pt-BR${url}`,
+        hreflang: LOCALES.ptBR,
+        href: this.buildUrl(LOCALES.ptBR, path),
       },
       {
         hreflang: 'x-default',
-        href: `https://www.ressutti.com/en-GB${url}`,
+        href: this.buildUrl(LOCALES.enGB, path),
       },
     ];
 
@@ -45,9 +49,7 @@ export class SeoService {
     });
   }
 
-  private setCanonical(url: string) {
-    if (!this.isBrowser) return;
-
+  private setCanonical(path: string) {
     let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
 
     if (!link) {
@@ -56,7 +58,7 @@ export class SeoService {
       this.document.head.appendChild(link);
     }
 
-    link.setAttribute('href', url);
+    link.setAttribute('href', this.buildUrl(this.currentLocale, path));
   }
 
   public updateSeo(seo: Seo) {
@@ -65,9 +67,12 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:title', content: seo.title });
     this.meta.updateTag({ property: 'og:description', content: seo.description });
     this.meta.updateTag({ property: 'og:image', content: seo.image });
-    this.meta.updateTag({ property: 'og:url', content: seo.url });
-    this.updateAlternateLinks(seo.url);
-    this.setCanonical(seo.url);
+    this.meta.updateTag({
+      property: 'og:url',
+      content: this.buildUrl(this.currentLocale, seo.path),
+    });
+    this.updateAlternateLinks(seo.path);
+    this.setCanonical(seo.path);
   }
 }
-// verificar as url que estao sendo passadas para o og:url, canonical e alternate links, para garantir que estão corretas e consistentes.
+// verificar as url que estao sendo passadas para o og:url, canonical e alternate links, para garantir que estão corretas e consistentes - OK!!

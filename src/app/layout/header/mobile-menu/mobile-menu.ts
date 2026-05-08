@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Nav } from '../../../shared/models/nav.model';
 
 @Component({
   selector: 'app-mobile-menu',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './mobile-menu.html',
   styleUrl: './mobile-menu.css',
 })

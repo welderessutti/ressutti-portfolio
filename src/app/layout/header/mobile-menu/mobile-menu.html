@@ -21,7 +21,10 @@
       @for (nav of navs; track nav.id) {
         <li>
           <a
-            [routerLink]="['/', nav.path]"
+            [hreflang]="nav.locale"
+            [routerLink]="'/' + nav.locale + nav.path"
+            routerLinkActive="text-accent"
+            [routerLinkActiveOptions]="{ exact: true }"
             (click)="onClose()"
             class="hover:text-accent transition"
           >
