@@ -3,7 +3,11 @@
 >
   <nav class="container-padding py-3 lg:py-4 flex items-center justify-between">
     <!-- Logo -->
-    <a routerLink="/" class="text-xl font-bold text-text-primary hover:opacity-80 transition">
+    <a
+      [hreflang]="nav.navs[0].locale"
+      [routerLink]="'/' + nav.navs[0].locale.toLowerCase() + nav.navs[0].path"
+      class="text-xl font-bold text-text-primary hover:opacity-80 transition"
+    >
       Ressutti.dev
     </a>
 
@@ -14,7 +18,7 @@
           <li>
             <a
               [hreflang]="nav.locale"
-              [routerLink]="'/' + nav.locale + nav.path"
+              [routerLink]="'/' + nav.locale.toLowerCase() + nav.path"
               routerLinkActive="text-accent"
               [routerLinkActiveOptions]="{ exact: true }"
               class="hover:text-accent transition relative"

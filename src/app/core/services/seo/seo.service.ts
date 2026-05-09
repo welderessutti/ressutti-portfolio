@@ -17,7 +17,7 @@ export class SeoService {
   }
 
   private buildUrl(locale: Locale, path: string): string {
-    return `${this.BASE_URL}/${locale}${path}`;
+    return `${this.BASE_URL}/${locale.toLowerCase()}${path}`;
   }
 
   private updateAlternateLinks(path: string) {
@@ -75,4 +75,3 @@ export class SeoService {
     this.setCanonical(seo.path);
   }
 }
-// verificar as url que estao sendo passadas para o og:url, canonical e alternate links, para garantir que estão corretas e consistentes - OK!!
