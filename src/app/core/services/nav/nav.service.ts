@@ -16,26 +16,26 @@ export class NavService {
     {
       id: 'home',
       label: 'Home',
+      path: '',
       locale: this.currentLocale,
-      path: '/',
     },
     {
       id: 'projects',
       label: $localize`:@@nav.projects.label:Projects`,
+      path: $localize`:@@nav.projects.path:projects`,
       locale: this.currentLocale,
-      path: $localize`:@@nav.projects.path:/projects`,
     },
     {
       id: 'about',
       label: $localize`:@@nav.about.label:About`,
+      path: $localize`:@@nav.about.path:about`,
       locale: this.currentLocale,
-      path: $localize`:@@nav.about.path:/about`,
     },
     {
       id: 'contact',
       label: $localize`:@@nav.contact.label:Contact`,
+      path: $localize`:@@nav.contact.path:contact`,
       locale: this.currentLocale,
-      path: $localize`:@@nav.contact.path:/contact`,
     },
   ];
 }

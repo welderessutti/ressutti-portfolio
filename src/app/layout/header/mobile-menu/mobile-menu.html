@@ -22,7 +22,7 @@
         <li>
           <a
             [hreflang]="nav.locale"
-            [routerLink]="'/' + nav.locale.toLowerCase() + nav.path"
+            [routerLink]="nav.path"
             routerLinkActive="text-accent"
             [routerLinkActiveOptions]="{ exact: true }"
             (click)="onClose()"

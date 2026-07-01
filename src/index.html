@@ -4,32 +4,12 @@
     <script>
       (function () {
         try {
-          const html = document.documentElement;
-          const savedLang = localStorage.getItem('lang');
           const savedTheme = localStorage.getItem('theme');
-          let lang = 'en-GB';
-
-          if (savedLang) {
-            lang = savedLang;
-          } else {
-            const browserLang = (
-              navigator.language ||
-              navigator.userLanguage ||
-              'en'
-            ).toLowerCase();
-            if (browserLang.startsWith('pt')) {
-              lang = 'pt-BR';
-            }
-          }
-          html.setAttribute('lang', lang);
-
           if (savedTheme === 'dark') {
-            html.classList.add('dark');
+            document.documentElement.classList.add('dark');
           } else if (!savedTheme) {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (prefersDark) {
-              html.classList.add('dark');
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              document.documentElement.classList.add('dark');
             }
           }
         } catch (e) {}

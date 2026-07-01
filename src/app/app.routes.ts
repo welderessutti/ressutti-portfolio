@@ -7,57 +7,23 @@ import { Contact } from './features/contact/contact';
 
 export const routes: Routes = [
   {
-    path: 'en-gb',
-    children: [
-      {
-        path: '',
-        component: Home,
-      },
-      {
-        path: 'projects',
-        component: Projects,
-      },
-      {
-        path: 'about',
-        component: About,
-      },
-      {
-        path: 'contact',
-        component: Contact,
-      },
-    ],
-  },
-
-  {
-    path: 'pt-br',
-    children: [
-      {
-        path: '',
-        component: Home,
-      },
-      {
-        path: 'projetos',
-        component: Projects,
-      },
-      {
-        path: 'sobre',
-        component: About,
-      },
-      {
-        path: 'contato',
-        component: Contact,
-      },
-    ],
-  },
-
-  {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'en-gb',
+    component: Home,
   },
-
+  {
+    path: $localize`:@@route.projects.path:projects`,
+    component: Projects,
+  },
+  {
+    path: $localize`:@@route.about.path:about`,
+    component: About,
+  },
+  {
+    path: $localize`:@@route.contact.path:contact`,
+    component: Contact,
+  },
   {
     path: '**',
-    redirectTo: 'en-gb',
+    redirectTo: '',
   },
 ];

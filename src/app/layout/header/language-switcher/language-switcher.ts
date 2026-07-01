@@ -26,35 +26,25 @@ export class LanguageSwitcher implements OnInit {
   }
 
   protected getSwitchLangUrl(targetLocale: Locale): string {
-    // Remove query string e fragmento antes de processar
     const pathname = this.router.url.split('?')[0].split('#')[0];
     const segments = pathname.split('/').filter(Boolean);
 
-    // Normaliza para comparação case-insensitive (URL pode vir como 'en-gb' ou 'en-GB')
-    const currentLocale = SUPPORTED_LOCALES.find(
-      (locale) => locale.toLowerCase() === segments[0]?.toLowerCase(),
-    );
+    const currentLocale = this.currentLang(); // fonte de verdade real
 
-    if (!currentLocale) {
-      return `/${targetLocale.toLowerCase()}`;
-    }
+    const currentSlug = segments[0] ?? ''; // slug é o primeiro segmento (sem locale no path)
 
-    const currentSlug = segments[1] ?? '';
-
-    // Encontra a routeKey pelo slug atual no locale atual
     const routeKey = (Object.keys(ROUTES) as RouteKey[]).find(
       (key) => ROUTES[key][currentLocale] === currentSlug,
     );
 
     const translatedSlug = routeKey ? ROUTES[routeKey][targetLocale] : null;
-
     const base = `/${targetLocale.toLowerCase()}`;
 
     return translatedSlug !== null && translatedSlug !== undefined
       ? translatedSlug === ''
-        ? base // home: /pt-br
-        : `${base}/${translatedSlug}` // /pt-br/projetos
-      : base; // slug não encontrado → fallback
+        ? base
+        : `${base}/${translatedSlug}`
+      : base;
   }
 
   protected savePreferredLanguage(locale: Locale) {

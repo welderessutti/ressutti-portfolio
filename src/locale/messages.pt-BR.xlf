@@ -2,8 +2,9 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-GB" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="route.projects.path" datatype="html">
+    <trans-unit id="route.projects.path" datatype="html">
         <source>projects</source>
+        <target>projetos</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
           <context context-type="linenumber">14</context>
@@ -11,6 +12,7 @@
       </trans-unit>
       <trans-unit id="route.about.path" datatype="html">
         <source>about</source>
+        <target>sobre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
           <context context-type="linenumber">18</context>
@@ -18,6 +20,7 @@
       </trans-unit>
       <trans-unit id="route.contact.path" datatype="html">
         <source>contact</source>
+        <target>contato</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
           <context context-type="linenumber">22</context>
@@ -25,6 +28,7 @@
       </trans-unit>
       <trans-unit id="nav.projects.label" datatype="html">
         <source>Projects</source>
+        <target>Projetos</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
           <context context-type="linenumber">24</context>
@@ -32,13 +36,15 @@
       </trans-unit>
       <trans-unit id="nav.projects.path" datatype="html">
         <source>projects</source>
+        <target>projetos</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.about.label" datatype="html">
         <source>About</source>
+        <target>Sobre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
           <context context-type="linenumber">30</context>
@@ -46,13 +52,15 @@
       </trans-unit>
       <trans-unit id="nav.about.path" datatype="html">
         <source>about</source>
+        <target>sobre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.contact.label" datatype="html">
         <source>Contact</source>
+        <target>Contato</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
           <context context-type="linenumber">36</context>
@@ -60,9 +68,10 @@
       </trans-unit>
       <trans-unit id="nav.contact.path" datatype="html">
         <source>contact</source>
+        <target>contato</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.seo.title" datatype="html">
@@ -77,13 +86,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
           <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="home.seo.alt" datatype="html">
-        <source>Home page of Ressutti.dev portfolio.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.about.main.title" datatype="html">
@@ -193,6 +195,7 @@
       </trans-unit>
       <trans-unit id="home.hero.title.before" datatype="html">
         <source>Building </source>
+        <target>Construindo experiências digitais </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
           <context context-type="linenumber">9,10</context>
@@ -200,6 +203,7 @@
       </trans-unit>
       <trans-unit id="home.hero.title.after" datatype="html">
         <source> digital experiences</source>
+        <target> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
           <context context-type="linenumber">14,16</context>
@@ -228,6 +232,7 @@
       </trans-unit>
       <trans-unit id="home.hero.keyword.modern" datatype="html">
         <source>modern</source>
+        <target>modernas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
           <context context-type="linenumber">11</context>
@@ -235,6 +240,7 @@
       </trans-unit>
       <trans-unit id="home.hero.keyword.scalable" datatype="html">
         <source>scalable</source>
+        <target>escaláveis</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
           <context context-type="linenumber">12</context>
@@ -242,6 +248,7 @@
       </trans-unit>
       <trans-unit id="home.hero.keyword.highPerformance" datatype="html">
         <source>high-performance</source>
+        <target>performáticas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
           <context context-type="linenumber">13</context>
@@ -298,6 +305,7 @@
       </trans-unit>
       <trans-unit id="home.stacks.category.database" datatype="html">
         <source>Database</source>
+        <target>Banco de dados</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/stacks/stacks.ts</context>
           <context context-type="linenumber">36</context>
@@ -326,6 +334,7 @@
       </trans-unit>
       <trans-unit id="footer.copyright" datatype="html">
         <source>All rights reserved.</source>
+        <target>Todos os direitos reservados.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
           <context context-type="linenumber">69,72</context>

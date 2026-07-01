@@ -10,7 +10,8 @@ export class SeoService {
   private readonly document = inject(DOCUMENT);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
-  private readonly BASE_URL: string = 'https://www.ressutti.com';
+  private readonly SITE_NAME = 'Ressutti.dev';
+  private readonly BASE_URL = 'https://www.ressutti.com';
 
   private get currentLocale(): Locale {
     return this.document.documentElement.lang as Locale;
@@ -18,6 +19,65 @@ export class SeoService {
 
   private buildUrl(locale: Locale, path: string): string {
     return `${this.BASE_URL}/${locale.toLowerCase()}${path}`;
+  }
+
+  private buildImageUrl(imagePath: string): string {
+    return `${this.BASE_URL}${imagePath}`;
+  }
+
+  private buildJsonLd(seo: Seo): object {
+    return {
+      '@context': 'https://schema.org',
+      '@type': seo.jsonLdType,
+
+      name: seo.title,
+      description: seo.description,
+      url: this.buildUrl(this.currentLocale, seo.path),
+
+      inLanguage: this.currentLocale,
+
+      image: this.buildImageUrl(seo.image),
+
+      isPartOf: {
+        '@type': 'WebSite',
+        name: this.SITE_NAME,
+        url: this.BASE_URL,
+      },
+
+      publisher: {
+        '@type': 'Person',
+        name: 'Welder Ressutti',
+        url: this.BASE_URL,
+      },
+    };
+  }
+
+  private toOgLocale(locale: Locale): string {
+    return locale.replace('-', '_');
+  }
+
+  private setOgLocaleAlternates() {
+    this.document
+      .querySelectorAll('meta[property="og:locale:alternate"]')
+      .forEach((meta) => meta.remove());
+
+    Object.values(LOCALES)
+      .filter((locale) => locale !== this.currentLocale)
+      .forEach((locale) => {
+        this.meta.addTag({ property: 'og:locale:alternate', content: this.toOgLocale(locale) });
+      });
+  }
+
+  private setCanonical(path: string) {
+    let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
+
+    if (!link) {
+      link = this.document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(link);
+    }
+
+    link.setAttribute('href', this.buildUrl(this.currentLocale, path));
   }
 
   private updateAlternateLinks(path: string) {
@@ -49,29 +109,46 @@ export class SeoService {
     });
   }
 
-  private setCanonical(path: string) {
-    let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
+  private updateJsonLd(seo: Seo) {
+    const id = 'json-ld';
 
-    if (!link) {
-      link = this.document.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      this.document.head.appendChild(link);
+    let script = this.document.getElementById(id) as HTMLScriptElement | null;
+
+    if (!script) {
+      script = this.document.createElement('script');
+
+      script.id = id;
+      script.type = 'application/ld+json';
+
+      this.document.head.appendChild(script);
     }
 
-    link.setAttribute('href', this.buildUrl(this.currentLocale, path));
+    script.textContent = JSON.stringify(this.buildJsonLd(seo));
   }
 
   public updateSeo(seo: Seo) {
     this.title.setTitle(seo.title);
     this.meta.updateTag({ name: 'description', content: seo.description });
+    this.meta.updateTag({ property: 'og:site_name', content: this.SITE_NAME });
     this.meta.updateTag({ property: 'og:title', content: seo.title });
     this.meta.updateTag({ property: 'og:description', content: seo.description });
-    this.meta.updateTag({ property: 'og:image', content: seo.image });
+    this.meta.updateTag({ property: 'og:image', content: this.buildImageUrl(seo.image) });
+    this.meta.updateTag({ property: 'og:image:alt', content: seo.imageAlt });
+    this.meta.updateTag({ property: 'og:type', content: seo.ogType });
     this.meta.updateTag({
       property: 'og:url',
       content: this.buildUrl(this.currentLocale, seo.path),
     });
-    this.updateAlternateLinks(seo.path);
+    this.meta.updateTag({ property: 'og:locale', content: this.toOgLocale(this.currentLocale) });
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: seo.title });
+    this.meta.updateTag({ name: 'twitter:description', content: seo.description });
+    this.meta.updateTag({ name: 'twitter:image', content: this.buildImageUrl(seo.image) });
+    this.meta.updateTag({ name: 'twitter:image:alt', content: seo.imageAlt });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
+    this.setOgLocaleAlternates();
     this.setCanonical(seo.path);
+    this.updateAlternateLinks(seo.path);
+    this.updateJsonLd(seo);
   }
 }
