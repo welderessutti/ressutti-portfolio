@@ -6,21 +6,21 @@
         <source>projects</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="route.about.path" datatype="html">
         <source>about</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="route.contact.path" datatype="html">
         <source>contact</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.projects.label" datatype="html">
@@ -212,39 +212,53 @@
           <context context-type="linenumber">21,24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="home.hero.buttonProjects" datatype="html">
+      <trans-unit id="home.hero.viewProjectsButton" datatype="html">
         <source>View projects</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
-          <context context-type="linenumber">30,34</context>
+          <context context-type="linenumber">31,35</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="home.hero.buttonContact" datatype="html">
+      <trans-unit id="home.hero.contactButton" datatype="html">
         <source>Contact</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
-          <context context-type="linenumber">37,40</context>
+          <context context-type="linenumber">39,42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.keyword.modern" datatype="html">
         <source>modern</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.keyword.scalable" datatype="html">
         <source>scalable</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.keyword.highPerformance" datatype="html">
         <source>high-performance</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.viewProjectsButton.path" datatype="html">
+        <source>projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home.hero.contactButton.path" datatype="html">
+        <source>contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.projects.title" datatype="html">
@@ -261,25 +275,18 @@
           <context context-type="linenumber">7,10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="home.projects.buttonViewAll" datatype="html">
+      <trans-unit id="home.projects.viewAllProjectsButton" datatype="html">
         <source> View all projects </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/projects/projects.html</context>
-          <context context-type="linenumber">23,26</context>
+          <context context-type="linenumber">24,28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="home.projects.items.project1.description" datatype="html">
-        <source>Description of project 1.</source>
+      <trans-unit id="home.projects.viewAllProjectsButton.path" datatype="html">
+        <source>projects</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/projects/projects.ts</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="home.projects.items.project2.description" datatype="html">
-        <source>Description of project 2.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.stacks.title" datatype="html">
@@ -329,6 +336,48 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
           <context context-type="linenumber">69,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.portfolio.glicare.subtitle" datatype="html">
+        <source>Glicose monitoring system for diabetic patients.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.portfolio.glicare.shortDescription" datatype="html">
+        <source>This project is a web application that allows diabetic patients to monitor their glucose levels and manage their health effectively.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.portfolio.glicare.description" datatype="html">
+        <source>This is a comprehensive solution for managing diabetes, providing tools for monitoring glucose levels, tracking medication, and accessing educational resources.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.portfolio.deedscash.subtitle" datatype="html">
+        <source>Financial management platform for earns and expenses.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.portfolio.deedscash.shortDescription" datatype="html">
+        <source>This project is a web application that allows users to manage their financial transactions and expenses.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.portfolio.deedscash.description" datatype="html">
+        <source>This is a comprehensive solution for managing personal finances, providing tools for tracking income and expenses, and accessing educational resources.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
     </body>

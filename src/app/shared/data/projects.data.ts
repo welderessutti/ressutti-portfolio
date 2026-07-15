@@ -1,0 +1,58 @@
+import { Project } from '../models/project.model';
+import { TECHNOLOGIES } from './technologies.data';
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'glicare',
+    slug: 'glicare',
+    title: 'Glicare',
+    subtitle: $localize`:@@project.portfolio.glicare.subtitle:Glicose monitoring system for diabetic patients.`,
+    shortDescription: $localize`:@@project.portfolio.glicare.shortDescription:This project is a web application that allows diabetic patients to monitor their glucose levels and manage their health effectively.`,
+    description: $localize`:@@project.portfolio.glicare.description:This is a comprehensive solution for managing diabetes, providing tools for monitoring glucose levels, tracking medication, and accessing educational resources.`,
+    coverImage: '/assets/images/projects/glicare-cover.webp',
+    seoImage: '/assets/images/seo/projects/glicare.webp',
+    technologies: [
+      TECHNOLOGIES.angular,
+      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.tailwindCss,
+      TECHNOLOGIES.nodeJs,
+      TECHNOLOGIES.java,
+      TECHNOLOGIES.spring,
+      TECHNOLOGIES.postgresql,
+      TECHNOLOGIES.docker,
+      TECHNOLOGIES.aws,
+    ],
+    repositoryUrl: 'https://github.com/...',
+    liveUrl: 'https://www.ressutti.com',
+    featured: true,
+    completedAt: new Date('2026-07-01'),
+  },
+
+  {
+    id: 'deedscash',
+    slug: 'deedscash',
+    title: 'DeedsCash',
+    subtitle: $localize`:@@project.portfolio.deedscash.subtitle:Financial management platform for earns and expenses.`,
+    shortDescription: $localize`:@@project.portfolio.deedscash.shortDescription:This project is a web application that allows users to manage their financial transactions and expenses.`,
+    description: $localize`:@@project.portfolio.deedscash.description:This is a comprehensive solution for managing personal finances, providing tools for tracking income and expenses, and accessing educational resources.`,
+    coverImage: '/assets/images/projects/deedscash-cover.webp',
+    seoImage: '/assets/images/seo/projects/deedscash.webp',
+    technologies: [
+      TECHNOLOGIES.html,
+      TECHNOLOGIES.css,
+      TECHNOLOGIES.angular,
+      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.tailwindCss,
+      TECHNOLOGIES.nodeJs,
+      TECHNOLOGIES.java,
+      TECHNOLOGIES.spring,
+      TECHNOLOGIES.mysql,
+      TECHNOLOGIES.docker,
+      TECHNOLOGIES.azure,
+    ],
+    repositoryUrl: 'https://github.com/...',
+    liveUrl: 'https://www.ressutti.com',
+    featured: true,
+    completedAt: new Date('2026-10-01'),
+  },
+];

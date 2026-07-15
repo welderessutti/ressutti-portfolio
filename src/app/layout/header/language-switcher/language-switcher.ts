@@ -40,6 +40,9 @@ export class LanguageSwitcher implements OnInit {
     const translatedSlug = routeKey ? ROUTES[routeKey][targetLocale] : null;
     const base = `/${targetLocale.toLowerCase()}`;
 
+    console.log('Current Locale:', currentLocale);
+    console.log('executou!');
+
     return translatedSlug !== null && translatedSlug !== undefined
       ? translatedSlug === ''
         ? base

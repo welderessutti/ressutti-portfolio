@@ -1,12 +1,5 @@
-export type OgType = 'website' | 'article' | 'profile';
-
-export type JsonLdType =
-  | 'WebPage'
-  | 'Article'
-  | 'Person'
-  | 'CollectionPage'
-  | 'AboutPage'
-  | 'ContactPage';
+import { OpenGraphType } from '../types/open-graph.type';
+import { JsonLdType } from '../types/json-ld.type';
 
 export interface Seo {
   title: string;
@@ -14,6 +7,6 @@ export interface Seo {
   image: string;
   imageAlt: string;
   path: string;
-  ogType: OgType;
+  openGraphType: OpenGraphType;
   jsonLdType: JsonLdType;
 }

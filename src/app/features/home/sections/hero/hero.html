@@ -24,15 +24,17 @@
       <!-- Buttons -->
       <div class="mt-8 flex gap-4 animate-fade-up delay-300">
         <a
-          i18n="@@home.hero.buttonProjects"
-          routerLink="/projects"
+          i18n="@@home.hero.viewProjectsButton"
+          [hreflang]="currentLocale"
+          [routerLink]="viewProjectsButtonPath"
           class="px-6 py-3 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
           >View projects</a
         >
 
         <a
-          i18n="@@home.hero.buttonContact"
-          routerLink="/contact"
+          i18n="@@home.hero.contactButton"
+          [hreflang]="currentLocale"
+          [routerLink]="contactButtonPath"
           class="px-6 py-3 bg-surface text-text-secondary border border-border rounded-lg hover:bg-surface-hover transition font-medium shadow-lg hover:shadow-gray-400/30"
           >Contact</a
         >

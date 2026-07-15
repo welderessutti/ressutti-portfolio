@@ -1,26 +1,21 @@
 import { Routes } from '@angular/router';
 
-import { Home } from './features/home/home';
-import { Projects } from './features/projects/projects';
-import { About } from './features/about/about';
-import { Contact } from './features/contact/contact';
-
 export const routes: Routes = [
   {
     path: '',
-    component: Home,
+    loadComponent: () => import('./features/home/home').then((m) => m.Home),
   },
   {
     path: $localize`:@@route.projects.path:projects`,
-    component: Projects,
+    loadComponent: () => import('./features/projects/projects').then((m) => m.Projects),
   },
   {
     path: $localize`:@@route.about.path:about`,
-    component: About,
+    loadComponent: () => import('./features/about/about').then((m) => m.About),
   },
   {
     path: $localize`:@@route.contact.path:contact`,
-    component: Contact,
+    loadComponent: () => import('./features/contact/contact').then((m) => m.Contact),
   },
   {
     path: '**',

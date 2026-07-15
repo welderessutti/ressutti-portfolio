@@ -21,7 +21,7 @@ export class Home {
       image: '/assets/images/seo/home.png',
       imageAlt: $localize`:@@home.seo.alt:Home page of Ressutti.dev portfolio.`,
       path: '/',
-      ogType: 'website',
+      openGraphType: 'website',
       jsonLdType: 'WebPage',
     });
   }

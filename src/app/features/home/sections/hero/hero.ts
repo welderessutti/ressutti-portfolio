@@ -1,12 +1,15 @@
-import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, inject, DOCUMENT } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Locale } from '../../../../shared/i18n/locales';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
 export class Hero implements OnInit, OnDestroy {
+  private readonly document = inject(DOCUMENT);
   private readonly words = [
     $localize`:@@home.hero.keyword.modern:modern`,
     $localize`:@@home.hero.keyword.scalable:scalable`,
@@ -16,6 +19,9 @@ export class Hero implements OnInit, OnDestroy {
   private charIndex = 0;
   private isDeleting = false;
   private timeoutId?: ReturnType<typeof setTimeout>;
+  protected readonly currentLocale = this.currentLocaleHtml;
+  protected readonly viewProjectsButtonPath = $localize`:@@home.hero.viewProjectsButton.path:projects`;
+  protected readonly contactButtonPath = $localize`:@@home.hero.contactButton.path:contact`;
   protected readonly typedText = signal('');
 
   public ngOnInit() {
@@ -26,6 +32,10 @@ export class Hero implements OnInit, OnDestroy {
     if (this.timeoutId) {
       clearTimeout(this.timeoutId);
     }
+  }
+
+  private get currentLocaleHtml(): Locale {
+    return this.document.documentElement.lang as Locale;
   }
 
   private typeEffect() {

@@ -5,9 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "preview:ssg": "node tools/preview-ssg.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:ressutti-portfolio": "node dist/ressutti-portfolio/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "packageManager": "npm@10.9.1",

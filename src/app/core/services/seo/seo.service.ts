@@ -134,7 +134,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:description', content: seo.description });
     this.meta.updateTag({ property: 'og:image', content: this.buildImageUrl(seo.image) });
     this.meta.updateTag({ property: 'og:image:alt', content: seo.imageAlt });
-    this.meta.updateTag({ property: 'og:type', content: seo.ogType });
+    this.meta.updateTag({ property: 'og:type', content: seo.openGraphType });
     this.meta.updateTag({
       property: 'og:url',
       content: this.buildUrl(this.currentLocale, seo.path),
