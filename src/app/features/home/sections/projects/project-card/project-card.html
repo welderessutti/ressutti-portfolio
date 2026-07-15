@@ -4,8 +4,8 @@
   <!-- Image -->
   <div class="relative overflow-hidden">
     <img
-      [src]="project.coverImage"
-      [alt]="project.title"
+      [src]="project().coverImage"
+      [alt]="project().title"
       loading="lazy"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
     />
@@ -18,17 +18,17 @@
   <div class="p-5 flex flex-col gap-4">
     <!-- Title -->
     <h3 class="text-xl font-semibold text-text-primary">
-      {{ project.title }}
+      {{ project().title }}
     </h3>
 
     <!-- Short Description -->
     <p class="text-text-secondary text-sm leading-relaxed">
-      {{ project.shortDescription }}
+      {{ project().shortDescription }}
     </p>
 
     <!-- Techs -->
     <div class="flex flex-wrap gap-2">
-      @for (tech of project.technologies; track tech.id) {
+      @for (tech of project().technologies; track tech.id) {
         <span class="text-xs px-2 py-1 rounded-md bg-surfaceLight text-text-secondary">
           {{ tech.name }}
         </span>
@@ -37,9 +37,9 @@
 
     <!-- Actions -->
     <div class="flex items-center gap-4 mt-2">
-      @if (project.repositoryUrl) {
+      @if (project().repositoryUrl) {
         <a
-          [href]="project.repositoryUrl"
+          [href]="project().repositoryUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="text-sm text-text-secondary hover:text-accent transition"
@@ -48,9 +48,9 @@
         </a>
       }
 
-      @if (project.liveUrl) {
+      @if (project().liveUrl) {
         <a
-          [href]="project.liveUrl"
+          [href]="project().liveUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="text-sm text-accent hover:underline"

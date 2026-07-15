@@ -1,10 +1,10 @@
 <div class="bg-surface p-5 flex flex-col gap-4 rounded-lg border border-border">
   <h3 class="text-lg font-semibold text-text-primary">
-    {{ stack.category }}
+    {{ stack().category }}
   </h3>
 
   <ul class="flex flex-col gap-3">
-    @for (item of stack.stacks; track item.name) {
+    @for (item of stack().stacks; track item.name) {
       <li>
         <div
           class="flex items-center gap-2 px-3 py-2 bg-surfaceLight rounded-lg hover:bg-surface hover:scale-105 transition-all duration-300"

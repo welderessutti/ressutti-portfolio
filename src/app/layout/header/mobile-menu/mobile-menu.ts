@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Nav } from '../../../shared/models/nav.model';
 
@@ -9,9 +9,9 @@ import { Nav } from '../../../shared/models/nav.model';
   styleUrl: './mobile-menu.css',
 })
 export class MobileMenu {
-  @Input() navs: Nav[] = [];
-  @Input() isOpen: boolean = false;
-  @Output() protected readonly closeMenu = new EventEmitter<void>();
+  public readonly navs = input<Nav[]>([]);
+  public readonly isOpen = input<boolean>(false);
+  public readonly closeMenu = output<void>();
 
   protected onClose() {
     this.closeMenu.emit();

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Stack } from '../stack.model';
 
 @Component({
@@ -8,5 +8,5 @@ import { Stack } from '../stack.model';
   styleUrl: './stack-card.css',
 })
 export class StackCard {
-  @Input() stack!: Stack;
+  public readonly stack = input.required<Stack>();
 }

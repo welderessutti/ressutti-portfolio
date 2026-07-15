@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Project } from '../../../../../shared/models/project.model'
 
 @Component({
@@ -8,5 +8,5 @@ import { Project } from '../../../../../shared/models/project.model'
   styleUrl: './project-card.css',
 })
 export class ProjectCard {
-  @Input() project!: Project;
+  public readonly project = input.required<Project>();
 }

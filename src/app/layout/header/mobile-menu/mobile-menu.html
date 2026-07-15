@@ -1,10 +1,10 @@
 <!-- Overlay -->
 <div
   class="fixed inset-0 bg-background/60 backdrop-blur-xs z-30 transition-opacity duration-300"
-  [class.opacity-100]="isOpen"
-  [class.opacity-0]="!isOpen"
-  [class.pointer-events-none]="!isOpen"
-  [class.invisible]="!isOpen"
+  [class.opacity-100]="isOpen()"
+  [class.opacity-0]="!isOpen()"
+  [class.pointer-events-none]="!isOpen()"
+  [class.invisible]="!isOpen()"
   (click)="onClose()"
 ></div>
 
@@ -12,13 +12,13 @@
 <div
   id="mobile-menu"
   class="fixed top-0 right-0 h-full pt-24 w-[min(100%,320px)] flex flex-col bg-surface-light z-40 shadow-2xl transform transition-transform duration-300 ease-in-out"
-  [class.translate-x-0]="isOpen"
-  [class.translate-x-full]="!isOpen"
+  [class.translate-x-0]="isOpen()"
+  [class.translate-x-full]="!isOpen()"
 >
   <nav class="flex flex-col h-full px-6 gap-6">
     <!-- Links -->
     <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
-      @for (nav of navs; track nav.id) {
+      @for (nav of navs(); track nav.id) {
         <li>
           <a
             [hreflang]="nav.locale"
