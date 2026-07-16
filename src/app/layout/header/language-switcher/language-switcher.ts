@@ -1,6 +1,6 @@
-import { Component, signal, HostListener, inject, DOCUMENT, OnInit } from '@angular/core';
+import { Component, signal, computed, HostListener, inject, DOCUMENT, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DEFAULT_LOCALE, Locale, LOCALES, SUPPORTED_LOCALES } from '../../../shared/i18n/locales';
+import { DEFAULT_LOCALE, Locale, LOCALES } from '../../../shared/i18n/locales';
 import { ROUTES, RouteKey } from '../../../shared/i18n/routes';
 
 @Component({
@@ -12,9 +12,16 @@ import { ROUTES, RouteKey } from '../../../shared/i18n/routes';
 export class LanguageSwitcher implements OnInit {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
+  private readonly currentUrl = computed(() => {
+    const finalUrl = this.router.lastSuccessfulNavigation()?.finalUrl;
+
+    return finalUrl ? this.router.serializeUrl(finalUrl) : this.router.url;
+  });
   protected readonly LOCALES = LOCALES;
   protected readonly currentLang = signal<Locale>(DEFAULT_LOCALE);
   protected readonly isOpen = signal(false);
+  protected readonly ptBRSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.ptBR));
+  protected readonly enGBSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.enGB));
 
   public ngOnInit() {
     const lang = this.document.documentElement.lang as Locale;
@@ -25,29 +32,57 @@ export class LanguageSwitcher implements OnInit {
     this.isOpen.update((value) => !value);
   }
 
-  protected getSwitchLangUrl(targetLocale: Locale): string {
-    const pathname = this.router.url.split('?')[0].split('#')[0];
-    const segments = pathname.split('/').filter(Boolean);
+  private buildSwitchLangUrl(targetLocale: Locale): string {
+    const urlTree = this.router.parseUrl(this.currentUrl());
+    const primarySegments = urlTree.root.children['primary']?.segments ?? [];
 
-    const currentLocale = this.currentLang(); // fonte de verdade real
+    const localeSegment = primarySegments[0]?.path.toLowerCase();
+    const hasLocalePrefix = Object.values(LOCALES)
+      .map((locale) => locale.toLowerCase())
+      .includes(localeSegment);
 
-    const currentSlug = segments[0] ?? ''; // slug é o primeiro segmento (sem locale no path)
+    const routeSegments = hasLocalePrefix ? primarySegments.slice(1) : primarySegments;
+    const firstRouteSegment = routeSegments[0];
+    const remainingSegments = routeSegments.slice(1);
 
-    const routeKey = (Object.keys(ROUTES) as RouteKey[]).find(
-      (key) => ROUTES[key][currentLocale] === currentSlug,
+    const currentLocale = this.currentLang();
+
+    const routeKey = firstRouteSegment
+      ? (Object.keys(ROUTES) as RouteKey[]).find(
+          (key) => ROUTES[key][currentLocale] === firstRouteSegment.path,
+        )
+      : 'home';
+
+    if (!routeKey) {
+      return `/${targetLocale.toLowerCase()}`;
+    }
+
+    const translatedSlug = ROUTES[routeKey][targetLocale];
+
+    const commands: Array<string | Record<string, string>> = ['/', targetLocale.toLowerCase()];
+
+    if (translatedSlug) {
+      commands.push(translatedSlug);
+
+      if (Object.keys(firstRouteSegment.parameters).length > 0) {
+        commands.push(firstRouteSegment.parameters);
+      }
+    }
+
+    for (const segment of remainingSegments) {
+      commands.push(segment.path);
+
+      if (Object.keys(segment.parameters).length > 0) {
+        commands.push(segment.parameters);
+      }
+    }
+
+    return this.router.serializeUrl(
+      this.router.createUrlTree(commands, {
+        queryParams: urlTree.queryParams,
+        fragment: urlTree.fragment ?? undefined,
+      }),
     );
-
-    const translatedSlug = routeKey ? ROUTES[routeKey][targetLocale] : null;
-    const base = `/${targetLocale.toLowerCase()}`;
-
-    console.log('Current Locale:', currentLocale);
-    console.log('executou!');
-
-    return translatedSlug !== null && translatedSlug !== undefined
-      ? translatedSlug === ''
-        ? base
-        : `${base}/${translatedSlug}`
-      : base;
   }
 
   protected savePreferredLanguage(locale: Locale) {

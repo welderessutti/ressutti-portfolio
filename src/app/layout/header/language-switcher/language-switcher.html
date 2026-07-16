@@ -46,7 +46,7 @@
     <!-- PT -->
     <a
       (click)="savePreferredLanguage(LOCALES.ptBR)"
-      [href]="getSwitchLangUrl(LOCALES.ptBR)"
+      [href]="ptBRSwitchLangUrl()"
       [hreflang]="LOCALES.ptBR"
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
       [class.bg-surface-hover]="currentLang() === LOCALES.ptBR"
@@ -57,7 +57,7 @@
     <!-- EN -->
     <a
       (click)="savePreferredLanguage(LOCALES.enGB)"
-      [href]="getSwitchLangUrl(LOCALES.enGB)"
+      [href]="enGBSwitchLangUrl()"
       [hreflang]="LOCALES.enGB"
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
       [class.bg-surface-hover]="currentLang() === LOCALES.enGB"
