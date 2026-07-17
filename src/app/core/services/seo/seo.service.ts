@@ -1,3 +1,4 @@
+import { ROUTES, RouteValue } from './../../../shared/i18n/routes';
 import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Seo } from '../../../shared/models/seo.model';
@@ -18,7 +19,7 @@ export class SeoService {
   }
 
   private buildUrl(locale: Locale, path: string): string {
-    return `${this.BASE_URL}/${locale.toLowerCase()}${path}`;
+    return `${this.BASE_URL}/${locale.toLowerCase()}/${path}`;
   }
 
   private buildImageUrl(imagePath: string): string {
@@ -32,7 +33,7 @@ export class SeoService {
 
       name: seo.title,
       description: seo.description,
-      url: this.buildUrl(this.currentLocale, seo.path),
+      url: this.buildUrl(this.currentLocale, seo.path[this.currentLocale]),
 
       inLanguage: this.currentLocale,
 
@@ -80,19 +81,19 @@ export class SeoService {
     link.setAttribute('href', this.buildUrl(this.currentLocale, path));
   }
 
-  private updateAlternateLinks(path: string) {
+  private updateAlternateLinks(path: RouteValue) {
     const alternates = [
       {
         hreflang: LOCALES.enGB,
-        href: this.buildUrl(LOCALES.enGB, path),
+        href: this.buildUrl(LOCALES.enGB, path[LOCALES.enGB]),
       },
       {
         hreflang: LOCALES.ptBR,
-        href: this.buildUrl(LOCALES.ptBR, path),
+        href: this.buildUrl(LOCALES.ptBR, path[LOCALES.ptBR]),
       },
       {
         hreflang: 'x-default',
-        href: this.buildUrl(LOCALES.enGB, path),
+        href: this.buildUrl(LOCALES.enGB, path[LOCALES.enGB]),
       },
     ];
 
@@ -137,7 +138,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:type', content: seo.openGraphType });
     this.meta.updateTag({
       property: 'og:url',
-      content: this.buildUrl(this.currentLocale, seo.path),
+      content: this.buildUrl(this.currentLocale, seo.path[this.currentLocale]),
     });
     this.meta.updateTag({ property: 'og:locale', content: this.toOgLocale(this.currentLocale) });
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
@@ -147,7 +148,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:image:alt', content: seo.imageAlt });
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.setOgLocaleAlternates();
-    this.setCanonical(seo.path);
+    this.setCanonical(seo.path[this.currentLocale]);
     this.updateAlternateLinks(seo.path);
     this.updateJsonLd(seo);
   }

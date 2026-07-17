@@ -4,6 +4,7 @@ import { Hero } from './sections/hero/hero';
 import { Projects } from './sections/projects/projects';
 import { Stacks } from './sections/stacks/stacks';
 import { About } from './sections/about/about';
+import { ROUTES } from '../../shared/i18n/routes';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class Home {
       description: $localize`:@@home.seo.description:Portfolio of a full-stack developer focused on performance and scalability.`,
       image: '/assets/images/seo/home.png',
       imageAlt: $localize`:@@home.seo.alt:Home page of Ressutti.dev portfolio.`,
-      path: '/',
+      path: ROUTES.home,
       openGraphType: 'website',
       jsonLdType: 'WebPage',
     });

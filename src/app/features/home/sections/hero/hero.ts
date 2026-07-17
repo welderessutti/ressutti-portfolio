@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, signal, inject, DOCUMENT } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Locale } from '../../../../shared/i18n/locales';
+import { ROUTES } from '../../../../shared/i18n/routes';
 
 @Component({
   selector: 'app-hero',
@@ -20,8 +21,8 @@ export class Hero implements OnInit, OnDestroy {
   private isDeleting = false;
   private timeoutId?: ReturnType<typeof setTimeout>;
   protected readonly currentLocale = this.currentLocaleHtml;
-  protected readonly viewProjectsButtonPath = $localize`:@@home.hero.viewProjectsButton.path:projects`;
-  protected readonly contactButtonPath = $localize`:@@home.hero.contactButton.path:contact`;
+  protected readonly viewProjectsButtonPath = ROUTES.projects[this.currentLocale];
+  protected readonly contactButtonPath = ROUTES.contact[this.currentLocale];
   protected readonly typedText = signal('');
 
   public ngOnInit() {

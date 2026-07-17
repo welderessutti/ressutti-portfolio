@@ -4,6 +4,7 @@ import { ProjectCard } from './project-card/project-card';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
 import { ProjectService } from '../../../../core/services/project/project.service';
 import { Locale } from '../../../../shared/i18n/locales';
+import { ROUTES } from '../../../../shared/i18n/routes';
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +16,7 @@ export class Projects {
   private readonly document = inject(DOCUMENT);
   private readonly project = inject(ProjectService);
   protected readonly currentLocale = this.currentLocaleHtml;
-  protected readonly viewAllProjectsButtonPath = $localize`:@@home.projects.viewAllProjectsButton.path:projects`;
+  protected readonly viewAllProjectsButtonPath = ROUTES.projects[this.currentLocale];
   protected readonly allProjects = this.project.getAllProjects();
 
   private get currentLocaleHtml(): Locale {

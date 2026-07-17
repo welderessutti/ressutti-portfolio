@@ -69,21 +69,21 @@
         <source>Home | Ressutti.dev</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.seo.description" datatype="html">
         <source>Portfolio of a full-stack developer focused on performance and scalability.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.seo.alt" datatype="html">
         <source>Home page of Ressutti.dev portfolio.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.about.main.title" datatype="html">
@@ -230,35 +230,21 @@
         <source>modern</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.keyword.scalable" datatype="html">
         <source>scalable</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.keyword.highPerformance" datatype="html">
         <source>high-performance</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="home.hero.viewProjectsButton.path" datatype="html">
-        <source>projects</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="home.hero.contactButton.path" datatype="html">
-        <source>contact</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.projects.title" datatype="html">
@@ -280,13 +266,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/projects/projects.html</context>
           <context context-type="linenumber">24,28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="home.projects.viewAllProjectsButton.path" datatype="html">
-        <source>projects</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/home/sections/projects/projects.ts</context>
-          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.stacks.title" datatype="html">
@@ -342,42 +321,28 @@
         <source> Contact me </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.html</context>
-          <context context-type="linenumber">50,53</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projects.contact.path" datatype="html">
-        <source>contact</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">51,54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projects.seo.title" datatype="html">
         <source>Projects | Ressutti.dev</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projects.seo.description" datatype="html">
         <source>Explore web applications developed by Welder Ressutti, including their purpose, technologies, responsibilities and outcomes.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projects.seo.imageAlt" datatype="html">
         <source>Selection of web development projects by Welder Ressutti.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projects.seo.path" datatype="html">
-        <source>/projects</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="footer.slogan" datatype="html">
