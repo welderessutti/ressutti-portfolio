@@ -1,1 +1,54 @@
-<p>projects works!</p>
+<section class="section-padding bg-background" aria-labelledby="projects-page-title">
+  <div class="container-padding">
+    <header class="max-w-3xl mb-10 md:mb-14">
+      <h1
+        id="projects-page-title"
+        i18n="@@projects.title"
+        class="text-4xl md:text-5xl font-bold text-text-primary"
+      >
+        Projects
+      </h1>
+
+      <p
+        i18n="@@projects.introduction"
+        class="mt-5 text-base md:text-lg leading-relaxed text-text-secondary"
+      >
+        Explore applications I have developed, their purpose, the technologies involved, my
+        responsibilities and the results achieved.
+      </p>
+    </header>
+
+    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      @for (project of projects; track project.id) {
+        <li class="flex">
+          <app-project-list-card class="flex w-full" [project]="project" />
+        </li>
+      }
+    </ul>
+
+    <aside
+      class="mt-16 md:mt-20 rounded-2xl border border-border bg-surface p-6 md:p-8 text-center"
+      aria-labelledby="projects-contact-title"
+    >
+      <h2
+        id="projects-contact-title"
+        i18n="@@projects.contact.title"
+        class="text-2xl font-semibold text-text-primary"
+      >
+        Interested in working together?
+      </h2>
+
+      <p i18n="@@projects.contact.description" class="mt-3 text-text-secondary">
+        Let's talk about your project or opportunity.
+      </p>
+
+      <a
+        i18n="@@projects.contact.action"
+        [routerLink]="['/', contactMeButtonPath]"
+        class="mt-6 inline-flex rounded-lg bg-accent px-6 py-3 font-medium text-white hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      >
+        Contact me
+      </a>
+    </aside>
+  </div>
+</section>

@@ -85,6 +85,21 @@ Examples:
 - Avoid visual changes unless explicitly requested.
 - Follow the existing responsive and mobile-first design.
 
+## Current development phase
+
+The project is currently focused on structure and architecture.
+
+Until this phase is explicitly declared complete:
+
+- Do not report missing or incomplete translations as review findings.
+- Ignore hardcoded user-facing text unless it causes a functional or accessibility issue unrelated to localization.
+- Do not report missing image assets, placeholder image paths or incomplete image content.
+- Do not report placeholder or incomplete external URLs.
+- Continue reviewing internal application links and routes, because they affect application behavior.
+- Continue reviewing image markup when it affects layout stability, accessibility or performance, but ignore the absence of the final asset itself.
+- Continue preserving the existing i18n architecture; do not remove localization support or introduce patterns that would make localization harder later.
+- Do not implement translations, final images or external links unless explicitly requested.
+
 ## Working process
 
 For complex, architectural or potentially risky tasks:
@@ -109,3 +124,4 @@ Primary commands:
 ```bash
 npm run build
 npm test
+```

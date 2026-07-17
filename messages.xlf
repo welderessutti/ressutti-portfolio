@@ -310,6 +310,76 @@
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="projects.title" datatype="html">
+        <source> Projects </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.html</context>
+          <context context-type="linenumber">9,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.introduction" datatype="html">
+        <source> Explore applications I have developed, their purpose, the technologies involved, my responsibilities and the results achieved. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.html</context>
+          <context context-type="linenumber">16,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.contact.title" datatype="html">
+        <source> Interested in working together? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.html</context>
+          <context context-type="linenumber">38,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.contact.description" datatype="html">
+        <source> Let&apos;s talk about your project or opportunity. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.html</context>
+          <context context-type="linenumber">42,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.contact.action" datatype="html">
+        <source> Contact me </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.contact.path" datatype="html">
+        <source>contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.seo.title" datatype="html">
+        <source>Projects | Ressutti.dev</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.seo.description" datatype="html">
+        <source>Explore web applications developed by Welder Ressutti, including their purpose, technologies, responsibilities and outcomes.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.seo.imageAlt" datatype="html">
+        <source>Selection of web development projects by Welder Ressutti.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projects.seo.path" datatype="html">
+        <source>/projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="footer.slogan" datatype="html">
         <source> Building modern, high-performance web applications with a focus on user experience. </source>
         <context-group purpose="location">
@@ -338,46 +408,102 @@
           <context context-type="linenumber">69,72</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="project.portfolio.glicare.subtitle" datatype="html">
+      <trans-unit id="project.data.glicare.subtitle" datatype="html">
         <source>Glicose monitoring system for diabetic patients.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="project.portfolio.glicare.shortDescription" datatype="html">
-        <source>This project is a web application that allows diabetic patients to monitor their glucose levels and manage their health effectively.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="project.portfolio.glicare.description" datatype="html">
-        <source>This is a comprehensive solution for managing diabetes, providing tools for monitoring glucose levels, tracking medication, and accessing educational resources.</source>
+      <trans-unit id="project.data.glicare.shortDescription" datatype="html">
+        <source>This project is a web application that allows diabetic patients to monitor their glucose levels and manage their health effectively.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="project.portfolio.deedscash.subtitle" datatype="html">
-        <source>Financial management platform for earns and expenses.</source>
+      <trans-unit id="project.data.glicare.description" datatype="html">
+        <source>This is a comprehensive solution for managing diabetes, providing tools for monitoring glucose levels, tracking medication, and accessing educational resources.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="project.portfolio.deedscash.shortDescription" datatype="html">
-        <source>This project is a web application that allows users to manage their financial transactions and expenses.</source>
+      <trans-unit id="project.data.glicare.category" datatype="html">
+        <source>Health web application</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="project.portfolio.deedscash.description" datatype="html">
-        <source>This is a comprehensive solution for managing personal finances, providing tools for tracking income and expenses, and accessing educational resources.</source>
+      <trans-unit id="project.data.glicare.role" datatype="html">
+        <source>Full-stack development and UX/UI design</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.glicare.outcome" datatype="html">
+        <source>Improved patient engagement and health outcomes through effective glucose monitoring</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.glicare.imageAlt" datatype="html">
+        <source>Glicare dashboard showing glucose levels and health metrics</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.subtitle" datatype="html">
+        <source>Personal finance management platform.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.shortDescription" datatype="html">
+        <source>A web application for organising income, expenses and financial activity.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.description" datatype="html">
+        <source>A more complete description reserved for the project detail page.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.category" datatype="html">
+        <source>Financial web application</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.role" datatype="html">
+        <source>Full-stack development and product design</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.outcome" datatype="html">
+        <source>Centralised financial records in a clear and maintainable workflow</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.deedscash.imageAlt" datatype="html">
+        <source>DeedsCash dashboard showing financial summaries and recent transactions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
     </body>

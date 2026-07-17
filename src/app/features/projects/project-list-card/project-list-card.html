@@ -1,0 +1,92 @@
+<article
+  class="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface-light transition-colors hover:border-accent/40 focus-within:border-accent"
+>
+  <img
+    [src]="project().coverImage"
+    [alt]="project().imageAlt"
+    [width]="project().coverWidth"
+    [height]="project().coverHeight"
+    loading="lazy"
+    decoding="async"
+    class="aspect-video w-full object-cover"
+  />
+
+  <div class="flex flex-1 flex-col p-5 md:p-6">
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-tertiary">
+      <span>{{ project().category }}</span>
+      <span aria-hidden="true">·</span>
+      <span>{{ project().period.startYear }}</span>
+    </div>
+
+    <h2 class="mt-3 text-2xl font-semibold text-text-primary">
+      <a
+        [routerLink]="[project().slug]"
+        class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      >
+        {{ project().title }}
+      </a>
+    </h2>
+
+    <p class="mt-3 text-sm leading-relaxed text-text-secondary">
+      {{ project().shortDescription }}
+    </p>
+
+    <ul class="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+      @for (technology of visibleTechnologies(); track technology.id) {
+        <li class="rounded-md bg-surface px-2.5 py-1 text-xs text-text-secondary">
+          {{ technology.name }}
+        </li>
+      }
+
+      @if (hiddenTechnologyCount() > 0) {
+        <li class="rounded-md bg-surface px-2.5 py-1 text-xs text-text-tertiary">
+          +{{ hiddenTechnologyCount() }}
+        </li>
+      }
+    </ul>
+
+    <dl class="mt-6 grid gap-4">
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-text-tertiary">Role</dt>
+        <dd class="mt-1 text-sm text-text-secondary">
+          {{ project().roleSummary }}
+        </dd>
+      </div>
+
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-text-tertiary">Outcome</dt>
+        <dd class="mt-1 text-sm text-text-secondary">
+          {{ project().outcomeSummary }}
+        </dd>
+      </div>
+    </dl>
+
+    <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-6">
+      <a [routerLink]="[project().slug]" class="font-medium text-accent"> View details </a>
+
+      @if (project().liveUrl) {
+        <a
+          [href]="project().liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-text-secondary hover:text-accent"
+        >
+          Live demo
+          <span class="sr-only">for {{ project().title }} (opens in a new tab)</span>
+        </a>
+      }
+
+      @if (project().repositoryUrl) {
+        <a
+          [href]="project().repositoryUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-text-secondary hover:text-accent"
+        >
+          Repository
+          <span class="sr-only">for {{ project().title }} (opens in a new tab)</span>
+        </a>
+      }
+    </div>
+  </div>
+</article>
