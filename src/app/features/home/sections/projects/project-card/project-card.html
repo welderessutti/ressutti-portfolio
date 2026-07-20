@@ -1,42 +1,47 @@
 <div
-  class="backdrop-blur-sm group bg-surface-light rounded-2xl overflow-hidden border border-border hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+  class="group flex h-full w-full flex-col backdrop-blur-sm group bg-surface-light rounded-2xl overflow-hidden border border-border hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-within:*"
 >
   <!-- Image -->
-  <div class="relative overflow-hidden">
+  <div class="relative shrink-0 overflow-hidden">
     <img
       [src]="project().coverImage"
-      [alt]="project().title"
+      [alt]="project().imageAlt"
+      [width]="project().coverWidth"
+      [height]="project().coverHeight"
       loading="lazy"
-      class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+      class="block w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
     />
 
     <!-- Light Overlay -->
-    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition"></div>
+    <div
+      [aria-hidden]="true"
+      class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition"
+    ></div>
   </div>
 
   <!-- Content -->
-  <div class="p-5 flex flex-col gap-4">
+  <div class="p-5 flex flex-1 flex-col gap-4">
     <!-- Title -->
-    <h3 class="text-xl font-semibold text-text-primary">
+    <h3 class="min-h-7 text-xl font-semibold text-text-primary">
       {{ project().title }}
     </h3>
 
     <!-- Short Description -->
-    <p class="text-text-secondary text-sm leading-relaxed">
+    <p class="min-h-20 text-text-secondary text-sm leading-relaxed">
       {{ project().shortDescription }}
     </p>
 
     <!-- Techs -->
-    <div class="flex flex-wrap gap-2">
+    <div class="flex flex-wrap gap-2 content-start">
       @for (tech of project().technologies; track tech.id) {
-        <span class="text-xs px-2 py-1 rounded-md bg-surfaceLight text-text-secondary">
+        <span class="text-xs px-2 py-1 rounded-md bg-surface text-text-secondary">
           {{ tech.name }}
         </span>
       }
     </div>
 
     <!-- Actions -->
-    <div class="flex items-center gap-4 mt-2">
+    <div class="mt-auto flex items-center gap-4 mt-2">
       @if (project().repositoryUrl) {
         <a
           [href]="project().repositoryUrl"

@@ -75,4 +75,37 @@ export const PROJECTS: Project[] = [
     period: { startYear: 2026 },
     featured: true,
   },
+
+  {
+    id: 'outro',
+    slug: 'outro',
+    title: 'Outro',
+
+    subtitle: $localize`:@@project.data.outro.subtitle:Personal finance management platform.`,
+    shortDescription: $localize`:@@project.data.outro.shortDescription:A web application for organising income, expenses and financial activity.`,
+    description: $localize`:@@project.data.outro.description:A more complete description reserved for the project detail page.`,
+
+    category: $localize`:@@project.data.outro.category:Financial web application`,
+    roleSummary: $localize`:@@project.data.outro.role:Full-stack development and product design`,
+    outcomeSummary: $localize`:@@project.data.outro.outcome:Centralised financial records in a clear and maintainable workflow`,
+    imageAlt: $localize`:@@project.data.outro.imageAlt:Outro dashboard showing financial summaries and recent transactions`,
+
+    coverImage: '/assets/images/projects/outro-cover.webp',
+    coverWidth: 1600,
+    coverHeight: 900,
+    seoImage: '/assets/images/seo/projects/outro.webp',
+
+    technologies: [
+      TECHNOLOGIES.angular,
+      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.java,
+      TECHNOLOGIES.spring,
+    ],
+
+    repositoryUrl: 'https://github.com/...',
+    liveUrl: 'https://...',
+    status: 'in-progress',
+    period: { startYear: 2026 },
+    featured: true,
+  },
 ];
