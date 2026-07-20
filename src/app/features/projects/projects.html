@@ -18,10 +18,10 @@
       </p>
     </header>
 
-    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+    <ul class="grid auto-rows-fr gap-6 lg:grid-cols-2 lg:gap-8">
       @for (project of projects; track project.id) {
-        <li class="flex">
-          <app-project-list-card class="flex w-full" [project]="project" />
+        <li>
+          <app-project-list-card [project]="project" />
         </li>
       }
     </ul>

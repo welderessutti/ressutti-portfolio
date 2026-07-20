@@ -1,5 +1,5 @@
 <div
-  class="group flex h-full w-full flex-col backdrop-blur-sm group bg-surface-light rounded-2xl overflow-hidden border border-border hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-within:*"
+  class="group flex h-full w-full flex-col backdrop-blur-sm bg-surface-light rounded-2xl overflow-hidden border border-border hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-within:*"
 >
   <!-- Image -->
   <div class="relative shrink-0 overflow-hidden">
@@ -14,7 +14,7 @@
 
     <!-- Light Overlay -->
     <div
-      [aria-hidden]="true"
+      aria-hidden="true"
       class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition"
     ></div>
   </div>
@@ -22,7 +22,7 @@
   <!-- Content -->
   <div class="p-5 flex flex-1 flex-col gap-4">
     <!-- Title -->
-    <h3 class="min-h-7 text-xl font-semibold text-text-primary">
+    <h3 class="text-xl font-semibold text-text-primary">
       {{ project().title }}
     </h3>
 
@@ -32,7 +32,7 @@
     </p>
 
     <!-- Techs -->
-    <div class="flex flex-wrap gap-2 content-start">
+    <div class="min-h-20 flex flex-wrap gap-2 content-start">
       @for (tech of project().technologies; track tech.id) {
         <span class="text-xs px-2 py-1 rounded-md bg-surface text-text-secondary">
           {{ tech.name }}
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Actions -->
-    <div class="mt-auto flex items-center gap-4 mt-2">
+    <div class="mt-auto flex items-center gap-4">
       @if (project().repositoryUrl) {
         <a
           [href]="project().repositoryUrl"
