@@ -1,5 +1,5 @@
 <article
-  class="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface-light transition-colors hover:border-accent/40 focus-within:border-accent"
+  class="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent/40 focus-within:border-accent"
 >
   <img
     [src]="project().coverImage"
@@ -8,7 +8,7 @@
     [height]="project().coverHeight"
     loading="lazy"
     decoding="async"
-    class="aspect-video w-full object-cover"
+    class="aspect-video w-full object-cover bg-black/10"
   />
 
   <div class="flex flex-1 flex-col p-5 md:p-6 gap-4">
@@ -33,7 +33,7 @@
 
     <ul class="min-h-14 flex flex-wrap gap-2 content-start" aria-label="Technologies">
       @for (technology of visibleTechnologies(); track technology.id) {
-        <li class="rounded-md bg-surface px-2.5 py-1 text-xs text-text-secondary">
+        <li class="rounded-md bg-surface-light px-2.5 py-1 text-xs text-text-secondary">
           {{ technology.name }}
         </li>
       }

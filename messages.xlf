@@ -27,42 +27,428 @@
         <source>Projects</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="nav.projects.path" datatype="html">
-        <source>projects</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.about.label" datatype="html">
         <source>About</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="nav.about.path" datatype="html">
-        <source>about</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.contact.label" datatype="html">
         <source>Contact</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="nav.contact.path" datatype="html">
-        <source>contact</source>
+      <trans-unit id="about.title" datatype="html">
+        <source> About </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">9,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.positioning" datatype="html">
+        <source> Full-stack software developer building reliable applications with Angular, Java and Spring. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.introduction" datatype="html">
+        <source> I design and develop web applications with a focus on clear architecture, maintainable code and dependable behaviour. My work covers front-end experiences, back-end services and the integration between them, always aiming for solutions that can evolve without unnecessary complexity. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">24,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.location" datatype="html">
+        <source> Based in Indaiatuba, São Paulo, Brazil. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">31,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.actions.label" datatype="html">
+        <source>About page actions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.actions.projects" datatype="html">
+        <source> View projects </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">45,48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">236,238</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.actions.contact" datatype="html">
+        <source> Contact me </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">54,56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">244,246</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.journey.eyebrow" datatype="html">
+        <source> From analytical rigour to software engineering </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">68,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.journey.title" datatype="html">
+        <source> Professional journey </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">75,77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.journey.paragraph1" datatype="html">
+        <source> Before moving into software development, I spent 11 years working in biomedicine and managing a clinical laboratory. That environment required analytical thinking, responsibility, attention to processes, leadership and consistent decision-making. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">81,84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.journey.paragraph2" datatype="html">
+        <source> I brought those principles into technology. After completing a degree in Systems Analysis and Development and postgraduate studies in Java Architecture and Development, I focused my work on full-stack applications using Angular, Java and Spring. Today, I approach software as a system that should remain understandable, testable and reliable as its requirements evolve. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">86,90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.title" datatype="html">
+        <source> How I work </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">107,110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.introduction" datatype="html">
+        <source> Practical principles that guide technical decisions and the way I build software. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">113,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.title" datatype="html">
+        <source> Core capabilities </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">136,139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.introduction" datatype="html">
+        <source> Knowledge organised by the role it plays in delivering complete, dependable applications. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">142,146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.title" datatype="html">
+        <source> Education </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">186,189</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.cta.title" datatype="html">
+        <source> See how these principles translate into working software </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">223,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.cta.description" datatype="html">
+        <source> Explore selected projects or get in touch to discuss an opportunity. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.html</context>
+          <context context-type="linenumber">226,229</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.clarity.title" datatype="html">
+        <source>Clarity before complexity</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.clarity.description" datatype="html">
+        <source>I make responsibilities and trade-offs explicit before adding abstractions, keeping solutions understandable and proportionate to the problem.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.architecture.title" datatype="html">
+        <source>Architecture guided by need</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.architecture.description" datatype="html">
+        <source>I consider scale, risks and expected evolution before choosing between a simpler design and a distributed approach.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.quality.title" datatype="html">
+        <source>Quality throughout development</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.quality.description" datatype="html">
+        <source>Testing, security and maintainability are part of implementation from the beginning, not activities left until the end.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.evolution.title" datatype="html">
+        <source>Reliable, incremental evolution</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.principles.evolution.description" datatype="html">
+        <source>I favour small, verifiable improvements that reduce regressions and allow software to evolve with confidence.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.frontend.title" datatype="html">
+        <source>Front-end</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.frontend.angular" datatype="html">
+        <source>Angular and TypeScript</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.frontend.responsive" datatype="html">
+        <source>Responsive web applications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.frontend.rest" datatype="html">
+        <source>REST API integration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.frontend.structure" datatype="html">
+        <source>Component and feature organisation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.frontend.auth" datatype="html">
+        <source>Client-side authentication and authorisation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.backend.title" datatype="html">
+        <source>Back-end</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.backend.java" datatype="html">
+        <source>Java and Spring</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.backend.architectures" datatype="html">
+        <source>Monolithic applications and microservices</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.backend.jwt" datatype="html">
+        <source>JWT authentication and authorisation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.backend.integration" datatype="html">
+        <source>Service integration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.architecture.title" datatype="html">
+        <source>Architecture and integration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.architecture.communication" datatype="html">
+        <source>Synchronous and asynchronous communication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.architecture.messaging" datatype="html">
+        <source>Messaging</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.architecture.discovery" datatype="html">
+        <source>Service discovery and load balancing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.architecture.delivery" datatype="html">
+        <source>Containers and cloud deployment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.quality.title" datatype="html">
+        <source>Quality</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.quality.unit" datatype="html">
+        <source>Unit and integration testing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.quality.system" datatype="html">
+        <source>System and end-to-end testing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.quality.behaviour" datatype="html">
+        <source>Behaviour testing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.quality.regressions" datatype="html">
+        <source>Security and regression prevention</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.capabilities.quality.code" datatype="html">
+        <source>Maintainable code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.systems.title" datatype="html">
+        <source>Systems Analysis and Development</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.systems.description" datatype="html">
+        <source>Undergraduate degree</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.java.title" datatype="html">
+        <source>Java Architecture and Development</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.java.description" datatype="html">
+        <source>Postgraduate qualification</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.biomedicine.title" datatype="html">
+        <source>Biomedicine</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.biomedicine.description" datatype="html">
+        <source>Previous academic background that supports an analytical, responsible and process-oriented approach to professional work.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.seo.title" datatype="html">
+        <source>About Welder Ressutti | Ressutti.dev</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.seo.description" datatype="html">
+        <source>Learn about Welder Ressutti, a full-stack software developer building reliable web applications with Angular, Java and Spring.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.seo.imageAlt" datatype="html">
+        <source>Ressutti.dev portfolio logo.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">134</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.seo.title" datatype="html">
@@ -469,6 +855,55 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
           <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.subtitle" datatype="html">
+        <source>Personal finance management platform.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.shortDescription" datatype="html">
+        <source>A web application for organising income, expenses and financial activity.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.description" datatype="html">
+        <source>A more complete description reserved for the project detail page.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.category" datatype="html">
+        <source>Financial web application</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.role" datatype="html">
+        <source>Full-stack development and product design</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.outcome" datatype="html">
+        <source>Centralised financial records in a clear and maintainable workflow</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="project.data.outro.imageAlt" datatype="html">
+        <source>Outro dashboard showing financial summaries and recent transactions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/data/projects.data.ts</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
     </body>

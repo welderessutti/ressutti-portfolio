@@ -1,1 +1,250 @@
-<p>about works!</p>
+<article class="bg-background">
+  <header class="border-b border-border-light bg-surface-light pb-16 pt-28 md:pb-20 md:pt-32">
+    <div class="container-padding">
+      <div class="max-w-3xl">
+        <h1
+          i18n="@@about.title"
+          class="text-4xl font-bold tracking-tight text-text-primary md:text-5xl"
+        >
+          About
+        </h1>
+
+        <p
+          i18n="@@about.positioning"
+          class="mt-6 text-xl font-medium leading-relaxed text-text-primary md:text-2xl"
+        >
+          Full-stack software developer building reliable applications with Angular, Java and
+          Spring.
+        </p>
+
+        <p
+          i18n="@@about.introduction"
+          class="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg"
+        >
+          I design and develop web applications with a focus on clear architecture, maintainable
+          code and dependable behaviour. My work covers front-end experiences, back-end services and
+          the integration between them, always aiming for solutions that can evolve without
+          unnecessary complexity.
+        </p>
+
+        <p i18n="@@about.location" class="mt-4 text-sm text-text-tertiary">
+          Based in Indaiatuba, São Paulo, Brazil.
+        </p>
+
+        <nav
+          i18n-aria-label="@@about.actions.label"
+          aria-label="About page actions"
+          class="mt-8 flex flex-wrap gap-4"
+        >
+          <a
+            i18n="@@about.actions.projects"
+            [hreflang]="currentLocale"
+            [routerLink]="['/', projectsPath]"
+            class="rounded-lg bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            View projects
+          </a>
+
+          <a
+            i18n="@@about.actions.contact"
+            [hreflang]="currentLocale"
+            [routerLink]="['/', contactPath]"
+            class="rounded-lg border border-border bg-surface px-6 py-3 font-medium text-text-secondary transition-colors hover:bg-surface-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            Contact me
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-padding" aria-labelledby="about-journey-title">
+    <div class="container-padding grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-12">
+      <header>
+        <p
+          i18n="@@about.journey.eyebrow"
+          class="text-sm font-semibold uppercase tracking-wider text-accent"
+        >
+          From analytical rigour to software engineering
+        </p>
+        <h2
+          id="about-journey-title"
+          i18n="@@about.journey.title"
+          class="mt-3 text-3xl font-bold text-text-primary md:text-4xl"
+        >
+          Professional journey
+        </h2>
+      </header>
+
+      <div class="max-w-3xl space-y-5 text-base leading-relaxed text-text-secondary md:text-lg">
+        <p i18n="@@about.journey.paragraph1">
+          Before moving into software development, I spent 11 years working in biomedicine and
+          managing a clinical laboratory. That environment required analytical thinking,
+          responsibility, attention to processes, leadership and consistent decision-making.
+        </p>
+        <p i18n="@@about.journey.paragraph2">
+          I brought those principles into technology. After completing a degree in Systems Analysis
+          and Development and postgraduate studies in Java Architecture and Development, I focused
+          my work on full-stack applications using Angular, Java and Spring. Today, I approach
+          software as a system that should remain understandable, testable and reliable as its
+          requirements evolve.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="section-padding border-y border-border-light bg-surface"
+    aria-labelledby="about-principles-title"
+  >
+    <div class="container-padding">
+      <header class="max-w-3xl">
+        <h2
+          id="about-principles-title"
+          i18n="@@about.principles.title"
+          class="text-3xl font-bold text-text-primary md:text-4xl"
+        >
+          How I work
+        </h2>
+        <p
+          i18n="@@about.principles.introduction"
+          class="mt-4 leading-relaxed text-text-secondary md:text-lg"
+        >
+          Practical principles that guide technical decisions and the way I build software.
+        </p>
+      </header>
+
+      <ul class="mt-10 grid gap-5 md:grid-cols-2">
+        @for (principle of principles; track principle.id) {
+          <li class="rounded-2xl border border-border bg-surface-light p-6 md:p-7">
+            <h3 class="text-lg font-semibold text-text-primary">{{ principle.title }}</h3>
+            <p class="mt-3 leading-relaxed text-text-secondary">{{ principle.description }}</p>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-padding" aria-labelledby="about-capabilities-title">
+    <div class="container-padding">
+      <header class="max-w-3xl">
+        <h2
+          id="about-capabilities-title"
+          i18n="@@about.capabilities.title"
+          class="text-3xl font-bold text-text-primary md:text-4xl"
+        >
+          Core capabilities
+        </h2>
+        <p
+          i18n="@@about.capabilities.introduction"
+          class="mt-4 leading-relaxed text-text-secondary md:text-lg"
+        >
+          Knowledge organised by the role it plays in delivering complete, dependable applications.
+        </p>
+      </header>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        @for (group of skillGroups; track group.id) {
+          <section
+            class="rounded-2xl border border-border bg-surface-light p-6 md:p-7"
+            [attr.aria-labelledby]="'about-capability-' + group.id"
+          >
+            <h3
+              [id]="'about-capability-' + group.id"
+              class="text-xl font-semibold text-text-primary"
+            >
+              {{ group.title }}
+            </h3>
+            <ul class="mt-5 space-y-3">
+              @for (skill of group.skills; track skill) {
+                <li class="flex gap-3 leading-relaxed text-text-secondary">
+                  <span
+                    aria-hidden="true"
+                    class="mt-2.5 size-1.5 shrink-0 rounded-full bg-accent"
+                  ></span>
+                  <span>{{ skill }}</span>
+                </li>
+              }
+            </ul>
+          </section>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="section-padding border-y border-border-light bg-surface-light"
+    aria-labelledby="about-education-title"
+  >
+    <div class="container-padding">
+      <div class="max-w-4xl">
+        <h2
+          id="about-education-title"
+          i18n="@@about.education.title"
+          class="text-3xl font-bold text-text-primary md:text-4xl"
+        >
+          Education
+        </h2>
+
+        <dl class="mt-10 divide-y divide-border">
+          @for (item of education; track item.id) {
+            <div
+              class="grid gap-2 py-6 first:pt-0 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:gap-8"
+            >
+              <dt
+                class="font-semibold"
+                [class.text-text-primary]="!item.secondary"
+                [class.text-text-secondary]="item.secondary"
+              >
+                {{ item.qualification }}
+              </dt>
+              <dd
+                class="leading-relaxed"
+                [class.text-text-secondary]="!item.secondary"
+                [class.text-text-tertiary]="item.secondary"
+              >
+                {{ item.description }}
+              </dd>
+            </div>
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" aria-labelledby="about-cta-title">
+    <div class="container-padding">
+      <div class="rounded-2xl border border-border bg-surface p-6 text-center md:p-10">
+        <h2
+          id="about-cta-title"
+          i18n="@@about.cta.title"
+          class="text-2xl font-semibold text-text-primary md:text-3xl"
+        >
+          See how these principles translate into working software
+        </h2>
+        <p i18n="@@about.cta.description" class="mx-auto mt-4 max-w-2xl text-text-secondary">
+          Explore selected projects or get in touch to discuss an opportunity.
+        </p>
+
+        <div class="mt-7 flex flex-wrap justify-center gap-4">
+          <a
+            i18n="@@about.actions.projects"
+            [hreflang]="currentLocale"
+            [routerLink]="['/', projectsPath]"
+            class="rounded-lg bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            View projects
+          </a>
+          <a
+            i18n="@@about.actions.contact"
+            [hreflang]="currentLocale"
+            [routerLink]="['/', contactPath]"
+            class="rounded-lg border border-border bg-background px-6 py-3 font-medium text-text-secondary transition-colors hover:bg-surface-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            Contact me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
