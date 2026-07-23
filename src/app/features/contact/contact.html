@@ -1,12 +1,12 @@
 <article
-  class="flex-1 first-section-padding border-b border-border-light bg-surface-light"
+  class="flex-1"
   aria-labelledby="contact-page-title"
 >
-  <div class="container-padding">
+  <section class="first-section-padding bg-surface-light border-b border-border-light">
     <div
-      class="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-border bg-surface shadow-lg shadow-black/5 md:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]"
+      class="container-padding mx-auto grid max-w-5xl overflow-hidden md:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]"
     >
-      <header class="p-7 md:p-10 lg:p-12">
+      <header class="pb-7 md:pr-7 md:pb-0 border-b border-border md:border-b-0 md:border-r">
         <p
           i18n="@@contact.eyebrow"
           class="text-sm font-semibold uppercase tracking-wider text-accent"
@@ -24,7 +24,7 @@
           i18n="@@contact.introduction"
           class="mt-5 max-w-xl text-base leading-relaxed text-text-secondary md:text-lg"
         >
-          Have an opportunity, project or idea to discuss? Send me a message.
+          Have an opportunity, project or idea to discuss? Send me a message or find me online.
         </p>
 
         <address class="mt-8 not-italic">
@@ -45,21 +45,20 @@
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            <span class="min-w-0 break-all">{{ contact.email }}</span>
           </a>
         </address>
       </header>
 
-      <section
-        class="flex flex-col justify-center border-t border-border bg-surface-light p-7 md:border-t-0 md:border-l md:p-10"
+      <div
+        class="flex flex-col items-center md:justify-center pt-7 md:pl-7 md:pt-0"
         aria-labelledby="contact-options-title"
       >
         <h2
           id="contact-options-title"
-          i18n="@@contact.options.title"
+          i18n="@@contact.cv.download"
           class="text-lg font-semibold text-text-primary"
         >
-          Find me online
+          Download CV (PDF)
         </h2>
 
         <ul class="mt-5 flex flex-wrap gap-3">
@@ -121,7 +120,7 @@
           </svg>
           <span i18n="@@contact.cv.action">Download CV (PDF)</span>
         </a>
-      </section>
+      </div>
     </div>
-  </div>
+  </section>
 </article>
