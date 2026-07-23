@@ -5,10 +5,12 @@ import { DEFAULT_LOCALE, Locale, SUPPORTED_LOCALES } from '../../shared/i18n/loc
 import { ROUTES } from '../../shared/i18n/routes';
 
 interface ContactChannel {
-  readonly id: 'linkedin' | 'github' | 'whatsapp';
-  readonly label: 'LinkedIn' | 'GitHub' | 'WhatsApp';
+  readonly id: 'email' | 'linkedin' | 'github' | 'whatsapp';
+  readonly label: 'Email' | 'LinkedIn' | 'GitHub' | 'WhatsApp';
   readonly accessibleLabel: string;
-  readonly url: `https://${string}`;
+  readonly url: `mailto:${string}` | `https://${string}`;
+  readonly external: boolean;
+  readonly primary: boolean;
 }
 
 @Component({
@@ -26,22 +28,36 @@ export class Contact {
   protected readonly cvPath = this.contact.cvPath[this.currentLocale];
   protected readonly channels: readonly ContactChannel[] = [
     {
+      id: 'email',
+      label: 'Email',
+      accessibleLabel: $localize`:@@contact.channels.email.label:Send an email`,
+      url: this.contact.emailUrl,
+      external: false,
+      primary: true,
+    },
+    {
       id: 'linkedin',
       label: 'LinkedIn',
       accessibleLabel: $localize`:@@contact.channels.linkedin.label:Open LinkedIn in a new tab`,
       url: this.contact.linkedinUrl,
+      external: true,
+      primary: false,
     },
     {
       id: 'github',
       label: 'GitHub',
       accessibleLabel: $localize`:@@contact.channels.github.label:Open GitHub in a new tab`,
       url: this.contact.githubUrl,
+      external: true,
+      primary: false,
     },
     {
       id: 'whatsapp',
       label: 'WhatsApp',
       accessibleLabel: $localize`:@@contact.channels.whatsapp.label:Open WhatsApp in a new tab`,
       url: this.contact.whatsappUrl,
+      external: true,
+      primary: false,
     },
   ];
 
