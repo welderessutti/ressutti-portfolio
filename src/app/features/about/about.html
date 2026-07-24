@@ -162,14 +162,10 @@
             >
               {{ group.title }}
             </h3>
-            <ul class="mt-5 space-y-3">
+            <ul class="list-disc pl-5 marker:text-accent mt-5 space-y-3 text-text-secondary">
               @for (skill of group.skills; track skill) {
-                <li class="flex gap-3 leading-relaxed text-text-secondary">
-                  <span
-                    aria-hidden="true"
-                    class="mt-2.5 size-1.5 shrink-0 rounded-full bg-accent"
-                  ></span>
-                  <span>{{ skill }}</span>
+                <li>
+                  {{ skill }}
                 </li>
               }
             </ul>

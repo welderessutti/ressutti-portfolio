@@ -1,8 +1,6 @@
 <article class="flex-1" aria-labelledby="contact-page-title">
   <section class="first-section-padding bg-surface-light border-b border-border-light">
-    <div
-      class="container-padding mx-auto grid max-w-5xl overflow-hidden md:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]"
-    >
+    <div class="container-padding mx-auto grid overflow-hidden md:grid-cols-2">
       <header class="pb-7 md:pr-7 md:pb-0 border-b border-border md:border-b-0 md:border-r">
         <p
           i18n="@@contact.eyebrow"
@@ -116,6 +114,63 @@
             </svg>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="section-padding border-b border-border-light bg-surface"
+    aria-labelledby="contact-location-title"
+  >
+    <div class="container-padding">
+      <header>
+        <h2
+          id="contact-location-title"
+          i18n="@@contact.location.title"
+          class="text-3xl font-bold text-text-primary md:text-4xl"
+        >
+          Location
+        </h2>
+
+        <p
+          i18n="@@contact.location.introduction"
+          class="mt-4 leading-relaxed text-text-secondary md:text-lg"
+        >
+          Available for on-site and remote opportunities.
+        </p>
+      </header>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <section aria-labelledby="contact-location-on-site">
+          <h3
+            id="contact-location-on-site"
+            i18n="@@contact.location.onSite.title"
+            class="text-lg font-semibold text-text-primary"
+          >
+            On-site
+          </h3>
+
+          <ul class="list-disc pl-5 marker:text-accent mt-5 space-y-3 text-text-secondary">
+            <li i18n="@@contact.location.onSite.indaiatuba">Indaiatuba, São Paulo, Brazil</li>
+            <li i18n="@@contact.location.onSite.saoPaulo">São Paulo, São Paulo, Brazil</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="contact-location-remote" class="flex flex-col md:items-center">
+          <div>
+            <h3
+              id="contact-location-remote"
+              i18n="@@contact.location.remote.title"
+              class="text-lg font-semibold text-text-primary"
+            >
+              Remote
+            </h3>
+
+            <ul class="list-disc pl-5 marker:text-accent mt-5 space-y-3 text-text-secondary">
+              <li i18n="@@contact.location.remote.availability">Available worldwide</li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   </section>
