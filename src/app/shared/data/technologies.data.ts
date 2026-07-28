@@ -2,103 +2,115 @@ export const TECHNOLOGIES = {
   java: {
     id: 'java',
     name: 'Java',
-    icon: '/assets/icons/technologies/java.svg',
+    icon: '/icons/stacks/java.svg',
   },
 
   spring: {
     id: 'spring',
     name: 'Spring',
-    icon: '/assets/icons/technologies/spring.svg',
+    icon: '/icons/stacks/spring.svg',
   },
 
   angular: {
     id: 'angular',
     name: 'Angular',
-    icon: '/assets/icons/technologies/angular.svg',
+    icon: '/icons/stacks/angular.svg',
   },
 
   typescript: {
     id: 'typescript',
     name: 'TypeScript',
-    icon: '/assets/icons/technologies/typescript.svg',
+    icon: '/icons/stacks/typescript.svg',
   },
 
   javascript: {
     id: 'javascript',
     name: 'JavaScript',
-    icon: '/assets/icons/technologies/javascript.svg',
+    icon: '/icons/stacks/javascript.svg',
   },
 
-  tailwindCss: {
+  tailwindcss: {
     id: 'tailwind-css',
     name: 'Tailwind CSS',
-    icon: '/assets/icons/technologies/tailwindcss.svg',
+    icon: '/icons/stacks/tailwindcss.svg',
   },
 
-  html: {
-    id: 'html',
-    name: 'HTML',
-    icon: '/assets/icons/technologies/html.svg',
+  html5: {
+    id: 'html5',
+    name: 'HTML5',
+    icon: '/icons/stacks/html5.svg',
   },
 
-  css: {
-    id: 'css',
-    name: 'CSS',
-    icon: '/assets/icons/technologies/css.svg',
+  css3: {
+    id: 'css3',
+    name: 'CSS3',
+    icon: '/icons/stacks/css3.svg',
   },
 
-  nodeJs: {
+  nodejs: {
     id: 'nodejs',
     name: 'Node.js',
-    icon: '/assets/icons/technologies/nodejs.svg',
+    icon: '/icons/stacks/nodejs.svg',
   },
 
   mongodb: {
     id: 'mongodb',
     name: 'MongoDB',
-    icon: '/assets/icons/technologies/mongodb.svg',
+    icon: '/icons/stacks/mongodb.svg',
   },
 
   mysql: {
     id: 'mysql',
     name: 'MySQL',
-    icon: '/assets/icons/technologies/mysql.svg',
+    icon: '/icons/stacks/mysql.svg',
   },
 
   postgresql: {
     id: 'postgresql',
     name: 'PostgreSQL',
-    icon: '/assets/icons/technologies/postgresql.svg',
+    icon: '/icons/stacks/postgresql.svg',
+  },
+
+  redis: {
+    id: 'redis',
+    name: 'redis',
+    icon: '/icons/stacks/redis.svg',
   },
 
   docker: {
     id: 'docker',
     name: 'Docker',
-    icon: '/assets/icons/technologies/docker.svg',
+    icon: '/icons/stacks/docker.svg',
   },
 
-  kubernetes: {
-    id: 'kubernetes',
-    name: 'Kubernetes',
-    icon: '/assets/icons/technologies/kubernetes.svg',
+  git: {
+    id: 'git',
+    name: 'Git',
+    icon: '/icons/stacks/git.svg',
+  },
+
+  github: {
+    id: 'github',
+    name: 'GitHub',
+    icon: '/icons/stacks/github.svg',
   },
 
   aws: {
     id: 'aws',
     name: 'AWS',
-    icon: '/assets/icons/technologies/aws.svg',
+    icon: '/icons/stacks/amazonwebservices.svg',
   },
 
   azure: {
     id: 'azure',
     name: 'Azure',
-    icon: '/assets/icons/technologies/azure.svg',
+    icon: '/icons/stacks/azure.svg',
   },
 
   gcp: {
     id: 'gcp',
     name: 'Google Cloud',
-    icon: '/assets/icons/technologies/gcp.svg',
+    icon: '/icons/stacks/googlecloud.svg',
   },
 } as const;
 

@@ -1,8 +1,8 @@
 import { Locale } from '../i18n/locales';
 
 export interface Nav {
-  id: string;
-  label: string;
-  path: string;
-  locale: Locale;
+  readonly id: string;
+  readonly label: string;
+  readonly path: string;
+  readonly locale: Locale;
 }

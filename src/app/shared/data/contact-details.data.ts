@@ -10,7 +10,7 @@ export const CONTACT_DETAILS: ContactDetails = {
   whatsappNumber: '+55 19 99808-5588',
   whatsappUrl: 'https://wa.me/5519998085588',
   cvPath: {
-    [LOCALES.enGB]: '/documents/welder-ressutti-cv-en-gb.pdf',
-    [LOCALES.ptBR]: '/documents/welder-ressutti-cv-pt-br.pdf',
+    [LOCALES.enGB]: '/public/documents/Welder Ressutti - EN.pdf',
+    [LOCALES.ptBR]: '/public/documents/Welder Ressutti - EN.pdf',
   },
 };

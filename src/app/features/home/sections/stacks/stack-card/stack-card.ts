@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Stack } from '../stack.model';
+import { Stack } from '../../../../../shared/models/stack.model';
 
 @Component({
   selector: 'app-stack-card',

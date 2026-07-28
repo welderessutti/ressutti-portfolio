@@ -16,16 +16,16 @@ export const PROJECTS: Project[] = [
     outcomeSummary: $localize`:@@project.data.glicare.outcome:Improved patient engagement and health outcomes through effective glucose monitoring`,
     imageAlt: $localize`:@@project.data.glicare.imageAlt:Glicare dashboard showing glucose levels and health metrics`,
 
-    coverImage: '/assets/images/projects/glicare-cover.webp',
+    coverImage: '/images/projects/1785012012152.png',
     coverWidth: 1600,
     coverHeight: 900,
-    seoImage: '/assets/images/seo/projects/glicare.webp',
+    seoImage: '/images/seo/projects/1785012012152.png',
 
     technologies: [
       TECHNOLOGIES.angular,
       TECHNOLOGIES.typescript,
-      TECHNOLOGIES.tailwindCss,
-      TECHNOLOGIES.nodeJs,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.nodejs,
       TECHNOLOGIES.java,
       TECHNOLOGIES.spring,
       TECHNOLOGIES.postgresql,
@@ -54,10 +54,10 @@ export const PROJECTS: Project[] = [
     outcomeSummary: $localize`:@@project.data.deedscash.outcome:Centralised financial records in a clear and maintainable workflow`,
     imageAlt: $localize`:@@project.data.deedscash.imageAlt:DeedsCash dashboard showing financial summaries and recent transactions`,
 
-    coverImage: '/assets/images/projects/deedscash-cover.webp',
+    coverImage: '/images/projects/ChatGPT Image Jul 27, 2026, 04_12_21 PM.png',
     coverWidth: 1600,
     coverHeight: 900,
-    seoImage: '/assets/images/seo/projects/deedscash.webp',
+    seoImage: '/images/seo/projects/ChatGPT Image Jul 27, 2026, 04_12_21 PM.png',
 
     technologies: [
       TECHNOLOGIES.angular,
@@ -90,10 +90,10 @@ export const PROJECTS: Project[] = [
     outcomeSummary: $localize`:@@project.data.outro.outcome:Centralised financial records in a clear and maintainable workflow`,
     imageAlt: $localize`:@@project.data.outro.imageAlt:Outro dashboard showing financial summaries and recent transactions`,
 
-    coverImage: '/assets/images/projects/outro-cover.webp',
+    coverImage: '/images/projects/Sleek 3D metallic logo design.png',
     coverWidth: 1600,
     coverHeight: 900,
-    seoImage: '/assets/images/seo/projects/outro.webp',
+    seoImage: '/images/seo/projects/Sleek 3D metallic logo design.png',
 
     technologies: [
       TECHNOLOGIES.angular,
