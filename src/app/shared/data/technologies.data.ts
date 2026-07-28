@@ -11,26 +11,50 @@ export const TECHNOLOGIES = {
     icon: '/icons/stacks/spring.svg',
   },
 
+  kotlin: {
+    id: 'kotlin',
+    name: 'Kotlin',
+    icon: '/icons/stacks/kotlin.svg',
+  },
+
+  rabbitMq: {
+    id: 'rabbitMq',
+    name: 'RabbitMQ',
+    icon: '/icons/stacks/rabbitmq.svg',
+  },
+
+  jUnit: {
+    id: 'jUnit',
+    name: 'JUnit',
+    icon: '/icons/stacks/junit.svg',
+  },
+
+  cucumber: {
+    id: 'cucumber',
+    name: 'Cucumber',
+    icon: '/icons/stacks/cucumber.svg',
+  },
+
   angular: {
     id: 'angular',
     name: 'Angular',
     icon: '/icons/stacks/angular.svg',
   },
 
-  typescript: {
-    id: 'typescript',
+  typeScript: {
+    id: 'typeScript',
     name: 'TypeScript',
     icon: '/icons/stacks/typescript.svg',
   },
 
-  javascript: {
-    id: 'javascript',
+  javaScript: {
+    id: 'javaScript',
     name: 'JavaScript',
     icon: '/icons/stacks/javascript.svg',
   },
 
-  tailwindcss: {
-    id: 'tailwind-css',
+  tailwindCss: {
+    id: 'tailwindCss',
     name: 'Tailwind CSS',
     icon: '/icons/stacks/tailwindcss.svg',
   },
@@ -53,27 +77,27 @@ export const TECHNOLOGIES = {
     icon: '/icons/stacks/nodejs.svg',
   },
 
-  mongodb: {
-    id: 'mongodb',
+  mongoDb: {
+    id: 'mongoDb',
     name: 'MongoDB',
     icon: '/icons/stacks/mongodb.svg',
   },
 
-  mysql: {
-    id: 'mysql',
+  mySql: {
+    id: 'mySql',
     name: 'MySQL',
     icon: '/icons/stacks/mysql.svg',
   },
 
-  postgresql: {
-    id: 'postgresql',
+  postgreSql: {
+    id: 'postgreSql',
     name: 'PostgreSQL',
     icon: '/icons/stacks/postgresql.svg',
   },
 
   redis: {
     id: 'redis',
-    name: 'redis',
+    name: 'Redis',
     icon: '/icons/stacks/redis.svg',
   },
 
@@ -89,10 +113,16 @@ export const TECHNOLOGIES = {
     icon: '/icons/stacks/git.svg',
   },
 
-  github: {
-    id: 'github',
+  gitHub: {
+    id: 'gitHub',
     name: 'GitHub',
     icon: '/icons/stacks/github.svg',
+  },
+
+  gitHubActions: {
+    id: 'gitHubActions',
+    name: 'GitHub Actions',
+    icon: '/icons/stacks/githubactions.svg',
   },
 
   aws: {
@@ -111,6 +141,84 @@ export const TECHNOLOGIES = {
     id: 'gcp',
     name: 'Google Cloud',
     icon: '/icons/stacks/googlecloud.svg',
+  },
+
+  figma: {
+    id: 'figma',
+    name: 'Figma',
+    icon: '/icons/stacks/figma.svg',
+  },
+
+  gimp: {
+    id: 'gimp',
+    name: 'Gimp',
+    icon: '/icons/stacks/gimp.svg',
+  },
+
+  linux: {
+    id: 'linux',
+    name: 'Linux',
+    icon: '/icons/stacks/linux.svg',
+  },
+
+  windows: {
+    id: 'windows',
+    name: 'Windows',
+    icon: '/icons/stacks/windows11.svg',
+  },
+
+  android: {
+    id: 'android',
+    name: 'Android',
+    icon: '/icons/stacks/android.svg',
+  },
+
+  visualStudioCode: {
+    id: 'visualStudioCode',
+    name: 'Visual Studio Code',
+    icon: '/icons/stacks/vscode.svg',
+  },
+
+  intelliJ: {
+    id: 'intelliJ',
+    name: 'IntelliJ',
+    icon: '/icons/stacks/intellij.svg',
+  },
+
+  androidStudio: {
+    id: 'androidStudio',
+    name: 'Android Studio',
+    icon: '/icons/stacks/androidstudio.svg',
+  },
+
+  insomnia: {
+    id: 'insomnia',
+    name: 'Insomnia',
+    icon: '/icons/stacks/insomnia.svg',
+  },
+
+  postman: {
+    id: 'postman',
+    name: 'Postman',
+    icon: '/icons/stacks/postman.svg',
+  },
+
+  nanoBanana: {
+    id: 'nanoBanana',
+    name: 'Nano Banana',
+    icon: '/icons/stacks/nanobanana.svg',
+  },
+
+  claudeCode: {
+    id: 'claudeCode',
+    name: 'Claude Code',
+    icon: '/icons/stacks/claude.svg',
+  },
+
+  Codex: {
+    id: 'codex',
+    name: 'Codex',
+    icon: '/icons/stacks/codex.svg',
   },
 } as const;
 

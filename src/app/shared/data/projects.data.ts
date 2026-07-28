@@ -23,12 +23,12 @@ export const PROJECTS: Project[] = [
 
     technologies: [
       TECHNOLOGIES.angular,
-      TECHNOLOGIES.typescript,
-      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.typeScript,
+      TECHNOLOGIES.tailwindCss,
       TECHNOLOGIES.nodejs,
       TECHNOLOGIES.java,
       TECHNOLOGIES.spring,
-      TECHNOLOGIES.postgresql,
+      TECHNOLOGIES.postgreSql,
       TECHNOLOGIES.docker,
       TECHNOLOGIES.aws,
     ],
@@ -61,10 +61,10 @@ export const PROJECTS: Project[] = [
 
     technologies: [
       TECHNOLOGIES.angular,
-      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.typeScript,
       TECHNOLOGIES.java,
       TECHNOLOGIES.spring,
-      TECHNOLOGIES.mysql,
+      TECHNOLOGIES.mySql,
       TECHNOLOGIES.docker,
       TECHNOLOGIES.azure,
     ],
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
 
     technologies: [
       TECHNOLOGIES.angular,
-      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.typeScript,
       TECHNOLOGIES.java,
       TECHNOLOGIES.spring,
     ],
