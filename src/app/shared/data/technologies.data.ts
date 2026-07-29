@@ -1,224 +1,226 @@
+const PATH = 'icons/stacks/';
+
 export const TECHNOLOGIES = {
   java: {
     id: 'java',
     name: 'Java',
-    icon: '/icons/stacks/java.svg',
+    icon: `${PATH}java.svg`,
   },
 
   spring: {
     id: 'spring',
     name: 'Spring',
-    icon: '/icons/stacks/spring.svg',
+    icon: `${PATH}spring.svg`,
   },
 
   kotlin: {
     id: 'kotlin',
     name: 'Kotlin',
-    icon: '/icons/stacks/kotlin.svg',
+    icon: `${PATH}kotlin.svg`,
   },
 
   rabbitMq: {
     id: 'rabbitMq',
     name: 'RabbitMQ',
-    icon: '/icons/stacks/rabbitmq.svg',
+    icon: `${PATH}rabbitmq.svg`,
   },
 
   jUnit: {
     id: 'jUnit',
     name: 'JUnit',
-    icon: '/icons/stacks/junit.svg',
+    icon: `${PATH}junit.svg`,
   },
 
   cucumber: {
     id: 'cucumber',
     name: 'Cucumber',
-    icon: '/icons/stacks/cucumber.svg',
+    icon: `${PATH}cucumber.svg`,
   },
 
   angular: {
     id: 'angular',
     name: 'Angular',
-    icon: '/icons/stacks/angular.svg',
+    icon: `${PATH}angular.svg`,
   },
 
   typeScript: {
     id: 'typeScript',
     name: 'TypeScript',
-    icon: '/icons/stacks/typescript.svg',
+    icon: `${PATH}typescript.svg`,
   },
 
   javaScript: {
     id: 'javaScript',
     name: 'JavaScript',
-    icon: '/icons/stacks/javascript.svg',
+    icon: `${PATH}javascript.svg`,
   },
 
   tailwindCss: {
     id: 'tailwindCss',
     name: 'Tailwind CSS',
-    icon: '/icons/stacks/tailwindcss.svg',
+    icon: `${PATH}tailwindcss.svg`,
   },
 
   html5: {
     id: 'html5',
     name: 'HTML5',
-    icon: '/icons/stacks/html5.svg',
+    icon: `${PATH}html5.svg`,
   },
 
   css3: {
     id: 'css3',
     name: 'CSS3',
-    icon: '/icons/stacks/css3.svg',
+    icon: `${PATH}css3.svg`,
   },
 
   nodejs: {
     id: 'nodejs',
     name: 'Node.js',
-    icon: '/icons/stacks/nodejs.svg',
+    icon: `${PATH}nodejs.svg`,
   },
 
   mongoDb: {
     id: 'mongoDb',
     name: 'MongoDB',
-    icon: '/icons/stacks/mongodb.svg',
+    icon: `${PATH}mongodb.svg`,
   },
 
   mySql: {
     id: 'mySql',
     name: 'MySQL',
-    icon: '/icons/stacks/mysql.svg',
+    icon: `${PATH}mysql.svg`,
   },
 
   postgreSql: {
     id: 'postgreSql',
     name: 'PostgreSQL',
-    icon: '/icons/stacks/postgresql.svg',
+    icon: `${PATH}postgresql.svg`,
   },
 
   redis: {
     id: 'redis',
     name: 'Redis',
-    icon: '/icons/stacks/redis.svg',
+    icon: `${PATH}redis.svg`,
   },
 
   docker: {
     id: 'docker',
     name: 'Docker',
-    icon: '/icons/stacks/docker.svg',
+    icon: `${PATH}docker.svg`,
   },
 
   git: {
     id: 'git',
     name: 'Git',
-    icon: '/icons/stacks/git.svg',
+    icon: `${PATH}git.svg`,
   },
 
   gitHub: {
     id: 'gitHub',
     name: 'GitHub',
-    icon: '/icons/stacks/github.svg',
+    icon: `${PATH}github.svg`,
   },
 
   gitHubActions: {
     id: 'gitHubActions',
     name: 'GitHub Actions',
-    icon: '/icons/stacks/githubactions.svg',
+    icon: `${PATH}githubactions.svg`,
   },
 
   aws: {
     id: 'aws',
     name: 'AWS',
-    icon: '/icons/stacks/amazonwebservices.svg',
+    icon: `${PATH}amazonwebservices.svg`,
   },
 
   azure: {
     id: 'azure',
     name: 'Azure',
-    icon: '/icons/stacks/azure.svg',
+    icon: `${PATH}azure.svg`,
   },
 
   gcp: {
     id: 'gcp',
     name: 'Google Cloud',
-    icon: '/icons/stacks/googlecloud.svg',
+    icon: `${PATH}googlecloud.svg`,
   },
 
   figma: {
     id: 'figma',
     name: 'Figma',
-    icon: '/icons/stacks/figma.svg',
+    icon: `${PATH}figma.svg`,
   },
 
   gimp: {
     id: 'gimp',
     name: 'Gimp',
-    icon: '/icons/stacks/gimp.svg',
+    icon: `${PATH}gimp.svg`,
   },
 
   linux: {
     id: 'linux',
     name: 'Linux',
-    icon: '/icons/stacks/linux.svg',
+    icon: `${PATH}linux.svg`,
   },
 
   windows: {
     id: 'windows',
     name: 'Windows',
-    icon: '/icons/stacks/windows11.svg',
+    icon: `${PATH}windows11.svg`,
   },
 
   android: {
     id: 'android',
     name: 'Android',
-    icon: '/icons/stacks/android.svg',
+    icon: `${PATH}android.svg`,
   },
 
   visualStudioCode: {
     id: 'visualStudioCode',
     name: 'Visual Studio Code',
-    icon: '/icons/stacks/vscode.svg',
+    icon: `${PATH}vscode.svg`,
   },
 
   intelliJ: {
     id: 'intelliJ',
     name: 'IntelliJ',
-    icon: '/icons/stacks/intellij.svg',
+    icon: `${PATH}intellij.svg`,
   },
 
   androidStudio: {
     id: 'androidStudio',
     name: 'Android Studio',
-    icon: '/icons/stacks/androidstudio.svg',
+    icon: `${PATH}androidstudio.svg`,
   },
 
   insomnia: {
     id: 'insomnia',
     name: 'Insomnia',
-    icon: '/icons/stacks/insomnia.svg',
+    icon: `${PATH}insomnia.svg`,
   },
 
   postman: {
     id: 'postman',
     name: 'Postman',
-    icon: '/icons/stacks/postman.svg',
+    icon: `${PATH}postman.svg`,
   },
 
   nanoBanana: {
     id: 'nanoBanana',
     name: 'Nano Banana',
-    icon: '/icons/stacks/nanobanana.svg',
+    icon: `${PATH}nanobanana.svg`,
   },
 
   claudeCode: {
     id: 'claudeCode',
     name: 'Claude Code',
-    icon: '/icons/stacks/claude.svg',
+    icon: `${PATH}claude.svg`,
   },
 
   Codex: {
     id: 'codex',
     name: 'Codex',
-    icon: '/icons/stacks/codex.svg',
+    icon: `${PATH}codex.svg`,
   },
 } as const;
 

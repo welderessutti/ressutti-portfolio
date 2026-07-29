@@ -5,23 +5,7 @@
     class="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-accent transition"
   >
     <!-- Flag -->
-    <span>
-      @if (currentLang() === LOCALES.ptBR) {
-        🇧🇷
-      } @else {
-        🇬🇧
-      }
-    </span>
-
-    <!-- Label -->
-    <span>
-      @if (currentLang() === LOCALES.ptBR) {
-        PT
-      } @else {
-        EN
-      }
-    </span>
-
+    <img [src]="currentFlag()" [alt]="currentLang()" class="w-6 h-6 object-contain" />
     <!-- Arrow -->
     <svg
       class="w-4 h-4 transition-transform"
@@ -51,7 +35,8 @@
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
       [class.bg-surface-hover]="currentLang() === LOCALES.ptBR"
     >
-      🇧🇷 Português
+      <img src="icons/flags/pt-BR.svg" alt="pt-BR" class="w-6 h-6 object-contain" />
+      <span>Português</span>
     </a>
 
     <!-- EN -->
@@ -62,7 +47,8 @@
       class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
       [class.bg-surface-hover]="currentLang() === LOCALES.enGB"
     >
-      🇬🇧 English
+      <img src="icons/flags/en-GB.svg" alt="en-GB" class="w-6 h-6 object-contain" />
+      <span>English</span>
     </a>
   </div>
 </div>

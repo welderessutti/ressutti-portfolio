@@ -22,6 +22,7 @@ export class LanguageSwitcher implements OnInit {
   protected readonly isOpen = signal(false);
   protected readonly ptBRSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.ptBR));
   protected readonly enGBSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.enGB));
+  protected readonly currentFlag = computed(() => `icons/flags/${this.currentLang()}.svg`);
 
   public ngOnInit() {
     const lang = this.document.documentElement.lang as Locale;
