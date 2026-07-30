@@ -10,30 +10,30 @@ import { AboutDefinition } from './about.definition.model';
 })
 export class About {
   protected readonly highlights: string[] = [
-    $localize`:@@home.about.main.highlights.0:Focus on performance and scalability`,
-    $localize`:@@home.about.main.highlights.1:Clean code and best practices`,
-    $localize`:@@home.about.main.highlights.2:Experience with web applications`,
+    $localize`:@@home.about.main.highlights.0:Analytical and solution-oriented mindset`,
+    $localize`:@@home.about.main.highlights.1:Quality throughout the development process`,
+    $localize`:@@home.about.main.highlights.2:Experience building end-to-end web applications`,
   ];
   protected readonly definitions: AboutDefinition[] = [
     {
       id: '1',
       term: $localize`:@@home.about.card.definitions.term1:Main stack`,
-      description: $localize`:@@home.about.card.definitions.description1:Angular, Java`,
+      description: $localize`:@@home.about.card.definitions.description1:Angular | Spring`,
     },
     {
       id: '2',
-      term: $localize`:@@home.about.card.definitions.term2:Focus`,
-      description: $localize`:@@home.about.card.definitions.description2:Modern frontend`,
+      term: $localize`:@@home.about.card.definitions.term2:Expertise`,
+      description: $localize`:@@home.about.card.definitions.description2:Full-stack web development`,
     },
     {
       id: '3',
       term: $localize`:@@home.about.card.definitions.term3:Experience`,
-      description: $localize`:@@home.about.card.definitions.description3:Personal projects and continuous learning`,
+      description: $localize`:@@home.about.card.definitions.description3:Freelance work | Independent projects`,
     },
     {
       id: '4',
       term: $localize`:@@home.about.card.definitions.term4:Location`,
-      description: $localize`:@@home.about.card.definitions.description4:Indaiatuba, SP - Brazil`,
+      description: $localize`:@@home.about.card.definitions.description4:Indaiatuba | São Paulo | Worldwide`,
     },
   ];
 }
