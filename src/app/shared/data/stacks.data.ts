@@ -3,14 +3,14 @@ import { TECHNOLOGIES } from '../data/technologies.data';
 
 export const STACKS: Stack[] = [
   {
-    id: 'frontend',
-    category: 'Frontend',
+    id: 'front-end',
+    category: 'Front-end',
     technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.typeScript, TECHNOLOGIES.tailwindCss],
   },
 
   {
-    id: 'backend',
-    category: 'Backend',
+    id: 'back-end',
+    category: 'Back-end',
     technologies: [TECHNOLOGIES.spring, TECHNOLOGIES.java, TECHNOLOGIES.kotlin],
   },
 

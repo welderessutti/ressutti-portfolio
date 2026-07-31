@@ -1,14 +1,22 @@
-<div class="bg-surface p-5 flex flex-col h-full gap-4 rounded-lg border border-border">
-  <h3 class="text-lg font-semibold text-text-primary">
+<div
+  class="bg-surface flex items-center xs:items-start h-full flex-col gap-4 rounded-lg border border-border p-5"
+>
+  <h3 class="text-lg font-semibold break-words text-text-primary text-center xs:text-start">
     {{ stack().category }}
   </h3>
 
-  <ul class="flex flex-col gap-3">
+  <ul class="flex flex-col items-center xs:items-start gap-3">
     @for (technology of stack().technologies; track technology.id) {
       <li>
-        <div class="flex gap-2 px-3 py-2 hover:scale-105 transition-all duration-300">
-          <img [src]="technology.icon" [alt]="technology.name" class="w-5 h-5 object-contain" />
-          <span class="text-sm text-text-secondary">
+        <div
+          class="flex flex-col xs:flex-row items-center xs:items-start gap-2 rounded-md p-2 transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            [src]="technology.icon"
+            [alt]="technology.name"
+            class="h-5 w-5 shrink-0 object-contain"
+          />
+          <span class="min-w-0 break-words text-sm text-text-secondary text-center xs:text-start">
             {{ technology.name }}
           </span>
         </div>
