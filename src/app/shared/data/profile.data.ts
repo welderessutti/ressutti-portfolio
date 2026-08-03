@@ -1,7 +1,7 @@
 import { LOCALES } from '../i18n/locales';
-import { ContactDetails } from '../models/contact-details.model';
+import { Profile } from '../models/profile.model';
 
-export const CONTACT_DETAILS: ContactDetails = {
+export const PROFILE: Profile = {
   name: 'Welder Ressutti',
   email: 'welderessutti@gmail.com',
   emailUrl: 'mailto:welderessutti@gmail.com',
@@ -10,7 +10,7 @@ export const CONTACT_DETAILS: ContactDetails = {
   whatsappNumber: '+55 19 99808-5588',
   whatsappUrl: 'https://wa.me/5519998085588',
   cvPath: {
-    [LOCALES.enGB]: '/public/documents/Welder Ressutti - EN.pdf',
-    [LOCALES.ptBR]: '/public/documents/Welder Ressutti - EN.pdf',
+    [LOCALES.enGB]: '/documents/Welder Ressutti - EN.pdf',
+    [LOCALES.ptBR]: '/documents/Welder Ressutti - EN.pdf',
   },
 };

@@ -1,5 +1,5 @@
 import { Technology } from '../data/technologies.data';
-import { ProjectStatus } from '../types/project-status.type';
+import { ProjectStatusType } from '../types/project-status.type';
 
 export interface ProjectPeriod {
   readonly startYear: number;
@@ -30,7 +30,7 @@ export interface Project {
   readonly repositoryUrl?: string;
   readonly liveUrl?: string;
 
-  readonly status: ProjectStatus;
+  readonly status: ProjectStatusType;
   readonly period: ProjectPeriod;
   readonly featured: boolean;
 }

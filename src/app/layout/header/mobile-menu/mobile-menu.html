@@ -9,29 +9,49 @@
 ></div>
 
 <!-- Drawer -->
-<div
+<section
+  aria-labelledby="mobile-menu"
   id="mobile-menu"
   class="fixed top-0 right-0 h-full pt-24 w-[min(100%,320px)] flex flex-col bg-surface-light z-40 shadow-2xl transform transition-transform duration-300 ease-in-out"
   [class.translate-x-0]="isOpen()"
   [class.translate-x-full]="!isOpen()"
 >
-  <nav class="flex flex-col h-full px-6 gap-6">
-    <!-- Links -->
-    <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
-      @for (nav of navs(); track nav.id) {
-        <li>
-          <a
-            [hreflang]="nav.locale"
-            [routerLink]="['/', nav.path]"
-            routerLinkActive="text-accent"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="onClose()"
-            class="hover:text-accent transition"
-          >
-            {{ nav.label }}
-          </a>
-        </li>
-      }
-    </ul>
-  </nav>
-</div>
+  <div class="flex flex-col px-6">
+    <nav>
+      <!-- Links -->
+      <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
+        @for (nav of navs(); track nav.id) {
+          <li>
+            <a
+              [hreflang]="nav.locale"
+              [routerLink]="['/', nav.path]"
+              routerLinkActive="text-accent"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="onClose()"
+              class="hover:text-accent transition"
+            >
+              {{ nav.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <section aria-labelledby="mobile-menu-contact-menu" class="mt-10">
+      <ul class="flex flex-col gap-2 text-sm text-text-secondary">
+        @for (contact of contacts(); track contact.id) {
+          <li>
+            <a
+              [href]="contact.url"
+              [attr.aria-label]="contact.accessibleLabel"
+              [attr.target]="contact.external ? '_blank' : null"
+              [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+              class="flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition"
+              ><app-svg [contact]="contact.id" /> <span>{{ contact.label }}</span></a
+            >
+          </li>
+        }
+      </ul>
+    </section>
+  </div>
+</section>

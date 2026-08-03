@@ -1,6 +1,6 @@
 import { Locale } from '../i18n/locales';
 
-export interface ContactDetails {
+export interface Profile {
   readonly name: string;
   readonly email: string;
   readonly emailUrl: `mailto:${string}`;

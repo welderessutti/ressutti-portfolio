@@ -12,6 +12,7 @@ import { MobileMenu } from './mobile-menu/mobile-menu';
 import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { NavService } from '../../core/services/nav/nav.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ContactService } from '../../core/services/contact/contact.service';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Header implements OnInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly document = inject(DOCUMENT);
-  protected readonly nav = inject(NavService);
+  private readonly nav = inject(NavService);
+  private readonly contact = inject(ContactService);
+  protected readonly navs = this.nav.navs;
+  protected readonly contacts = this.contact.contacts;
   protected readonly isMenuOpen = signal(false);
   protected readonly isDarkMode = signal(false);
 

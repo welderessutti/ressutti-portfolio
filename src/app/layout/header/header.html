@@ -4,8 +4,8 @@
   <nav class="container-padding py-3 lg:py-4 flex items-center justify-between">
     <!-- Logo -->
     <a
-      [hreflang]="nav.navs[0].locale"
-      [routerLink]="['/', nav.navs[0].path]"
+      [hreflang]="navs[0].locale"
+      [routerLink]="['/', navs[0].path]"
       class="text-xl font-bold text-text-primary hover:opacity-80 transition"
     >
       Ressutti.dev
@@ -14,7 +14,7 @@
     <div class="flex items-center justify-between gap-8">
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
-        @for (nav of nav.navs; track nav.id) {
+        @for (nav of navs; track nav.id) {
           <li>
             <a
               [hreflang]="nav.locale"
@@ -106,4 +106,9 @@
     </div>
   </nav>
 </header>
-<app-mobile-menu [isOpen]="isMenuOpen()" [navs]="nav.navs" (closeMenu)="closeMenu()" />
+<app-mobile-menu
+  [isOpen]="isMenuOpen()"
+  [navs]="navs"
+  [contacts]="contacts"
+  (closeMenu)="closeMenu()"
+/>

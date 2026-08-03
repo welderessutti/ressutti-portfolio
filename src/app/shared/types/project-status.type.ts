@@ -1,1 +1,1 @@
-export type ProjectStatus = 'completed' | 'in-progress' | 'maintained' | 'archived';
+export type ProjectStatusType = 'completed' | 'in-progress' | 'maintained' | 'archived';
