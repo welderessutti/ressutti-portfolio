@@ -3,10 +3,11 @@ import { SeoService } from '../../core/services/seo/seo.service';
 import { ROUTES } from '../../shared/i18n/routes';
 import { ContactService } from '../../core/services/contact/contact.service';
 import { Svg } from '../../shared/icons/svg/svg';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 @Component({
   selector: 'app-contact',
-  imports: [Svg],
+  imports: [Svg, RevealOnScroll],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })

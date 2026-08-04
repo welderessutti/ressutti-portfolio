@@ -1,9 +1,7 @@
 <article
-  class="group flex flex-col md:flex-row overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/40 focus-within:border-accent"
+  class="group flex flex-col h-full md:flex-row overflow-hidden rounded-xl border border-border bg-surface hover:border-accent/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-within:*"
 >
-  <div
-    class="flex shrink-0 items-center justify-center p-3 md:w-1/3 md:p-4"
-  >
+  <div class="flex shrink-0 items-center justify-center p-3 overflow-hidden md:w-1/3 md:p-4">
     <img
       [src]="project().coverImage"
       [alt]="project().imageAlt"
@@ -11,7 +9,7 @@
       [height]="project().coverHeight"
       loading="lazy"
       decoding="async"
-      class="block aspect-video w-full bg-black/10 object-contain shadow-lg"
+      class="block aspect-video w-full bg-black/10 object-contain shadow-lg transition-transform duration-500 group-hover:scale-105"
     />
   </div>
 
@@ -66,7 +64,9 @@
     </dl>
 
     <div class="mt-auto flex flex-wrap items-center gap-x-5">
-      <a [routerLink]="[project().slug]" class="font-medium text-accent hover:underline"> View details </a>
+      <a [routerLink]="[project().slug]" class="font-medium text-accent hover:underline">
+        View details
+      </a>
 
       @if (project().liveUrl) {
         <a

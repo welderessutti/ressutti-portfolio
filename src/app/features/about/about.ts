@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { SeoService } from '../../core/services/seo/seo.service';
 import { Locale } from '../../shared/i18n/locales';
 import { ROUTES } from '../../shared/i18n/routes';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 interface ProfessionalPrinciple {
   readonly id: string;
@@ -25,7 +26,7 @@ interface EducationItem {
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink],
+  imports: [RouterLink, RevealOnScroll],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })

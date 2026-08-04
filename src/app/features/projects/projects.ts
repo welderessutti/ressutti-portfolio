@@ -5,10 +5,11 @@ import { SeoService } from '../../core/services/seo/seo.service';
 import { ProjectListCard } from './project-list-card/project-list-card';
 import { Locale } from '../../shared/i18n/locales';
 import { ROUTES } from '../../shared/i18n/routes';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectListCard, RouterLink],
+  imports: [ProjectListCard, RouterLink, RevealOnScroll],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
