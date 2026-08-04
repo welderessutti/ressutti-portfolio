@@ -19,7 +19,7 @@
         </p>
       </header>
 
-      <ul class="grid auto-rows-fr gap-6 lg:grid-cols-2 lg:gap-8">
+      <ul class="flex flex-col gap-6">
         @for (project of projects; track project.id) {
           <li>
             <app-project-list-card [project]="project" />
@@ -31,10 +31,7 @@
 
   <section class="section-padding bg-surface flex-1">
     <div class="container-padding">
-      <aside
-        class="text-center"
-        aria-labelledby="projects-contact-title"
-      >
+      <aside class="text-center" aria-labelledby="projects-contact-title">
         <h2
           id="projects-contact-title"
           i18n="@@projects.contact.title"
