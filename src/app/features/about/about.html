@@ -27,34 +27,6 @@
           the integration between them, always aiming for solutions that can evolve without
           unnecessary complexity.
         </p>
-
-        <p i18n="@@about.location" class="mt-4 text-sm text-text-tertiary">
-          Based in Indaiatuba, São Paulo, Brazil.
-        </p>
-
-        <nav
-          i18n-aria-label="@@about.actions.label"
-          aria-label="About page actions"
-          class="mt-8 flex flex-wrap gap-4"
-        >
-          <a
-            i18n="@@about.actions.projects"
-            [hreflang]="currentLocale"
-            [routerLink]="['/', projectsPath]"
-            class="rounded-lg bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-          >
-            View projects
-          </a>
-
-          <a
-            i18n="@@about.actions.contact"
-            [hreflang]="currentLocale"
-            [routerLink]="['/', contactPath]"
-            class="rounded-lg border border-border bg-surface px-6 py-3 font-medium text-text-secondary transition-colors hover:bg-surface-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-          >
-            Contact me
-          </a>
-        </nav>
       </div>
     </div>
   </header>
@@ -239,7 +211,7 @@
             i18n="@@about.actions.projects"
             [hreflang]="currentLocale"
             [routerLink]="['/', projectsPath]"
-            class="rounded-lg bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            class="px-6 py-3 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
           >
             View projects
           </a>
@@ -247,7 +219,7 @@
             i18n="@@about.actions.contact"
             [hreflang]="currentLocale"
             [routerLink]="['/', contactPath]"
-            class="rounded-lg border border-border bg-background px-6 py-3 font-medium text-text-secondary transition-colors hover:bg-surface-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            class="px-6 py-3 bg-surface text-text-secondary border border-border rounded-lg hover:bg-surface-hover transition font-medium shadow-lg hover:shadow-gray-400/30"
           >
             Contact me
           </a>
