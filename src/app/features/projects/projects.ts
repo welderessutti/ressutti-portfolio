@@ -19,7 +19,7 @@ export class Projects {
   private readonly seo = inject(SeoService);
   protected readonly currentLocale = this.currentLocaleHtml;
   protected readonly projects = this.projectService.getAllProjects();
-  protected readonly contactMeButtonPath = ROUTES.contact[this.currentLocale];
+  protected readonly contactMeButtonPath = `/${ROUTES.contact[this.currentLocale]}`;
 
   private get currentLocaleHtml(): Locale {
     return this.document.documentElement.lang as Locale;

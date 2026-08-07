@@ -22,7 +22,8 @@
 
     <h2 class="text-2xl font-semibold text-text-primary">
       <a
-        [routerLink]="[project().slug]"
+        [hreflang]="currentLocale()"
+        [routerLink]="project().slug"
         class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       >
         {{ project().title }}
@@ -64,7 +65,11 @@
     </dl>
 
     <div class="mt-auto flex flex-wrap items-center gap-x-5">
-      <a [routerLink]="[project().slug]" class="font-medium text-accent hover:underline">
+      <a
+        [hreflang]="currentLocale()"
+        [routerLink]="project().slug"
+        class="font-medium text-accent hover:underline"
+      >
         View details
       </a>
 

@@ -14,25 +14,25 @@ export class NavService {
     {
       id: 'home',
       label: 'Home',
-      path: ROUTES.home[this.currentLocale],
+      path: `/${ROUTES.home[this.currentLocale]}`,
       locale: this.currentLocale,
     },
     {
       id: 'projects',
       label: $localize`:@@nav.projects.label:Projects`,
-      path: ROUTES.projects[this.currentLocale],
+      path: `/${ROUTES.projects[this.currentLocale]}`,
       locale: this.currentLocale,
     },
     {
       id: 'about',
       label: $localize`:@@nav.about.label:About`,
-      path: ROUTES.about[this.currentLocale],
+      path: `/${ROUTES.about[this.currentLocale]}`,
       locale: this.currentLocale,
     },
     {
       id: 'contact',
       label: $localize`:@@nav.contact.label:Contact`,
-      path: ROUTES.contact[this.currentLocale],
+      path: `/${ROUTES.contact[this.currentLocale]}`,
       locale: this.currentLocale,
     },
   ];

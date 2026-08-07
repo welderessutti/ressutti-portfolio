@@ -35,8 +35,8 @@ export class About {
   private readonly seo = inject(SeoService);
 
   protected readonly currentLocale = this.document.documentElement.lang as Locale;
-  protected readonly projectsPath = ROUTES.projects[this.currentLocale];
-  protected readonly contactPath = ROUTES.contact[this.currentLocale];
+  protected readonly projectsPath = `/${ROUTES.projects[this.currentLocale]}`;
+  protected readonly contactPath = `/${ROUTES.contact[this.currentLocale]}`;
 
   protected readonly principles: readonly ProfessionalPrinciple[] = [
     {

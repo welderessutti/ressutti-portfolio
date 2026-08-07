@@ -5,7 +5,7 @@
     <!-- Logo -->
     <a
       [hreflang]="navs[0].locale"
-      [routerLink]="['/', navs[0].path]"
+      [routerLink]="navs[0].path"
       class="text-xl font-bold text-text-primary hover:opacity-80 transition"
     >
       Ressutti.dev
@@ -18,7 +18,7 @@
           <li>
             <a
               [hreflang]="nav.locale"
-              [routerLink]="['/', nav.path]"
+              [routerLink]="nav.path"
               routerLinkActive="text-accent"
               [routerLinkActiveOptions]="{ exact: true }"
               class="hover:text-accent transition relative"

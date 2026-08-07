@@ -16,7 +16,7 @@ export class Projects {
   private readonly document = inject(DOCUMENT);
   private readonly project = inject(ProjectService);
   protected readonly currentLocale = this.currentLocaleHtml;
-  protected readonly viewAllProjectsButtonPath = ROUTES.projects[this.currentLocale];
+  protected readonly viewAllProjectsButtonPath = `/${ROUTES.projects[this.currentLocale]}`;
   protected readonly allProjects = this.project.getAllProjects();
 
   private get currentLocaleHtml(): Locale {

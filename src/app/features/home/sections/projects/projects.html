@@ -10,7 +10,11 @@
     <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
       @for (project of allProjects; track project.id) {
         <li>
-          <app-project-card [project]="project"></app-project-card>
+          <app-project-card
+            [projectsPagePath]="viewAllProjectsButtonPath"
+            [project]="project"
+            [currentLocale]="currentLocale"
+          ></app-project-card>
         </li>
       }
     </ul>
@@ -19,7 +23,7 @@
       <a
         i18n="@@home.projects.viewAllProjectsButton"
         [hreflang]="currentLocale"
-        [routerLink]="['/', viewAllProjectsButtonPath]"
+        [routerLink]="viewAllProjectsButtonPath"
         class="px-6 py-3 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
       >
         View all projects

@@ -20,6 +20,11 @@ export const ROUTES = {
     [LOCALES.enGB]: 'contact',
     [LOCALES.ptBR]: 'contato',
   },
+
+  notFound: {
+    [LOCALES.enGB]: '404',
+    [LOCALES.ptBR]: '404',
+  },
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;

@@ -21,8 +21,8 @@ export class Hero implements OnInit, OnDestroy {
   private isDeleting = false;
   private timeoutId?: ReturnType<typeof setTimeout>;
   protected readonly currentLocale = this.currentLocaleHtml;
-  protected readonly viewProjectsButtonPath = ROUTES.projects[this.currentLocale];
-  protected readonly contactButtonPath = ROUTES.contact[this.currentLocale];
+  protected readonly viewProjectsButtonPath = `/${ROUTES.projects[this.currentLocale]}`;
+  protected readonly contactButtonPath = `/${ROUTES.contact[this.currentLocale]}`;
   protected readonly typedText = signal('');
 
   public ngOnInit() {

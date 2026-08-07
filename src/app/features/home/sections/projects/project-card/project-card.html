@@ -27,8 +27,8 @@
     </p>
 
     <a
-      [hreflang]="currentLocale"
-      [routerLink]="['/', projectsPagePath, project().slug]"
+      [hreflang]="currentLocale()"
+      [routerLink]="[projectsPagePath(), project().slug]"
       class="mt-auto inline-blocl w-fit font-medium text-accent hover:underline"
     >
       View details

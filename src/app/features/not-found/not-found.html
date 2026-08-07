@@ -1,0 +1,61 @@
+<section
+  aria-labelledby="not-found-title"
+  aria-describedby="not-found-description"
+  class="first-section-padding flex flex-1 items-center bg-surface-light"
+>
+  <div class="container-padding w-full text-center">
+    <p class="text-7xl font-bold text-accent md:text-8xl">
+      <span i18n="@@notFound.codeLabel" class="sr-only">Error code:</span>
+      404
+    </p>
+
+    <h1
+      #pageTitle
+      id="not-found-title"
+      tabindex="-1"
+      i18n="@@notFound.title"
+      class="mt-6 text-4xl font-bold tracking-tight text-text-primary md:text-5xl"
+    >
+      Page not found
+    </h1>
+
+    <p
+      id="not-found-description"
+      i18n="@@notFound.description"
+      class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg"
+    >
+      We could not find the page you requested. Check the address or continue using one of the
+      options below.
+    </p>
+
+    <nav
+      i18n-aria-label="@@notFound.actions.label"
+      aria-label="Error recovery options"
+      class="mt-8"
+    >
+      <ul class="flex flex-wrap justify-center gap-4">
+        <li>
+          <a
+            i18n="@@notFound.actions.home"
+            [hreflang]="currentLocale"
+            [routerLink]="homeButtonPath"
+            class="inline-flex px-6 py-3 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"
+          >
+            Go to home
+          </a>
+        </li>
+
+        <li>
+          <a
+            i18n="@@notFound.actions.projects"
+            [hreflang]="currentLocale"
+            [routerLink]="viewProjectsButtonPath"
+            class="inline-flex px-6 py-3 bg-surface text-text-secondary border border-border rounded-lg hover:bg-surface-hover transition font-medium shadow-lg hover:shadow-gray-400/30"
+          >
+            View projects
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
