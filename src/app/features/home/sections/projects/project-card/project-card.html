@@ -4,10 +4,10 @@
   <!-- Image -->
   <div class="flex shrink-0 items-start justify-start p-3 overflow-hidden">
     <img
-      [src]="project().coverImage"
-      [alt]="project().imageAlt"
-      [width]="project().coverWidth"
-      [height]="project().coverHeight"
+      [src]="project().coverImage.src"
+      [alt]="project().coverImage.alt"
+      [width]="project().coverImage.width"
+      [height]="project().coverImage.height"
       loading="lazy"
       decoding="async"
       class="block aspect-video w-full bg-black/10 object-contain shadow-lg transition-transform duration-500 group-hover:scale-105"

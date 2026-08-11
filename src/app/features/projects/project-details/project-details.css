@@ -1,0 +1,89 @@
+@reference '../../../../styles.css';
+
+:host {
+  @apply flex flex-1 flex-col;
+}
+
+.project-hero {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      color-mix(in srgb, var(--color-accent) 15%, transparent),
+      transparent 28rem
+    ),
+    linear-gradient(180deg, var(--color-surface-light), var(--color-background));
+}
+
+.hero-frame {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-accent) 12%, transparent),
+      transparent 45%
+    ),
+    var(--color-surface);
+}
+
+.section-eyebrow {
+  @apply text-sm font-semibold uppercase tracking-[0.16em] text-accent;
+}
+
+.section-title {
+  @apply mt-3 text-3xl font-bold tracking-tight text-text-primary md:text-4xl;
+}
+
+.section-description {
+  @apply mt-4 text-base leading-relaxed text-text-secondary md:text-lg;
+}
+
+.architecture-canvas {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-border) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-border) 45%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 2rem 2rem;
+}
+
+.architecture-flow > li:not(:last-child)::after {
+  position: absolute;
+  bottom: -1.55rem;
+  left: 50%;
+  width: 0.65rem;
+  height: 0.65rem;
+  content: '';
+  border-right: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@media (min-width: 64rem) {
+  .architecture-flow > li:not(:last-child)::after {
+    top: 50%;
+    right: -1.15rem;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .showcase-item:nth-child(even) .showcase-media {
+    grid-column: 2;
+  }
+
+  .showcase-item:nth-child(even) .showcase-copy {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}

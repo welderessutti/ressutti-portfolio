@@ -8,6 +8,10 @@ import { Project } from '../../../shared/models/project.model';
 export class ProjectService {
   private readonly projects: readonly Project[] = PROJECTS;
 
+  public getProjectById(id: string): Project | undefined {
+    return this.projects.find((project) => project.id === id);
+  }
+
   public getAllProjects(): readonly Project[] {
     return this.projects;
   }
@@ -18,10 +22,6 @@ export class ProjectService {
 
   public getProjectBySlug(slug: string): Project | undefined {
     return this.projects.find((project) => project.slug === slug);
-  }
-
-  public getProjectById(id: string): Project | undefined {
-    return this.projects.find((project) => project.id === id);
   }
 
   public existsProjectBySlug(slug: string): boolean {

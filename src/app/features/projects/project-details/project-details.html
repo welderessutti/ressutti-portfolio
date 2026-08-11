@@ -1,0 +1,847 @@
+<article [attr.aria-labelledby]="project.id + '-title'" class="flex flex-1 flex-col bg-background">
+  <header class="project-hero first-section-padding overflow-hidden border-b border-border-light">
+    <div class="container-padding relative">
+      <div class="max-w-4xl animate-fade-up">
+        <div class="flex flex-wrap items-center gap-3 text-sm font-medium">
+          <span class="uppercase tracking-[0.18em] text-accent">{{ project.category }}</span>
+          <span class="h-1 w-1 rounded-full bg-text-muted" aria-hidden="true"></span>
+          <span
+            class="rounded-full border border-border bg-background/70 px-3 py-1 text-text-secondary"
+          >
+            {{ project.status }}
+          </span>
+        </div>
+
+        <h1
+          [id]="project.id + '-title'"
+          class="mt-6 text-5xl font-bold tracking-tight text-text-primary sm:text-6xl lg:text-7xl"
+        >
+          {{ project.name }}
+        </h1>
+
+        <p class="mt-6 max-w-3xl text-xl leading-relaxed text-text-secondary md:text-2xl">
+          {{ project.summary }}
+        </p>
+
+        @if (project.liveUrl || project.repositoryUrl) {
+          <div class="mt-9 flex flex-wrap gap-3">
+            @if (project.liveUrl; as liveUrl) {
+              <a
+                [href]="liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-text-inverse shadow-lg transition hover:bg-accent-hover hover:shadow-accent/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
+                <span i18n="@@projectDetails.actions.liveDemo">Live demo</span>
+                <svg
+                  aria-hidden="true"
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="sr-only" i18n="@@projectDetails.actions.newTab"
+                  >(opens in a new tab)</span
+                >
+              </a>
+            }
+
+            @if (project.repositoryUrl; as repositoryUrl) {
+              <a
+                [href]="repositoryUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 font-medium text-text-secondary shadow-sm transition hover:border-accent/60 hover:bg-surface-hover hover:text-text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="m8 9-4 3 4 3m8-6 4 3-4 3m-3-9-2 12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span i18n="@@projectDetails.actions.sourceCode">Source code</span>
+                <span class="sr-only" i18n="@@projectDetails.actions.newTab"
+                  >(opens in a new tab)</span
+                >
+              </a>
+            }
+          </div>
+        }
+      </div>
+
+      <figure class="relative mt-12 animate-fade-up delay-200 lg:mt-16">
+        <div
+          class="hero-frame overflow-hidden rounded-2xl border border-border bg-surface p-2 shadow-2xl sm:p-3"
+        >
+          <img
+            [src]="project.heroImage.src"
+            [alt]="project.heroImage.alt"
+            [width]="project.heroImage.width"
+            [height]="project.heroImage.height"
+            fetchpriority="high"
+            decoding="async"
+            class="block aspect-video w-full rounded-xl bg-surface-light object-cover"
+          />
+        </div>
+      </figure>
+    </div>
+  </header>
+
+  <!-- <nav
+    i18n-aria-label="@@projectDetails.navigation.label"
+    aria-label="Project sections"
+    class="sticky top-[61px] z-40 hidden border-b border-border-light bg-background/90 backdrop-blur lg:block"
+  >
+    <ul
+      class="container-padding flex h-14 items-center gap-8 text-sm font-medium text-text-tertiary"
+    >
+      @for (item of sectionNavigation(); track item.id) {
+        <li>
+          <a
+            [href]="'#' + item.id"
+            class="border-b-2 border-transparent py-[1.1rem] transition hover:border-accent hover:text-text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav> -->
+
+  <div>
+    <section
+      id="overview"
+      class="scroll-mt-28 border-b border-border-light bg-background section-padding"
+      [attr.aria-labelledby]="project.id + '-overview-title'"
+    >
+      <div class="container-padding reveal" appRevealOnScroll>
+        <div class="grid gap-12 lg:grid-cols-[minmax(0,1.65fr)_minmax(17rem,0.75fr)] lg:gap-20">
+          <div>
+            <p class="section-eyebrow" i18n="@@projectDetails.overview.eyebrow">The project</p>
+            <h2 [id]="project.id + '-overview-title'" class="section-title">
+              <span i18n="@@projectDetails.overview.title">Project overview</span>
+            </h2>
+
+            <div class="mt-8 grid gap-8 text-text-secondary sm:grid-cols-3">
+              <div>
+                <h3
+                  class="text-sm font-semibold uppercase tracking-wider text-text-primary"
+                  i18n="@@projectDetails.overview.context"
+                >
+                  Context
+                </h3>
+                <p class="mt-3 leading-relaxed">{{ project.overview.context }}</p>
+              </div>
+              <div>
+                <h3
+                  class="text-sm font-semibold uppercase tracking-wider text-text-primary"
+                  i18n="@@projectDetails.overview.problem"
+                >
+                  Problem
+                </h3>
+                <p class="mt-3 leading-relaxed">{{ project.overview.problem }}</p>
+              </div>
+              <div>
+                <h3
+                  class="text-sm font-semibold uppercase tracking-wider text-text-primary"
+                  i18n="@@projectDetails.overview.solution"
+                >
+                  Solution
+                </h3>
+                <p class="mt-3 leading-relaxed">{{ project.overview.solution }}</p>
+              </div>
+            </div>
+          </div>
+
+          <dl
+            class="grid grid-cols-2 gap-x-5 gap-y-6 rounded-2xl border border-border bg-surface p-6 sm:grid-cols-3 lg:grid-cols-1 lg:p-7"
+          >
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+                Role
+              </dt>
+              <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
+                {{ project.role }}
+              </dd>
+            </div>
+
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+                Type
+              </dt>
+              <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
+                {{ project.type }}
+              </dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+                Status
+              </dt>
+              <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
+                {{ project.status }}
+              </dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+                Timeline
+              </dt>
+              <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
+                {{ project.timeline }}
+              </dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+                Year
+              </dt>
+              <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
+                {{ project.year.startYear }} - {{ project.year.endYear }}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    @if (project.features?.length) {
+      <section
+        id="features"
+        class="scroll-mt-28 border-b border-border-light bg-surface-light section-padding"
+        [attr.aria-labelledby]="project.id + '-features-title'"
+      >
+        <div class="container-padding reveal" appRevealOnScroll>
+          <header class="max-w-3xl">
+            <p class="section-eyebrow" i18n="@@projectDetails.features.eyebrow">
+              Product experience
+            </p>
+            <h2 [id]="project.id + '-features-title'" class="section-title">
+              <span i18n="@@projectDetails.features.title">Key features</span>
+            </h2>
+            <p class="section-description" i18n="@@projectDetails.features.description">
+              Purposeful capabilities shaped around the core user journey.
+            </p>
+          </header>
+
+          <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            @for (feature of project.features; track feature.id; let index = $index) {
+              <li
+                class="group rounded-xl border border-border bg-background p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-accent">0{{ index + 1 }}</span>
+                  <span
+                    class="h-px w-10 bg-border transition-all duration-300 group-hover:w-14 group-hover:bg-accent"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+                <h3 class="mt-6 text-lg font-semibold text-text-primary">{{ feature.title }}</h3>
+                <p class="mt-3 leading-relaxed text-text-secondary">{{ feature.description }}</p>
+              </li>
+            }
+          </ul>
+        </div>
+      </section>
+    }
+
+    @if (project.stack?.length) {
+      <section
+        class="border-b border-border-light bg-background section-padding"
+        [attr.aria-labelledby]="project.id + '-stack-title'"
+      >
+        <div class="container-padding reveal" appRevealOnScroll>
+          <div class="grid gap-10 lg:grid-cols-[minmax(15rem,0.65fr)_minmax(0,1.6fr)] lg:gap-16">
+            <header>
+              <p class="section-eyebrow" i18n="@@projectDetails.stack.eyebrow">Under the hood</p>
+              <h2 [id]="project.id + '-stack-title'" class="section-title">
+                <span i18n="@@projectDetails.stack.title">Tech stack</span>
+              </h2>
+              <p class="section-description" i18n="@@projectDetails.stack.description">
+                Tools selected for the role they play in a maintainable, end-to-end system.
+              </p>
+            </header>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              @for (group of project.stack; track group.id) {
+                <section
+                  class="rounded-xl border border-border bg-surface p-6"
+                  [attr.aria-labelledby]="project.id + '-stack-' + group.id"
+                >
+                  <h3
+                    [id]="project.id + '-stack-' + group.id"
+                    class="text-sm font-semibold uppercase tracking-wider text-text-tertiary"
+                  >
+                    {{ group.name }}
+                  </h3>
+                  <ul class="mt-5 space-y-5">
+                    @for (technology of group.technologies; track technology.id) {
+                      <li class="flex gap-4">
+                        @if (technology.technology.icon; as icon) {
+                          <span
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-border bg-background"
+                          >
+                            <img
+                              [src]="icon"
+                              alt=""
+                              width="24"
+                              height="24"
+                              loading="lazy"
+                              decoding="async"
+                              class="h-6 w-6"
+                            />
+                          </span>
+                        }
+                        <div>
+                          <h4 class="font-semibold text-text-primary">
+                            {{ technology.technology.name }}
+                          </h4>
+                          <p class="mt-1 text-sm leading-relaxed text-text-secondary">
+                            {{ technology.description }}
+                          </p>
+                        </div>
+                      </li>
+                    }
+                  </ul>
+                </section>
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    }
+
+    @if (project.architecture || project.workflow?.length) {
+      <section
+        id="architecture"
+        class="scroll-mt-28 border-b border-border-light bg-surface section-padding"
+        [attr.aria-labelledby]="project.id + '-architecture-title'"
+      >
+        <div class="container-padding space-y-20">
+          @if (project.architecture; as architecture) {
+            <div class="reveal" appRevealOnScroll>
+              <header class="max-w-3xl">
+                <p class="section-eyebrow" i18n="@@projectDetails.architecture.eyebrow">
+                  System design
+                </p>
+                <h2 [id]="project.id + '-architecture-title'" class="section-title">
+                  <span i18n="@@projectDetails.architecture.title">System architecture</span>
+                </h2>
+                <p class="section-description">{{ architecture.description }}</p>
+              </header>
+
+              <figure
+                class="architecture-canvas mt-10 rounded-2xl border border-border bg-background p-6 shadow-sm sm:p-8 lg:p-10"
+              >
+                <figcaption class="sr-only" i18n="@@projectDetails.architecture.diagramCaption">
+                  Main system components and their communication flow
+                </figcaption>
+                <ol class="architecture-flow grid gap-10 lg:grid-cols-4 lg:gap-7">
+                  @for (
+                    component of architecture.components;
+                    track component.id;
+                    let index = $index
+                  ) {
+                    <li
+                      class="relative z-10 rounded-xl border border-border bg-surface-light p-5 text-center shadow-sm"
+                    >
+                      <span
+                        class="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-bold text-text-inverse"
+                      >
+                        {{ index + 1 }}
+                      </span>
+                      <h3 class="mt-4 font-semibold text-text-primary">{{ component.name }}</h3>
+                      <p class="mt-2 text-sm leading-relaxed text-text-secondary">
+                        {{ component.description }}
+                      </p>
+                    </li>
+                  }
+                </ol>
+              </figure>
+            </div>
+          }
+
+          @if (project.workflow?.length) {
+            <div class="reveal" appRevealOnScroll>
+              <header class="max-w-3xl">
+                <p class="section-eyebrow" i18n="@@projectDetails.workflow.eyebrow">Core journey</p>
+                <h2 class="section-title" i18n="@@projectDetails.workflow.title">How it works</h2>
+              </header>
+
+              <ol class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                @for (
+                  step of project.workflow;
+                  track step.id;
+                  let index = $index;
+                  let isLast = $last
+                ) {
+                  <li class="workflow-step relative">
+                    <div class="flex items-center gap-4">
+                      <span
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-accent bg-background text-lg font-bold text-accent"
+                      >
+                        {{ index + 1 }}
+                      </span>
+                      @if (!isLast) {
+                        <span
+                          class="hidden h-px flex-1 bg-border lg:block"
+                          aria-hidden="true"
+                        ></span>
+                      }
+                    </div>
+                    <h3 class="mt-5 text-lg font-semibold text-text-primary">{{ step.title }}</h3>
+                    <p class="mt-2 leading-relaxed text-text-secondary">{{ step.description }}</p>
+                  </li>
+                }
+              </ol>
+            </div>
+          }
+        </div>
+      </section>
+    }
+
+    @if (project.decisions?.length || project.challenges?.length || project.engineering?.length) {
+      <section
+        id="engineering"
+        class="scroll-mt-28 border-b border-border-light bg-background section-padding"
+        [attr.aria-labelledby]="project.id + '-engineering-title'"
+      >
+        <div class="container-padding space-y-20">
+          <header class="max-w-3xl reveal" appRevealOnScroll>
+            <p class="section-eyebrow" i18n="@@projectDetails.engineering.eyebrow">
+              Behind the product
+            </p>
+            <h2 [id]="project.id + '-engineering-title'" class="section-title">
+              <span i18n="@@projectDetails.engineering.title">Engineering</span>
+            </h2>
+            <p class="section-description" i18n="@@projectDetails.engineering.description">
+              The technical choices and trade-offs that shaped a reliable product experience.
+            </p>
+          </header>
+
+          @if (project.decisions?.length) {
+            <section
+              class="reveal"
+              appRevealOnScroll
+              [attr.aria-labelledby]="project.id + '-decisions-title'"
+            >
+              <div class="grid gap-8 lg:grid-cols-[minmax(15rem,0.6fr)_minmax(0,1.6fr)] lg:gap-16">
+                <div>
+                  <p class="section-eyebrow" i18n="@@projectDetails.decisions.eyebrow">
+                    Trade-offs
+                  </p>
+                  <h3
+                    [id]="project.id + '-decisions-title'"
+                    class="text-2xl font-bold text-text-primary md:text-3xl"
+                    i18n="@@projectDetails.decisions.title"
+                  >
+                    Technical decisions
+                  </h3>
+                </div>
+
+                <ol class="divide-y divide-border border-y border-border">
+                  @for (decision of project.decisions; track decision.id; let index = $index) {
+                    <li class="grid gap-3 py-7 sm:grid-cols-[3rem_minmax(0,1fr)]">
+                      <span class="font-semibold text-accent">0{{ index + 1 }}</span>
+                      <div>
+                        <h4 class="text-lg font-semibold text-text-primary">
+                          {{ decision.title }}
+                        </h4>
+                        <p class="mt-2 font-medium text-text-secondary">{{ decision.decision }}</p>
+                        <p class="mt-2 leading-relaxed text-text-tertiary">
+                          {{ decision.rationale }}
+                        </p>
+                      </div>
+                    </li>
+                  }
+                </ol>
+              </div>
+            </section>
+          }
+
+          @if (project.challenges?.length) {
+            <section
+              class="reveal"
+              appRevealOnScroll
+              [attr.aria-labelledby]="project.id + '-challenges-title'"
+            >
+              <header class="max-w-3xl">
+                <p class="section-eyebrow" i18n="@@projectDetails.challenges.eyebrow">
+                  Problem solving
+                </p>
+                <h3
+                  [id]="project.id + '-challenges-title'"
+                  class="text-2xl font-bold text-text-primary md:text-3xl"
+                  i18n="@@projectDetails.challenges.title"
+                >
+                  Engineering challenges
+                </h3>
+              </header>
+
+              <div class="mt-9 grid gap-6 lg:grid-cols-2">
+                @for (item of project.challenges; track item.id) {
+                  <article class="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+                    <h4 class="text-xl font-semibold text-text-primary">{{ item.title }}</h4>
+                    <dl class="mt-6 space-y-5">
+                      <div class="grid gap-1.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-5">
+                        <dt
+                          class="text-sm font-semibold text-error"
+                          i18n="@@projectDetails.challenges.challenge"
+                        >
+                          Challenge
+                        </dt>
+                        <dd class="leading-relaxed text-text-secondary">{{ item.challenge }}</dd>
+                      </div>
+                      <div class="grid gap-1.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-5">
+                        <dt
+                          class="text-sm font-semibold text-accent"
+                          i18n="@@projectDetails.challenges.solution"
+                        >
+                          Solution
+                        </dt>
+                        <dd class="leading-relaxed text-text-secondary">{{ item.solution }}</dd>
+                      </div>
+                      <div class="grid gap-1.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-5">
+                        <dt
+                          class="text-sm font-semibold text-success"
+                          i18n="@@projectDetails.challenges.result"
+                        >
+                          Result
+                        </dt>
+                        <dd class="leading-relaxed text-text-secondary">{{ item.result }}</dd>
+                      </div>
+                    </dl>
+                  </article>
+                }
+              </div>
+            </section>
+          }
+
+          @if (project.engineering?.length) {
+            <section
+              class="reveal"
+              appRevealOnScroll
+              [attr.aria-labelledby]="project.id + '-quality-title'"
+            >
+              <header class="max-w-3xl">
+                <p class="section-eyebrow" i18n="@@projectDetails.quality.eyebrow">
+                  Quality attributes
+                </p>
+                <h3
+                  [id]="project.id + '-quality-title'"
+                  class="text-2xl font-bold text-text-primary md:text-3xl"
+                  i18n="@@projectDetails.quality.title"
+                >
+                  Built beyond the happy path
+                </h3>
+              </header>
+
+              <div class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                @for (item of project.engineering; track item.id) {
+                  <article class="rounded-xl border border-border bg-surface-light p-6">
+                    <div
+                      class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent"
+                      aria-hidden="true"
+                    >
+                      @switch (item.category) {
+                        @case ('Security') {
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M12 3 5 6v5c0 4.8 2.8 8.2 7 10 4.2-1.8 7-5.2 7-10V6l-7-3Z"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="m9 12 2 2 4-4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        }
+                        @case ('Performance') {
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path d="M4 14a8 8 0 1 1 16 0" stroke-linecap="round" />
+                            <path d="m12 14 4-4M6 19h12" stroke-linecap="round" />
+                          </svg>
+                        }
+                        @case ('Testing') {
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="m9 3 6 0M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path d="M8 14h8" />
+                          </svg>
+                        }
+                        @default {
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path d="M4 19V9m5 10V5m5 14v-7m5 7V3" stroke-linecap="round" />
+                          </svg>
+                        }
+                      }
+                    </div>
+                    <h4 class="mt-5 text-lg font-semibold text-text-primary">
+                      {{ item.category }}
+                    </h4>
+                    <p class="mt-2 text-sm leading-relaxed text-text-secondary">
+                      {{ item.description }}
+                    </p>
+                    @if (item.highlights.length) {
+                      <ul class="mt-5 space-y-2 text-sm text-text-tertiary">
+                        @for (highlight of item.highlights; track highlight) {
+                          <li class="flex gap-2">
+                            <span
+                              class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                              aria-hidden="true"
+                            ></span>
+                            <span>{{ highlight }}</span>
+                          </li>
+                        }
+                      </ul>
+                    }
+                  </article>
+                }
+              </div>
+            </section>
+          }
+        </div>
+      </section>
+    }
+
+    @if (project.showcase?.length) {
+      <section
+        id="gallery"
+        class="scroll-mt-28 border-b border-border-light bg-surface-light section-padding"
+        [attr.aria-labelledby]="project.id + '-showcase-title'"
+      >
+        <div class="container-padding">
+          <header class="max-w-3xl reveal" appRevealOnScroll>
+            <p class="section-eyebrow" i18n="@@projectDetails.showcase.eyebrow">In the product</p>
+            <h2 [id]="project.id + '-showcase-title'" class="section-title">
+              <span i18n="@@projectDetails.showcase.title">Product showcase</span>
+            </h2>
+            <p class="section-description" i18n="@@projectDetails.showcase.description">
+              A closer look at the moments that define the experience.
+            </p>
+          </header>
+
+          <div class="mt-12 space-y-16 lg:space-y-24">
+            @for (item of project.showcase; track item.id) {
+              <article
+                class="showcase-item grid items-center gap-8 reveal lg:grid-cols-[minmax(0,1.55fr)_minmax(17rem,0.75fr)] lg:gap-14"
+                appRevealOnScroll
+              >
+                <figure
+                  class="showcase-media overflow-hidden rounded-2xl border border-border bg-background p-2 shadow-xl sm:p-3"
+                >
+                  <img
+                    [src]="item.image.src"
+                    [alt]="item.image.alt"
+                    [width]="item.image.width"
+                    [height]="item.image.height"
+                    loading="lazy"
+                    decoding="async"
+                    class="block aspect-video w-full rounded-xl bg-surface object-cover"
+                  />
+                </figure>
+                <div class="showcase-copy max-w-xl">
+                  <p class="section-eyebrow">{{ item.eyebrow }}</p>
+                  <h3 class="mt-3 text-2xl font-bold text-text-primary md:text-3xl">
+                    {{ item.title }}
+                  </h3>
+                  <p class="mt-4 text-lg leading-relaxed text-text-secondary">
+                    {{ item.description }}
+                  </p>
+                </div>
+              </article>
+            }
+          </div>
+        </div>
+      </section>
+    }
+
+    @if (project.lessons; as lessons) {
+      @if (lessons.learnings.length || lessons.nextSteps.length) {
+        <section
+          class="border-b border-border-light bg-background section-padding"
+          [attr.aria-labelledby]="project.id + '-lessons-title'"
+        >
+          <div class="container-padding reveal" appRevealOnScroll>
+            <header class="max-w-3xl">
+              <p class="section-eyebrow" i18n="@@projectDetails.lessons.eyebrow">Reflection</p>
+              <h2 [id]="project.id + '-lessons-title'" class="section-title">
+                <span i18n="@@projectDetails.lessons.title">Lessons & next steps</span>
+              </h2>
+            </header>
+
+            <div class="mt-10 grid gap-6 lg:grid-cols-2">
+              @if (lessons.learnings.length) {
+                <section
+                  class="rounded-2xl border border-border bg-surface p-6 sm:p-8"
+                  [attr.aria-labelledby]="project.id + '-learnings-title'"
+                >
+                  <h3
+                    [id]="project.id + '-learnings-title'"
+                    class="text-xl font-semibold text-text-primary"
+                    i18n="@@projectDetails.lessons.learnings"
+                  >
+                    Key learnings
+                  </h3>
+                  <ul class="mt-6 space-y-4">
+                    @for (learning of lessons.learnings; track learning) {
+                      <li class="flex gap-3 leading-relaxed text-text-secondary">
+                        <svg
+                          aria-hidden="true"
+                          class="mt-1 h-5 w-5 shrink-0 text-success"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ learning }}</span>
+                      </li>
+                    }
+                  </ul>
+                </section>
+              }
+
+              @if (lessons.nextSteps.length) {
+                <section
+                  class="rounded-2xl border border-border bg-surface-light p-6 sm:p-8"
+                  [attr.aria-labelledby]="project.id + '-next-steps-title'"
+                >
+                  <h3
+                    [id]="project.id + '-next-steps-title'"
+                    class="text-xl font-semibold text-text-primary"
+                    i18n="@@projectDetails.lessons.nextSteps"
+                  >
+                    Next steps
+                  </h3>
+                  <ul class="mt-6 space-y-4">
+                    @for (nextStep of lessons.nextSteps; track nextStep) {
+                      <li class="flex gap-3 leading-relaxed text-text-secondary">
+                        <svg
+                          aria-hidden="true"
+                          class="mt-1 h-5 w-5 shrink-0 text-accent"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path
+                            d="M5 12h14m-5-5 5 5-5 5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <span>{{ nextStep }}</span>
+                      </li>
+                    }
+                  </ul>
+                </section>
+              }
+            </div>
+          </div>
+        </section>
+      }
+    }
+  </div>
+
+  @if (project.previousProject || project.nextProject) {
+    <nav
+      i18n-aria-label="@@projectDetails.projectNavigation.label"
+      aria-label="Project navigation"
+      class="bg-surface section-padding"
+    >
+      <div class="container-padding grid gap-4 sm:grid-cols-2">
+        @if (project.previousProject; as previousProject) {
+          <a
+            [href]="previousProject.path"
+            class="group rounded-xl border border-border bg-background p-6 transition hover:border-accent/60 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            <span
+              class="text-sm text-text-tertiary"
+              i18n="@@projectDetails.projectNavigation.previous"
+              >Previous project</span
+            >
+            <span class="mt-2 flex items-center gap-3 text-xl font-semibold text-text-primary">
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5 transition-transform group-hover:-translate-x-1"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              {{ previousProject.label }}
+            </span>
+          </a>
+        } @else {
+          <span class="hidden sm:block" aria-hidden="true"></span>
+        }
+
+        @if (project.nextProject; as nextProject) {
+          <a
+            [href]="nextProject.path"
+            class="group rounded-xl border border-border bg-background p-6 text-right transition hover:border-accent/60 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:col-start-2"
+          >
+            <span class="text-sm text-text-tertiary" i18n="@@projectDetails.projectNavigation.next"
+              >Next project</span
+            >
+            <span
+              class="mt-2 flex items-center justify-end gap-3 text-xl font-semibold text-text-primary"
+            >
+              {{ nextProject.label }}
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5 transition-transform group-hover:translate-x-1"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        }
+      </div>
+    </nav>
+  }
+</article>

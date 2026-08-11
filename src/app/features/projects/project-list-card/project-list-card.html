@@ -3,10 +3,10 @@
 >
   <div class="flex shrink-0 items-center justify-center p-3 overflow-hidden md:w-1/3 md:p-4">
     <img
-      [src]="project().coverImage"
-      [alt]="project().imageAlt"
-      [width]="project().coverWidth"
-      [height]="project().coverHeight"
+      [src]="project().coverImage.src"
+      [alt]="project().coverImage.alt"
+      [width]="project().coverImage.width"
+      [height]="project().coverImage.height"
       loading="lazy"
       decoding="async"
       class="block aspect-video w-full bg-black/10 object-contain shadow-lg transition-transform duration-500 group-hover:scale-105"
@@ -17,7 +17,7 @@
     <div class="flex flex-wrap items-center gap-x-3 text-sm text-text-tertiary">
       <span>{{ project().category }}</span>
       <span aria-hidden="true">·</span>
-      <time [attr.datetime]="project().period.startYear">{{ project().period.startYear }}</time>
+      <time [attr.datetime]="project().year.startYear">{{ project().year.startYear }}</time>
     </div>
 
     <h2 class="text-2xl font-semibold text-text-primary">
@@ -52,14 +52,14 @@
       <div>
         <dt class="text-xs font-semibold uppercase tracking-wide text-text-tertiary">Role</dt>
         <dd class="mt-1 text-sm text-text-secondary">
-          {{ project().roleSummary }}
+          {{ project().role }}
         </dd>
       </div>
 
       <div>
         <dt class="text-xs font-semibold uppercase tracking-wide text-text-tertiary">Outcome</dt>
         <dd class="mt-1 text-sm text-text-secondary">
-          {{ project().outcomeSummary }}
+          {{ project().outcome }}
         </dd>
       </div>
     </dl>
