@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RevealOnScroll } from '../../../../shared/directives/reveal-on-scroll';
-import { AboutDefinition } from './about.definition.model';
+import { AboutDefinition } from '../../../../shared/models/about.definition.model';
 
 @Component({
   selector: 'app-about',
