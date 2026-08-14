@@ -8,11 +8,15 @@
       Technologies and tools I use to build my projects, ensuring high performance and scalability.
     </p>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+    <ul
+      class="flex flex-wrap items-stretch justify-center gap-4 [&>li]:flex [&>li]:grow-0 [&>li]:shrink-0 [&>li]:basis-[calc((100%_-_1rem)/2)] sm:[&>li]:basis-[calc((100%_-_2rem)/3)] md:[&>li]:basis-[calc((100%_-_3rem)/4)] lg:[&>li]:basis-[calc((100%_-_4rem)/5)] xl:[&>li]:basis-[calc((100%_-_5rem)/6)] [&>li>app-stack-card]:w-full"
+    >
       <!-- Category -->
       @for (stack of stacks; track stack.id) {
-        <app-stack-card [stack]="stack"></app-stack-card>
+        <li>
+          <app-stack-card [stack]="stack"></app-stack-card>
+        </li>
       }
-    </div>
+    </ul>
   </div>
 </section>

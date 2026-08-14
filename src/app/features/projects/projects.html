@@ -19,7 +19,7 @@
         </p>
       </header>
 
-      <ul class="grid gap-6">
+      <ul class="flex flex-col gap-6">
         @for (project of projects; track project.id) {
           <li>
             <app-project-list-card [project]="project" [currentLocale]="currentLocale" />
