@@ -18,7 +18,7 @@ export class About {
     {
       id: '1',
       term: $localize`:@@home.about.card.definitions.term1:Main stack`,
-      description: $localize`:@@home.about.card.definitions.description1:Angular | Spring`,
+      description: $localize`:@@home.about.card.definitions.description1:Angular · Spring`,
     },
     {
       id: '2',
@@ -28,12 +28,12 @@ export class About {
     {
       id: '3',
       term: $localize`:@@home.about.card.definitions.term3:Experience`,
-      description: $localize`:@@home.about.card.definitions.description3:Freelance work | Independent projects`,
+      description: $localize`:@@home.about.card.definitions.description3:Freelance work · Independent projects`,
     },
     {
       id: '4',
       term: $localize`:@@home.about.card.definitions.term4:Location`,
-      description: $localize`:@@home.about.card.definitions.description4:Indaiatuba | São Paulo | Worldwide`,
+      description: $localize`:@@home.about.card.definitions.description4:São Paulo · Indaiatuba · Worldwide`,
     },
   ];
 }
