@@ -133,8 +133,8 @@ export interface Project {
   readonly workflow?: readonly ProjectDetailsWorkflowStep[];
   readonly decisions?: readonly ProjectDetailsDecision[];
   readonly challenges?: readonly ProjectDetailsChallenge[];
-  readonly showcase?: readonly ProjectDetailsShowcaseItem[];
   readonly engineering?: readonly ProjectDetailsEngineeringItem[];
+  readonly showcase?: readonly ProjectDetailsShowcaseItem[];
   readonly lessons?: ProjectDetailsLessons;
   readonly previousProject?: ProjectDetailsLink;
   readonly nextProject?: ProjectDetailsLink;
