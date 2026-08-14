@@ -46,11 +46,24 @@
               [attr.aria-label]="contact.accessibleLabel"
               [attr.target]="contact.external ? '_blank' : null"
               [attr.rel]="contact.external ? 'noopener noreferrer' : null"
-              class="flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition"
+              [class]="
+                contact.primary
+                  ? 'flex items-center gap-2 py-3 px-4 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition'
+                  : 'flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition'
+              "
               ><app-svg [contact]="contact.id" /> <span>{{ contact.label }}</span></a
             >
           </li>
         }
+        <li>
+          <a
+            [href]="cvPath()"
+            download
+            class="flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition"
+          >
+            <app-svg contact="download" /> <span>Download CV (PDF)</span></a
+          >
+        </li>
       </ul>
     </section>
   </div>

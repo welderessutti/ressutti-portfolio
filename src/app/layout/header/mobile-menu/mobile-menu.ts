@@ -13,6 +13,7 @@ import { Svg } from '../../../shared/icons/svg/svg';
 export class MobileMenu {
   public readonly navs = input<Nav[]>([]);
   public readonly contacts = input<Contact[]>([]);
+  public readonly cvPath = input<string>();
   public readonly isOpen = input<boolean>(false);
   public readonly closeMenu = output<void>();
 

@@ -112,8 +112,9 @@
   </nav>
 </header>
 <app-mobile-menu
-  [isOpen]="isMenuOpen()"
   [navs]="navs"
   [contacts]="contacts"
+  [cvPath]="cvPath"
+  [isOpen]="isMenuOpen()"
   (closeMenu)="closeMenu()"
 />

@@ -35,8 +35,8 @@
                 [attr.rel]="contact.external ? 'noopener noreferrer' : null"
                 [class]="
                   contact.primary
-                    ? 'group flex size-12 items-center justify-center rounded-lg bg-accent font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent'
-                    : 'flex size-12 items-center justify-center rounded-lg border border-border bg-surface text-text-secondary transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent'
+                    ? 'flex size-12 items-center justify-center rounded-lg bg-accent text-text-inverse hover:bg-accent-hover transition'
+                    : 'flex size-12 items-center justify-center rounded-lg border border-border bg-surface text-text-secondary transition hover:border-accent hover:text-accent'
                 "
               >
                 <app-svg [contact]="contact.id" />
@@ -62,7 +62,7 @@
           <a
             [href]="cvPath"
             download
-            class="flex mt-8 size-12 items-center justify-center rounded-lg border border-border bg-surface text-text-secondary transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            class="flex mt-8 mb-1 size-12 items-center justify-center rounded-lg border border-border bg-surface text-text-secondary transition-colors hover:border-accent hover:text-accent"
           >
             <app-svg contact="download" />
           </a>

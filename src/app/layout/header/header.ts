@@ -27,6 +27,7 @@ export class Header implements OnInit {
   private readonly contact = inject(ContactService);
   protected readonly navs = this.nav.navs;
   protected readonly contacts = this.contact.contacts;
+  protected readonly cvPath = this.contact.cvPath;
   protected readonly isMenuOpen = signal(false);
   protected readonly isDarkMode = signal(false);
 
