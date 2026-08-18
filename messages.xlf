@@ -693,14 +693,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.title.before" datatype="html">
-        <source>From ideas to</source>
+        <source>Building</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
           <context context-type="linenumber">9,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.hero.title.after" datatype="html">
-        <source> digital solutions</source>
+        <source>digital solutions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
           <context context-type="linenumber">14,16</context>
@@ -788,7 +788,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="home.stacks.description" datatype="html">
-        <source> The technologies and tools I use across front-end, back-end, data, quality and delivery. </source>
+        <source>The technologies and tools I use to develop, test and deliver complete applications.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/stacks/stacks.html</context>
           <context context-type="linenumber">11,15</context>

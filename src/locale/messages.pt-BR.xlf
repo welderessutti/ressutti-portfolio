@@ -72,7 +72,7 @@
       </trans-unit>
      <trans-unit id="layout.navigation.home.label" datatype="html">
        <source>Home</source>
-        <target>Início</target>
+        <target>Home</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/nav/nav.service.ts</context>
           <context context-type="linenumber">16</context>
@@ -688,7 +688,7 @@
       </trans-unit>
      <trans-unit id="home.about.introduction.description" datatype="html">
        <source> I am a full-stack developer specialising in Angular and Spring, building modern web applications from responsive front ends to secure, maintainable back-end services. </source>
-        <target>Sou desenvolvedor full-stack especializado em Angular e Spring, criando aplicações web modernas que vão de interfaces responsivas a serviços back-end seguros e de fácil manutenção.</target>
+        <target>Atuo como desenvolvedor full stack, com foco em Angular e Spring. Desenvolvo aplicações web modernas, combinando interfaces responsivas com serviços de back-end seguros e fáceis de manter.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/about/about.html</context>
           <context context-type="linenumber">18,23</context>
@@ -712,7 +712,7 @@
       </trans-unit>
      <trans-unit id="home.about.highlights.fullStackDelivery" datatype="html">
        <source>End-to-end development across front-end and back-end</source>
-        <target>Desenvolvimento de ponta a ponta em front-end e back-end</target>
+        <target>Desenvolvimento de aplicações completas, do front-end ao back-end</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
           <context context-type="linenumber">13</context>
@@ -784,22 +784,22 @@
       </trans-unit>
      <trans-unit id="home.about.summary.location.description" datatype="html">
        <source>São Paulo · Indaiatuba · Worldwide</source>
-        <target>São Paulo · Indaiatuba · Todo o mundo</target>
+        <target>São Paulo · Indaiatuba · Mundialmente</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/about/about.ts</context>
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
      <trans-unit id="home.hero.title.before" datatype="html">
-       <source>From ideas to</source>
-        <target>De ideias a soluções digitais</target>
+       <source>Building</source>
+        <target>Construindo soluções digitais</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
           <context context-type="linenumber">9,10</context>
         </context-group>
       </trans-unit>
      <trans-unit id="home.hero.title.after" datatype="html">
-       <source> digital solutions</source>
+       <source>digital solutions</source>
         <target></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
@@ -808,7 +808,7 @@
       </trans-unit>
      <trans-unit id="home.hero.description" datatype="html">
        <source> I am a <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>full-stack developer<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> specialising in <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Spring<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, building end-to-end web applications from responsive front ends to reliable back-end services. </source>
-        <target> Sou <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>desenvolvedor full-stack<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> especializado em <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> e <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Spring<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, criando aplicações web de ponta a ponta, desde interfaces responsivas até serviços back-end confiáveis. </target>
+        <target> Sou <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>desenvolvedor full-stack<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> com foco em <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Angular<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> e <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Spring<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Crio aplicações web completas, com interfaces responsivas e serviços back-end confiáveis. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
           <context context-type="linenumber">18,21</context>
@@ -848,7 +848,7 @@
       </trans-unit>
      <trans-unit id="home.hero.title.keyword.highPerformance" datatype="html">
        <source>high-performance</source>
-        <target>de alto desempenho</target>
+        <target>performáticas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
           <context context-type="linenumber">17</context>
@@ -876,7 +876,7 @@
       </trans-unit>
      <trans-unit id="home.projects.description" datatype="html">
        <source> Selected work demonstrating end-to-end development, architectural decisions and dependable user experiences. </source>
-        <target>Trabalhos selecionados que demonstram desenvolvimento de ponta a ponta, decisões arquiteturais e experiências de usuário confiáveis.</target>
+        <target>Projetos selecionados que demonstram desenvolvimento completo, decisões de arquitetura e experiências de uso consistentes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/projects/projects.html</context>
           <context context-type="linenumber">10,15</context>
@@ -899,8 +899,8 @@
         </context-group>
       </trans-unit>
      <trans-unit id="home.stacks.description" datatype="html">
-       <source> The technologies and tools I use across front-end, back-end, data, quality and delivery. </source>
-        <target>As tecnologias e ferramentas que utilizo em front-end, back-end, dados, qualidade e entrega.</target>
+       <source>The technologies and tools I use to develop, test and deliver complete applications.</source>
+        <target>As tecnologias e ferramentas que utilizo para desenvolver, testar e entregar aplicações completas.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/stacks/stacks.html</context>
           <context context-type="linenumber">11,15</context>
@@ -2436,7 +2436,7 @@
       </trans-unit>
      <trans-unit id="home.stacks.category.operatingSystems.label" datatype="html">
        <source>OS</source>
-        <target>Sistemas operacionais</target>
+        <target>SO</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/stacks.data.ts</context>
           <context context-type="linenumber">66</context>
