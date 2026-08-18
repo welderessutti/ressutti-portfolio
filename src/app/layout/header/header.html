@@ -11,6 +11,7 @@
       <img
         src="icons/logo/wr-logo-frame-gradient.svg"
         alt="Ressutti.dev Logo"
+        i18n-alt="@@shared.brand.logo.alt"
         class="w-10 shrink-0 object-contain"
       />
       <span class="hidden text-xl font-bold text-text-primary md:block">ressutti.dev</span>
@@ -39,6 +40,7 @@
         class="text-text-secondary hover:text-accent transition"
         (click)="toggleTheme()"
         aria-label="Toggle theme"
+        i18n-aria-label="@@layout.header.theme.toggle.ariaLabel"
       >
         @if (isDarkMode()) {
           <!-- Sun -->
@@ -93,6 +95,7 @@
         class="md:hidden text-text-secondary hover:text-accent transition"
         (click)="toggleMenu()"
         aria-label="Open menu"
+        i18n-aria-label="@@layout.header.mobileMenu.open.ariaLabel"
         [attr.aria-expanded]="isMenuOpen()"
         aria-controls="mobile-menu"
       >

@@ -64,24 +64,24 @@ export class About {
   protected readonly skillGroups: readonly SkillGroup[] = [
     {
       id: 'frontend',
-      title: $localize`:@@about.capabilities.frontend.title:Front-end`,
+      title: $localize`:@@about.capabilities.frontEnd.title:Front-end`,
       skills: [
-        $localize`:@@about.capabilities.frontend.angular:Angular and TypeScript`,
-        $localize`:@@about.capabilities.frontend.responsive:Responsive web applications`,
-        $localize`:@@about.capabilities.frontend.rest:REST API integration`,
-        $localize`:@@about.capabilities.frontend.structure:Component and feature organisation`,
-        $localize`:@@about.capabilities.frontend.auth:Client-side authentication and authorisation`,
+        $localize`:@@about.capabilities.frontEnd.angular:Angular and TypeScript`,
+        $localize`:@@about.capabilities.frontEnd.responsive:Responsive web applications`,
+        $localize`:@@about.capabilities.frontEnd.rest:REST API integration`,
+        $localize`:@@about.capabilities.frontEnd.structure:Component and feature organisation`,
+        $localize`:@@about.capabilities.frontEnd.auth:Client-side authentication and authorisation`,
       ],
     },
     {
       id: 'backend',
-      title: $localize`:@@about.capabilities.backend.title:Back-end`,
+      title: $localize`:@@about.capabilities.backEnd.title:Back-end`,
       skills: [
-        $localize`:@@about.capabilities.backend.java:Java and Spring`,
+        $localize`:@@about.capabilities.backEnd.java:Java and Spring`,
         'REST APIs',
-        $localize`:@@about.capabilities.backend.architectures:Monolithic applications and microservices`,
-        $localize`:@@about.capabilities.backend.jwt:JWT authentication and authorisation`,
-        $localize`:@@about.capabilities.backend.integration:Service integration`,
+        $localize`:@@about.capabilities.backEnd.architectures:Monolithic applications and microservices`,
+        $localize`:@@about.capabilities.backEnd.jwt:JWT authentication and authorisation`,
+        $localize`:@@about.capabilities.backEnd.integration:Service integration`,
       ],
     },
     {

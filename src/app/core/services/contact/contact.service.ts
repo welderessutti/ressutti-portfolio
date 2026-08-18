@@ -19,8 +19,8 @@ export class ContactService {
   public readonly contacts: Contact[] = [
     {
       id: 'email',
-      label: $localize`:@@contact.contacts.email.label:Email`,
-      accessibleLabel: $localize`:@@contact.contacts.email.accessibleLabel:Send an email`,
+      label: $localize`:@@shared.contactChannels.email.label:Email`,
+      accessibleLabel: $localize`:@@shared.contactChannels.email.ariaLabel:Send an email`,
       url: this.profile.emailUrl,
       external: false,
       primary: true,
@@ -28,7 +28,7 @@ export class ContactService {
     {
       id: 'linkedin',
       label: 'LinkedIn',
-      accessibleLabel: $localize`:@@contact.contacts.linkedin.accessibleLabel:Open LinkedIn in a new tab`,
+      accessibleLabel: $localize`:@@shared.contactChannels.linkedin.ariaLabel:Open LinkedIn in a new tab`,
       url: this.profile.linkedinUrl,
       external: true,
       primary: false,
@@ -36,7 +36,7 @@ export class ContactService {
     {
       id: 'github',
       label: 'GitHub',
-      accessibleLabel: $localize`:@@contact.contacts.github.accessibleLabel:Open GitHub in a new tab`,
+      accessibleLabel: $localize`:@@shared.contactChannels.github.ariaLabel:Open GitHub in a new tab`,
       url: this.profile.githubUrl,
       external: true,
       primary: false,
@@ -44,7 +44,7 @@ export class ContactService {
     {
       id: 'whatsapp',
       label: 'WhatsApp',
-      accessibleLabel: $localize`:@@contact.contacts.whatsapp.accessibleLabel:Open WhatsApp in a new tab`,
+      accessibleLabel: $localize`:@@shared.contactChannels.whatsapp.ariaLabel:Open WhatsApp in a new tab`,
       url: this.profile.whatsappUrl,
       external: true,
       primary: false,

@@ -12,9 +12,9 @@ import { ROUTES } from '../../../../shared/i18n/routes';
 export class Hero implements OnInit, OnDestroy {
   private readonly document = inject(DOCUMENT);
   private readonly words = [
-    $localize`:@@home.hero.keyword.modern:modern`,
-    $localize`:@@home.hero.keyword.scalable:scalable`,
-    $localize`:@@home.hero.keyword.highPerformance:high-performance`,
+    $localize`:@@home.hero.title.keyword.modern:modern`,
+    $localize`:@@home.hero.title.keyword.scalable:scalable`,
+    $localize`:@@home.hero.title.keyword.highPerformance:high-performance`,
   ];
   private wordIndex = 0;
   private charIndex = 0;

@@ -1,9 +1,12 @@
 <section id="projects" class="section-padding bg-surface border-b border-border-light">
   <div class="container-padding reveal" appRevealOnScroll>
-    <h2 i18n="@@home.projects.title" class="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+    <h2
+      i18n="@@home.projects.heading"
+      class="text-3xl md:text-4xl font-bold mb-4 text-text-primary"
+    >
       Projects
     </h2>
-    <p i18n="@@home.projects.subtitle" class="text-text-secondary mb-12">
+    <p i18n="@@home.projects.description" class="text-text-secondary mb-12">
       Selected work demonstrating end-to-end development, architectural decisions and dependable
       user experiences.
     </p>
@@ -24,7 +27,7 @@
 
     <div class="mt-12 flex justify-center">
       <a
-        i18n="@@home.projects.viewAllProjectsButton"
+        i18n="@@home.projects.cta.viewAll.label"
         [hreflang]="currentLocale"
         [routerLink]="viewAllProjectsButtonPath"
         class="px-6 py-3 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition font-medium shadow-lg hover:shadow-accent/30"

@@ -35,7 +35,11 @@
       {{ project().shortDescription }}
     </p>
 
-    <ul class="flex flex-wrap gap-2 content-start" aria-label="Technologies">
+    <ul
+      class="flex flex-wrap gap-2 content-start"
+      aria-label="Technologies"
+      i18n-aria-label="@@projects.list.card.technologies.ariaLabel"
+    >
       @for (technology of visibleTechnologies(); track technology.id) {
         <li class="rounded-md bg-surface-light px-2.5 py-1 text-xs text-text-secondary">
           {{ technology.name }}
@@ -51,14 +55,24 @@
 
     <dl class="flex flex-1 flex-col gap-4">
       <div>
-        <dt class="text-xs font-semibold uppercase tracking-wide text-text-tertiary">Role</dt>
+        <dt
+          class="text-xs font-semibold uppercase tracking-wide text-text-tertiary"
+          i18n="@@projects.list.card.role.label"
+        >
+          Role
+        </dt>
         <dd class="mt-1 text-sm text-text-secondary">
           {{ project().role }}
         </dd>
       </div>
 
       <div>
-        <dt class="text-xs font-semibold uppercase tracking-wide text-text-tertiary">Outcome</dt>
+        <dt
+          class="text-xs font-semibold uppercase tracking-wide text-text-tertiary"
+          i18n="@@projects.list.card.outcome.label"
+        >
+          Outcome
+        </dt>
         <dd class="mt-1 text-sm text-text-secondary">
           {{ project().outcome }}
         </dd>
@@ -67,6 +81,7 @@
 
     <div class="mt-auto flex flex-wrap items-center gap-x-5">
       <a
+        i18n="@@projects.card.viewDetails.label"
         [hreflang]="currentLocale()"
         [routerLink]="project().slug"
         class="font-medium text-accent hover:underline"
@@ -81,8 +96,10 @@
           rel="noopener noreferrer"
           class="text-sm text-text-secondary hover:text-accent"
         >
-          Live demo
-          <span class="sr-only">for {{ project().title }} (opens in a new tab)</span>
+          <span i18n="@@projects.links.liveDemo.label">Live demo</span>
+          <span class="sr-only" i18n="@@projects.list.card.externalLink.newTabContext"
+            >for {{ project().title }} (opens in a new tab)</span
+          >
         </a>
       }
 
@@ -93,8 +110,10 @@
           rel="noopener noreferrer"
           class="text-sm text-text-secondary hover:text-accent"
         >
-          Repository
-          <span class="sr-only">for {{ project().title }} (opens in a new tab)</span>
+          <span i18n="@@projects.list.card.repository.label">Repository</span>
+          <span class="sr-only" i18n="@@projects.list.card.externalLink.newTabContext"
+            >for {{ project().title }} (opens in a new tab)</span
+          >
         </a>
       }
     </div>

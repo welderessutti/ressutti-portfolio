@@ -4,37 +4,37 @@ import { TECHNOLOGIES } from '../data/technologies.data';
 export const STACKS: Stack[] = [
   {
     id: 'front-end',
-    category: 'Front-end',
+    category: $localize`:@@home.stacks.category.frontEnd.label:Front-end`,
     technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.typeScript, TECHNOLOGIES.tailwindCss],
   },
 
   {
     id: 'back-end',
-    category: 'Back-end',
+    category: $localize`:@@home.stacks.category.backEnd.label:Back-end`,
     technologies: [TECHNOLOGIES.spring, TECHNOLOGIES.java, TECHNOLOGIES.kotlin],
   },
 
   {
     id: 'database',
-    category: $localize`:@@home.stacks.category.database:Database`,
+    category: $localize`:@@home.stacks.category.database.label:Database`,
     technologies: [TECHNOLOGIES.postgreSql, TECHNOLOGIES.mySql, TECHNOLOGIES.mongoDb],
   },
 
   {
     id: 'messaging',
-    category: 'Messaging',
+    category: $localize`:@@home.stacks.category.messaging.label:Messaging`,
     technologies: [TECHNOLOGIES.rabbitMq],
   },
 
   {
-    id: 'qa',
-    category: 'QA',
+    id: 'testing',
+    category: $localize`:@@home.stacks.category.testing.label:Testing`,
     technologies: [TECHNOLOGIES.jUnit, TECHNOLOGIES.cucumber],
   },
 
   {
     id: 'devops&ci/cd',
-    category: 'DevOps & CI/CD',
+    category: $localize`:@@home.stacks.category.devOpsCiCd.label:DevOps & CI/CD`,
     technologies: [
       TECHNOLOGIES.docker,
       TECHNOLOGIES.git,
@@ -45,31 +45,31 @@ export const STACKS: Stack[] = [
 
   {
     id: 'cloud',
-    category: 'Cloud',
+    category: $localize`:@@home.stacks.category.cloud.label:Cloud`,
     technologies: [TECHNOLOGIES.aws, TECHNOLOGIES.azure, TECHNOLOGIES.gcp],
   },
 
   {
     id: 'ux/ui',
-    category: 'UX/UI',
+    category: $localize`:@@home.stacks.category.userExperienceDesign.label:UX/UI`,
     technologies: [TECHNOLOGIES.figma, TECHNOLOGIES.gimp, TECHNOLOGIES.blender],
   },
 
   {
-    id: 'ia',
-    category: 'IA',
+    id: 'ai',
+    category: $localize`:@@home.stacks.category.artificialIntelligence.label:AI`,
     technologies: [TECHNOLOGIES.codex, TECHNOLOGIES.claudeCode, TECHNOLOGIES.nanoBanana],
   },
 
   {
     id: 'os',
-    category: 'OS',
+    category: $localize`:@@home.stacks.category.operatingSystems.label:OS`,
     technologies: [TECHNOLOGIES.linux, TECHNOLOGIES.windows, TECHNOLOGIES.android],
   },
 
   {
     id: 'ide',
-    category: 'IDE',
+    category: $localize`:@@home.stacks.category.developmentEnvironments.label:IDE`,
     technologies: [
       TECHNOLOGIES.intelliJ,
       TECHNOLOGIES.webstorm,

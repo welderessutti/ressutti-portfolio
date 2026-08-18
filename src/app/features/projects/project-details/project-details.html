@@ -31,7 +31,7 @@
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-text-inverse shadow-lg transition hover:bg-accent-hover hover:shadow-accent/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
-                <span i18n="@@projectDetails.actions.liveDemo">Live demo</span>
+                <span i18n="@@projects.links.liveDemo.label">Live demo</span>
                 <svg
                   aria-hidden="true"
                   class="h-4 w-4"
@@ -42,7 +42,7 @@
                 >
                   <path d="M7 17 17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="sr-only" i18n="@@projectDetails.actions.newTab"
+                <span class="sr-only" i18n="@@projects.details.externalLink.newTabContext"
                   >(opens in a new tab)</span
                 >
               </a>
@@ -69,8 +69,8 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span i18n="@@projectDetails.actions.sourceCode">Source code</span>
-                <span class="sr-only" i18n="@@projectDetails.actions.newTab"
+                <span i18n="@@projects.details.links.sourceCode.label">Source code</span>
+                <span class="sr-only" i18n="@@projects.details.externalLink.newTabContext"
                   >(opens in a new tab)</span
                 >
               </a>
@@ -127,16 +127,16 @@
       <div class="container-padding reveal" appRevealOnScroll>
         <div class="grid gap-12 lg:grid-cols-[minmax(0,1.65fr)_minmax(17rem,0.75fr)] lg:gap-20">
           <div>
-            <p class="section-eyebrow" i18n="@@projectDetails.overview.eyebrow">The project</p>
+            <p class="section-eyebrow" i18n="@@projects.details.overview.eyebrow">The project</p>
             <h2 [id]="project.id + '-overview-title'" class="section-title">
-              <span i18n="@@projectDetails.overview.title">Project overview</span>
+              <span i18n="@@projects.details.overview.heading">Project overview</span>
             </h2>
 
             <div class="mt-8 grid gap-8 text-text-secondary sm:grid-cols-3">
               <div>
                 <h3
                   class="text-sm font-semibold uppercase tracking-wider text-text-primary"
-                  i18n="@@projectDetails.overview.context"
+                  i18n="@@projects.details.overview.context.heading"
                 >
                   Context
                 </h3>
@@ -145,7 +145,7 @@
               <div>
                 <h3
                   class="text-sm font-semibold uppercase tracking-wider text-text-primary"
-                  i18n="@@projectDetails.overview.problem"
+                  i18n="@@projects.details.overview.problem.heading"
                 >
                   Problem
                 </h3>
@@ -154,7 +154,7 @@
               <div>
                 <h3
                   class="text-sm font-semibold uppercase tracking-wider text-text-primary"
-                  i18n="@@projectDetails.overview.solution"
+                  i18n="@@projects.details.overview.solution.heading"
                 >
                   Solution
                 </h3>
@@ -167,7 +167,10 @@
             class="grid grid-cols-2 gap-x-5 gap-y-6 rounded-2xl border border-border bg-surface p-6 sm:grid-cols-3 lg:grid-cols-1 lg:p-7"
           >
             <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+              <dt
+                class="text-xs font-semibold uppercase tracking-wider text-text-tertiary"
+                i18n="@@projects.details.overview.facts.role.label"
+              >
                 Role
               </dt>
               <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
@@ -176,7 +179,10 @@
             </div>
 
             <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+              <dt
+                class="text-xs font-semibold uppercase tracking-wider text-text-tertiary"
+                i18n="@@projects.details.overview.facts.type.label"
+              >
                 Type
               </dt>
               <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
@@ -184,7 +190,10 @@
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+              <dt
+                class="text-xs font-semibold uppercase tracking-wider text-text-tertiary"
+                i18n="@@projects.details.overview.facts.status.label"
+              >
                 Status
               </dt>
               <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
@@ -192,7 +201,10 @@
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+              <dt
+                class="text-xs font-semibold uppercase tracking-wider text-text-tertiary"
+                i18n="@@projects.details.overview.facts.timeline.label"
+              >
                 Timeline
               </dt>
               <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
@@ -200,7 +212,10 @@
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+              <dt
+                class="text-xs font-semibold uppercase tracking-wider text-text-tertiary"
+                i18n="@@projects.details.overview.facts.year.label"
+              >
                 Year
               </dt>
               <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
@@ -223,13 +238,13 @@
       >
         <div class="container-padding reveal" appRevealOnScroll>
           <header class="max-w-3xl">
-            <p class="section-eyebrow" i18n="@@projectDetails.features.eyebrow">
+            <p class="section-eyebrow" i18n="@@projects.details.features.eyebrow">
               Product experience
             </p>
             <h2 [id]="project.id + '-features-title'" class="section-title">
-              <span i18n="@@projectDetails.features.title">Key features</span>
+              <span i18n="@@projects.details.features.heading">Key features</span>
             </h2>
-            <p class="section-description" i18n="@@projectDetails.features.description">
+            <p class="section-description" i18n="@@projects.details.features.description">
               Purposeful capabilities shaped around the core user journey.
             </p>
           </header>
@@ -263,11 +278,11 @@
         <div class="container-padding reveal" appRevealOnScroll>
           <div class="grid gap-10 lg:grid-cols-[minmax(15rem,0.65fr)_minmax(0,1.6fr)] lg:gap-16">
             <header>
-              <p class="section-eyebrow" i18n="@@projectDetails.stack.eyebrow">Under the hood</p>
+              <p class="section-eyebrow" i18n="@@projects.details.stack.eyebrow">Under the hood</p>
               <h2 [id]="project.id + '-stack-title'" class="section-title">
-                <span i18n="@@projectDetails.stack.title">Tech stack</span>
+                <span i18n="@@projects.details.stack.heading">Tech stack</span>
               </h2>
-              <p class="section-description" i18n="@@projectDetails.stack.description">
+              <p class="section-description" i18n="@@projects.details.stack.description">
                 Tools selected for the role they play in a maintainable, end-to-end system.
               </p>
             </header>
@@ -331,11 +346,11 @@
           @if (project.architecture; as architecture) {
             <div class="reveal" appRevealOnScroll>
               <header class="max-w-3xl">
-                <p class="section-eyebrow" i18n="@@projectDetails.architecture.eyebrow">
+                <p class="section-eyebrow" i18n="@@projects.details.architecture.eyebrow">
                   System design
                 </p>
                 <h2 [id]="project.id + '-architecture-title'" class="section-title">
-                  <span i18n="@@projectDetails.architecture.title">System architecture</span>
+                  <span i18n="@@projects.details.architecture.heading">System architecture</span>
                 </h2>
                 <p class="section-description">{{ architecture.description }}</p>
               </header>
@@ -343,7 +358,7 @@
               <figure
                 class="architecture-canvas mt-10 rounded-2xl border border-border bg-background p-6 shadow-sm sm:p-8 lg:p-10"
               >
-                <figcaption class="sr-only" i18n="@@projectDetails.architecture.diagramCaption">
+                <figcaption class="sr-only" i18n="@@projects.details.architecture.diagram.caption">
                   Main system components and their communication flow
                 </figcaption>
                 <ol class="architecture-flow grid gap-10 lg:grid-cols-4 lg:gap-7">
@@ -374,8 +389,8 @@
           @if (project.workflow?.length) {
             <div class="reveal" appRevealOnScroll>
               <header class="max-w-3xl">
-                <p class="section-eyebrow" i18n="@@projectDetails.workflow.eyebrow">Core journey</p>
-                <h2 class="section-title" i18n="@@projectDetails.workflow.title">How it works</h2>
+                <p class="section-eyebrow" i18n="@@projects.details.workflow.eyebrow">Core journey</p>
+                <h2 class="section-title" i18n="@@projects.details.workflow.heading">How it works</h2>
               </header>
 
               <ol class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -418,13 +433,13 @@
       >
         <div class="container-padding space-y-20">
           <header class="max-w-3xl reveal" appRevealOnScroll>
-            <p class="section-eyebrow" i18n="@@projectDetails.engineering.eyebrow">
+            <p class="section-eyebrow" i18n="@@projects.details.engineering.eyebrow">
               Behind the product
             </p>
             <h2 [id]="project.id + '-engineering-title'" class="section-title">
-              <span i18n="@@projectDetails.engineering.title">Engineering</span>
+              <span i18n="@@projects.details.engineering.heading">Engineering</span>
             </h2>
-            <p class="section-description" i18n="@@projectDetails.engineering.description">
+            <p class="section-description" i18n="@@projects.details.engineering.description">
               The technical choices and trade-offs that shaped a reliable product experience.
             </p>
           </header>
@@ -437,13 +452,13 @@
             >
               <div class="grid gap-8 lg:grid-cols-[minmax(15rem,0.6fr)_minmax(0,1.6fr)] lg:gap-16">
                 <div>
-                  <p class="section-eyebrow" i18n="@@projectDetails.decisions.eyebrow">
+                  <p class="section-eyebrow" i18n="@@projects.details.decisions.eyebrow">
                     Trade-offs
                   </p>
                   <h3
                     [id]="project.id + '-decisions-title'"
                     class="text-2xl font-bold text-text-primary md:text-3xl"
-                    i18n="@@projectDetails.decisions.title"
+                    i18n="@@projects.details.decisions.heading"
                   >
                     Technical decisions
                   </h3>
@@ -476,13 +491,13 @@
               [attr.aria-labelledby]="project.id + '-challenges-title'"
             >
               <header class="max-w-3xl">
-                <p class="section-eyebrow" i18n="@@projectDetails.challenges.eyebrow">
+                <p class="section-eyebrow" i18n="@@projects.details.challenges.eyebrow">
                   Problem solving
                 </p>
                 <h3
                   [id]="project.id + '-challenges-title'"
                   class="text-2xl font-bold text-text-primary md:text-3xl"
-                  i18n="@@projectDetails.challenges.title"
+                  i18n="@@projects.details.challenges.heading"
                 >
                   Engineering challenges
                 </h3>
@@ -496,7 +511,7 @@
                       <div class="grid gap-1.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-5">
                         <dt
                           class="text-sm font-semibold text-error"
-                          i18n="@@projectDetails.challenges.challenge"
+                          i18n="@@projects.details.challenges.fields.challenge.label"
                         >
                           Challenge
                         </dt>
@@ -505,7 +520,7 @@
                       <div class="grid gap-1.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-5">
                         <dt
                           class="text-sm font-semibold text-accent"
-                          i18n="@@projectDetails.challenges.solution"
+                          i18n="@@projects.details.challenges.fields.solution.label"
                         >
                           Solution
                         </dt>
@@ -514,7 +529,7 @@
                       <div class="grid gap-1.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-5">
                         <dt
                           class="text-sm font-semibold text-success"
-                          i18n="@@projectDetails.challenges.result"
+                          i18n="@@projects.details.challenges.fields.result.label"
                         >
                           Result
                         </dt>
@@ -534,13 +549,13 @@
               [attr.aria-labelledby]="project.id + '-quality-title'"
             >
               <header class="max-w-3xl">
-                <p class="section-eyebrow" i18n="@@projectDetails.quality.eyebrow">
+                <p class="section-eyebrow" i18n="@@projects.details.quality.eyebrow">
                   Quality attributes
                 </p>
                 <h3
                   [id]="project.id + '-quality-title'"
                   class="text-2xl font-bold text-text-primary md:text-3xl"
-                  i18n="@@projectDetails.quality.title"
+                  i18n="@@projects.details.quality.heading"
                 >
                   Built beyond the happy path
                 </h3>
@@ -553,8 +568,8 @@
                       class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent"
                       aria-hidden="true"
                     >
-                      @switch (item.category) {
-                        @case ('Security') {
+                      @switch (item.id) {
+                        @case ('security') {
                           <svg
                             class="h-5 w-5"
                             viewBox="0 0 24 24"
@@ -573,7 +588,7 @@
                             />
                           </svg>
                         }
-                        @case ('Performance') {
+                        @case ('performance') {
                           <svg
                             class="h-5 w-5"
                             viewBox="0 0 24 24"
@@ -585,7 +600,7 @@
                             <path d="m12 14 4-4M6 19h12" stroke-linecap="round" />
                           </svg>
                         }
-                        @case ('Testing') {
+                        @case ('testing') {
                           <svg
                             class="h-5 w-5"
                             viewBox="0 0 24 24"
@@ -650,11 +665,11 @@
       >
         <div class="container-padding">
           <header class="max-w-3xl reveal" appRevealOnScroll>
-            <p class="section-eyebrow" i18n="@@projectDetails.showcase.eyebrow">In the product</p>
+            <p class="section-eyebrow" i18n="@@projects.details.showcase.eyebrow">In the product</p>
             <h2 [id]="project.id + '-showcase-title'" class="section-title">
-              <span i18n="@@projectDetails.showcase.title">Product showcase</span>
+              <span i18n="@@projects.details.showcase.heading">Product showcase</span>
             </h2>
-            <p class="section-description" i18n="@@projectDetails.showcase.description">
+            <p class="section-description" i18n="@@projects.details.showcase.description">
               A closer look at the moments that define the experience.
             </p>
           </header>
@@ -702,9 +717,9 @@
         >
           <div class="container-padding reveal" appRevealOnScroll>
             <header class="max-w-3xl">
-              <p class="section-eyebrow" i18n="@@projectDetails.lessons.eyebrow">Reflection</p>
+              <p class="section-eyebrow" i18n="@@projects.details.lessons.eyebrow">Reflection</p>
               <h2 [id]="project.id + '-lessons-title'" class="section-title">
-                <span i18n="@@projectDetails.lessons.title">Lessons & next steps</span>
+                <span i18n="@@projects.details.lessons.heading">Lessons & next steps</span>
               </h2>
             </header>
 
@@ -717,7 +732,7 @@
                   <h3
                     [id]="project.id + '-learnings-title'"
                     class="text-xl font-semibold text-text-primary"
-                    i18n="@@projectDetails.lessons.learnings"
+                    i18n="@@projects.details.lessons.learnings.heading"
                   >
                     Key learnings
                   </h3>
@@ -749,7 +764,7 @@
                   <h3
                     [id]="project.id + '-next-steps-title'"
                     class="text-xl font-semibold text-text-primary"
-                    i18n="@@projectDetails.lessons.nextSteps"
+                    i18n="@@projects.details.lessons.nextSteps.heading"
                   >
                     Next steps
                   </h3>
@@ -785,7 +800,7 @@
 
   @if (project.previousProject || project.nextProject) {
     <nav
-      i18n-aria-label="@@projectDetails.projectNavigation.label"
+      i18n-aria-label="@@projects.details.projectNavigation.ariaLabel"
       aria-label="Project navigation"
       class="bg-surface section-padding"
     >
@@ -797,7 +812,7 @@
           >
             <span
               class="text-sm text-text-tertiary"
-              i18n="@@projectDetails.projectNavigation.previous"
+              i18n="@@projects.details.projectNavigation.previous.label"
               >Previous project</span
             >
             <span class="mt-2 flex items-center gap-3 text-xl font-semibold text-text-primary">
@@ -823,7 +838,9 @@
             [href]="nextProject.path"
             class="group rounded-xl border border-border bg-background p-6 text-right transition hover:border-accent/60 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:col-start-2"
           >
-            <span class="text-sm text-text-tertiary" i18n="@@projectDetails.projectNavigation.next"
+            <span
+              class="text-sm text-text-tertiary"
+              i18n="@@projects.details.projectNavigation.next.label"
               >Next project</span
             >
             <span

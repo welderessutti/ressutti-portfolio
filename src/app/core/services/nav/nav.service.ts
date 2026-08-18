@@ -13,25 +13,25 @@ export class NavService {
   public readonly navs: Nav[] = [
     {
       id: 'home',
-      label: 'Home',
+      label: $localize`:@@layout.navigation.home.label:Home`,
       path: `/${ROUTES.home[this.currentLocale]}`,
       locale: this.currentLocale,
     },
     {
       id: 'projects',
-      label: $localize`:@@nav.projects.label:Projects`,
+      label: $localize`:@@layout.navigation.projects.label:Projects`,
       path: `/${ROUTES.projects[this.currentLocale]}`,
       locale: this.currentLocale,
     },
     {
       id: 'about',
-      label: $localize`:@@nav.about.label:About`,
+      label: $localize`:@@layout.navigation.about.label:About`,
       path: `/${ROUTES.about[this.currentLocale]}`,
       locale: this.currentLocale,
     },
     {
       id: 'contact',
-      label: $localize`:@@nav.contact.label:Contact`,
+      label: $localize`:@@layout.navigation.contact.label:Contact`,
       path: `/${ROUTES.contact[this.currentLocale]}`,
       locale: this.currentLocale,
     },
