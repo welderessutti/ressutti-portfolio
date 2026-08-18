@@ -130,7 +130,7 @@ export class About {
   public constructor() {
     this.seo.updateSeo({
       title: $localize`:@@about.seo.title:About Welder Ressutti | Ressutti.dev`,
-      description: $localize`:@@about.seo.description:Learn about Welder Ressutti, a full-stack software developer building reliable web applications with Angular, Java and Spring.`,
+      description: $localize`:@@about.seo.description:Learn about Welder Ressutti, a full-stack developer specialising in Angular and Spring, with a focus on reliable, maintainable web applications.`,
       image: '/favicon.ico',
       imageAlt: $localize`:@@about.seo.imageAlt:Ressutti.dev portfolio logo.`,
       path: ROUTES.about,

@@ -8,19 +8,19 @@ export const PROJECTS: Project[] = [
 
     name: 'Glicare',
     title: 'Glicare',
-    subtitle: $localize`:@@project.data.glicare.subtitle:Glicose monitoring system for diabetic patients.`,
-    shortDescription: $localize`:@@project.data.glicare.shortDescription:This project is a web application that allows diabetic patients to monitor their glucose levels and manage their health effectively.`,
-    description: $localize`:@@project.data.glicare.description:This is a comprehensive solution for managing diabetes, providing tools for monitoring glucose levels, tracking medication, and accessing educational resources.`,
+    subtitle: $localize`:@@project.data.glicare.subtitle:A web application for diabetes self-management.`,
+    shortDescription: $localize`:@@project.data.glicare.shortDescription:A responsive health platform that centralises glucose readings, medication routines and progress trends to support daily diabetes management.`,
+    description: $localize`:@@project.data.glicare.description:Glicare brings glucose records, medication tracking, progress indicators and educational resources into one structured care experience.`,
     featured: true,
 
     category: $localize`:@@projectDetails.default.category:Digital health platform`,
     type: $localize`:@@projectDetails.default.type:Responsive web application`,
-    role: $localize`:@@projectDetails.default.role:Full-stack development & product design`,
-    summary: $localize`:@@projectDetails.default.summary:A focused care experience that turns daily glucose records into clear, actionable health insights.`,
-    outcome: $localize`:@@project.data.glicare.outcome:Improved patient engagement and health outcomes through effective glucose monitoring`,
+    role: $localize`:@@projectDetails.default.role:Full-stack development and product design`,
+    summary: $localize`:@@projectDetails.default.summary:A full-stack health application that turns glucose records into clear trends and structured information for patients and care conversations.`,
+    outcome: $localize`:@@project.data.glicare.outcome:A clearer, structured workflow for recording glucose data and reviewing health trends`,
 
     status: $localize`:@@projectDetails.default.status:In progress`,
-    timeline: $localize`:@@projectDetails.default.timeline:1 months`,
+    timeline: $localize`:@@projectDetails.default.timeline:1 month`,
     year: {
       startYear: 2026,
       // endYear: 2025,

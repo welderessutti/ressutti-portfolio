@@ -17,8 +17,8 @@ export class Home {
 
   constructor() {
     this.seo.updateSeo({
-      title: $localize`:@@home.seo.title:Home | Ressutti.dev`,
-      description: $localize`:@@home.seo.description:Portfolio of a full-stack developer focused on performance and scalability.`,
+      title: $localize`:@@home.seo.title:Full-stack Developer | Angular + Spring | Ressutti.dev`,
+      description: $localize`:@@home.seo.description:Portfolio of Welder Ressutti, a full-stack developer specialising in modern, scalable and robust web applications with Angular and Spring.`,
       image: '/assets/images/seo/home.png',
       imageAlt: $localize`:@@home.seo.alt:Home page of Ressutti.dev portfolio.`,
       path: ROUTES.home,

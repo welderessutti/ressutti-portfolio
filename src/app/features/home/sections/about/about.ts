@@ -10,9 +10,9 @@ import { AboutDefinition } from '../../../../shared/models/about.definition.mode
 })
 export class About {
   protected readonly highlights: string[] = [
-    $localize`:@@home.about.main.highlights.0:Analytical and solution-oriented mindset`,
-    $localize`:@@home.about.main.highlights.1:Quality throughout the development process`,
-    $localize`:@@home.about.main.highlights.2:Experience building end-to-end web applications`,
+    $localize`:@@home.about.main.highlights.0:End-to-end development across front-end and back-end`,
+    $localize`:@@home.about.main.highlights.1:Architecture designed for maintainability and growth`,
+    $localize`:@@home.about.main.highlights.2:Quality built into implementation and delivery`,
   ];
   protected readonly definitions: AboutDefinition[] = [
     {

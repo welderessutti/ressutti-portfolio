@@ -204,7 +204,10 @@
                 Year
               </dt>
               <dd class="mt-1.5 text-sm font-medium leading-relaxed text-text-primary">
-                {{ project.year.startYear }} - {{ project.year.endYear }}
+                {{ project.year.startYear }}
+                @if (project.year.endYear) {
+                  – {{ project.year.endYear }}
+                }
               </dd>
             </div>
           </dl>

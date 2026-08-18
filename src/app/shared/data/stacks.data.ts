@@ -50,9 +50,15 @@ export const STACKS: Stack[] = [
   },
 
   {
+    id: 'ux/ui',
+    category: 'UX/UI',
+    technologies: [TECHNOLOGIES.figma, TECHNOLOGIES.gimp, TECHNOLOGIES.blender],
+  },
+
+  {
     id: 'ia',
     category: 'IA',
-    technologies: [TECHNOLOGIES.Codex, TECHNOLOGIES.claudeCode, TECHNOLOGIES.nanoBanana],
+    technologies: [TECHNOLOGIES.codex, TECHNOLOGIES.claudeCode, TECHNOLOGIES.nanoBanana],
   },
 
   {
@@ -66,14 +72,10 @@ export const STACKS: Stack[] = [
     category: 'IDE',
     technologies: [
       TECHNOLOGIES.intelliJ,
+      TECHNOLOGIES.webstorm,
+      TECHNOLOGIES.datagrip,
       TECHNOLOGIES.visualStudioCode,
       TECHNOLOGIES.androidStudio,
     ],
-  },
-
-  {
-    id: 'design',
-    category: 'Design',
-    technologies: [TECHNOLOGIES.figma, TECHNOLOGIES.gimp],
   },
 ];

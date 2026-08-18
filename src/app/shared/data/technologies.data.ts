@@ -217,10 +217,28 @@ export const TECHNOLOGIES = {
     icon: `${PATH}claude.svg`,
   },
 
-  Codex: {
+  codex: {
     id: 'codex',
     name: 'Codex',
     icon: `${PATH}codex.svg`,
+  },
+
+  blender: {
+    id: 'blender',
+    name: 'Blender',
+    icon: `${PATH}blender.svg`,
+  },
+
+  webstorm: {
+    id: 'webstorm',
+    name: 'WebStorm',
+    icon: `${PATH}webstorm.svg`,
+  },
+
+  datagrip: {
+    id: 'datagrip',
+    name: 'DataGrip',
+    icon: `${PATH}datagrip.svg`,
   },
 } as const;
 

@@ -27,8 +27,8 @@ export class Projects {
 
   constructor() {
     this.seo.updateSeo({
-      title: $localize`:@@projects.seo.title:Projects | Ressutti.dev`,
-      description: $localize`:@@projects.seo.description:Explore web applications developed by Welder Ressutti, including their purpose, technologies, responsibilities and outcomes.`,
+      title: $localize`:@@projects.seo.title:Full-stack Projects | Angular + Spring | Ressutti.dev`,
+      description: $localize`:@@projects.seo.description:Explore full-stack web applications by Welder Ressutti, with context on product goals, Angular and Spring architecture, responsibilities and engineering decisions.`,
       image: '/assets/images/seo/projects.webp',
       imageAlt: $localize`:@@projects.seo.imageAlt:Selection of web development projects by Welder Ressutti.`,
       path: ROUTES.projects,

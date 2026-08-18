@@ -20,7 +20,7 @@ export class Contact {
   public constructor() {
     this.seo.updateSeo({
       title: $localize`:@@contact.seo.title:Contact Welder Ressutti | Ressutti.dev`,
-      description: $localize`:@@contact.seo.description:Contact Welder Ressutti about software development opportunities, projects, collaboration or professional networking.`,
+      description: $localize`:@@contact.seo.description:Contact Welder Ressutti about Angular and Spring development opportunities, full-stack web projects or professional collaboration.`,
       image: '/favicon.ico',
       imageAlt: $localize`:@@contact.seo.imageAlt:Ressutti.dev portfolio logo.`,
       path: ROUTES.contact,
