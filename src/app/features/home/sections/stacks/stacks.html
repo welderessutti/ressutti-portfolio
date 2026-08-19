@@ -9,7 +9,7 @@
     </p>
 
     <ul
-      class="flex flex-wrap items-stretch justify-center gap-4 [&>li]:flex [&>li]:grow-0 [&>li]:shrink-0 [&>li]:basis-[calc((100%_-_1rem)/2)] sm:[&>li]:basis-[calc((100%_-_2rem)/3)] md:[&>li]:basis-[calc((100%_-_3rem)/4)] lg:[&>li]:basis-[calc((100%_-_4rem)/5)] xl:[&>li]:basis-[calc((100%_-_5rem)/6)] [&>li>app-stack-card]:w-full"
+      class="flex flex-wrap items-stretch justify-center gap-4 [&>li]:flex [&>li]:min-w-0 [&>li]:grow-0 [&>li]:shrink-0 [&>li]:basis-[calc((100%_-_1rem)/2)] sm:[&>li]:basis-[calc((100%_-_2rem)/3)] md:[&>li]:basis-[calc((100%_-_3rem)/4)] lg:[&>li]:basis-[calc((100%_-_4rem)/5)] xl:[&>li]:basis-[calc((100%_-_5rem)/6)] [&>li>app-stack-card]:w-full"
     >
       <!-- Category -->
       @for (stack of stacks; track stack.id) {
