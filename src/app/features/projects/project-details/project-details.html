@@ -5,7 +5,9 @@
         <div class="flex flex-wrap items-center gap-3">
           <span class="section-eyebrow">{{ project.category }}</span>
           <span
-            class="rounded-full border border-border bg-background/70 px-2 text-sm text-text-secondary"
+            class="rounded-full border border-border bg-background/70 px-2 text-sm"
+            [class.text-error]="!project.completed"
+            [class.text-success]="project.completed"
           >
             {{ project.status }}
           </span>
@@ -389,8 +391,12 @@
           @if (project.workflow?.length) {
             <div class="reveal" appRevealOnScroll>
               <header class="max-w-3xl">
-                <p class="section-eyebrow" i18n="@@projects.details.workflow.eyebrow">Core journey</p>
-                <h2 class="section-title" i18n="@@projects.details.workflow.heading">How it works</h2>
+                <p class="section-eyebrow" i18n="@@projects.details.workflow.eyebrow">
+                  Core journey
+                </p>
+                <h2 class="section-title" i18n="@@projects.details.workflow.heading">
+                  How it works
+                </h2>
               </header>
 
               <ol class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">

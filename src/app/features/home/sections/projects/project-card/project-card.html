@@ -22,7 +22,9 @@
         {{ project().title }}
       </h3>
       <span
-        class="rounded-full border border-border bg-background/70 px-2 text-sm text-text-secondary"
+        class="rounded-full border border-border bg-background/70 px-2 text-sm"
+        [class.text-error]="!project().completed"
+        [class.text-success]="project().completed"
       >
         {{ project().status }}
       </span>

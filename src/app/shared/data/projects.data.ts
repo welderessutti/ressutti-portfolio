@@ -20,6 +20,7 @@ export const PROJECTS: Project[] = [
     outcome: $localize`:@@projects.data.glicare.outcome:A clearer, structured workflow for recording glucose data and reviewing health trends`,
 
     status: $localize`:@@projects.data.glicare.status:In progress`,
+    completed: false,
     timeline: $localize`:@@projects.data.glicare.timeline:1 month`,
     year: {
       startYear: 2026,
@@ -350,6 +351,7 @@ export const PROJECTS: Project[] = [
   //   outcome: $localize`:@@project.data.deedscash.outcome:Faster budget reviews and clearer visibility into monthly spending`,
 
   //   status: $localize`:@@project.data.deedscash.status:Completed`,
+  //   completed: false,
   //   timeline: $localize`:@@project.data.deedscash.timeline:6 months`,
   //   year: {
   //     startYear: 2023,
@@ -684,6 +686,7 @@ export const PROJECTS: Project[] = [
   //   outcome: $localize`:@@project.data.ecommerce.outcome:Higher checkout completion and more efficient catalogue and order operations`,
 
   //   status: $localize`:@@project.data.ecommerce.status:Completed`,
+  //   completed: false,
   //   timeline: $localize`:@@project.data.ecommerce.timeline:10 months`,
   //   year: {
   //     startYear: 2024,

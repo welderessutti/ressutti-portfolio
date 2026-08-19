@@ -110,6 +110,7 @@ export interface Project {
   readonly outcome: string;
 
   readonly status: string;
+  readonly completed: boolean;
   readonly timeline: string;
   readonly year: ProjectPeriod;
   readonly technologies: readonly Technology[];
