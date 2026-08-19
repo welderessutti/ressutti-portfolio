@@ -14,7 +14,7 @@ export class Hero implements OnInit, OnDestroy {
   private readonly words = [
     $localize`:@@home.hero.title.keyword.modern:modern`,
     $localize`:@@home.hero.title.keyword.scalable:scalable`,
-    $localize`:@@home.hero.title.keyword.highPerformance:high-performance`,
+    $localize`:@@home.hero.title.keyword.robust:robust`,
   ];
   private wordIndex = 0;
   private charIndex = 0;

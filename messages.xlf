@@ -294,7 +294,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="about.capabilities.frontEnd.auth" datatype="html">
-        <source>Client-side authentication and authorisation</source>
+        <source>Stateless authentication and authorisation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">73</context>
@@ -307,8 +307,8 @@
           <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="about.capabilities.backEnd.java" datatype="html">
-        <source>Java and Spring</source>
+      <trans-unit id="about.capabilities.backEnd.spring" datatype="html">
+        <source>Spring and Java</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">80</context>
@@ -412,29 +412,29 @@
           <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="about.education.systems.title" datatype="html">
-        <source>Systems Analysis and Development</source>
+      <trans-unit id="about.education.java.title" datatype="html">
+        <source>Java Architecture and Development</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="about.education.systems.description" datatype="html">
-        <source>Undergraduate degree</source>
+      <trans-unit id="about.education.java.description" datatype="html">
+        <source>Postgraduate degree</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="about.education.java.title" datatype="html">
-        <source>Java Architecture and Development</source>
+      <trans-unit id="about.education.systems.title" datatype="html">
+        <source>Systems Analysis and Development</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="about.education.java.description" datatype="html">
-        <source>Postgraduate qualification</source>
+      <trans-unit id="about.education.systems.description" datatype="html">
+        <source>Associate degree</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">120</context>
@@ -448,10 +448,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="about.education.biomedicine.description" datatype="html">
-        <source>Previous academic background that supports an analytical, responsible and process-oriented approach to professional work.</source>
+        <source>Bachelor's degree</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.environmental.title" datatype="html">
+        <source>Environmental Management</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.environmental.description" datatype="html">
+        <source>Associate degree</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">130</context>
         </context-group>
       </trans-unit>
       <trans-unit id="about.seo.title" datatype="html">
@@ -741,8 +755,8 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="home.hero.title.keyword.highPerformance" datatype="html">
-        <source>high-performance</source>
+      <trans-unit id="home.hero.title.keyword.robust" datatype="html">
+        <source>robust</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
           <context context-type="linenumber">17</context>
@@ -1273,7 +1287,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="layout.footer.brand.description" datatype="html">
-        <source> Building modern, scalable and high-performance web applications. </source>
+        <source> Building modern, scalable and robust digital solutions. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
           <context context-type="linenumber">16,20</context>

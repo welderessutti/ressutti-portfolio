@@ -112,7 +112,7 @@
       </trans-unit>
      <trans-unit id="about.introduction.positioning" datatype="html">
        <source> Full-stack Developer specialising in Angular and Spring for modern, scalable and robust web applications. </source>
-        <target>Desenvolvedor full-stack especializado em Angular e Spring para aplicações web modernas, escaláveis e robustas.</target>
+        <target>Desenvolvedor full-stack com foco em Angular e Spring para aplicações web modernas, escaláveis e robustas.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.html</context>
           <context context-type="linenumber">17,21</context>
@@ -335,8 +335,8 @@
         </context-group>
       </trans-unit>
      <trans-unit id="about.capabilities.frontEnd.auth" datatype="html">
-       <source>Client-side authentication and authorisation</source>
-        <target>Autenticação e autorização no lado do cliente</target>
+       <source>Stateless authentication and authorisation</source>
+        <target>Autenticação e autorização stateless</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">73</context>
@@ -350,9 +350,9 @@
           <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
-     <trans-unit id="about.capabilities.backEnd.java" datatype="html">
-       <source>Java and Spring</source>
-        <target>Java e Spring</target>
+     <trans-unit id="about.capabilities.backEnd.spring" datatype="html">
+       <source>Spring and Java</source>
+        <target>Spring e Java</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">80</context>
@@ -416,7 +416,7 @@
       </trans-unit>
      <trans-unit id="about.capabilities.architecture.delivery" datatype="html">
        <source>Containers and cloud deployment</source>
-        <target>Contêineres e implantação em Cloud</target>
+        <target>Contêineres e implantação em nuvem</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">95</context>
@@ -470,33 +470,33 @@
           <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
-     <trans-unit id="about.education.systems.title" datatype="html">
-       <source>Systems Analysis and Development</source>
-        <target>Análise e Desenvolvimento de Sistemas</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/about/about.ts</context>
-          <context context-type="linenumber">114</context>
-        </context-group>
-      </trans-unit>
-     <trans-unit id="about.education.systems.description" datatype="html">
-       <source>Undergraduate degree</source>
-        <target>Graduação</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/about/about.ts</context>
-          <context context-type="linenumber">115</context>
-        </context-group>
-      </trans-unit>
      <trans-unit id="about.education.java.title" datatype="html">
        <source>Java Architecture and Development</source>
         <target>Arquitetura e Desenvolvimento Java</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
-          <context context-type="linenumber">119</context>
+          <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
      <trans-unit id="about.education.java.description" datatype="html">
-       <source>Postgraduate qualification</source>
+       <source>Postgraduate degree</source>
         <target>Pós-graduação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+     <trans-unit id="about.education.systems.title" datatype="html">
+       <source>Systems Analysis and Development</source>
+        <target>Análise e Desenvolvimento de Sistemas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+     <trans-unit id="about.education.systems.description" datatype="html">
+       <source>Associate degree</source>
+        <target>Tecnólogo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">120</context>
@@ -511,11 +511,27 @@
         </context-group>
       </trans-unit>
      <trans-unit id="about.education.biomedicine.description" datatype="html">
-       <source>Previous academic background that supports an analytical, responsible and process-oriented approach to professional work.</source>
-        <target>Formação acadêmica anterior que contribui para uma abordagem analítica, responsável e orientada a processos no trabalho profissional.</target>
+       <source>Bachelor's degree</source>
+        <target>Bacharelado</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
           <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about.education.environmental.title" datatype="html">
+       <source>Environmental Management</source>
+        <target>Gestão Ambiental</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+     <trans-unit id="about.education.environmental.description" datatype="html">
+       <source>Associate degree</source>
+        <target>Tecnólogo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/about/about.ts</context>
+          <context context-type="linenumber">130</context>
         </context-group>
       </trans-unit>
      <trans-unit id="about.seo.title" datatype="html">
@@ -568,7 +584,7 @@
       </trans-unit>
      <trans-unit id="contact.shared.cv.download.label" datatype="html">
        <source> Download CV (PDF) </source>
-        <target>Baixar CV (PDF)</target>
+        <target>Baixar currículo (PDF)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/contact/contact.html</context>
           <context context-type="linenumber">60,64</context>
@@ -846,9 +862,9 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
-     <trans-unit id="home.hero.title.keyword.highPerformance" datatype="html">
-       <source>high-performance</source>
-        <target>performáticas</target>
+     <trans-unit id="home.hero.title.keyword.robust" datatype="html">
+       <source>robust</source>
+        <target>robustas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/sections/hero/hero.ts</context>
           <context context-type="linenumber">17</context>
@@ -1451,8 +1467,8 @@
         </context-group>
       </trans-unit>
      <trans-unit id="layout.footer.brand.description" datatype="html">
-       <source> Building modern, scalable and high-performance web applications. </source>
-        <target>Construindo aplicações web modernas, escaláveis e de alto desempenho.</target>
+       <source> Building modern, scalable and robust digital solutions. </source>
+        <target>Construindo soluções digitais, modernas, escaláveis e robustas.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
           <context context-type="linenumber">16,20</context>
@@ -1500,7 +1516,7 @@
       </trans-unit>
      <trans-unit id="header.shared.cv.download.label" datatype="html">
        <source>Download CV (PDF)</source>
-        <target>Baixar CV (PDF)</target>
+        <target>Baixar currículo (PDF)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/header/mobile-menu/mobile-menu.html</context>
           <context context-type="linenumber">65,68</context>

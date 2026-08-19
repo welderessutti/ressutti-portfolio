@@ -70,14 +70,14 @@ export class About {
         $localize`:@@about.capabilities.frontEnd.responsive:Responsive web applications`,
         $localize`:@@about.capabilities.frontEnd.rest:REST API integration`,
         $localize`:@@about.capabilities.frontEnd.structure:Component and feature organisation`,
-        $localize`:@@about.capabilities.frontEnd.auth:Client-side authentication and authorisation`,
+        $localize`:@@about.capabilities.frontEnd.auth:Stateless authentication and authorisation`,
       ],
     },
     {
       id: 'backend',
       title: $localize`:@@about.capabilities.backEnd.title:Back-end`,
       skills: [
-        $localize`:@@about.capabilities.backEnd.java:Java and Spring`,
+        $localize`:@@about.capabilities.backEnd.spring:Spring and Java`,
         'REST APIs',
         $localize`:@@about.capabilities.backEnd.architectures:Monolithic applications and microservices`,
         $localize`:@@about.capabilities.backEnd.jwt:JWT authentication and authorisation`,
@@ -110,20 +110,24 @@ export class About {
 
   protected readonly education: readonly EducationItem[] = [
     {
-      id: 'systems',
-      qualification: $localize`:@@about.education.systems.title:Systems Analysis and Development`,
-      description: $localize`:@@about.education.systems.description:Undergraduate degree`,
-    },
-    {
       id: 'java',
       qualification: $localize`:@@about.education.java.title:Java Architecture and Development`,
-      description: $localize`:@@about.education.java.description:Postgraduate qualification`,
+      description: $localize`:@@about.education.java.description:Postgraduate degree`,
+    },
+    {
+      id: 'systems',
+      qualification: $localize`:@@about.education.systems.title:Systems Analysis and Development`,
+      description: $localize`:@@about.education.systems.description:Associate degree`,
     },
     {
       id: 'biomedicine',
       qualification: $localize`:@@about.education.biomedicine.title:Biomedicine`,
-      description: $localize`:@@about.education.biomedicine.description:Previous academic background that supports an analytical, responsible and process-oriented approach to professional work.`,
-      secondary: true,
+      description: $localize`:@@about.education.biomedicine.description:Bachelor's degree`,
+    },
+    {
+      id: 'environmental',
+      qualification: $localize`:@@about.education.environmental.title:Environmental Management`,
+      description: $localize`:@@about.education.environmental.description:Associate degree`,
     },
   ];
 
