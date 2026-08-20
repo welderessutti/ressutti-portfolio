@@ -6,12 +6,17 @@
       <h1
         class="flex flex-col text-[2rem] sm:text-5xl md:text-6xl font-bold tracking-tight text-text-primary leading-tight animate-fade-up"
       >
-        <span i18n="@@home.hero.title.before">Building</span>
-        <span class="text-accent">
-          {{ typedText() }}
-          <span class="animate-blink text-text-primary">|</span>
+        <span class="sr-only" i18n="@@home.hero.title.accessibleText"
+          >Building modern, scalable and robust digital solutions.</span
+        >
+        <span class="contents" aria-hidden="true">
+          <span i18n="@@home.hero.title.before">Building</span>
+          <span class="text-accent">
+            {{ typedText() }}
+            <span class="animate-blink text-text-primary">|</span>
+          </span>
+          <span i18n="@@home.hero.title.after">digital solutions</span>
         </span>
-        <span i18n="@@home.hero.title.after">digital solutions</span>
       </h1>
       <!-- Subtitle -->
       <p i18n="@@home.hero.description" class="mt-6 text-text-secondary animate-fade-up delay-200">

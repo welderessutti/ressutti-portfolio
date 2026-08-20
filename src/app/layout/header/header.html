@@ -1,17 +1,21 @@
 <header
   class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur border-b border-border"
 >
-  <nav class="container-padding py-3 lg:py-4 flex items-center justify-between">
+  <nav
+    aria-label="Primary navigation"
+    i18n-aria-label="@@layout.header.primaryNavigation.ariaLabel"
+    class="container-padding py-3 lg:py-4 flex items-center justify-between"
+  >
     <!-- Logo -->
     <a
       [hreflang]="navs[0].locale"
       [routerLink]="navs[0].path"
+      aria-label="Ressutti.dev"
       class="flex items-center gap-2 hover:opacity-80 transition"
     >
       <img
         src="icons/logo/wr-logo-frame-gradient.svg"
-        alt="Ressutti.dev Logo"
-        i18n-alt="@@shared.brand.logo.alt"
+        alt=""
         class="w-10 shrink-0 object-contain"
       />
       <span class="hidden text-xl font-bold text-text-primary md:block">ressutti.dev</span>
@@ -26,6 +30,7 @@
               [hreflang]="nav.locale"
               [routerLink]="nav.path"
               routerLinkActive="text-accent"
+              ariaCurrentWhenActive="page"
               [routerLinkActiveOptions]="{ exact: true }"
               class="hover:text-accent transition relative"
             >
@@ -37,14 +42,17 @@
 
       <!-- Theme Button -->
       <button
+        type="button"
         class="text-text-secondary hover:text-accent transition"
         (click)="toggleTheme()"
         aria-label="Toggle theme"
         i18n-aria-label="@@layout.header.theme.toggle.ariaLabel"
+        [attr.aria-pressed]="isDarkMode()"
       >
         @if (isDarkMode()) {
           <!-- Sun -->
           <svg
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -69,6 +77,7 @@
         } @else {
           <!-- Moon -->
           <svg
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -92,21 +101,35 @@
 
       <!-- Mobile Button -->
       <button
+        #mobileMenuButton
+        type="button"
         class="md:hidden text-text-secondary hover:text-accent transition"
         (click)="toggleMenu()"
-        aria-label="Open menu"
-        i18n-aria-label="@@layout.header.mobileMenu.open.ariaLabel"
+        aria-label="Main menu"
+        i18n-aria-label="@@layout.header.mobileMenu.toggle.ariaLabel"
         [attr.aria-expanded]="isMenuOpen()"
         aria-controls="mobile-menu"
       >
         @if (isMenuOpen()) {
           <!-- X -->
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg
+            aria-hidden="true"
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
             <path stroke-width="2" stroke-linecap="round" d="M6 6L18 18M6 18L18 6" />
           </svg>
         } @else {
           <!-- Menu -->
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg
+            aria-hidden="true"
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
             <path stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         }
@@ -119,5 +142,5 @@
   [contacts]="contacts"
   [cvPath]="cvPath"
   [isOpen]="isMenuOpen()"
-  (closeMenu)="closeMenu()"
+  (closeRequested)="handleMobileMenuClose($event)"
 />

@@ -1,11 +1,12 @@
-import { Directive, ElementRef, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Directive, ElementRef, inject, PLATFORM_ID } from '@angular/core';
 
 @Directive({
   selector: '[appRevealOnScroll]',
 })
 export class RevealOnScroll implements AfterViewInit {
-  private readonly el = inject(ElementRef);
+  private readonly document = inject(DOCUMENT);
+  private readonly el = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly platformId = inject(PLATFORM_ID);
 
   private get isBrowser() {
@@ -15,7 +16,16 @@ export class RevealOnScroll implements AfterViewInit {
   public ngAfterViewInit() {
     if (!this.isBrowser) return;
 
-    const observer = new IntersectionObserver(
+    const view = this.document.defaultView;
+    const prefersReducedMotion =
+      view?.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+
+    if (!view || prefersReducedMotion || typeof view.IntersectionObserver !== 'function') {
+      this.el.nativeElement.classList.add('show');
+      return;
+    }
+
+    const observer = new view.IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           this.el.nativeElement.classList.add('show');

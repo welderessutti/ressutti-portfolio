@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { afterAll, beforeAll, vi } from 'vitest';
 
-import { ProjectDetails, ProjectDetailsData } from './project-details';
+import { ProjectDetails } from './project-details';
+import { Project } from '../../../shared/models/project.model';
 
 class IntersectionObserverMock implements IntersectionObserver {
   public readonly root = null;
@@ -19,30 +21,46 @@ class IntersectionObserverMock implements IntersectionObserver {
   public unobserve(): void {}
 }
 
-const MINIMAL_PROJECT: ProjectDetailsData = {
+const PROJECT_IMAGE = {
+  src: '/images/projects/1785012012152.png',
+  alt: 'Minimal project interface',
+  width: 1600,
+  height: 900,
+} as const;
+
+const MINIMAL_PROJECT: Project = {
   id: 'minimal-project',
+  slug: 'minimal-project',
   name: 'Minimal project',
+  title: 'Minimal project',
+  subtitle: 'Minimal project subtitle.',
+  shortDescription: 'A focused project summary.',
+  description: 'A focused project description.',
+  featured: false,
   category: 'Web application',
+  type: 'Website',
+  role: 'Developer',
   summary: 'A focused project summary.',
+  outcome: 'A focused outcome.',
   status: 'Completed',
-  technologies: ['Angular'],
-  heroImage: {
-    src: '/images/projects/1785012012152.png',
-    alt: 'Minimal project interface',
-    width: 1600,
-    height: 900,
-  },
+  completed: true,
+  timeline: 'One month',
+  year: { startYear: 2026 },
+  technologies: [],
+  coverImage: PROJECT_IMAGE,
+  seoImage: PROJECT_IMAGE,
+  heroImage: PROJECT_IMAGE,
   overview: {
     context: 'Project context.',
     problem: 'Project problem.',
     solution: 'Project solution.',
-    facts: [{ label: 'Role', value: 'Developer' }],
   },
 };
 
 describe('ProjectDetails', () => {
   let component: ProjectDetails;
   let fixture: ComponentFixture<ProjectDetails>;
+  let routeData: { project: Project };
 
   beforeAll(() => {
     vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
@@ -53,8 +71,16 @@ describe('ProjectDetails', () => {
   });
 
   beforeEach(async () => {
+    routeData = { project: MINIMAL_PROJECT };
+
     await TestBed.configureTestingModule({
       imports: [ProjectDetails],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { data: routeData } },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectDetails);
@@ -66,10 +92,7 @@ describe('ProjectDetails', () => {
     expect(component).toBeTruthy();
   });
 
-  it('renders the supplied project data', () => {
-    fixture.componentRef.setInput('project', MINIMAL_PROJECT);
-    fixture.detectChanges();
-
+  it('renders the resolved project data', () => {
     const element = fixture.nativeElement as HTMLElement;
 
     expect(element.querySelector('h1')?.textContent).toContain('Minimal project');
@@ -77,9 +100,6 @@ describe('ProjectDetails', () => {
   });
 
   it('does not render optional sections without content', () => {
-    fixture.componentRef.setInput('project', MINIMAL_PROJECT);
-    fixture.detectChanges();
-
     const element = fixture.nativeElement as HTMLElement;
 
     expect(element.querySelector('#features')).toBeNull();
@@ -89,15 +109,17 @@ describe('ProjectDetails', () => {
   });
 
   it('renders external actions only when URLs are available', () => {
-    fixture.componentRef.setInput('project', {
+    routeData.project = {
       ...MINIMAL_PROJECT,
       liveUrl: 'https://example.com/demo',
-      sourceUrl: 'https://example.com/source',
-    } satisfies ProjectDetailsData);
-    fixture.detectChanges();
+      repositoryUrl: 'https://example.com/source',
+    };
+
+    const externalFixture = TestBed.createComponent(ProjectDetails);
+    externalFixture.detectChanges();
 
     const externalLinks = Array.from(
-      (fixture.nativeElement as HTMLElement).querySelectorAll<HTMLAnchorElement>(
+      (externalFixture.nativeElement as HTMLElement).querySelectorAll<HTMLAnchorElement>(
         'a[target="_blank"]',
       ),
     );

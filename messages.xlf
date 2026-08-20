@@ -713,6 +713,13 @@
           <context context-type="linenumber">9,10</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="home.hero.title.accessibleText" datatype="html">
+        <source>Building modern, scalable and robust digital solutions.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/sections/hero/hero.html</context>
+          <context context-type="linenumber">9,11</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="home.hero.title.after" datatype="html">
         <source>digital solutions</source>
         <context-group purpose="location">
@@ -816,17 +823,17 @@
         </context-group>
       </trans-unit>
       <trans-unit id="notFound.error.heading" datatype="html">
-        <source> Page not found </source>
+        <source>Page not found</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/not-found/not-found.html</context>
-          <context context-type="linenumber">19,23</context>
+          <context context-type="sourcefile">src/app/features/not-found/not-found.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="notFound.error.description" datatype="html">
-        <source> We could not find the page you requested. Check the address or continue using one of the options below. </source>
+        <source>We could not find the page you requested. Check the address or continue using one of the options below.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/not-found/not-found.html</context>
-          <context context-type="linenumber">27,32</context>
+          <context context-type="sourcefile">src/app/features/not-found/not-found.ts</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="notFound.navigation.ariaLabel" datatype="html">
@@ -1275,17 +1282,6 @@
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="shared.brand.logo.alt" datatype="html">
-        <source>Ressutti.dev Logo</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
-          <context context-type="linenumber">9,10</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/layout/header/header.html</context>
-          <context context-type="linenumber">13,14</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="layout.footer.brand.description" datatype="html">
         <source> Building modern, scalable and robust digital solutions. </source>
         <context-group purpose="location">
@@ -1306,6 +1302,10 @@
           <context context-type="sourcefile">src/app/layout/footer/footer.html</context>
           <context context-type="linenumber">53,55</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/header/mobile-menu/mobile-menu.html</context>
+          <context context-type="linenumber">46,52</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="layout.footer.legal.copyright" datatype="html">
         <source>All rights reserved.</source>
@@ -1321,11 +1321,39 @@
           <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="layout.header.mobileMenu.open.ariaLabel" datatype="html">
-        <source>Open menu</source>
+      <trans-unit id="layout.skipLink.label" datatype="html">
+        <source>Skip to main content</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="layout.header.primaryNavigation.ariaLabel" datatype="html">
+        <source>Primary navigation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/layout/header/header.html</context>
-          <context context-type="linenumber">97,98</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="layout.header.mobileMenu.toggle.ariaLabel" datatype="html">
+        <source>Main menu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/header/header.html</context>
+          <context context-type="linenumber">111,112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="layout.header.mobileMenu.navigation.ariaLabel" datatype="html">
+        <source>Mobile navigation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/header/mobile-menu/mobile-menu.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="layout.header.languageSwitcher.label" datatype="html">
+        <source>Change language. Current language:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/header/language-switcher/language-switcher.html</context>
+          <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="header.shared.cv.download.label" datatype="html">
@@ -2134,11 +2162,11 @@
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="home.stacks.category.userExperienceDesign.label" datatype="html">
-        <source>UX/UI</source>
+      <trans-unit id="home.stacks.category.design.label" datatype="html">
+        <source>Design</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/data/stacks.data.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="home.stacks.category.artificialIntelligence.label" datatype="html">

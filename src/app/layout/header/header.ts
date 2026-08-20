@@ -5,10 +5,12 @@ import {
   inject,
   PLATFORM_ID,
   DOCUMENT,
+  ElementRef,
   OnInit,
+  viewChild,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { MobileMenu } from './mobile-menu/mobile-menu';
+import { MobileMenu, MobileMenuCloseReason } from './mobile-menu/mobile-menu';
 import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { NavService } from '../../core/services/nav/nav.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -30,6 +32,7 @@ export class Header implements OnInit {
   protected readonly cvPath = this.contact.cvPath;
   protected readonly isMenuOpen = signal(false);
   protected readonly isDarkMode = signal(false);
+  private readonly mobileMenuButton = viewChild<ElementRef<HTMLButtonElement>>('mobileMenuButton');
 
   private get isBrowser() {
     return isPlatformBrowser(this.platformId);
@@ -62,9 +65,15 @@ export class Header implements OnInit {
     });
   }
 
-  protected closeMenu() {
+  protected handleMobileMenuClose(reason: MobileMenuCloseReason) {
     this.isMenuOpen.set(false);
     this.toggleBodyScroll(false);
+
+    if (reason === 'dismiss' || reason === 'action') {
+      this.document.defaultView?.requestAnimationFrame(() => {
+        this.mobileMenuButton()?.nativeElement.focus();
+      });
+    }
   }
 
   @HostListener('window:resize')
@@ -72,7 +81,7 @@ export class Header implements OnInit {
     if (!this.isBrowser) return;
     if (!this.isMenuOpen()) return;
     if (window.innerWidth >= 768) {
-      this.closeMenu();
+      this.handleMobileMenuClose('viewport-change');
     }
   }
 
@@ -80,7 +89,7 @@ export class Header implements OnInit {
   protected onEsc() {
     if (!this.isBrowser) return;
     if (this.isMenuOpen()) {
-      this.closeMenu();
+      this.handleMobileMenuClose('dismiss');
     }
   }
 }

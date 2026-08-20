@@ -12,6 +12,7 @@ describe('Svg', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(Svg);
+    fixture.componentRef.setInput('contact', 'email');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

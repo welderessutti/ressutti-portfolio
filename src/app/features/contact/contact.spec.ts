@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { LOCALES } from '../../shared/i18n/locales';
 import { Contact } from './contact';
 
 describe('Contact', () => {
@@ -7,6 +8,8 @@ describe('Contact', () => {
   let fixture: ComponentFixture<Contact>;
 
   beforeEach(async () => {
+    document.documentElement.lang = LOCALES.enGB;
+
     await TestBed.configureTestingModule({
       imports: [Contact],
     }).compileComponents();
@@ -20,23 +23,23 @@ describe('Contact', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render a compact contact page with one page heading', () => {
+  it('should render one page heading and the main contact sections', () => {
     const element = fixture.nativeElement as HTMLElement;
 
     expect(element.querySelectorAll('h1')).toHaveLength(1);
     expect(element.querySelector('article')).toBeTruthy();
     expect(element.querySelector('address')).toBeTruthy();
-    expect(element.querySelectorAll('section')).toHaveLength(1);
+    expect(element.querySelector('[aria-labelledby="contact-location-title"]')).toBeTruthy();
   });
 
-  it('should render the email address and mailto links', () => {
+  it('should give the icon-only email link an accessible name', () => {
     const element = fixture.nativeElement as HTMLElement;
     const emailLinks = Array.from(
       element.querySelectorAll<HTMLAnchorElement>('a[href="mailto:welderessutti@gmail.com"]'),
     );
 
-    expect(element.textContent).toContain('welderessutti@gmail.com');
     expect(emailLinks).toHaveLength(1);
+    expect(emailLinks[0].getAttribute('aria-label')).toBe('Send an email');
   });
 
   it('should render the external contact channels safely', () => {
@@ -57,6 +60,7 @@ describe('Contact', () => {
     const element = fixture.nativeElement as HTMLElement;
     const cvLink = element.querySelector<HTMLAnchorElement>('a[download]');
 
-    expect(cvLink?.getAttribute('href')).toBe('/documents/welder-ressutti-cv-en-gb.pdf');
+    expect(cvLink?.getAttribute('href')).toBe('/documents/Welder Ressutti - EN.pdf');
+    expect(cvLink?.getAttribute('aria-labelledby')).toBe('contact-options-title');
   });
 });

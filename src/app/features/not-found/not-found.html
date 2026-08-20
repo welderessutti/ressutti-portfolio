@@ -10,22 +10,17 @@
     </p>
 
     <h1
-      #pageTitle
       id="not-found-title"
-      tabindex="-1"
-      i18n="@@notFound.error.heading"
       class="mt-6 text-4xl font-bold tracking-tight text-text-primary md:text-5xl"
     >
-      Page not found
+      {{ pageTitle }}
     </h1>
 
     <p
       id="not-found-description"
-      i18n="@@notFound.error.description"
       class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-text-secondary md:text-lg"
     >
-      We could not find the page you requested. Check the address or continue using one of the
-      options below.
+      {{ pageDescription }}
     </p>
 
     <nav

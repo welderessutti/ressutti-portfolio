@@ -1,4 +1,4 @@
-import { ROUTES, RouteValue } from './../../../shared/i18n/routes';
+import { RouteValue } from './../../../shared/i18n/routes';
 import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Seo } from '../../../shared/models/seo.model';
@@ -127,8 +127,12 @@ export class SeoService {
     script.textContent = JSON.stringify(this.buildJsonLd(seo));
   }
 
+  public updateTitle(title: string) {
+    this.title.setTitle(title);
+  }
+
   public updateSeo(seo: Seo) {
-    this.title.setTitle(seo.title);
+    this.updateTitle(seo.title);
     this.meta.updateTag({ name: 'description', content: seo.description });
     this.meta.updateTag({ property: 'og:site_name', content: this.SITE_NAME });
     this.meta.updateTag({ property: 'og:title', content: seo.title });

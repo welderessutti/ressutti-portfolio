@@ -1,23 +1,29 @@
 <!-- Overlay -->
 <div
+  aria-hidden="true"
   class="fixed inset-0 bg-background/60 backdrop-blur-xs z-30 transition-opacity duration-300"
   [class.opacity-100]="isOpen()"
   [class.opacity-0]="!isOpen()"
   [class.pointer-events-none]="!isOpen()"
   [class.invisible]="!isOpen()"
-  (click)="onClose()"
+  (click)="requestClose('dismiss')"
 ></div>
 
 <!-- Drawer -->
-<section
-  aria-labelledby="mobile-menu"
+<div
   id="mobile-menu"
   class="fixed top-0 right-0 h-full pt-24 w-[min(100%,320px)] flex flex-col bg-surface-light z-40 shadow-2xl transform transition-transform duration-300 ease-in-out"
+  [attr.aria-hidden]="!isOpen()"
+  [attr.inert]="!isOpen() ? '' : null"
   [class.translate-x-0]="isOpen()"
   [class.translate-x-full]="!isOpen()"
+  (focusout)="onFocusOut($event)"
 >
   <div class="flex flex-col px-6">
-    <nav>
+    <nav
+      aria-label="Mobile navigation"
+      i18n-aria-label="@@layout.header.mobileMenu.navigation.ariaLabel"
+    >
       <!-- Links -->
       <ul class="flex flex-col gap-6 text-lg font-medium text-text-primary">
         @for (nav of navs(); track nav.id) {
@@ -26,8 +32,9 @@
               [hreflang]="nav.locale"
               [routerLink]="nav.path"
               routerLinkActive="text-accent"
+              ariaCurrentWhenActive="page"
               [routerLinkActiveOptions]="{ exact: true }"
-              (click)="onClose()"
+              (click)="requestClose('navigation')"
               class="hover:text-accent transition"
             >
               {{ nav.label }}
@@ -38,34 +45,43 @@
     </nav>
 
     <section aria-labelledby="mobile-menu-contact-menu" class="mt-10">
-      <ul class="flex flex-col gap-2 text-sm text-text-secondary">
-        @for (contact of contacts(); track contact.id) {
-          <li>
-            <a
-              [href]="contact.url"
-              [attr.aria-label]="contact.accessibleLabel"
-              [attr.target]="contact.external ? '_blank' : null"
-              [attr.rel]="contact.external ? 'noopener noreferrer' : null"
-              [class]="
-                contact.primary
-                  ? 'flex items-center gap-2 py-3 px-4 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition'
-                  : 'flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition'
-              "
-              ><app-svg [contact]="contact.id" /> <span>{{ contact.label }}</span></a
-            >
-          </li>
-        }
-        <li>
-          <a
-            [href]="cvPath()"
-            download
-            class="flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition"
-          >
-            <app-svg contact="download" />
-            <span i18n="@@header.shared.cv.download.label">Download CV (PDF)</span></a
-          >
-        </li>
-      </ul>
+      <h2
+        id="mobile-menu-contact-menu"
+        class="sr-only"
+        i18n="@@layout.footer.contact.heading"
+      >
+        Contact
+      </h2>
+      <address class="not-italic">
+        <ul class="flex flex-col gap-2 text-sm text-text-secondary">
+          @for (contact of contacts(); track contact.id) {
+            <li>
+              <a
+                [href]="contact.url"
+                [attr.aria-label]="contact.accessibleLabel"
+                [attr.target]="contact.external ? '_blank' : null"
+                [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+                (click)="requestClose('action')"
+                [class]="
+                  contact.primary
+                    ? 'flex items-center gap-2 py-3 px-4 bg-accent text-text-inverse rounded-lg hover:bg-accent-hover transition'
+                    : 'flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition'
+                "
+                ><app-svg [contact]="contact.id" /> <span>{{ contact.label }}</span></a
+              >
+            </li>
+          }
+        </ul>
+      </address>
+      <a
+        [href]="cvPath()"
+        download
+        (click)="requestClose('action')"
+        class="mt-2 flex items-center gap-2 py-3 px-4 bg-surface border border-border rounded-lg hover:text-accent hover:border-accent transition"
+      >
+        <app-svg contact="download" />
+        <span i18n="@@header.shared.cv.download.label">Download CV (PDF)</span></a
+      >
     </section>
   </div>
-</section>
+</div>

@@ -2,15 +2,14 @@
   <div class="container-padding py-12 lg:py-16">
     <div class="grid md:grid-cols-3 gap-10">
       <!-- Brand -->
-      <section aria-labelledby="footer-brand">
+      <div>
         <div class="flex items-center gap-2">
           <img
             src="icons/logo/wr-logo-frame-gradient.svg"
-            alt="Ressutti.dev Logo"
-            i18n-alt="@@shared.brand.logo.alt"
+            alt=""
             class="w-10 shrink-0 object-contain"
           />
-          <h3 class="text-xl font-bold text-text-primary">ressutti.dev</h3>
+          <p class="text-xl font-bold text-text-primary">ressutti.dev</p>
         </div>
         <p
           i18n="@@layout.footer.brand.description"
@@ -18,17 +17,18 @@
         >
           Building modern, scalable and robust digital solutions.
         </p>
-      </section>
+      </div>
 
       <!-- Navigation -->
-      <section aria-labelledby="footer-navigation-menu">
-        <h4
+      <div>
+        <h2
+          id="footer-navigation-heading"
           i18n="@@layout.footer.navigation.heading"
           class="text-sm font-semibold text-text-primary mb-4"
         >
           Navigation
-        </h4>
-        <nav>
+        </h2>
+        <nav aria-labelledby="footer-navigation-heading">
           <ul class="flex flex-col gap-2 text-sm text-text-secondary">
             @for (nav of navs; track nav.id) {
               <li>
@@ -36,6 +36,7 @@
                   [hreflang]="nav.locale"
                   [routerLink]="nav.path"
                   routerLinkActive="text-accent"
+                  ariaCurrentWhenActive="page"
                   [routerLinkActiveOptions]="{ exact: true }"
                   class="hover:text-accent transition"
                 >
@@ -45,40 +46,40 @@
             }
           </ul>
         </nav>
-      </section>
+      </div>
 
       <!-- Contact -->
-      <section aria-labelledby="footer-contact-menu">
-        <h4
+      <section aria-labelledby="footer-contact-heading">
+        <h2
+          id="footer-contact-heading"
           i18n="@@layout.footer.contact.heading"
           class="text-sm font-semibold text-text-primary mb-4"
         >
           Contact
-        </h4>
-        <ul class="flex flex-col gap-2 text-sm text-text-secondary">
-          @for (contact of contacts; track contact.id) {
-            <li>
-              <a
-                [href]="contact.url"
-                [attr.aria-label]="contact.accessibleLabel"
-                [attr.target]="contact.external ? '_blank' : null"
-                [attr.rel]="contact.external ? 'noopener noreferrer' : null"
-                class="hover:text-accent transition"
-                >{{ contact.label }}</a
-              >
-            </li>
-          }
-        </ul>
+        </h2>
+        <address class="not-italic">
+          <ul class="flex flex-col gap-2 text-sm text-text-secondary">
+            @for (contact of contacts; track contact.id) {
+              <li>
+                <a
+                  [href]="contact.url"
+                  [attr.aria-label]="contact.accessibleLabel"
+                  [attr.target]="contact.external ? '_blank' : null"
+                  [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+                  class="hover:text-accent transition"
+                  >{{ contact.label }}</a
+                >
+              </li>
+            }
+          </ul>
+        </address>
       </section>
     </div>
 
     <!-- Bottom -->
-    <section
-      aria-labelledby="footer-bottom"
-      class="mt-10 pt-6 text-center text-sm text-text-tertiary"
-    >
+    <div class="mt-10 pt-6 text-center text-sm text-text-tertiary">
       © {{ currentYear }} Ressutti.dev.
       <span i18n="@@layout.footer.legal.copyright">All rights reserved.</span>
-    </section>
+    </div>
   </div>
 </footer>

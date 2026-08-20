@@ -36,12 +36,12 @@
     </p>
 
     <a
-      i18n="@@projects.card.viewDetails.label"
       [hreflang]="currentLocale()"
       [routerLink]="[projectsPagePath(), project().slug]"
       class="mt-auto inline-blocl w-fit font-medium text-accent hover:underline"
     >
-      View details
+      <span i18n="@@projects.card.viewDetails.label">View details</span>
+      <span class="sr-only"> — {{ project().title }}</span>
     </a>
   </div>
 </article>

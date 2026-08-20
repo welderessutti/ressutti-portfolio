@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideRouter([])],
     }).compileComponents();
   });
 
@@ -14,10 +16,14 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the skip link and its focusable main target', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ressutti-portfolio');
+    const skipLink = compiled.querySelector<HTMLAnchorElement>('.skip-link');
+    const main = compiled.querySelector<HTMLElement>('#main-content');
+
+    expect(skipLink?.getAttribute('href')).toBe('#main-content');
+    expect(main?.getAttribute('tabindex')).toBe('-1');
   });
 });

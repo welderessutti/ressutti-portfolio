@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MobileMenu } from './mobile-menu';
+import { MobileMenu, MobileMenuCloseReason } from './mobile-menu';
 
 describe('MobileMenu', () => {
   let component: MobileMenu;
@@ -18,5 +18,15 @@ describe('MobileMenu', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit an explicit reason when dismissal is requested', () => {
+    const emittedReasons: MobileMenuCloseReason[] = [];
+    component.closeRequested.subscribe((reason) => emittedReasons.push(reason));
+
+    const overlay = fixture.nativeElement.querySelector('[aria-hidden="true"]') as HTMLElement;
+    overlay.click();
+
+    expect(emittedReasons).toEqual(['dismiss']);
   });
 });

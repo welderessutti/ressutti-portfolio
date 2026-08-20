@@ -1,4 +1,14 @@
-import { Component, signal, computed, HostListener, inject, DOCUMENT, OnInit } from '@angular/core';
+import {
+  Component,
+  signal,
+  computed,
+  ElementRef,
+  HostListener,
+  inject,
+  DOCUMENT,
+  OnInit,
+  viewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { DEFAULT_LOCALE, Locale, LOCALES } from '../../../shared/i18n/locales';
 import { ROUTES, RouteKey } from '../../../shared/i18n/routes';
@@ -23,6 +33,7 @@ export class LanguageSwitcher implements OnInit {
   protected readonly ptBRSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.ptBR));
   protected readonly enGBSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.enGB));
   protected readonly currentFlag = computed(() => `icons/flags/${this.currentLang()}.svg`);
+  private readonly languageButton = viewChild<ElementRef<HTMLButtonElement>>('languageButton');
 
   public ngOnInit() {
     const lang = this.document.documentElement.lang as Locale;
@@ -90,11 +101,28 @@ export class LanguageSwitcher implements OnInit {
     this.document.cookie = `preferred-language=${locale};path=/;max-age=31536000;SameSite=Lax`;
   }
 
+  protected onFocusOut(event: FocusEvent) {
+    const container = event.currentTarget as HTMLElement;
+    const nextTarget = event.relatedTarget as Node | null;
+
+    if (!nextTarget || !container.contains(nextTarget)) {
+      this.isOpen.set(false);
+    }
+  }
+
   @HostListener('document:click', ['$event'])
   protected onClickOutside(event: Event) {
     const target = event.target as HTMLElement;
     if (!target.closest('#lang-switcher')) {
       this.isOpen.set(false);
     }
+  }
+
+  @HostListener('document:keydown.escape')
+  protected onEscape() {
+    if (!this.isOpen()) return;
+
+    this.isOpen.set(false);
+    this.languageButton()?.nativeElement.focus();
   }
 }

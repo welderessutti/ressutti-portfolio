@@ -1,13 +1,22 @@
-<div id="lang-switcher" class="relative">
+<div id="lang-switcher" class="relative" (focusout)="onFocusOut($event)">
   <!-- Button -->
   <button
+    #languageButton
+    type="button"
     (click)="toggle()"
+    aria-controls="language-options"
+    [attr.aria-expanded]="isOpen()"
     class="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-accent transition"
   >
+    <span class="sr-only" i18n="@@layout.header.languageSwitcher.label"
+      >Change language. Current language:</span
+    >
+    <span class="sr-only">{{ currentLang() }}</span>
     <!-- Flag -->
-    <img [src]="currentFlag()" [alt]="currentLang()" class="w-6 shrink-0 object-contain" />
+    <img [src]="currentFlag()" alt="" class="w-6 shrink-0 object-contain" />
     <!-- Arrow -->
     <svg
+      aria-hidden="true"
       class="w-4 h-4 transition-transform"
       [class.rotate-180]="isOpen()"
       viewBox="0 0 24 24"
@@ -20,35 +29,46 @@
 
   <!-- Dropdown -->
   <div
+    id="language-options"
     class="absolute right-0 mt-2 w-36 bg-surface border border-border rounded-lg shadow-lg p-2 z-50 transition-all duration-200"
+    [attr.aria-hidden]="!isOpen()"
+    [attr.inert]="!isOpen() ? '' : null"
     [class.opacity-100]="isOpen()"
     [class.opacity-0]="!isOpen()"
     [class.pointer-events-none]="!isOpen()"
     [class.translate-y-0]="isOpen()"
     [class.translate-y-2]="!isOpen()"
   >
-    <!-- PT -->
-    <a
-      (click)="savePreferredLanguage(LOCALES.ptBR)"
-      [href]="ptBRSwitchLangUrl()"
-      [hreflang]="LOCALES.ptBR"
-      class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
-      [class.bg-surface-hover]="currentLang() === LOCALES.ptBR"
-    >
-      <img src="icons/flags/pt-BR.svg" alt="pt-BR" class="w-6 h-6 object-contain" />
-      <span>Português</span>
-    </a>
+    <ul>
+      <!-- PT -->
+      <li>
+        <a
+          (click)="savePreferredLanguage(LOCALES.ptBR)"
+          [href]="ptBRSwitchLangUrl()"
+          [hreflang]="LOCALES.ptBR"
+          [attr.aria-current]="currentLang() === LOCALES.ptBR ? 'page' : null"
+          class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left aria-[current=page]:font-semibold"
+          [class.bg-surface-hover]="currentLang() === LOCALES.ptBR"
+        >
+          <img src="icons/flags/pt-BR.svg" alt="" class="w-6 h-6 object-contain" />
+          <span lang="pt-BR">Português</span>
+        </a>
+      </li>
 
-    <!-- EN -->
-    <a
-      (click)="savePreferredLanguage(LOCALES.enGB)"
-      [href]="enGBSwitchLangUrl()"
-      [hreflang]="LOCALES.enGB"
-      class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left"
-      [class.bg-surface-hover]="currentLang() === LOCALES.enGB"
-    >
-      <img src="icons/flags/en-GB.svg" alt="en-GB" class="w-6 h-6 object-contain" />
-      <span>English</span>
-    </a>
+      <!-- EN -->
+      <li>
+        <a
+          (click)="savePreferredLanguage(LOCALES.enGB)"
+          [href]="enGBSwitchLangUrl()"
+          [hreflang]="LOCALES.enGB"
+          [attr.aria-current]="currentLang() === LOCALES.enGB ? 'page' : null"
+          class="flex items-center gap-2 w-full px-3 py-2 rounded-md hover:bg-surface-hover transition text-left aria-[current=page]:font-semibold"
+          [class.bg-surface-hover]="currentLang() === LOCALES.enGB"
+        >
+          <img src="icons/flags/en-GB.svg" alt="" class="w-6 h-6 object-contain" />
+          <span lang="en-GB">English</span>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

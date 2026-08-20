@@ -1,4 +1,13 @@
-import { Component, OnInit, OnDestroy, signal, inject, DOCUMENT } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  signal,
+  inject,
+  DOCUMENT,
+  PLATFORM_ID,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Locale } from '../../../../shared/i18n/locales';
 import { ROUTES } from '../../../../shared/i18n/routes';
@@ -11,22 +20,31 @@ import { ROUTES } from '../../../../shared/i18n/routes';
 })
 export class Hero implements OnInit, OnDestroy {
   private readonly document = inject(DOCUMENT);
+  private readonly platformId = inject(PLATFORM_ID);
   private readonly words = [
     $localize`:@@home.hero.title.keyword.modern:modern`,
     $localize`:@@home.hero.title.keyword.scalable:scalable`,
     $localize`:@@home.hero.title.keyword.robust:robust`,
   ];
   private wordIndex = 0;
-  private charIndex = 0;
-  private isDeleting = false;
+  private charIndex = this.words[0].length;
+  private isDeleting = true;
   private timeoutId?: ReturnType<typeof setTimeout>;
   protected readonly currentLocale = this.currentLocaleHtml;
   protected readonly viewProjectsButtonPath = `/${ROUTES.projects[this.currentLocale]}`;
   protected readonly contactButtonPath = `/${ROUTES.contact[this.currentLocale]}`;
-  protected readonly typedText = signal('');
+  protected readonly typedText = signal(this.words[0]);
 
   public ngOnInit() {
-    this.typeEffect();
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    if (
+      this.document.defaultView?.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+    ) {
+      return;
+    }
+
+    this.timeoutId = setTimeout(() => this.typeEffect(), 1200);
   }
 
   public ngOnDestroy() {

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { STACKS } from '../../../../../shared/data/stacks.data';
 import { StackCard } from './stack-card';
 
 describe('StackCard', () => {
@@ -12,6 +13,7 @@ describe('StackCard', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(StackCard);
+    fixture.componentRef.setInput('stack', STACKS[0]);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
