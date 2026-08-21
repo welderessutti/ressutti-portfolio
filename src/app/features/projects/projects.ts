@@ -27,14 +27,14 @@ export class Projects {
 
   constructor() {
     this.seo.updateSeo({
-      title: $localize`:@@projects.seo.title:Full-stack Projects | Angular + Spring | Ressutti.dev`,
-      description: $localize`:@@projects.seo.description:Explore full-stack web applications by Welder Ressutti, with context on product goals, Angular and Spring architecture, responsibilities and engineering decisions.`,
+      title: $localize`:@@projects.seo.title:Projects | Welder Ressutti | Full-Stack Developer`,
+      description: $localize`:@@projects.seo.description:Explore full-stack web projects by Welder Ressutti, with product goals, Angular and Spring architecture, technical responsibilities and engineering decisions.`,
       currentLocale: this.currentLocale,
       path: ROUTES.projects,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
-      imageAlt: $localize`:@@projects.seo.imageAlt:Selection of web development projects by Welder Ressutti.`,
+      imageAlt: $localize`:@@projects.seo.imageAlt:WR logo for Welder Ressutti — ressutti.com`,
       openGraphType: 'website',
-      jsonLdType: 'CollectionPage',
+      jsonLdType: 'WebPage',
     });
   }
 }

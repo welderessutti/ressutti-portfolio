@@ -23,12 +23,12 @@ export class Home {
 
   constructor() {
     this.seo.updateSeo({
-      title: $localize`:@@home.seo.title:Full-stack Developer | Angular + Spring | Ressutti.dev`,
-      description: $localize`:@@home.seo.description:Portfolio of Welder Ressutti, a full-stack developer specialising in modern, scalable and robust web applications with Angular and Spring.`,
+      title: $localize`:@@home.seo.title:Welder Ressutti | Full-Stack Angular + Spring Developer`,
+      description: $localize`:@@home.seo.description:Portfolio of Welder Ressutti, a Full-Stack Angular + Spring Developer building end-to-end web applications with clear architecture and maintainable code.`,
       currentLocale: this.currentLocale,
       path: ROUTES.home,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
-      imageAlt: $localize`:@@home.seo.imageAlt:Home page of Ressutti.dev portfolio.`,
+      imageAlt: $localize`:@@home.seo.imageAlt:WR logo for Welder Ressutti — ressutti.com`,
       openGraphType: 'website',
       jsonLdType: 'WebPage',
     });

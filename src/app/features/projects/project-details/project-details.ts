@@ -24,15 +24,15 @@ export class ProjectDetails {
 
   public constructor() {
     this.seo.updateSeo({
-      title: $localize`:@@contact.seo.title:Contact Welder Ressutti | Ressutti.dev`,
-      description: $localize`:@@contact.seo.description:Contact Welder Ressutti about Angular and Spring development opportunities, full-stack web projects or professional collaboration.`,
+      title: `${this.project.name} | ${this.project.category} | Welder Ressutti`,
+      description: this.project.description,
       currentLocale: this.currentLocale,
       path: ROUTES.projects,
       slug: this.project.slug,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
-      imageAlt: $localize`:@@contact.seo.imageAlt:Ressutti.dev portfolio logo.`,
+      imageAlt: $localize`:@@projects.details.seo.imageAlt:WR logo for Welder Ressutti — ressutti.com`,
       openGraphType: 'website',
-      jsonLdType: 'Article',
+      jsonLdType: 'WebPage',
     });
   }
 }

@@ -137,14 +137,14 @@ export class About {
 
   public constructor() {
     this.seo.updateSeo({
-      title: $localize`:@@about.seo.title:About Welder Ressutti | Ressutti.dev`,
-      description: $localize`:@@about.seo.description:Learn about Welder Ressutti, a full-stack developer specialising in Angular and Spring, with a focus on reliable, maintainable web applications.`,
+      title: $localize`:@@about.seo.title:About | Welder Ressutti | Full-Stack Developer`,
+      description: $localize`:@@about.seo.description:Learn about Welder Ressutti's path from biomedicine to full-stack development, including his education, working principles and focus on Angular and Spring.`,
       currentLocale: this.currentLocale,
       path: ROUTES.about,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
-      imageAlt: $localize`:@@about.seo.imageAlt:Ressutti.dev portfolio logo.`,
-      openGraphType: 'profile',
-      jsonLdType: 'AboutPage',
+      imageAlt: $localize`:@@about.seo.imageAlt:WR logo for Welder Ressutti — ressutti.com`,
+      openGraphType: 'website',
+      jsonLdType: 'WebPage',
     });
   }
 }

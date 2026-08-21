@@ -535,27 +535,27 @@
         </context-group>
       </trans-unit>
      <trans-unit id="about.seo.title" datatype="html">
-       <source>About Welder Ressutti | Ressutti.dev</source>
-        <target>Sobre Welder Ressutti | Ressutti.dev</target>
+       <source>About | Welder Ressutti | Full-Stack Developer</source>
+        <target>Sobre | Welder Ressutti | Desenvolvedor Full-Stack</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
-          <context context-type="linenumber">132</context>
+          <context context-type="linenumber">140</context>
         </context-group>
       </trans-unit>
      <trans-unit id="about.seo.description" datatype="html">
-       <source>Learn about Welder Ressutti, a full-stack developer specialising in Angular and Spring, with a focus on reliable, maintainable web applications.</source>
-        <target>Conheça Welder Ressutti, desenvolvedor full-stack especializado em Angular e Spring, com foco em aplicações web confiáveis e de fácil manutenção.</target>
+       <source>Learn about Welder Ressutti's path from biomedicine to full-stack development, including his education, working principles and focus on Angular and Spring.</source>
+        <target>Conheça a trajetória de Welder Ressutti da biomedicina ao desenvolvimento full-stack, sua formação, seus princípios de trabalho e seu foco em Angular e Spring.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">141</context>
         </context-group>
       </trans-unit>
      <trans-unit id="about.seo.imageAlt" datatype="html">
-       <source>Ressutti.dev portfolio logo.</source>
-        <target>Logo do portfólio Ressutti.dev.</target>
+       <source>WR logo for Welder Ressutti — ressutti.com</source>
+        <target>Logotipo WR de Welder Ressutti — ressutti.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/about/about.ts</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">145</context>
         </context-group>
       </trans-unit>
      <trans-unit id="contact.introduction.eyebrow" datatype="html">
@@ -647,11 +647,11 @@
         </context-group>
       </trans-unit>
      <trans-unit id="contact.seo.title" datatype="html">
-       <source>Contact Welder Ressutti | Ressutti.dev</source>
-        <target>Entre em contato com Welder Ressutti | Ressutti.dev</target>
+       <source>Contact | Welder Ressutti | Full-Stack Developer</source>
+        <target>Contato | Welder Ressutti | Desenvolvedor Full-Stack</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/contact/contact.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
      <trans-unit id="contact.seo.description" datatype="html">
@@ -659,39 +659,39 @@
         <target>Entre em contato com Welder Ressutti para conversar sobre oportunidades de desenvolvimento com Angular e Spring, projetos web full-stack ou colaboração profissional.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/contact/contact.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
      <trans-unit id="contact.seo.imageAlt" datatype="html">
-       <source>Ressutti.dev portfolio logo.</source>
-        <target>Logo do portfólio Ressutti.dev.</target>
+       <source>WR logo for Welder Ressutti — ressutti.com</source>
+        <target>Logotipo WR de Welder Ressutti — ressutti.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/contact/contact.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
      <trans-unit id="home.seo.title" datatype="html">
-       <source>Full-stack Developer | Angular + Spring | Ressutti.dev</source>
-        <target>Desenvolvedor full-stack | Angular + Spring | Ressutti.dev</target>
+       <source>Welder Ressutti | Full-Stack Angular + Spring Developer</source>
+        <target>Welder Ressutti | Desenvolvedor Full-Stack Angular + Spring</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
      <trans-unit id="home.seo.description" datatype="html">
-       <source>Portfolio of Welder Ressutti, a full-stack developer specialising in modern, scalable and robust web applications with Angular and Spring.</source>
-        <target>Portfólio de Welder Ressutti, desenvolvedor full-stack especializado em aplicações web modernas, escaláveis e robustas com Angular e Spring.</target>
+       <source>Portfolio of Welder Ressutti, a Full-Stack Angular + Spring Developer building end-to-end web applications with clear architecture and maintainable code.</source>
+        <target>Portfólio de Welder Ressutti, desenvolvedor Full-Stack Angular + Spring que cria aplicações web de ponta a ponta com arquitetura clara e código de fácil manutenção.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
      <trans-unit id="home.seo.imageAlt" datatype="html">
-       <source>Home page of Ressutti.dev portfolio.</source>
-        <target>Página inicial do portfólio Ressutti.dev.</target>
+       <source>WR logo for Welder Ressutti — ressutti.com</source>
+        <target>Logotipo WR de Welder Ressutti — ressutti.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
      <trans-unit id="home.about.introduction.heading" datatype="html">
@@ -1439,26 +1439,34 @@
         </context-group>
       </trans-unit>
      <trans-unit id="projects.seo.title" datatype="html">
-       <source>Full-stack Projects | Angular + Spring | Ressutti.dev</source>
-        <target>Projetos full-stack | Angular + Spring | Ressutti.dev</target>
+       <source>Projects | Welder Ressutti | Full-Stack Developer</source>
+        <target>Projetos | Welder Ressutti | Desenvolvedor Full-Stack</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
      <trans-unit id="projects.seo.description" datatype="html">
-       <source>Explore full-stack web applications by Welder Ressutti, with context on product goals, Angular and Spring architecture, responsibilities and engineering decisions.</source>
-        <target>Explore aplicações web full-stack desenvolvidas por Welder Ressutti, com contexto sobre objetivos do produto, arquitetura com Angular e Spring, responsabilidades e decisões de engenharia.</target>
+       <source>Explore full-stack web projects by Welder Ressutti, with product goals, Angular and Spring architecture, technical responsibilities and engineering decisions.</source>
+        <target>Explore projetos web full-stack de Welder Ressutti, com objetivos de produto, arquitetura Angular e Spring, responsabilidades técnicas e decisões de engenharia.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
      <trans-unit id="projects.seo.imageAlt" datatype="html">
-       <source>Selection of web development projects by Welder Ressutti.</source>
-        <target>Seleção de projetos de desenvolvimento web de Welder Ressutti.</target>
+       <source>WR logo for Welder Ressutti — ressutti.com</source>
+        <target>Logotipo WR de Welder Ressutti — ressutti.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/projects/projects.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+     <trans-unit id="projects.details.seo.imageAlt" datatype="html">
+       <source>WR logo for Welder Ressutti — ressutti.com</source>
+        <target>Logotipo WR de Welder Ressutti — ressutti.com</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/projects/project-details/project-details.ts</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
