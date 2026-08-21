@@ -11,19 +11,15 @@ export class SeoService {
   private readonly document = inject(DOCUMENT);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
-  private readonly SITE_NAME = 'Ressutti.dev';
+  private readonly SITE_NAME = 'ressutti.com';
   private readonly BASE_URL = 'https://www.ressutti.com';
 
-  private get currentLocale(): Locale {
-    return this.document.documentElement.lang as Locale;
+  private buildPageUrl(locale: Locale, path: string, slug?: string): string {
+    return `${this.BASE_URL}/${locale.toLowerCase()}/${path}${slug ? `/${slug}` : ''}`;
   }
 
-  private buildUrl(locale: Locale, path: string): string {
-    return `${this.BASE_URL}/${locale.toLowerCase()}/${path}`;
-  }
-
-  private buildImageUrl(imagePath: string): string {
-    return `${this.BASE_URL}${imagePath}`;
+  private buildImageUrl(locale: Locale, image: string): string {
+    return `${this.BASE_URL}/${locale.toLowerCase()}/${image}`;
   }
 
   private buildJsonLd(seo: Seo): object {
@@ -33,11 +29,11 @@ export class SeoService {
 
       name: seo.title,
       description: seo.description,
-      url: this.buildUrl(this.currentLocale, seo.path[this.currentLocale]),
+      url: this.buildPageUrl(seo.currentLocale, seo.path[seo.currentLocale], seo.slug),
 
-      inLanguage: this.currentLocale,
+      inLanguage: seo.currentLocale,
 
-      image: this.buildImageUrl(seo.image),
+      image: this.buildImageUrl(seo.currentLocale, seo.image),
 
       isPartOf: {
         '@type': 'WebSite',
@@ -57,19 +53,19 @@ export class SeoService {
     return locale.replace('-', '_');
   }
 
-  private setOgLocaleAlternates() {
+  private setOgLocaleAlternates(currentLocale: Locale) {
     this.document
       .querySelectorAll('meta[property="og:locale:alternate"]')
       .forEach((meta) => meta.remove());
 
     Object.values(LOCALES)
-      .filter((locale) => locale !== this.currentLocale)
+      .filter((locale) => locale !== currentLocale)
       .forEach((locale) => {
         this.meta.addTag({ property: 'og:locale:alternate', content: this.toOgLocale(locale) });
       });
   }
 
-  private setCanonical(path: string) {
+  private setCanonical(seo: Seo) {
     let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
 
     if (!link) {
@@ -78,22 +74,25 @@ export class SeoService {
       this.document.head.appendChild(link);
     }
 
-    link.setAttribute('href', this.buildUrl(this.currentLocale, path));
+    link.setAttribute(
+      'href',
+      this.buildPageUrl(seo.currentLocale, seo.path[seo.currentLocale], seo.slug),
+    );
   }
 
-  private updateAlternateLinks(path: RouteValue) {
+  private updateAlternateLinks(path: RouteValue, slug?: string) {
     const alternates = [
       {
         hreflang: LOCALES.enGB,
-        href: this.buildUrl(LOCALES.enGB, path[LOCALES.enGB]),
+        href: this.buildPageUrl(LOCALES.enGB, path[LOCALES.enGB], slug),
       },
       {
         hreflang: LOCALES.ptBR,
-        href: this.buildUrl(LOCALES.ptBR, path[LOCALES.ptBR]),
+        href: this.buildPageUrl(LOCALES.ptBR, path[LOCALES.ptBR], slug),
       },
       {
         hreflang: 'x-default',
-        href: this.buildUrl(LOCALES.enGB, path[LOCALES.enGB]),
+        href: this.buildPageUrl(LOCALES.enGB, path[LOCALES.enGB], slug),
       },
     ];
 
@@ -137,23 +136,29 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:site_name', content: this.SITE_NAME });
     this.meta.updateTag({ property: 'og:title', content: seo.title });
     this.meta.updateTag({ property: 'og:description', content: seo.description });
-    this.meta.updateTag({ property: 'og:image', content: this.buildImageUrl(seo.image) });
+    this.meta.updateTag({
+      property: 'og:image',
+      content: this.buildImageUrl(seo.currentLocale, seo.image),
+    });
     this.meta.updateTag({ property: 'og:image:alt', content: seo.imageAlt });
     this.meta.updateTag({ property: 'og:type', content: seo.openGraphType });
     this.meta.updateTag({
       property: 'og:url',
-      content: this.buildUrl(this.currentLocale, seo.path[this.currentLocale]),
+      content: this.buildPageUrl(seo.currentLocale, seo.path[seo.currentLocale], seo.slug),
     });
-    this.meta.updateTag({ property: 'og:locale', content: this.toOgLocale(this.currentLocale) });
+    this.meta.updateTag({ property: 'og:locale', content: this.toOgLocale(seo.currentLocale) });
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: seo.title });
     this.meta.updateTag({ name: 'twitter:description', content: seo.description });
-    this.meta.updateTag({ name: 'twitter:image', content: this.buildImageUrl(seo.image) });
+    this.meta.updateTag({
+      name: 'twitter:image',
+      content: this.buildImageUrl(seo.currentLocale, seo.image),
+    });
     this.meta.updateTag({ name: 'twitter:image:alt', content: seo.imageAlt });
-    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
-    this.setOgLocaleAlternates();
-    this.setCanonical(seo.path[this.currentLocale]);
-    this.updateAlternateLinks(seo.path);
+    this.meta.updateTag({ name: 'robots', content: 'index, follow, max-image-preview:large' });
+    this.setOgLocaleAlternates(seo.currentLocale);
+    this.setCanonical(seo);
+    this.updateAlternateLinks(seo.path, seo.slug);
     this.updateJsonLd(seo);
   }
 }

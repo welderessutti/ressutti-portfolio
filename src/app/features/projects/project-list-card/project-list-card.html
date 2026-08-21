@@ -18,8 +18,8 @@
       <span>{{ project().category }}</span>
       <span
         class="rounded-full border border-border bg-background/70 px-2"
-        [class.text-error]="!project().completed"
-        [class.text-success]="project().completed"
+        [class.text-error]="!project().isCompleted"
+        [class.text-success]="project().isCompleted"
       >
         {{ project().status }}
       </span>

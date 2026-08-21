@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
     subtitle: $localize`:@@projects.data.glicare.subtitle:A web application for diabetes self-management.`,
     shortDescription: $localize`:@@projects.data.glicare.shortDescription:A responsive health platform that centralises glucose readings, medication routines and progress trends to support daily diabetes management.`,
     description: $localize`:@@projects.data.glicare.description:Glicare brings glucose records, medication tracking, progress indicators and educational resources into one structured care experience.`,
-    featured: true,
+    isFeatured: true,
 
     category: $localize`:@@projects.data.glicare.category:Digital health platform`,
     type: $localize`:@@projects.data.glicare.type:Responsive web application`,
@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
     outcome: $localize`:@@projects.data.glicare.outcome:A clearer, structured workflow for recording glucose data and reviewing health trends`,
 
     status: $localize`:@@projects.data.glicare.status:In progress`,
-    completed: false,
+    isCompleted: false,
     timeline: $localize`:@@projects.data.glicare.timeline:1 month`,
     year: {
       startYear: 2026,
@@ -38,19 +38,19 @@ export const PROJECTS: Project[] = [
     // repositoryUrl: 'https://github.com/...',
 
     coverImage: {
-      src: 'images/projects/1785012012152.png',
+      src: 'images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
       width: 1600,
       height: 900,
     },
     seoImage: {
-      src: 'images/projects/1785012012152.png',
+      src: 'images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
       width: 1600,
       height: 900,
     },
     heroImage: {
-      src: 'images/projects/1785012012152.png',
+      src: 'images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
       width: 1600,
       height: 900,
@@ -297,7 +297,7 @@ export const PROJECTS: Project[] = [
         title: $localize`:@@projects.data.glicare.showcase.dashboard.title:A calm daily dashboard`,
         description: $localize`:@@projects.data.glicare.showcase.dashboard.description:The most relevant health indicators and next actions share one hierarchy, helping users orient themselves in seconds.`,
         image: {
-          src: 'images/projects/1785012012152.png',
+          src: 'images/projects/glicare/glicare-cover.webp',
           alt: $localize`:@@projects.data.glicare.showcase.dashboard.image.alt:Glicare dashboard presentation`,
           width: 1600,
           height: 900,
@@ -309,7 +309,7 @@ export const PROJECTS: Project[] = [
         title: $localize`:@@projects.data.glicare.showcase.timeline.title:History built for pattern recognition`,
         description: $localize`:@@projects.data.glicare.showcase.timeline.description:Measurements are presented as a coherent story rather than an isolated table, making changes easier to spot and discuss.`,
         image: {
-          src: 'images/projects/1785012012152.png',
+          src: 'images/projects/glicare/glicare-cover.webp',
           alt: $localize`:@@projects.data.glicare.showcase.timeline.image.alt:Glicare health timeline presentation`,
           width: 1600,
           height: 900,

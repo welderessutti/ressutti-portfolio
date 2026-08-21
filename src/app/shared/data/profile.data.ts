@@ -10,7 +10,7 @@ export const PROFILE: Profile = {
   whatsappNumber: '+55 19 99808-5588',
   whatsappUrl: 'https://wa.me/5519998085588',
   cvPath: {
-    [LOCALES.enGB]: '/documents/Welder Ressutti - EN.pdf',
-    [LOCALES.ptBR]: '/documents/Welder Ressutti - EN.pdf',
+    [LOCALES.enGB]: 'documents/welder-ressutti-fullstack-en.pdf',
+    [LOCALES.ptBR]: 'documents/welder-ressutti-fullstack-pt.pdf',
   },
 };

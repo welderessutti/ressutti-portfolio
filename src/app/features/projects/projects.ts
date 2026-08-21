@@ -29,9 +29,10 @@ export class Projects {
     this.seo.updateSeo({
       title: $localize`:@@projects.seo.title:Full-stack Projects | Angular + Spring | Ressutti.dev`,
       description: $localize`:@@projects.seo.description:Explore full-stack web applications by Welder Ressutti, with context on product goals, Angular and Spring architecture, responsibilities and engineering decisions.`,
-      image: '/assets/images/seo/projects.webp',
-      imageAlt: $localize`:@@projects.seo.imageAlt:Selection of web development projects by Welder Ressutti.`,
+      currentLocale: this.currentLocale,
       path: ROUTES.projects,
+      image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
+      imageAlt: $localize`:@@projects.seo.imageAlt:Selection of web development projects by Welder Ressutti.`,
       openGraphType: 'website',
       jsonLdType: 'CollectionPage',
     });

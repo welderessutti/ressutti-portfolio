@@ -17,7 +17,7 @@ export class ProjectService {
   }
 
   public getFeaturedProjects(): readonly Project[] {
-    return this.projects.filter((project) => project.featured);
+    return this.projects.filter((project) => project.isFeatured);
   }
 
   public getProjectBySlug(slug: string): Project | undefined {

@@ -1,6 +1,6 @@
 <div align="center">
 
-# Ressutti.dev
+# ressutti.com
 
 **Portfólio profissional bilíngue desenvolvido com Angular moderno, arquitetura orientada a features e geração estática.**
 
@@ -17,7 +17,7 @@
 
 ## Sobre o projeto
 
-O **Ressutti.dev** é um portfólio de software criado para apresentar perfil profissional, competências e projetos com uma experiência rápida, responsiva e acessível.
+O **ressutti.com** é um portfólio de software criado para apresentar perfil profissional, competências e projetos com uma experiência rápida, responsiva e acessível.
 
 Além da interface, o repositório demonstra decisões de engenharia aplicadas a uma aplicação Angular atual: componentes standalone, reatividade com Signals, carregamento sob demanda por rota, internacionalização nativa, prerenderização, hydration, SEO técnico e TypeScript em modo estrito.
 

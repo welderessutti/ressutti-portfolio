@@ -101,7 +101,7 @@ export interface Project {
   readonly subtitle: string;
   readonly shortDescription: string;
   readonly description: string;
-  readonly featured: boolean;
+  readonly isFeatured: boolean;
 
   readonly category: string;
   readonly type: string;
@@ -110,7 +110,7 @@ export interface Project {
   readonly outcome: string;
 
   readonly status: string;
-  readonly completed: boolean;
+  readonly isCompleted: boolean;
   readonly timeline: string;
   readonly year: ProjectPeriod;
   readonly technologies: readonly Technology[];

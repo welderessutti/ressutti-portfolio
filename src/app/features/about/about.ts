@@ -34,9 +34,13 @@ export class About {
   private readonly document = inject(DOCUMENT);
   private readonly seo = inject(SeoService);
 
-  protected readonly currentLocale = this.document.documentElement.lang as Locale;
+  protected readonly currentLocale = this.currentLocaleHtml;
   protected readonly projectsPath = `/${ROUTES.projects[this.currentLocale]}`;
   protected readonly contactPath = `/${ROUTES.contact[this.currentLocale]}`;
+
+  private get currentLocaleHtml(): Locale {
+    return this.document.documentElement.lang as Locale;
+  }
 
   protected readonly principles: readonly ProfessionalPrinciple[] = [
     {
@@ -135,9 +139,10 @@ export class About {
     this.seo.updateSeo({
       title: $localize`:@@about.seo.title:About Welder Ressutti | Ressutti.dev`,
       description: $localize`:@@about.seo.description:Learn about Welder Ressutti, a full-stack developer specialising in Angular and Spring, with a focus on reliable, maintainable web applications.`,
-      image: '/favicon.ico',
-      imageAlt: $localize`:@@about.seo.imageAlt:Ressutti.dev portfolio logo.`,
+      currentLocale: this.currentLocale,
       path: ROUTES.about,
+      image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
+      imageAlt: $localize`:@@about.seo.imageAlt:Ressutti.dev portfolio logo.`,
       openGraphType: 'profile',
       jsonLdType: 'AboutPage',
     });

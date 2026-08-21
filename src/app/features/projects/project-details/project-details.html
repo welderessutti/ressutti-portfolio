@@ -6,8 +6,8 @@
           <span class="section-eyebrow">{{ project.category }}</span>
           <span
             class="rounded-full border border-border bg-background/70 px-2 text-sm"
-            [class.text-error]="!project.completed"
-            [class.text-success]="project.completed"
+            [class.text-error]="!project.isCompleted"
+            [class.text-success]="project.isCompleted"
           >
             {{ project.status }}
           </span>
@@ -345,9 +345,7 @@
         id="architecture"
         class="scroll-mt-28 border-b border-border-light bg-surface section-padding"
         [attr.aria-labelledby]="
-          project.architecture
-            ? project.id + '-architecture-title'
-            : project.id + '-workflow-title'
+          project.architecture ? project.id + '-architecture-title' : project.id + '-workflow-title'
         "
       >
         <div class="container-padding space-y-20">

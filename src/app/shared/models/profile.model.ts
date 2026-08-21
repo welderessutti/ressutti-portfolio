@@ -8,5 +8,5 @@ export interface Profile {
   readonly githubUrl: `https://${string}`;
   readonly whatsappNumber: string;
   readonly whatsappUrl: `https://wa.me/${string}`;
-  readonly cvPath: Readonly<Record<Locale, `/${string}.pdf`>>;
+  readonly cvPath: Readonly<Record<Locale, `${string}.pdf`>>;
 }
