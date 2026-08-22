@@ -24,6 +24,12 @@ export class NotFound {
   }
 
   public constructor() {
-    this.seo.updateTitle(this.pageTitle);
+    this.seo.updateSeo({
+      indexable: false,
+      title: $localize`:@@notFound.seo.title:Page Not Found | ressutti.com`,
+      description: $localize`:@@notFound.seo.description:The requested page could not be found on ressutti.com. Check the address or continue to the home or projects pages.`,
+      currentLocale: this.currentLocale,
+      image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
+    });
   }
 }

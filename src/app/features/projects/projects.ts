@@ -27,6 +27,7 @@ export class Projects {
 
   constructor() {
     this.seo.updateSeo({
+      indexable: true,
       title: $localize`:@@projects.seo.title:Projects | Welder Ressutti | Full-Stack Developer`,
       description: $localize`:@@projects.seo.description:Explore full-stack web projects by Welder Ressutti, with product goals, Angular and Spring architecture, technical responsibilities and engineering decisions.`,
       currentLocale: this.currentLocale,

@@ -23,6 +23,7 @@ export class Home {
 
   constructor() {
     this.seo.updateSeo({
+      indexable: true,
       title: $localize`:@@home.seo.title:Welder Ressutti | Full-Stack Angular + Spring Developer`,
       description: $localize`:@@home.seo.description:Portfolio of Welder Ressutti, a Full-Stack Angular + Spring Developer building end-to-end web applications with clear architecture and maintainable code.`,
       currentLocale: this.currentLocale,

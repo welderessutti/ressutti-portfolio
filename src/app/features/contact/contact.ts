@@ -25,6 +25,7 @@ export class Contact {
 
   public constructor() {
     this.seo.updateSeo({
+      indexable: true,
       title: $localize`:@@contact.seo.title:Contact | Welder Ressutti | Full-Stack Developer`,
       description: $localize`:@@contact.seo.description:Contact Welder Ressutti about Angular and Spring development opportunities, full-stack web projects or professional collaboration.`,
       currentLocale: this.currentLocale,

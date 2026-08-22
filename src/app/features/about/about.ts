@@ -137,6 +137,7 @@ export class About {
 
   public constructor() {
     this.seo.updateSeo({
+      indexable: true,
       title: $localize`:@@about.seo.title:About | Welder Ressutti | Full-Stack Developer`,
       description: $localize`:@@about.seo.description:Learn about Welder Ressutti's path from biomedicine to full-stack development, including his education, working principles and focus on Angular and Spring.`,
       currentLocale: this.currentLocale,

@@ -24,6 +24,7 @@ export class ProjectDetails {
 
   public constructor() {
     this.seo.updateSeo({
+      indexable: true,
       title: `${this.project.name} | ${this.project.category} | Welder Ressutti`,
       description: this.project.description,
       currentLocale: this.currentLocale,

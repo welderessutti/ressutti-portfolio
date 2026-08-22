@@ -836,6 +836,20 @@
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="notFound.seo.title" datatype="html">
+        <source>Page Not Found | ressutti.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/not-found/not-found.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="notFound.seo.description" datatype="html">
+        <source>The requested page could not be found on ressutti.com. Check the address or continue to the home or projects pages.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/not-found/not-found.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="notFound.navigation.ariaLabel" datatype="html">
         <source>Error recovery options</source>
         <context-group purpose="location">

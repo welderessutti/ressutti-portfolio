@@ -1,7 +1,7 @@
 import { RouteValue } from './../../../shared/i18n/routes';
 import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Seo } from '../../../shared/models/seo.model';
+import { IndexableSeo, NonIndexableSeo, Seo } from '../../../shared/models/seo.model';
 import { Locale, LOCALES } from '../../../shared/i18n/locales';
 
 @Injectable({
@@ -13,6 +13,8 @@ export class SeoService {
   private readonly meta = inject(Meta);
   private readonly SITE_NAME = 'ressutti.com';
   private readonly BASE_URL = 'https://www.ressutti.com';
+  private readonly INDEXABLE_ROBOTS = 'index, follow, max-image-preview:large';
+  private readonly NON_INDEXABLE_ROBOTS = 'noindex, follow';
 
   private buildPageUrl(locale: Locale, path: string, slug?: string): string {
     return `${this.BASE_URL}/${locale.toLowerCase()}/${path}${slug ? `/${slug}` : ''}`;
@@ -22,7 +24,11 @@ export class SeoService {
     return `${this.BASE_URL}/${locale.toLowerCase()}/${image}`;
   }
 
-  private buildJsonLd(seo: Seo): object {
+  private updateTitle(title: string) {
+    this.title.setTitle(title);
+  }
+
+  private buildJsonLd(seo: IndexableSeo): object {
     return {
       '@context': 'https://schema.org',
       '@type': seo.jsonLdType,
@@ -65,7 +71,7 @@ export class SeoService {
       });
   }
 
-  private setCanonical(seo: Seo) {
+  private setCanonical(seo: IndexableSeo) {
     let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
 
     if (!link) {
@@ -109,7 +115,7 @@ export class SeoService {
     });
   }
 
-  private updateJsonLd(seo: Seo) {
+  private updateJsonLd(seo: IndexableSeo) {
     const id = 'json-ld';
 
     let script = this.document.getElementById(id) as HTMLScriptElement | null;
@@ -126,20 +132,30 @@ export class SeoService {
     script.textContent = JSON.stringify(this.buildJsonLd(seo));
   }
 
-  public updateTitle(title: string) {
-    this.title.setTitle(title);
-  }
-
-  public updateSeo(seo: Seo) {
-    this.updateTitle(seo.title);
-    this.meta.updateTag({ name: 'description', content: seo.description });
-    this.meta.updateTag({ property: 'og:site_name', content: this.SITE_NAME });
+  private updateOpenGraphPreview(seo: Seo) {
     this.meta.updateTag({ property: 'og:title', content: seo.title });
     this.meta.updateTag({ property: 'og:description', content: seo.description });
     this.meta.updateTag({
       property: 'og:image',
       content: this.buildImageUrl(seo.currentLocale, seo.image),
     });
+  }
+
+  private removeIndexableMetadata() {
+    this.document
+      .querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')
+      .forEach((meta) => meta.remove());
+
+    this.document
+      .querySelectorAll('link[rel="canonical"], link[rel="alternate"]')
+      .forEach((link) => link.remove());
+
+    this.document.getElementById('json-ld')?.remove();
+  }
+
+  private updateIndexableSeo(seo: IndexableSeo) {
+    this.updateOpenGraphPreview(seo);
+    this.meta.updateTag({ property: 'og:site_name', content: this.SITE_NAME });
     this.meta.updateTag({ property: 'og:image:alt', content: seo.imageAlt });
     this.meta.updateTag({ property: 'og:type', content: seo.openGraphType });
     this.meta.updateTag({
@@ -155,10 +171,28 @@ export class SeoService {
       content: this.buildImageUrl(seo.currentLocale, seo.image),
     });
     this.meta.updateTag({ name: 'twitter:image:alt', content: seo.imageAlt });
-    this.meta.updateTag({ name: 'robots', content: 'index, follow, max-image-preview:large' });
+    this.meta.updateTag({ name: 'robots', content: this.INDEXABLE_ROBOTS });
     this.setOgLocaleAlternates(seo.currentLocale);
     this.setCanonical(seo);
     this.updateAlternateLinks(seo.path, seo.slug);
     this.updateJsonLd(seo);
+  }
+
+  private updateNonIndexableSeo(seo: NonIndexableSeo) {
+    this.removeIndexableMetadata();
+    this.updateOpenGraphPreview(seo);
+    this.meta.updateTag({ name: 'robots', content: this.NON_INDEXABLE_ROBOTS });
+  }
+
+  public updateSeo(seo: Seo) {
+    this.updateTitle(seo.title);
+    this.meta.updateTag({ name: 'description', content: seo.description });
+
+    if (seo.indexable) {
+      this.updateIndexableSeo(seo);
+      return;
+    }
+
+    this.updateNonIndexableSeo(seo);
   }
 }
