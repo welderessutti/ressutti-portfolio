@@ -16,34 +16,182 @@
       rel="alternate"
       hreflang="pt-BR"
       href="https://www.ressutti.com/pt-br/" />
-  </url>
 
-  <url>
-    <loc>https://www.ressutti.com/en-gb/projects</loc>
-  </url>
-
-  <url>
-    <loc>https://www.ressutti.com/en-gb/about</loc>
-  </url>
-
-  <url>
-    <loc>https://www.ressutti.com/en-gb/contact</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/" />
   </url>
 
   <url>
     <loc>https://www.ressutti.com/pt-br/</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/" />
+  </url>
+
+  <url>
+    <loc>https://www.ressutti.com/en-gb/projects</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/projects" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/projetos" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/projects" />
   </url>
 
   <url>
     <loc>https://www.ressutti.com/pt-br/projetos</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/projects" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/projetos" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/projects" />
+  </url>
+
+  <url>
+    <loc>https://www.ressutti.com/en-gb/about</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/about" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/sobre" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/about" />
   </url>
 
   <url>
     <loc>https://www.ressutti.com/pt-br/sobre</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/about" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/sobre" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/about" />
+  </url>
+
+  <url>
+    <loc>https://www.ressutti.com/en-gb/contact</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/contact" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/contato" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/contact" />
   </url>
 
   <url>
     <loc>https://www.ressutti.com/pt-br/contato</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/contact" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/contato" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/contact" />
+  </url>
+
+  <url>
+    <loc>https://www.ressutti.com/en-gb/projects/glicare</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/projects/glicare" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/projetos/glicare" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/projects/glicare" />
+  </url>
+
+  <url>
+    <loc>https://www.ressutti.com/pt-br/projetos/glicare</loc>
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-GB"
+      href="https://www.ressutti.com/en-gb/projects/glicare" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://www.ressutti.com/pt-br/projetos/glicare" />
+
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.ressutti.com/en-gb/projects/glicare" />
   </url>
 
 </urlset>

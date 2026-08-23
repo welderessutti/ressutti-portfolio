@@ -1,6 +1,10 @@
 {
-  "name": "ressutti.com",
-  "short_name": "ressutti",
+  "name": "Welder Ressutti — Portfolio",
+  "short_name": "ressutti.com",
+  "description": "Professional portfolio of Welder Ressutti, featuring selected projects, skills, and software development experience.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

@@ -35,7 +35,7 @@ export class SeoService {
     'Git',
     'AWS',
     'Azure',
-    'Microservice',
+    'Microservices',
     'Messaging',
     'Testing',
     'Linux',
