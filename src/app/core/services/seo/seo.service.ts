@@ -3,6 +3,7 @@ import { Injectable, inject, DOCUMENT } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { IndexableSeo, NonIndexableSeo, Seo } from '../../../shared/models/seo.model';
 import { Locale, LOCALES } from '../../../shared/i18n/locales';
+import { PROFILE } from '../../../shared/data/profile.data';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,30 @@ export class SeoService {
   private readonly BASE_URL = 'https://www.ressutti.com';
   private readonly INDEXABLE_ROBOTS = 'index, follow, max-image-preview:large';
   private readonly NON_INDEXABLE_ROBOTS = 'noindex, follow';
+  private readonly OPEN_GRAPH_IMAGE_WIDTH = '1200';
+  private readonly OPEN_GRAPH_IMAGE_HEIGHT = '630';
+  private readonly PERSON_JOB_TITLE: Record<Locale, string> = {
+    [LOCALES.enGB]: 'Full-Stack Angular and Spring Developer',
+    [LOCALES.ptBR]: 'Desenvolvedor Full-Stack Angular e Spring',
+  };
+  private readonly PERSON_KNOWS_ABOUT = [
+    'Full-stack web development',
+    'Angular',
+    'TypeScript',
+    'Spring',
+    'Java',
+    'Kotlin',
+    'SQL',
+    'NoSQL',
+    'Docker',
+    'Git',
+    'AWS',
+    'Azure',
+    'Microservice',
+    'Messaging',
+    'Testing',
+    'Linux',
+  ];
 
   private buildPageUrl(locale: Locale, path: string, slug?: string): string {
     return `${this.BASE_URL}/${locale.toLowerCase()}/${path}${slug ? `/${slug}` : ''}`;
@@ -29,29 +54,49 @@ export class SeoService {
   }
 
   private buildJsonLd(seo: IndexableSeo): object {
+    const pageUrl = this.buildPageUrl(seo.currentLocale, seo.path[seo.currentLocale], seo.slug);
+    const imageUrl = this.buildImageUrl(seo.currentLocale, seo.image);
+    const websiteId = `${this.BASE_URL}/#website`;
+    const personId = `${this.BASE_URL}/#person`;
+
     return {
       '@context': 'https://schema.org',
-      '@type': seo.jsonLdType,
-
-      name: seo.title,
-      description: seo.description,
-      url: this.buildPageUrl(seo.currentLocale, seo.path[seo.currentLocale], seo.slug),
-
-      inLanguage: seo.currentLocale,
-
-      image: this.buildImageUrl(seo.currentLocale, seo.image),
-
-      isPartOf: {
-        '@type': 'WebSite',
-        name: this.SITE_NAME,
-        url: this.BASE_URL,
-      },
-
-      publisher: {
-        '@type': 'Person',
-        name: 'Welder Ressutti',
-        url: this.BASE_URL,
-      },
+      '@graph': [
+        {
+          '@type': seo.jsonLdType,
+          '@id': `${pageUrl}#webpage`,
+          name: seo.title,
+          description: seo.description,
+          url: pageUrl,
+          inLanguage: seo.currentLocale,
+          image: imageUrl,
+          isPartOf: {
+            '@id': websiteId,
+          },
+          publisher: {
+            '@id': personId,
+          },
+        },
+        {
+          '@type': 'WebSite',
+          '@id': websiteId,
+          name: this.SITE_NAME,
+          url: this.BASE_URL,
+          inLanguage: Object.values(LOCALES),
+          publisher: {
+            '@id': personId,
+          },
+        },
+        {
+          '@type': 'Person',
+          '@id': personId,
+          name: PROFILE.name,
+          url: this.BASE_URL,
+          jobTitle: this.PERSON_JOB_TITLE[seo.currentLocale],
+          sameAs: [PROFILE.linkedinUrl, PROFILE.githubUrl],
+          knowsAbout: this.PERSON_KNOWS_ABOUT,
+        },
+      ],
     };
   }
 
@@ -157,6 +202,14 @@ export class SeoService {
     this.updateOpenGraphPreview(seo);
     this.meta.updateTag({ property: 'og:site_name', content: this.SITE_NAME });
     this.meta.updateTag({ property: 'og:image:alt', content: seo.imageAlt });
+    this.meta.updateTag({
+      property: 'og:image:width',
+      content: this.OPEN_GRAPH_IMAGE_WIDTH,
+    });
+    this.meta.updateTag({
+      property: 'og:image:height',
+      content: this.OPEN_GRAPH_IMAGE_HEIGHT,
+    });
     this.meta.updateTag({ property: 'og:type', content: seo.openGraphType });
     this.meta.updateTag({
       property: 'og:url',
