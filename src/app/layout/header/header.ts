@@ -15,6 +15,7 @@ import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { NavService } from '../../core/services/nav/nav.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ContactService } from '../../core/services/contact/contact.service';
+import { SeoService } from '../../core/services/seo/seo.service';
 
 @Component({
   selector: 'app-header',
@@ -27,6 +28,7 @@ export class Header implements OnInit {
   private readonly document = inject(DOCUMENT);
   private readonly nav = inject(NavService);
   private readonly contact = inject(ContactService);
+  private readonly seo = inject(SeoService);
   protected readonly navs = this.nav.navs;
   protected readonly contacts = this.contact.contacts;
   protected readonly cvPath = this.contact.cvPath;
@@ -42,6 +44,7 @@ export class Header implements OnInit {
     if (this.isBrowser) {
       const isDark = this.document.documentElement.classList.contains('dark');
       this.isDarkMode.set(isDark);
+      this.seo.updateThemeColor(isDark);
     }
   }
 
@@ -49,6 +52,7 @@ export class Header implements OnInit {
     if (!this.isBrowser) return;
     const isDark = this.document.documentElement.classList.toggle('dark');
     this.isDarkMode.set(isDark);
+    this.seo.updateThemeColor(isDark);
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 

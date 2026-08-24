@@ -237,7 +237,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'robots', content: this.NON_INDEXABLE_ROBOTS });
   }
 
-  public updateSeo(seo: Seo) {
+  public updateSeo(seo: Seo): void {
     this.updateTitle(seo.title);
     this.meta.updateTag({ name: 'description', content: seo.description });
 
@@ -247,5 +247,22 @@ export class SeoService {
     }
 
     this.updateNonIndexableSeo(seo);
+  }
+
+  public updateThemeColor(isDark: boolean): void {
+    const themeColorMeta = this.meta.getTag('name="theme-color"');
+
+    if (!themeColorMeta) return;
+
+    const colorAttribute = isDark ? 'data-theme-color-dark' : 'data-theme-color-light';
+
+    const themeColor = themeColorMeta.getAttribute(colorAttribute);
+
+    if (themeColor) {
+      this.meta.updateTag({
+        name: 'theme-color',
+        content: themeColor,
+      });
+    }
   }
 }

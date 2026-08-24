@@ -1,21 +1,39 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
+    <meta charset="utf-8" />
+    <meta
+      name="theme-color"
+      content="#fcfcfe"
+      data-theme-color-light="#fcfcfe"
+      data-theme-color-dark="#0b0f19"
+    />
+    <meta name="color-scheme" content="light dark" />
     <script>
       (function () {
+        const root = document.documentElement;
+        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+        let savedTheme = null;
+
         try {
-          const savedTheme = localStorage.getItem('theme');
-          if (savedTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else if (!savedTheme) {
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-              document.documentElement.classList.add('dark');
-            }
-          }
-        } catch (e) {}
+          savedTheme = localStorage.getItem('theme');
+        } catch {}
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark);
+
+        root.classList.toggle('dark', isDark);
+
+        const colorAttribute = isDark ? 'data-theme-color-dark' : 'data-theme-color-light';
+
+        const themeColor = themeColorMeta?.getAttribute(colorAttribute);
+
+        if (themeColor) {
+          themeColorMeta.setAttribute('content', themeColor);
+        }
       })();
     </script>
-    <meta charset="utf-8" />
     <title>Welder Ressutti | Full-stack Developer — Angular + Spring</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

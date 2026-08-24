@@ -47,7 +47,7 @@ describe('SeoService', () => {
   afterEach(() => {
     document
       .querySelectorAll(
-        'meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[name^="twitter:"], link[rel="canonical"], link[rel="alternate"], #json-ld',
+        'meta[name="description"], meta[name="robots"], meta[name="theme-color"], meta[property^="og:"], meta[name^="twitter:"], link[rel="canonical"], link[rel="alternate"], #json-ld',
       )
       .forEach((element) => element.remove());
 
@@ -126,5 +126,24 @@ describe('SeoService', () => {
     expect(document.querySelector('link[rel="canonical"]')).not.toBeNull();
     expect(document.querySelectorAll('link[rel="alternate"]')).toHaveLength(3);
     expect(document.getElementById('json-ld')).not.toBeNull();
+  });
+
+  it('should update the existing theme color without creating duplicate metadata', () => {
+    const themeColorMeta = document.createElement('meta');
+    themeColorMeta.name = 'theme-color';
+    themeColorMeta.content = '#fcfcfe';
+    themeColorMeta.setAttribute('data-theme-color-light', '#fcfcfe');
+    themeColorMeta.setAttribute('data-theme-color-dark', '#0b0f19');
+    document.head.appendChild(themeColorMeta);
+
+    service.updateThemeColor(true);
+
+    expect(getMetaContent('meta[name="theme-color"]')).toBe('#0b0f19');
+    expect(document.querySelectorAll('meta[name="theme-color"]')).toHaveLength(1);
+
+    service.updateThemeColor(false);
+
+    expect(getMetaContent('meta[name="theme-color"]')).toBe('#fcfcfe');
+    expect(document.querySelectorAll('meta[name="theme-color"]')).toHaveLength(1);
   });
 });
