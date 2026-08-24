@@ -72,15 +72,13 @@ export class Hero implements OnInit, OnDestroy {
 
     let speed = this.isDeleting ? 50 : 100;
 
-    // stopped typing
     if (!this.isDeleting && this.charIndex === currentWord.length) {
-      speed = 1200; // pausa
+      speed = 1200;
       this.isDeleting = true;
     }
-    // stopped deleting
     else if (this.isDeleting && this.charIndex === 0) {
       this.isDeleting = false;
-      this.wordIndex = (this.wordIndex + 1) % this.words.length; // loop back to first word
+      this.wordIndex = (this.wordIndex + 1) % this.words.length;
       speed = 300;
     }
 

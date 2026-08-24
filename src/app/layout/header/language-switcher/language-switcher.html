@@ -1,5 +1,4 @@
 <div id="lang-switcher" class="relative" (focusout)="onFocusOut($event)">
-  <!-- Button -->
   <button
     #languageButton
     type="button"
@@ -12,9 +11,7 @@
       >Change language. Current language:</span
     >
     <span class="sr-only">{{ currentLang() }}</span>
-    <!-- Flag -->
     <img [src]="currentFlag()" alt="" class="w-6 shrink-0 object-contain" />
-    <!-- Arrow -->
     <svg
       aria-hidden="true"
       class="w-4 h-4 transition-transform"
@@ -27,7 +24,6 @@
     </svg>
   </button>
 
-  <!-- Dropdown -->
   <div
     id="language-options"
     class="absolute right-0 mt-2 w-36 bg-surface border border-border rounded-lg shadow-lg p-2 z-50 transition-all duration-200"
@@ -40,7 +36,6 @@
     [class.translate-y-2]="!isOpen()"
   >
     <ul>
-      <!-- PT -->
       <li>
         <a
           (click)="savePreferredLanguage(LOCALES.ptBR)"
@@ -55,7 +50,6 @@
         </a>
       </li>
 
-      <!-- EN -->
       <li>
         <a
           (click)="savePreferredLanguage(LOCALES.enGB)"

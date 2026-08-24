@@ -24,7 +24,6 @@ export const PROJECTS: Project[] = [
     timeline: $localize`:@@projects.data.glicare.timeline:1 month`,
     year: {
       startYear: 2026,
-      // endYear: 2025,
     },
     technologies: [
       TECHNOLOGIES.angular,
@@ -33,10 +32,6 @@ export const PROJECTS: Project[] = [
       TECHNOLOGIES.postgreSql,
       TECHNOLOGIES.docker,
     ],
-    // url: 'https://...',
-    // liveUrl: 'https://...',
-    // repositoryUrl: 'https://github.com/...',
-
     coverImage: {
       src: 'images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,

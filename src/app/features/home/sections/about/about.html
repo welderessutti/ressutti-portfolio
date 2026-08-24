@@ -1,8 +1,6 @@
 <section id="about" class="section-padding bg-surface flex-1">
   <div class="container-padding reveal" appRevealOnScroll>
-    <!-- Grid -->
     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Left (Text) -->
       <div>
         <h2
           i18n="@@home.about.introduction.heading"
@@ -27,7 +25,6 @@
           responsibility and attention to quality I now bring to software development.
         </p>
 
-        <!-- Highlights -->
         <ul class="list-disc pl-5 space-y-3 marker:text-accent">
           @for (highlight of highlights; track highlight) {
             <li class="text-text-secondary">{{ highlight }}</li>
@@ -35,7 +32,6 @@
         </ul>
       </div>
 
-      <!-- Right (Visual / Card) -->
       <div
         class="bg-surface-light rounded-xl p-6 border border-border shadow-sm hover:border-accent/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-within:*"
       >

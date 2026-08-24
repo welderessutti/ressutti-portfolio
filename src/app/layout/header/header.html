@@ -6,7 +6,6 @@
     i18n-aria-label="@@layout.header.primaryNavigation.ariaLabel"
     class="container-padding py-3 lg:py-4 flex items-center justify-between"
   >
-    <!-- Logo -->
     <a
       [hreflang]="navs[0].locale"
       [routerLink]="navs[0].path"
@@ -22,7 +21,6 @@
     </a>
 
     <div class="flex items-center justify-between gap-8">
-      <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-8 text-sm font-medium text-text-secondary">
         @for (nav of navs; track nav.id) {
           <li>
@@ -40,7 +38,6 @@
         }
       </ul>
 
-      <!-- Theme Button -->
       <button
         type="button"
         class="text-text-secondary hover:text-accent transition"
@@ -96,10 +93,8 @@
         }
       </button>
 
-      <!-- Language Switcher -->
       <app-language-switcher />
 
-      <!-- Mobile Button -->
       <button
         #mobileMenuButton
         type="button"

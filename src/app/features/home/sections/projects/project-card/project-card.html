@@ -1,7 +1,6 @@
 <article
   class="group flex flex-col h-full bg-surface-light rounded-xl overflow-hidden border border-border hover:border-accent/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-within:*"
 >
-  <!-- Image -->
   <div class="flex shrink-0 items-start justify-start p-3 overflow-hidden">
     <img
       [src]="project().coverImage.src"
@@ -14,10 +13,8 @@
     />
   </div>
 
-  <!-- Content -->
   <div class="p-5 flex flex-1 flex-col gap-4">
     <div class="flex flex-wrap items-center gap-3">
-      <!-- Title -->
       <h3 class="text-xl font-semibold text-text-primary">
         {{ project().title }}
       </h3>
@@ -30,7 +27,6 @@
       </span>
     </div>
 
-    <!-- Short Description -->
     <p class="text-text-secondary text-sm leading-relaxed">
       {{ project().shortDescription }}
     </p>
