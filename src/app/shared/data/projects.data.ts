@@ -35,8 +35,8 @@ export const PROJECTS: Project[] = [
     coverImage: {
       src: 'images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
-      width: 1600,
-      height: 900,
+      width: 1920,
+      height: 1080,
     },
     seoImage: {
       src: 'images/seo/projects/glicare/glicare-seo-image.webp',
@@ -47,8 +47,8 @@ export const PROJECTS: Project[] = [
     heroImage: {
       src: 'images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
-      width: 1600,
-      height: 900,
+      width: 1920,
+      height: 1080,
     },
 
     overview: {
@@ -294,8 +294,8 @@ export const PROJECTS: Project[] = [
         image: {
           src: 'images/projects/glicare/glicare-cover.webp',
           alt: $localize`:@@projects.data.glicare.showcase.dashboard.image.alt:Glicare dashboard presentation`,
-          width: 1600,
-          height: 900,
+          width: 1920,
+          height: 1080,
         },
       },
       {
@@ -306,8 +306,8 @@ export const PROJECTS: Project[] = [
         image: {
           src: 'images/projects/glicare/glicare-cover.webp',
           alt: $localize`:@@projects.data.glicare.showcase.timeline.image.alt:Glicare health timeline presentation`,
-          width: 1600,
-          height: 900,
+          width: 1920,
+          height: 1080,
         },
       },
     ],
