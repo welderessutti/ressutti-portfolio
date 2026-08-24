@@ -61,4 +61,16 @@ describe('NotFound', () => {
     expect(document.querySelectorAll('link[rel="alternate"]')).toHaveLength(0);
     expect(document.getElementById('json-ld')).toBeNull();
   });
+
+  it('should provide semantic, locale-aware recovery navigation', () => {
+    const element = fixture.nativeElement as HTMLElement;
+    const section = element.querySelector('section');
+    const links = Array.from(element.querySelectorAll<HTMLAnchorElement>('nav a'));
+
+    expect(element.querySelectorAll('h1')).toHaveLength(1);
+    expect(section?.getAttribute('aria-labelledby')).toBe('not-found-title');
+    expect(section?.getAttribute('aria-describedby')).toBe('not-found-description');
+    expect(links.map((link) => link.getAttribute('href'))).toEqual(['/', '/projects']);
+    expect(links.every((link) => link.hreflang === 'en-GB')).toBe(true);
+  });
 });

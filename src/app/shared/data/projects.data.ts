@@ -39,10 +39,10 @@ export const PROJECTS: Project[] = [
       height: 900,
     },
     seoImage: {
-      src: 'images/projects/glicare/glicare-cover.webp',
+      src: 'images/seo/projects/glicare/glicare-seo-image.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
-      width: 1600,
-      height: 900,
+      width: 1200,
+      height: 630,
     },
     heroImage: {
       src: 'images/projects/glicare/glicare-cover.webp',
@@ -322,10 +322,6 @@ export const PROJECTS: Project[] = [
         $localize`:@@projects.data.glicare.lessons.nextSteps.careTeamReports:Introduce configurable reports for care teams.`,
         $localize`:@@projects.data.glicare.lessons.nextSteps.trendInsights:Expand trend insights while keeping clinical interpretation transparent.`,
       ],
-    },
-    nextProject: {
-      label: 'DeedsCash',
-      path: '../deedscash',
     },
   },
 ];

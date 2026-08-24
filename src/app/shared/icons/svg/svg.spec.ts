@@ -20,4 +20,24 @@ describe('Svg', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it.each(['email', 'linkedin', 'github', 'whatsapp', 'download'])(
+    'should render the decorative %s icon',
+    async (contact) => {
+      fixture.componentRef.setInput('contact', contact);
+      await fixture.whenStable();
+
+      const svg = (fixture.nativeElement as HTMLElement).querySelector('svg');
+
+      expect(svg).not.toBeNull();
+      expect(svg?.getAttribute('aria-hidden')).toBe('true');
+    },
+  );
+
+  it('should render no fallback graphic for an unsupported icon', async () => {
+    fixture.componentRef.setInput('contact', 'unsupported');
+    await fixture.whenStable();
+
+    expect((fixture.nativeElement as HTMLElement).querySelector('svg')).toBeNull();
+  });
 });

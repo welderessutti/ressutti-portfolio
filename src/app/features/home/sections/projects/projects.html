@@ -14,7 +14,7 @@
     <ul
       class="flex flex-wrap items-stretch justify-center gap-6 [&>li]:flex [&>li]:flex-none [&>li]:basis-full md:[&>li]:basis-[calc(50%_-_0.75rem)] xl:[&>li]:basis-[calc(33.333333%_-_1rem)] [&>li>app-project-card]:w-full"
     >
-      @for (project of allProjects; track project.id) {
+      @for (project of featuredProjects; track project.id) {
         <li>
           <app-project-card
             [projectsPagePath]="viewAllProjectsButtonPath"

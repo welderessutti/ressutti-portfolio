@@ -30,8 +30,8 @@ export class ProjectDetails {
       currentLocale: this.currentLocale,
       path: ROUTES.projects,
       slug: this.project.slug,
-      image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
-      imageAlt: $localize`:@@projects.details.seo.imageAlt:WR logo for Welder Ressutti — ressutti.com`,
+      image: this.project.seoImage.src,
+      imageAlt: this.project.seoImage.alt,
       openGraphType: 'website',
       jsonLdType: 'WebPage',
     });

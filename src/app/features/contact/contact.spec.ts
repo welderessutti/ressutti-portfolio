@@ -1,17 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { vi } from 'vitest';
 
 import { LOCALES } from '../../shared/i18n/locales';
 import { Contact } from './contact';
+import { SeoService } from '../../core/services/seo/seo.service';
+import { ROUTES } from '../../shared/i18n/routes';
 
 describe('Contact', () => {
   let component: Contact;
   let fixture: ComponentFixture<Contact>;
+  const seoService = {
+    updateSeo: vi.fn(),
+  };
 
   beforeEach(async () => {
     document.documentElement.lang = LOCALES.enGB;
+    seoService.updateSeo.mockReset();
 
     await TestBed.configureTestingModule({
       imports: [Contact],
+      providers: [{ provide: SeoService, useValue: seoService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Contact);
@@ -60,7 +68,17 @@ describe('Contact', () => {
     const element = fixture.nativeElement as HTMLElement;
     const cvLink = element.querySelector<HTMLAnchorElement>('a[download]');
 
-    expect(cvLink?.getAttribute('href')).toBe('/documents/Welder Ressutti - EN.pdf');
+    expect(cvLink?.getAttribute('href')).toBe('documents/welder-ressutti-fullstack-en.pdf');
     expect(cvLink?.getAttribute('aria-labelledby')).toBe('contact-options-title');
+  });
+
+  it('should publish indexable contact-page SEO', () => {
+    expect(seoService.updateSeo).toHaveBeenCalledWith(
+      expect.objectContaining({
+        indexable: true,
+        currentLocale: LOCALES.enGB,
+        path: ROUTES.contact,
+      }),
+    );
   });
 });

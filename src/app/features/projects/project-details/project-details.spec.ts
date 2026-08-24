@@ -4,6 +4,10 @@ import { afterAll, beforeAll, vi } from 'vitest';
 
 import { ProjectDetails } from './project-details';
 import { Project } from '../../../shared/models/project.model';
+import { SeoService } from '../../../core/services/seo/seo.service';
+import { PROJECTS } from '../../../shared/data/projects.data';
+import { LOCALES } from '../../../shared/i18n/locales';
+import { ROUTES } from '../../../shared/i18n/routes';
 
 class IntersectionObserverMock implements IntersectionObserver {
   public readonly root = null;
@@ -61,6 +65,9 @@ describe('ProjectDetails', () => {
   let component: ProjectDetails;
   let fixture: ComponentFixture<ProjectDetails>;
   let routeData: { project: Project };
+  const seoService = {
+    updateSeo: vi.fn(),
+  };
 
   beforeAll(() => {
     vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
@@ -71,6 +78,8 @@ describe('ProjectDetails', () => {
   });
 
   beforeEach(async () => {
+    document.documentElement.lang = LOCALES.enGB;
+    seoService.updateSeo.mockReset();
     routeData = { project: MINIMAL_PROJECT };
 
     await TestBed.configureTestingModule({
@@ -80,6 +89,7 @@ describe('ProjectDetails', () => {
           provide: ActivatedRoute,
           useValue: { snapshot: { data: routeData } },
         },
+        { provide: SeoService, useValue: seoService },
       ],
     }).compileComponents();
 
@@ -97,6 +107,21 @@ describe('ProjectDetails', () => {
 
     expect(element.querySelector('h1')?.textContent).toContain('Minimal project');
     expect(element.querySelector('#overview')).toBeTruthy();
+  });
+
+  it('publishes project-specific SEO using the resolved slug', () => {
+    expect(seoService.updateSeo).toHaveBeenCalledWith(
+      expect.objectContaining({
+        indexable: true,
+        title: 'Minimal project | Web application | Welder Ressutti',
+        description: MINIMAL_PROJECT.description,
+        currentLocale: LOCALES.enGB,
+        path: ROUTES.projects,
+        slug: MINIMAL_PROJECT.slug,
+        image: MINIMAL_PROJECT.seoImage.src,
+        imageAlt: MINIMAL_PROJECT.seoImage.alt,
+      }),
+    );
   });
 
   it('does not render optional sections without content', () => {
@@ -126,5 +151,18 @@ describe('ProjectDetails', () => {
 
     expect(externalLinks).toHaveLength(2);
     expect(externalLinks.every((link) => link.rel === 'noopener noreferrer')).toBe(true);
+  });
+
+  it('renders all optional content groups supplied by a complete project', () => {
+    routeData.project = PROJECTS[0];
+
+    const completeFixture = TestBed.createComponent(ProjectDetails);
+    completeFixture.detectChanges();
+    const element = completeFixture.nativeElement as HTMLElement;
+
+    expect(element.querySelector('#features')).not.toBeNull();
+    expect(element.querySelector('#architecture')).not.toBeNull();
+    expect(element.querySelector('#engineering')).not.toBeNull();
+    expect(element.querySelector('#gallery')).not.toBeNull();
   });
 });

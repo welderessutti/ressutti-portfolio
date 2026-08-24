@@ -7,5 +7,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './svg.css',
 })
 export class Svg {
-  public readonly contact = input.required<String>();
+  public readonly contact = input.required<string>();
 }

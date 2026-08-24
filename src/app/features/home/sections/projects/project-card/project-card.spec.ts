@@ -26,4 +26,20 @@ describe('ProjectCard', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render stable image dimensions and an accessible details link', () => {
+    const project = PROJECTS[0];
+    const element = fixture.nativeElement as HTMLElement;
+    const image = element.querySelector<HTMLImageElement>('img');
+    const link = element.querySelector<HTMLAnchorElement>('a');
+
+    expect(image?.getAttribute('src')).toBe(project.coverImage.src);
+    expect(image?.alt).toBe(project.coverImage.alt);
+    expect(image?.width).toBe(project.coverImage.width);
+    expect(image?.height).toBe(project.coverImage.height);
+    expect(image?.getAttribute('loading')).toBe('lazy');
+    expect(link?.getAttribute('href')).toBe(`/projects/${project.slug}`);
+    expect(link?.hreflang).toBe(LOCALES.enGB);
+    expect(link?.textContent).toContain(project.title);
+  });
 });

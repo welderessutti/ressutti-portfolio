@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
+import { vi } from 'vitest';
 
 import { Header } from './header';
 
@@ -36,8 +37,10 @@ describe('Header', () => {
 
   afterEach(() => {
     document.documentElement.classList.remove('dark');
+    document.body.classList.remove('overflow-hidden');
     document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => meta.remove());
     localStorage.removeItem('theme');
+    vi.restoreAllMocks();
   });
 
   it('should create', async () => {
@@ -101,5 +104,66 @@ describe('Header', () => {
       '#fcfcfe',
     );
     expect(document.querySelectorAll('meta[name="theme-color"]')).toHaveLength(1);
+  });
+
+  it('should lock page scrolling while the mobile menu is open', async () => {
+    await createHeader();
+    const element = fixture.nativeElement as HTMLElement;
+    const menuButton = element.querySelector<HTMLButtonElement>(
+      'button[aria-controls="mobile-menu"]',
+    );
+    const drawer = element.querySelector<HTMLElement>('#mobile-menu');
+
+    menuButton?.click();
+    fixture.detectChanges();
+
+    expect(menuButton?.getAttribute('aria-expanded')).toBe('true');
+    expect(drawer?.getAttribute('aria-hidden')).toBe('false');
+    expect(document.body.classList.contains('overflow-hidden')).toBe(true);
+
+    menuButton?.click();
+    fixture.detectChanges();
+
+    expect(menuButton?.getAttribute('aria-expanded')).toBe('false');
+    expect(document.body.classList.contains('overflow-hidden')).toBe(false);
+  });
+
+  it('should close the mobile menu with Escape and restore focus to its trigger', async () => {
+    const animationFrame = vi
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation((callback) => {
+        callback(0);
+        return 1;
+      });
+    await createHeader();
+    const menuButton = (fixture.nativeElement as HTMLElement).querySelector<HTMLButtonElement>(
+      'button[aria-controls="mobile-menu"]',
+    );
+
+    menuButton?.click();
+    fixture.detectChanges();
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    fixture.detectChanges();
+
+    expect(animationFrame).toHaveBeenCalled();
+    expect(menuButton?.getAttribute('aria-expanded')).toBe('false');
+    expect(document.body.classList.contains('overflow-hidden')).toBe(false);
+    expect(document.activeElement).toBe(menuButton);
+  });
+
+  it('should close the mobile menu when the viewport reaches the desktop breakpoint', async () => {
+    vi.spyOn(window, 'innerWidth', 'get').mockReturnValue(768);
+    await createHeader();
+    const menuButton = (fixture.nativeElement as HTMLElement).querySelector<HTMLButtonElement>(
+      'button[aria-controls="mobile-menu"]',
+    );
+
+    menuButton?.click();
+    fixture.detectChanges();
+    window.dispatchEvent(new Event('resize'));
+    fixture.detectChanges();
+
+    expect(menuButton?.getAttribute('aria-expanded')).toBe('false');
+    expect(document.body.classList.contains('overflow-hidden')).toBe(false);
   });
 });
