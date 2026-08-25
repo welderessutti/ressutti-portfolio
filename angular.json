@@ -32,12 +32,7 @@
             "localize": true,
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+            "assets": [],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "static",
@@ -64,6 +59,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public"
+                }
+              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true

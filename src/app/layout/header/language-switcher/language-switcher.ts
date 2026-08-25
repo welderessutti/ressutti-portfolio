@@ -32,7 +32,7 @@ export class LanguageSwitcher implements OnInit {
   protected readonly isOpen = signal(false);
   protected readonly ptBRSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.ptBR));
   protected readonly enGBSwitchLangUrl = computed(() => this.buildSwitchLangUrl(LOCALES.enGB));
-  protected readonly currentFlag = computed(() => `icons/flags/${this.currentLang()}.svg`);
+  protected readonly currentFlag = computed(() => `/icons/flags/${this.currentLang()}.svg`);
   private readonly languageButton = viewChild<ElementRef<HTMLButtonElement>>('languageButton');
 
   public ngOnInit() {

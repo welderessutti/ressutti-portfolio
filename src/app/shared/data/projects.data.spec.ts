@@ -11,11 +11,14 @@ describe('project catalogue integrity', () => {
   it('should provide complete, dimensioned images for listing, SEO and hero rendering', () => {
     for (const project of PROJECTS) {
       for (const image of [project.coverImage, project.seoImage, project.heroImage]) {
-        expect(image.src).toMatch(/^images\//);
         expect(image.alt.trim().length).toBeGreaterThan(0);
         expect(image.width).toBeGreaterThan(0);
         expect(image.height).toBeGreaterThan(0);
       }
+
+      expect(project.coverImage.src).toMatch(/^\/images\//);
+      expect(project.seoImage.src).toMatch(/^images\//);
+      expect(project.heroImage.src).toMatch(/^\/images\//);
     }
   });
 

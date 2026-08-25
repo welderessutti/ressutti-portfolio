@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       TECHNOLOGIES.docker,
     ],
     coverImage: {
-      src: 'images/projects/glicare/glicare-cover.webp',
+      src: '/images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
       width: 1920,
       height: 1080,
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
       height: 630,
     },
     heroImage: {
-      src: 'images/projects/glicare/glicare-cover.webp',
+      src: '/images/projects/glicare/glicare-cover.webp',
       alt: $localize`:@@projects.data.glicare.images.presentation.alt:Glicare product presentation`,
       width: 1920,
       height: 1080,
@@ -292,7 +292,7 @@ export const PROJECTS: Project[] = [
         title: $localize`:@@projects.data.glicare.showcase.dashboard.title:A calm daily dashboard`,
         description: $localize`:@@projects.data.glicare.showcase.dashboard.description:The most relevant health indicators and next actions share one hierarchy, helping users orient themselves in seconds.`,
         image: {
-          src: 'images/projects/glicare/glicare-cover.webp',
+          src: '/images/projects/glicare/glicare-cover.webp',
           alt: $localize`:@@projects.data.glicare.showcase.dashboard.image.alt:Glicare dashboard presentation`,
           width: 1920,
           height: 1080,
@@ -304,7 +304,7 @@ export const PROJECTS: Project[] = [
         title: $localize`:@@projects.data.glicare.showcase.timeline.title:History built for pattern recognition`,
         description: $localize`:@@projects.data.glicare.showcase.timeline.description:Measurements are presented as a coherent story rather than an isolated table, making changes easier to spot and discuss.`,
         image: {
-          src: 'images/projects/glicare/glicare-cover.webp',
+          src: '/images/projects/glicare/glicare-cover.webp',
           alt: $localize`:@@projects.data.glicare.showcase.timeline.image.alt:Glicare health timeline presentation`,
           width: 1920,
           height: 1080,

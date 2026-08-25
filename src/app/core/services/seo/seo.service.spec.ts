@@ -69,7 +69,7 @@ describe('SeoService', () => {
     expect(getMetaContent('meta[property="og:title"]')).toBe('Indexable page | Welder Ressutti');
     expect(getMetaContent('meta[property="og:description"]')).toBe('Indexable page description.');
     expect(getMetaContent('meta[property="og:image"]')).toBe(
-      `https://www.ressutti.com/en-gb/${image}`,
+      `https://www.ressutti.com/${image}`,
     );
     expect(getMetaContent('meta[property="og:site_name"]')).toBe('ressutti.com');
     expect(getMetaContent('meta[property="og:image:alt"]')).toBe(
@@ -85,7 +85,7 @@ describe('SeoService', () => {
     expect(getMetaContent('meta[name="twitter:title"]')).toBe('Indexable page | Welder Ressutti');
     expect(getMetaContent('meta[name="twitter:description"]')).toBe('Indexable page description.');
     expect(getMetaContent('meta[name="twitter:image"]')).toBe(
-      `https://www.ressutti.com/en-gb/${image}`,
+      `https://www.ressutti.com/${image}`,
     );
     expect(getMetaContent('meta[name="twitter:image:alt"]')).toBe(
       'WR logo for Welder Ressutti — ressutti.com',
@@ -156,6 +156,7 @@ describe('SeoService', () => {
       '@id': 'https://www.ressutti.com/en-gb/#webpage',
       url: 'https://www.ressutti.com/en-gb/',
       inLanguage: LOCALES.enGB,
+      image: `https://www.ressutti.com/${image}`,
     });
     expect(jsonLd['@graph'][1]).toMatchObject({
       '@type': 'WebSite',
@@ -198,7 +199,7 @@ describe('SeoService', () => {
       'The requested page could not be found on ressutti.com.',
     );
     expect(getMetaContent('meta[property="og:image"]')).toBe(
-      `https://www.ressutti.com/en-gb/${image}`,
+      `https://www.ressutti.com/${image}`,
     );
 
     const openGraphProperties = Array.from(

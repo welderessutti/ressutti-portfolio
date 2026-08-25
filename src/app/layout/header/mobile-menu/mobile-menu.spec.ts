@@ -41,7 +41,7 @@ describe('MobileMenu', () => {
     fixture = TestBed.createComponent(MobileMenu);
     fixture.componentRef.setInput('navs', navs);
     fixture.componentRef.setInput('contacts', contacts);
-    fixture.componentRef.setInput('cvPath', 'documents/cv.pdf');
+    fixture.componentRef.setInput('cvPath', '/documents/cv.pdf');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -70,7 +70,7 @@ describe('MobileMenu', () => {
     expect(externalLink?.target).toBe('_blank');
     expect(externalLink?.rel).toBe('noopener noreferrer');
     expect(element.querySelector<HTMLAnchorElement>('a[download]')?.getAttribute('href')).toBe(
-      'documents/cv.pdf',
+      '/documents/cv.pdf',
     );
   });
 

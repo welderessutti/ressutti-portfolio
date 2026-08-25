@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <meta
+      name="description"
+      content="The requested page could not be found on ressutti.com. Check the address or continue to the home or projects pages."
+    />
+    <meta property="og:title" content="Page not found | ressutti.com" />
+    <meta
+      property="og:description"
+      content="The requested page could not be found on ressutti.com. Check the address or continue to the home or projects pages."
+    />
+    <meta
+      property="og:image"
+      content="https://www.ressutti.com/images/seo/pages/wr-logo-frame-gradient-seo-image.webp"
+    />
+    <meta
+      name="theme-color"
+      content="#fcfcfe"
+      data-theme-color-light="#fcfcfe"
+      data-theme-color-dark="#0b0f19"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <title>Page not found | ressutti.com</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        let savedTheme = null;
+
+        try {
+          savedTheme = localStorage.getItem('theme');
+        } catch {}
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark);
+
+        document.documentElement.classList.toggle('dark', isDark);
+
+        const themeColor = isDark ? '#0b0f19' : '#fcfcfe';
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor);
+      })();
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #fcfcfe;
+        --surface: #f5f6fb;
+        --border: #dbe0f2;
+        --text-primary: #111523;
+        --text-secondary: #353845;
+        --text-inverse: #fcfcfe;
+        --accent: #3b82f6;
+        --accent-hover: #2563eb;
+        --focus-ring: #111523;
+      }
+
+      :root.dark {
+        color-scheme: dark;
+        --background: #0b0f19;
+        --surface: #1a2233;
+        --border: #2a3447;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-inverse: #0b0f19;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+        --focus-ring: #f1f5f9;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 20rem;
+        min-height: 100vh;
+        margin: 0;
+        color: var(--text-primary);
+        font-family: Inter, system-ui, sans-serif;
+        background: var(--background);
+      }
+
+      main {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 3rem 1rem;
+        background: var(--surface);
+      }
+
+      .content {
+        width: min(100%, 44rem);
+        text-align: center;
+      }
+
+      .logo {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .code {
+        margin: 1.5rem 0 0;
+        color: var(--accent);
+        font-size: clamp(4.5rem, 16vw, 6rem);
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      h1 {
+        margin: 1.5rem 0 0;
+        font-size: clamp(2rem, 7vw, 3rem);
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+      }
+
+      .description {
+        max-width: 38rem;
+        margin: 1.25rem auto 0;
+        color: var(--text-secondary);
+        font-size: 1.0625rem;
+        line-height: 1.7;
+      }
+
+      nav {
+        margin-top: 2rem;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        display: inline-flex;
+        min-height: 3rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        color: var(--text-inverse);
+        font-weight: 500;
+        text-decoration: none;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        border-radius: 0.5rem;
+        transition:
+          background-color 150ms ease,
+          border-color 150ms ease;
+      }
+
+      a:hover {
+        background: var(--accent-hover);
+        border-color: var(--accent-hover);
+      }
+
+      a.secondary {
+        color: var(--text-secondary);
+        background: var(--background);
+        border-color: var(--border);
+      }
+
+      a.secondary:hover {
+        color: var(--text-primary);
+        background: var(--border);
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main aria-labelledby="not-found-title" aria-describedby="not-found-description">
+      <section class="content">
+        <img
+          class="logo"
+          src="/icons/logo/wr-logo-frame-gradient.svg"
+          width="64"
+          height="64"
+          alt=""
+        />
+        <p class="code"><span hidden>Error code:</span>404</p>
+        <h1 id="not-found-title">Page not found</h1>
+        <p id="not-found-description" class="description">
+          The requested page does not exist. Choose your language to return to the portfolio. A
+          página solicitada não existe. Escolha seu idioma para voltar ao portfólio.
+        </p>
+        <nav aria-label="Error recovery options">
+          <ul>
+            <li><a href="/en-gb/" hreflang="en-GB">Go to English home</a></li>
+            <li>
+              <a class="secondary" href="/pt-br/" hreflang="pt-BR">
+                Ir para o início em português
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>

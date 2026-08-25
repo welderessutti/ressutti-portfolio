@@ -45,8 +45,8 @@ export class SeoService {
     return `${this.BASE_URL}/${locale.toLowerCase()}/${path}${slug ? `/${slug}` : ''}`;
   }
 
-  private buildImageUrl(locale: Locale, image: string): string {
-    return `${this.BASE_URL}/${locale.toLowerCase()}/${image}`;
+  private buildImageUrl(image: string): string {
+    return `${this.BASE_URL}/${image}`;
   }
 
   private updateTitle(title: string) {
@@ -55,7 +55,7 @@ export class SeoService {
 
   private buildJsonLd(seo: IndexableSeo): object {
     const pageUrl = this.buildPageUrl(seo.currentLocale, seo.path[seo.currentLocale], seo.slug);
-    const imageUrl = this.buildImageUrl(seo.currentLocale, seo.image);
+    const imageUrl = this.buildImageUrl(seo.image);
     const websiteId = `${this.BASE_URL}/#website`;
     const personId = `${this.BASE_URL}/#person`;
 
@@ -182,7 +182,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:description', content: seo.description });
     this.meta.updateTag({
       property: 'og:image',
-      content: this.buildImageUrl(seo.currentLocale, seo.image),
+      content: this.buildImageUrl(seo.image),
     });
   }
 
@@ -221,7 +221,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: seo.description });
     this.meta.updateTag({
       name: 'twitter:image',
-      content: this.buildImageUrl(seo.currentLocale, seo.image),
+      content: this.buildImageUrl(seo.image),
     });
     this.meta.updateTag({ name: 'twitter:image:alt', content: seo.imageAlt });
     this.meta.updateTag({ name: 'robots', content: this.INDEXABLE_ROBOTS });

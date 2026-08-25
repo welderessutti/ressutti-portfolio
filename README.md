@@ -29,11 +29,12 @@ Além da interface, o repositório demonstra decisões de engenharia aplicadas a
 | Templates | Control flow nativo com `@if`, `@for` e `@switch`, incluindo funções de tracking nas listas |
 | Arquitetura | Organização por features, componentes focados, serviços `providedIn: 'root'`, modelos tipados e dados centralizados |
 | Roteamento | Lazy loading com `loadComponent`, guard e resolver funcionais, restauração de scroll e navegação por âncoras |
-| Renderização | SSG/prerender por rota, parâmetros dinâmicos gerados no build e saída totalmente estática |
+| Renderização | SSG/prerender por rota, parâmetros dinâmicos gerados no build e saída totalmente estática no Cloudflare Pages |
 | Hydration | Hydration no cliente com event replay para preservar interações durante a inicialização |
 | Internacionalização | Angular i18n com builds localizados em `en-GB` e `pt-BR`, rotas traduzidas e troca de idioma contextual |
 | SEO | Metadados por página, canonical, `hreflang`, Open Graph, Twitter Cards, JSON-LD, sitemap e robots.txt |
 | Acessibilidade | HTML semântico, landmarks, nomes acessíveis, foco visível, suporte a teclado e respeito a movimento reduzido |
+| Deploy | Cloudflare Pages Function para negociação de idioma e respostas 404 reais, com assets compartilhados fora dos locales |
 | Qualidade | TypeScript e templates estritos, Vitest, Prettier, EditorConfig e budgets de produção |
 
 ## Angular moderno na prática
@@ -126,7 +127,7 @@ flowchart LR
     G --> H["Hydration + event replay"]
 ```
 
-As páginas de detalhes de projeto recebem seus slugs de `getPrerenderParams()`, permitindo gerar no build todas as rotas conhecidas. Como fallback, uma rota dinâmica ainda pode ser inicializada no cliente.
+As páginas de detalhes de projeto recebem seus slugs de `getPrerenderParams()`, permitindo gerar no build todas as rotas conhecidas. O fallback de parâmetros está desativado: um slug não gerado nunca depende de renderização em servidor ou de fallback SPA em produção.
 
 Outras decisões voltadas a performance:
 
@@ -149,7 +150,9 @@ A internacionalização utiliza o pipeline nativo do Angular e `$localize`. Um �
 
 Somente o primeiro segmento funcional da rota é traduzido. Segmentos posteriores — como o slug de um projeto —, query parameters e fragmentos são preservados durante a troca de idioma.
 
-O preview estático também simula a entrada em produção: acessos à raiz são direcionados para o locale adequado a partir da preferência salva ou do cabeçalho `Accept-Language`.
+O preview estático também simula a entrada em produção: acessos à raiz são direcionados para o locale adequado a partir do cookie `preferred-language` ou do cabeçalho `Accept-Language`, incluindo os pesos de preferência `q`.
+
+Os arquivos de `public/` são copiados uma única vez para a raiz do artefato. Por isso, imagens, documentos, ícones, favicon, manifest, sitemap e robots usam caminhos absolutos e são compartilhados pelos dois builds localizados sem duplicação.
 
 ## Roteamento
 
@@ -220,12 +223,14 @@ A interface foi estruturada para oferecer uma base inclusiva, sem depender apena
 - Prettier
 - EditorConfig
 - Angular CLI
+- Wrangler 4
+- Cloudflare Pages Functions
 
 ## Como executar
 
 ### Pré-requisitos
 
-- Node.js `^20.19.0`, `^22.12.0` ou `>=24.0.0`, conforme o suporte do Angular 21
+- Node.js `22.16.0`, fixado em `.node-version` e compatível com Angular 21 e Wrangler 4
 - npm (o projeto declara npm `10.9.1` como package manager)
 
 ### Instalação
@@ -249,7 +254,11 @@ A aplicação estará disponível em `http://localhost:4200` e será recarregada
 | Comando | Descrição |
 | --- | --- |
 | `npm start` | Inicia o servidor de desenvolvimento do Angular |
-| `npm run build` | Gera os builds localizados e prerenderizados de produção |
+| `npm run build` | Gera o SSG localizado, copia os assets e valida/empacota a Pages Function |
+| `npm run build:app` | Gera apenas os builds Angular localizados e prerenderizados |
+| `npm run build:functions` | Gera tipos, verifica TypeScript e empacota a Pages Function localmente |
+| `npm run check:functions` | Verifica os tipos da Pages Function sem emitir arquivos |
+| `npm run types:functions` | Atualiza os tipos de runtime gerados pelo Wrangler |
 | `npm run preview:ssg` | Serve localmente o resultado estático já gerado |
 | `npm run watch` | Mantém um build de desenvolvimento em modo watch |
 | `npm test` | Executa os testes unitários com Vitest |
@@ -262,7 +271,13 @@ npm run build
 npm run preview:ssg
 ```
 
-Por padrão, o preview fica disponível em `http://localhost:4173`. A saída gerada está em `dist/ressutti-portfolio/browser`, separada por locale.
+Por padrão, o preview fica disponível em `http://localhost:4173`. A saída publicável está em `dist/ressutti-portfolio/browser`: os HTMLs ficam separados por locale e os assets compartilhados ficam na raiz.
+
+## Deploy no Cloudflare Pages
+
+Use `npm run build` como comando de build e `dist/ressutti-portfolio/browser` como diretório de saída. O Cloudflare Pages encontra automaticamente a Function em `functions/_middleware.ts`; o `wrangler.jsonc` registra a mesma saída para os fluxos locais do Wrangler.
+
+O middleware redireciona somente a raiz para o locale negociado, preserva URLs desconhecidas e entrega a página Angular localizada com status HTTP 404. O arquivo raiz `404.html` desativa o fallback SPA automático do Pages, enquanto `_routes.json` evita invocações da Function para os assets estáticos conhecidos e bundles com hash.
 
 ## Testes e segurança de tipos
 

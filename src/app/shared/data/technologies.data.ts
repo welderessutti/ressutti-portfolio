@@ -1,4 +1,4 @@
-const PATH = 'icons/stacks/';
+const PATH = '/icons/stacks/';
 
 export const TECHNOLOGIES = {
   java: {

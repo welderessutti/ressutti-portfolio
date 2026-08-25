@@ -53,7 +53,7 @@ describe('NotFound', () => {
       'The requested page could not be found on ressutti.com. Check the address or continue to the home or projects pages.',
     );
     expect(document.querySelector<HTMLMetaElement>('meta[property="og:image"]')?.content).toBe(
-      'https://www.ressutti.com/en-gb/images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
+      'https://www.ressutti.com/images/seo/pages/wr-logo-frame-gradient-seo-image.webp',
     );
     expect(document.querySelectorAll('meta[property^="og:"]')).toHaveLength(3);
     expect(document.querySelectorAll('meta[name^="twitter:"]')).toHaveLength(0);

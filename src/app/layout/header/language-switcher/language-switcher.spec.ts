@@ -46,7 +46,7 @@ describe('LanguageSwitcher', () => {
 
     expect(button?.textContent).toContain(LOCALES.ptBR);
     expect(element.querySelector<HTMLImageElement>('button img')?.getAttribute('src')).toBe(
-      'icons/flags/pt-BR.svg',
+      '/icons/flags/pt-BR.svg',
     );
     expect(currentOption?.hreflang).toBe(LOCALES.ptBR);
   });

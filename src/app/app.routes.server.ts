@@ -15,7 +15,7 @@ export const serverRoutes: ServerRoute[] = [
       }));
     },
 
-    fallback: PrerenderFallback.Client,
+    fallback: PrerenderFallback.None,
   },
   {
     path: '**',

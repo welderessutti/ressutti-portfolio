@@ -16,7 +16,7 @@ describe('server routes', () => {
     ) as ServerRoutePrerenderWithParams;
 
     expect(projectRoute?.renderMode).toBe(RenderMode.Prerender);
-    expect(projectRoute?.fallback).toBe(PrerenderFallback.Client);
+    expect(projectRoute?.fallback).toBe(PrerenderFallback.None);
 
     const params = await TestBed.runInInjectionContext(() => projectRoute.getPrerenderParams());
 
