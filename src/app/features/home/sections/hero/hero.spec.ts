@@ -36,7 +36,7 @@ describe('Hero', () => {
 
     expect(element.querySelectorAll('h1')).toHaveLength(1);
     expect(heading?.querySelector('.sr-only')?.textContent).toContain(
-      'Building modern, scalable and robust digital solutions.',
+      'Creating modern, scalable and robust digital solutions.',
     );
     expect(heading?.querySelector('[aria-hidden="true"]')).not.toBeNull();
   });

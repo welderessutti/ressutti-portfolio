@@ -81,11 +81,11 @@ export class About {
       id: 'backend',
       title: $localize`:@@about.capabilities.backEnd.title:Back-end`,
       skills: [
-        $localize`:@@about.capabilities.backEnd.spring:Spring and Java`,
+        $localize`:@@about.capabilities.backEnd.spring:Java and Spring`,
         'REST APIs',
         $localize`:@@about.capabilities.backEnd.architectures:Monolithic applications and microservices`,
         $localize`:@@about.capabilities.backEnd.jwt:JWT authentication and authorisation`,
-        $localize`:@@about.capabilities.backEnd.integration:Service integration`,
+        $localize`:@@about.capabilities.backEnd.bestPractices:Clean architecture, SOLID and design patterns`,
       ],
     },
     {
@@ -138,8 +138,8 @@ export class About {
   public constructor() {
     this.seo.updateSeo({
       indexable: true,
-      title: $localize`:@@about.seo.title:About | Welder Ressutti | Full-Stack Developer`,
-      description: $localize`:@@about.seo.description:Learn about Welder Ressutti's path from biomedicine to full-stack development, including his education, working principles and focus on Angular and Spring.`,
+      title: $localize`:@@about.seo.title:About Welder Ressutti | Full-Stack Software Developer`,
+      description: $localize`:@@about.seo.description:Meet Welder Ressutti and discover his transition from biomedicine to full-stack software development, along with his working principles, technical skills and education.`,
       currentLocale: this.currentLocale,
       path: ROUTES.about,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',

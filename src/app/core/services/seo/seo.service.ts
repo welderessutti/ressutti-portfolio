@@ -19,15 +19,14 @@ export class SeoService {
   private readonly OPEN_GRAPH_IMAGE_WIDTH = '1200';
   private readonly OPEN_GRAPH_IMAGE_HEIGHT = '630';
   private readonly PERSON_JOB_TITLE: Record<Locale, string> = {
-    [LOCALES.enGB]: 'Full-Stack Angular and Spring Developer',
-    [LOCALES.ptBR]: 'Desenvolvedor Full-Stack Angular e Spring',
+    [LOCALES.enGB]: 'Full-Stack Software Developer',
+    [LOCALES.ptBR]: 'Desenvolvedor de Software Full-Stack',
   };
   private readonly PERSON_KNOWS_ABOUT = [
-    'Full-stack web development',
     'Angular',
     'TypeScript',
-    'Spring',
     'Java',
+    'Spring',
     'Kotlin',
     'SQL',
     'NoSQL',
@@ -35,6 +34,7 @@ export class SeoService {
     'Git',
     'AWS',
     'Azure',
+    'REST API',
     'Microservices',
     'Messaging',
     'Testing',

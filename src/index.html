@@ -24,6 +24,7 @@
         const isDark = savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark);
 
         root.classList.toggle('dark', isDark);
+        root.style.colorScheme = isDark ? 'dark' : 'light';
 
         const colorAttribute = isDark ? 'data-theme-color-dark' : 'data-theme-color-light';
 
@@ -34,7 +35,7 @@
         }
       })();
     </script>
-    <title>Welder Ressutti | Full-stack Developer — Angular + Spring</title>
+    <title>Welder Ressutti | Full-Stack Software Developer | Portfolio</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -44,12 +45,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="ressutti.com" />
     <link rel="manifest" href="/site.webmanifest" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/inter/InterVariable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
     />
   </head>
   <body class="bg-background font-inter text-text-primary">

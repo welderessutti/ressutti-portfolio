@@ -28,8 +28,8 @@ export class Projects {
   constructor() {
     this.seo.updateSeo({
       indexable: true,
-      title: $localize`:@@projects.seo.title:Projects | Welder Ressutti | Full-Stack Developer`,
-      description: $localize`:@@projects.seo.description:Explore full-stack web projects by Welder Ressutti, with product goals, Angular and Spring architecture, technical responsibilities and engineering decisions.`,
+      title: $localize`:@@projects.seo.title:Welder Ressutti's Projects | Full-Stack Software Developer`,
+      description: $localize`:@@projects.seo.description:Explore full-stack software projects by Welder Ressutti, with product goals, architecture, technical responsibilities and engineering decisions.`,
       currentLocale: this.currentLocale,
       path: ROUTES.projects,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',

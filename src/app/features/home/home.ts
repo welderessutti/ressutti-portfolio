@@ -24,8 +24,8 @@ export class Home {
   constructor() {
     this.seo.updateSeo({
       indexable: true,
-      title: $localize`:@@home.seo.title:Welder Ressutti | Full-Stack Angular + Spring Developer`,
-      description: $localize`:@@home.seo.description:Portfolio of Welder Ressutti, a Full-Stack Angular + Spring Developer building end-to-end web applications with clear architecture and maintainable code.`,
+      title: $localize`:@@home.seo.title:Welder Ressutti | Full-Stack Software Developer | Portfolio`,
+      description: $localize`:@@home.seo.description:Portfolio of Welder Ressutti, a full-stack software developer specialising in Angular, Java and Spring, with a focus on architecture, performance and user experience.`,
       currentLocale: this.currentLocale,
       path: ROUTES.home,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',

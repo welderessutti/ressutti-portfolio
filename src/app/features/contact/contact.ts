@@ -26,8 +26,8 @@ export class Contact {
   public constructor() {
     this.seo.updateSeo({
       indexable: true,
-      title: $localize`:@@contact.seo.title:Contact | Welder Ressutti | Full-Stack Developer`,
-      description: $localize`:@@contact.seo.description:Contact Welder Ressutti about Angular and Spring development opportunities, full-stack web projects or professional collaboration.`,
+      title: $localize`:@@contact.seo.title:Contact Welder Ressutti | Full-Stack Software Developer`,
+      description: $localize`:@@contact.seo.description:Contact Welder Ressutti about full-stack software development roles, projects and collaborations involving Angular, Java, Spring, REST APIs and microservices.`,
       currentLocale: this.currentLocale,
       path: ROUTES.contact,
       image: 'images/seo/pages/wr-logo-frame-gradient-seo-image.webp',

@@ -10,20 +10,20 @@ import { AboutDefinition } from '../../../../shared/models/about.definition.mode
 })
 export class About {
   protected readonly highlights: string[] = [
-    $localize`:@@home.about.highlights.fullStackDelivery:End-to-end development across front-end and back-end`,
-    $localize`:@@home.about.highlights.maintainableArchitecture:Architecture designed for maintainability and growth`,
-    $localize`:@@home.about.highlights.deliveryQuality:Quality built into implementation and delivery`,
+    $localize`:@@home.about.highlights.fullStackDelivery:System integration across REST APIs, microservices and messaging systems`,
+    $localize`:@@home.about.highlights.maintainableArchitecture:Clean architecture, SOLID and design patterns for maintainability and scalability`,
+    $localize`:@@home.about.highlights.deliveryQuality:Automated unit, integration and end-to-end testing for reliable delivery`,
   ];
   protected readonly definitions: AboutDefinition[] = [
     {
       id: '1',
       term: $localize`:@@home.about.summary.mainStack.term:Main stack`,
-      description: 'Angular · Spring',
+      description: 'Angular · Java · Spring',
     },
     {
       id: '2',
       term: $localize`:@@home.about.summary.expertise.term:Expertise`,
-      description: $localize`:@@home.about.summary.expertise.description:Full-stack web development`,
+      description: $localize`:@@home.about.summary.expertise.description:Full-stack software development`,
     },
     {
       id: '3',
@@ -33,7 +33,7 @@ export class About {
     {
       id: '4',
       term: $localize`:@@home.about.summary.location.term:Location`,
-      description: $localize`:@@home.about.summary.location.description:São Paulo · Indaiatuba · Worldwide`,
+      description: $localize`:@@home.about.summary.location.description:São Paulo · Campinas · Indaiatuba · Worldwide`,
     },
   ];
 }

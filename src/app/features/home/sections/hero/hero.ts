@@ -1,13 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  signal,
-  inject,
-  DOCUMENT,
-  PLATFORM_ID,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, inject, DOCUMENT, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Locale } from '../../../../shared/i18n/locales';
 import { ROUTES } from '../../../../shared/i18n/routes';
@@ -23,8 +15,8 @@ export class Hero implements OnInit, OnDestroy {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly words = [
     $localize`:@@home.hero.title.keyword.modern:modern`,
-    $localize`:@@home.hero.title.keyword.scalable:scalable`,
     $localize`:@@home.hero.title.keyword.robust:robust`,
+    $localize`:@@home.hero.title.keyword.scalable:scalable`,
   ];
   private wordIndex = 0;
   private charIndex = this.words[0].length;
@@ -39,7 +31,8 @@ export class Hero implements OnInit, OnDestroy {
     if (!isPlatformBrowser(this.platformId)) return;
 
     if (
-      this.document.defaultView?.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+      this.document.defaultView?.matchMedia?.('(prefers-reduced-motion: reduce)').matches ??
+      false
     ) {
       return;
     }
@@ -75,8 +68,7 @@ export class Hero implements OnInit, OnDestroy {
     if (!this.isDeleting && this.charIndex === currentWord.length) {
       speed = 1200;
       this.isDeleting = true;
-    }
-    else if (this.isDeleting && this.charIndex === 0) {
+    } else if (this.isDeleting && this.charIndex === 0) {
       this.isDeleting = false;
       this.wordIndex = (this.wordIndex + 1) % this.words.length;
       speed = 300;

@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
 
     category: $localize`:@@projects.data.glicare.category:Digital health platform`,
     type: $localize`:@@projects.data.glicare.type:Responsive web application`,
-    role: $localize`:@@projects.data.glicare.role:Full-stack development and product design`,
+    role: $localize`:@@projects.data.glicare.role:Full-stack software development and product design`,
     summary: $localize`:@@projects.data.glicare.summary:A full-stack health application that turns glucose records into clear trends and structured information for patients and care conversations.`,
     outcome: $localize`:@@projects.data.glicare.outcome:A clearer, structured workflow for recording glucose data and reviewing health trends`,
 
@@ -29,6 +29,7 @@ export const PROJECTS: Project[] = [
       TECHNOLOGIES.angular,
       TECHNOLOGIES.typeScript,
       TECHNOLOGIES.spring,
+      TECHNOLOGIES.java,
       TECHNOLOGIES.postgreSql,
       TECHNOLOGIES.docker,
     ],
