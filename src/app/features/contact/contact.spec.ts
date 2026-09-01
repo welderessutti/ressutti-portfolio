@@ -68,7 +68,7 @@ describe('Contact', () => {
     const element = fixture.nativeElement as HTMLElement;
     const cvLink = element.querySelector<HTMLAnchorElement>('a[download]');
 
-    expect(cvLink?.getAttribute('href')).toBe('/documents/welder-ressutti-fullstack-en-cv.pdf');
+    expect(cvLink?.getAttribute('href')).toBe('/documents/cv/welder-ressutti-fullstack-en-cv.pdf');
     expect(cvLink?.getAttribute('aria-labelledby')).toBe('contact-options-title');
   });
 
