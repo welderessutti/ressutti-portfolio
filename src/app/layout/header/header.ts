@@ -51,6 +51,7 @@ export class Header implements OnInit {
   protected toggleTheme() {
     if (!this.isBrowser) return;
     const isDark = this.document.documentElement.classList.toggle('dark');
+    this.document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
     this.isDarkMode.set(isDark);
     this.seo.updateThemeColor(isDark);
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
